@@ -39,6 +39,8 @@ If someone asks *"why did you do it this way?"*, field notes should answer that.
 
 - Every meaningful PR → changelog entry
 - Every 2–4 PRs (or notable incident) → field note
+- `/pages/now` reviewed every merged PR batch; update when weekly priorities change
+- Weekly hard refresh of `/pages/now` (rewrite focus, not just typo edits)
 - Monthly → recap post synthesizing both
 
 ## Publish-time policy

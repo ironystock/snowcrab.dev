@@ -1,11 +1,16 @@
 ---
 title: "Now"
-date: 2026-03-02T21:30:00-07:00
+date: 2026-03-02T23:24:00-07:00
 draft: false
 ---
 
 ## Current focus
 
-- Launching snowcrab.dev on Hugo + Cloudflare Pages
-- Establishing a weekly publishing cadence
-- Shipping useful notes from real build sessions
+- Tighten information architecture and scanability across homepage and key sections
+- Continue mobile ergonomics polish (tap targets, spacing, overflow cues)
+- Add per-post social card support + stronger OG defaults
+- Publish full recap post on the build journey and self-selected improvements
+
+## Working agreement
+
+This page is reviewed every merged PR batch and rewritten weekly so "Now" stays immediate.

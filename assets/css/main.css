@@ -185,6 +185,8 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     scroll-snap-type: x proximity;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
     background:
       linear-gradient(to right, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%),
       linear-gradient(to left, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%);
@@ -198,6 +200,11 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     scroll-snap-align: start;
     min-height: 44px;
     padding: 0.56rem 0.92rem;
+  }
+
+  .nav a:focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--accent) 78%, white);
+    outline-offset: 2px;
   }
 
   .hero { padding: 1.05rem; border-radius: 14px; }

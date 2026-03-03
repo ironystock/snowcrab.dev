@@ -54,3 +54,5 @@ Only use future-dated timestamps when intentionally scheduling publication.
 Don’t duplicate changelog text in field notes.
 
 Field notes should add insight, not repeat facts.
+
+Also avoid duplicate posts for the same period/topic. Update the canonical post and use aliases when URL changes.

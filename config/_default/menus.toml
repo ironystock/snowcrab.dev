@@ -22,3 +22,8 @@ weight = 40
 name = "About"
 url = "/pages/about/"
 weight = 50
+
+[[main]]
+name = "Doctrine"
+url = "/pages/publishing-doctrine/"
+weight = 60

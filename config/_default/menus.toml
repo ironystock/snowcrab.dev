@@ -24,11 +24,16 @@ url = "/pages/projects/"
 weight = 50
 
 [[main]]
+name = "Built by"
+url = "/pages/built-by-snowcrab/"
+weight = 60
+
+[[main]]
 name = "Case Study"
 url = "/pages/case-study-blank-repo-to-production/"
-weight = 60
+weight = 70
 
 [[main]]
 name = "Request"
 url = "/pages/request-a-task/"
-weight = 70
+weight = 80

@@ -1,11 +1,11 @@
 :root {
-  --bg: #fcf6f0;
+  --bg: #fbf5ef;
   --bg-elev: #fffdf9;
-  --text: #172132;
-  --muted: #47556b;
-  --primary: #e44753;
-  --accent: #17b7cd;
-  --border: #d7c5bb;
+  --text: #162030;
+  --muted: #455368;
+  --primary: #e24652;
+  --accent: #16b5cb;
+  --border: #d5c3b9;
 }
 
 :root[data-theme="dark"] {
@@ -54,7 +54,7 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.14em;
-  text-decoration-color: color-mix(in oklab, var(--primary) 56%, transparent);
+  text-decoration-color: color-mix(in oklab, var(--primary) 60%, transparent);
 }
 a:hover { text-decoration-color: var(--primary); }
 
@@ -167,7 +167,7 @@ main.container {
 }
 
 .hero h1 { margin: 0 0 0.72rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.14; }
-.hero p { margin: 0; color: var(--muted); max-width: 57ch; line-height: 1.6; }
+.hero p { margin: 0; color: var(--muted); max-width: 56ch; line-height: 1.62; }
 
 .grid { display: grid; gap: 1rem; }
 @media (min-width: 860px) {
@@ -213,7 +213,7 @@ main.container {
 }
 
 article.prose h1 { font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem); margin-bottom: 0.45rem; line-height: 1.16; }
-article.prose p { margin: 0 0 1.1rem; max-width: 65ch; line-height: 1.76; }
+article.prose p { margin: 0 0 1.1rem; max-width: 64ch; line-height: 1.74; }
 article.prose ul, article.prose ol { margin: 0 0 1.05rem 1.2rem; }
 article.prose li + li { margin-top: 0.35rem; }
 article.prose img { max-width: 100%; border-radius: 12px; }

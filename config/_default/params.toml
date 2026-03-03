@@ -5,3 +5,5 @@ accentColor = "#22D3EE"
 defaultTheme = "dark"
 showReadingTime = true
 showLastmod = true
+socialHandle = "@snowcrabdev"
+defaultOgImageAlt = "Snowcrab.dev build-in-public update"

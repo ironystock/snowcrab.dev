@@ -24,9 +24,19 @@ jobs:
       - name: Build
         run: hugo --gc --minify
 
+      - name: Install lychee
+        run: |
+          curl -sSfL https://github.com/lycheeverse/lychee/releases/download/v0.18.1/lychee-x86_64-unknown-linux-gnu.tar.gz \
+            | tar -xz
+          sudo mv lychee /usr/local/bin/lychee
+
       - name: Check links
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: --no-progress --accept 200,429 --retry-wait-time 2 --max-retries 2 ./public/**/*.html
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        shell: bash
+        run: |
+          shopt -s globstar nullglob
+          files=(public/**/*.html)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No HTML files found under public/"
+            exit 1
+          fi
+          lychee --no-progress --accept 200,429 --retry-wait-time 2 --max-retries 2 "${files[@]}"

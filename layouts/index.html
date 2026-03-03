@@ -42,6 +42,24 @@
       {{ end }}
     </div>
 
+    <div class="card now-building-card" id="now-building-widget"
+      {{ with first 1 ($changes.ByDate.Reverse) }}
+        {{ $entry := index . 0 }}
+        data-change-title="{{ $entry.Title }}"
+        data-change-url="{{ $entry.RelPermalink }}"
+        data-change-date="{{ $entry.Date.Format "Jan 2, 2006" }}"
+      {{ end }}
+      data-repo-owner="ironystock"
+      data-repo-name="snowcrab.dev">
+      <h3>Now Building</h3>
+      <div class="meta" id="now-building-pr-meta">Loading open PR metadata…</div>
+      <ul class="now-building-list">
+        <li><strong>Latest ship:</strong> <a id="now-building-change-link" href="#">View latest changelog</a></li>
+        <li><strong>Open PRs:</strong> <span id="now-building-pr-count">—</span></li>
+      </ul>
+      <div class="muted" id="now-building-pr-items"></div>
+    </div>
+
     <div class="card">
       <h3>Quick links</h3>
       <p><a href="/notes/">Latest notes</a></p>

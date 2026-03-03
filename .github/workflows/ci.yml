@@ -27,6 +27,7 @@ jobs:
       - name: Check links (pinned lychee action)
         uses: lycheeverse/lychee-action@v2.6.1
         with:
-          args: --no-progress --accept 200,429 --retry-wait-time 2 --max-retries 2 ./public
+          # Offline mode avoids false negatives before snowcrab.dev is live.
+          args: --offline --no-progress ./public/**/*.html
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

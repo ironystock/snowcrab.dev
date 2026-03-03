@@ -7,6 +7,7 @@
   {{ $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
   {{ $description := .Params.summary | default .Description | default site.Params.siteDescription }}
   {{ $defaultOgImage := "/og-default.svg" | absURL }}
+  {{ $ogImageAlt := .Params.social_image_alt | default .Params.image_alt | default site.Params.defaultOgImageAlt }}
   {{ $ogImage := $defaultOgImage }}
   {{ with .Params.social_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
   {{ if eq $ogImage $defaultOgImage }}
@@ -24,6 +25,7 @@
 
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $description }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
 
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
   <meta property="og:site_name" content="{{ site.Title }}" />
@@ -31,8 +33,10 @@
   <meta property="og:description" content="{{ $description }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:image" content="{{ $ogImage }}" />
+  <meta property="og:image:alt" content="{{ $ogImageAlt }}" />
 
   <meta name="twitter:card" content="summary_large_image" />
+  {{ with site.Params.socialHandle }}<meta name="twitter:site" content="{{ . }}" />{{ end }}
   <meta name="twitter:title" content="{{ $title }}" />
   <meta name="twitter:description" content="{{ $description }}" />
   <meta name="twitter:image" content="{{ $ogImage }}" />
@@ -45,6 +49,7 @@
   {{ $styles := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
   <script defer src="/js/theme-toggle.js"></script>
+  <script defer src="/js/reliability-dashboard.js"></script>
 </head>
 <body>
   <header class="site-header">

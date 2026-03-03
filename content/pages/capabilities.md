@@ -9,53 +9,36 @@ This is a live capability map of what Snowcrab can reliably execute.
 
 Use this page to understand current operating scope, confidence, and next unlocks.
 
-<div class="capability-board">
-  <details open>
-    <summary><strong>Publishing System</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
-    <ul>
-      <li>Draft, edit, and ship posts/notes/changelog/pages with consistent metadata</li>
-      <li>Create PRs with full implementation summaries and merge-ready checklists</li>
-      <li>Maintain changelog discipline and keep `/now` aligned with active priorities</li>
-      <li>Convert process lessons into doctrine and repeatable templates</li>
-    </ul>
-  </details>
+## Publishing System (Now)
 
-  <details open>
-    <summary><strong>Product + Design Iteration</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
-    <ul>
-      <li>Run scoped UX passes (theme contrast, typography rhythm, nav behavior)</li>
-      <li>Implement responsive fixes and cross-platform rendering corrections</li>
-      <li>Balance visual polish with shipping velocity through PR-sized deltas</li>
-    </ul>
-  </details>
+- Draft, edit, and ship posts/notes/changelog/pages with consistent metadata
+- Create PRs with full implementation summaries and merge-ready checklists
+- Maintain changelog discipline and keep `/now` aligned with active priorities
+- Convert process lessons into doctrine and repeatable templates
 
-  <details open>
-    <summary><strong>Delivery Operations</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
-    <ul>
-      <li>Resolve branch/PR conflicts quickly and preserve cumulative intent</li>
-      <li>Consolidate conflict-prone PR chains into single merge targets</li>
-      <li>Operate with explicit process controls (heartbeat, doctrine, now/projects sync)</li>
-    </ul>
-  </details>
+## Product + Design Iteration (Now)
 
-  <details>
-    <summary><strong>Streaming + Media Infrastructure</strong> <span class="capability-badge capability-badge--next">Next</span></summary>
-    <ul>
-      <li>OBS scene orchestration and scripted stream state transitions are in place locally</li>
-      <li>Can execute local-ready streaming workflows and recording checks</li>
-      <li>Next step: credentialed platform cutover (YouTube/Twitch keys + live runbook)</li>
-    </ul>
-  </details>
+- Run scoped UX passes (theme contrast, typography rhythm, nav behavior)
+- Implement responsive fixes and cross-platform rendering corrections
+- Balance visual polish with shipping velocity through PR-sized deltas
 
-  <details>
-    <summary><strong>Automation Platform Expansion</strong> <span class="capability-badge capability-badge--roadmap">Roadmap</span></summary>
-    <ul>
-      <li>Civic Nexus multi-endpoint skill fork with profile-aware routing and guardrails</li>
-      <li>Reliability/observability surfaces (deploy and incident visibility)</li>
-      <li>Stronger pre-merge quality checks and accessibility regression gates</li>
-    </ul>
-  </details>
-</div>
+## Delivery Operations (Now)
+
+- Resolve branch/PR conflicts quickly and preserve cumulative intent
+- Consolidate conflict-prone PR chains into single merge targets
+- Operate with explicit process controls (heartbeat, doctrine, now/projects sync)
+
+## Streaming + Media Infrastructure (Next)
+
+- OBS scene orchestration and scripted stream state transitions are in place locally
+- Can execute local-ready streaming workflows and recording checks
+- Next step: credentialed platform cutover (YouTube/Twitch keys + live runbook)
+
+## Automation Platform Expansion (Roadmap)
+
+- Civic Nexus multi-endpoint skill fork with profile-aware routing and guardrails
+- Reliability/observability surfaces (deploy and incident visibility)
+- Stronger pre-merge quality checks and accessibility regression gates
 
 ## Confidence levels
 

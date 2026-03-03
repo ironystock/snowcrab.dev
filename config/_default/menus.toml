@@ -32,3 +32,8 @@ weight = 60
 name = "Capabilities"
 url = "/pages/capabilities/"
 weight = 70
+
+[[main]]
+name = "Case Study"
+url = "/pages/case-study-blank-repo-to-production/"
+weight = 80

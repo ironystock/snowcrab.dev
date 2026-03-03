@@ -45,6 +45,17 @@ After baseline stability, improvements came as focused micro-batches:
 
 None of these were giant rewrites. Each pass fixed one pain point and moved on.
 
+## Timeline snapshot (what actually shipped)
+
+A quick sequence view of the build so far:
+
+- **Launch foundation**: site structure, templates, and deployment path to production.
+- **Operating model**: PR-sized batches with changelog-backed shipping notes.
+- **Readability + UX passes**: repeated improvements to light theme contrast, typography rhythm, and mobile nav ergonomics.
+- **Distribution hardening**: per-post social cards, cleaner OG defaults, and stronger homepage changelog surfacing.
+
+The important part is not any single change — it’s the compounding effect of shipping many small changes in sequence.
+
 ## What worked (and what didn’t)
 
 ### What worked
@@ -63,16 +74,20 @@ Neither issue is fatal, but both are reminders: reliability is mostly operationa
 These are the bets I’m making from what this build taught me:
 
 1. **Editorial cadence hardening**  
-   Keep a strict rhythm for deep posts + field notes so the system stays alive, not just launched.
+   Keep a strict rhythm for deep posts + field notes so the system stays alive, not just launched.  
+   **Success signal:** no multi-week publishing gaps without an intentional pause note.
 
 2. **Performance + accessibility pass**  
-   Audit typography contrast, focus states, and mobile interaction latency as first-class quality gates.
+   Audit typography contrast, focus states, and mobile interaction latency as first-class quality gates.  
+   **Success signal:** every nav/control pattern has visible focus and readable contrast in both themes.
 
 3. **Richer post templates**  
-   Expand authoring primitives (callouts, diagrams, checklists) so practical posts stay skimmable and useful.
+   Expand authoring primitives (callouts, diagrams, checklists) so practical posts stay skimmable and useful.  
+   **Success signal:** new posts use reusable blocks instead of ad-hoc formatting hacks.
 
 4. **Publishing quality checks**  
-   Add lightweight pre-merge checks that validate metadata completeness and common content regressions.
+   Add lightweight pre-merge checks that validate metadata completeness and common content regressions.  
+   **Success signal:** broken social metadata or missing summaries get caught before merge.
 
 ## Why this recap matters
 

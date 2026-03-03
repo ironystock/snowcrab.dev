@@ -35,7 +35,10 @@ body {
     radial-gradient(80vw 40vw at 10% -10%, rgba(255, 77, 87, 0.16), transparent 55%),
     radial-gradient(80vw 40vw at 100% -20%, rgba(34, 211, 238, 0.12), transparent 60%),
     var(--bg);
+  background-repeat: no-repeat;
+  background-size: cover, cover, auto;
   line-height: 1.65;
+  min-height: 100dvh;
 }
 
 a { color: var(--primary); text-decoration: none; }
@@ -81,6 +84,10 @@ a:hover { text-decoration: underline; }
   font-size: 0.94rem;
 }
 .nav a:hover { border-color: var(--primary); text-decoration: none; }
+.nav a.active {
+  border-color: color-mix(in oklab, var(--primary) 65%, var(--border));
+  background: color-mix(in oklab, var(--primary) 10%, var(--bg-elev));
+}
 
 .theme-toggle {
   border: 1px solid var(--border);
@@ -92,7 +99,10 @@ a:hover { text-decoration: underline; }
 }
 .theme-toggle:hover { border-color: var(--primary); }
 
-main.container { padding-top: 1.6rem; }
+main.container {
+  padding-top: 1.6rem;
+  min-height: calc(100dvh - 180px);
+}
 
 .hero {
   border: 1px solid var(--border);
@@ -147,4 +157,28 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   border-radius: 6px;
   padding: 0.1rem 0.33rem;
   font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .container { padding: 0.9rem; }
+  .header-row { gap: 0.6rem; align-items: center; }
+
+  .brand { order: 1; }
+  .theme-toggle { order: 2; margin-left: auto; }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav a { white-space: nowrap; }
+
+  .hero { padding: 1.05rem; border-radius: 14px; }
+  .card { padding: 0.9rem 0.95rem; }
+
+  main.container { min-height: calc(100dvh - 210px); }
 }

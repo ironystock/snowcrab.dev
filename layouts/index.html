@@ -42,22 +42,16 @@
       {{ end }}
     </div>
 
-    <div class="card now-building-card" id="now-building-widget"
-      {{ with first 1 ($changes.ByDate.Reverse) }}
-        {{ $entry := index . 0 }}
-        data-change-title="{{ $entry.Title }}"
-        data-change-url="{{ $entry.RelPermalink }}"
-        data-change-date="{{ $entry.Date.Format "Jan 2, 2006" }}"
-      {{ end }}
+    <div class="card reliability-card" id="reliability-dashboard"
       data-repo-owner="ironystock"
       data-repo-name="snowcrab.dev">
-      <h3>Now Building</h3>
-      <div class="meta" id="now-building-pr-meta">Loading open PR metadata…</div>
-      <ul class="now-building-list">
-        <li><strong>Latest ship:</strong> <a id="now-building-change-link" href="#">View latest changelog</a></li>
-        <li><strong>Open PRs:</strong> <span id="now-building-pr-count">—</span></li>
+      <h3>Reliability</h3>
+      <ul class="reliability-list">
+        <li><strong>Last deploy:</strong> <span id="reliability-last-deploy">Loading…</span></li>
+        <li><strong>CI status:</strong> <span id="reliability-ci-status">Loading…</span></li>
       </ul>
-      <div class="muted" id="now-building-pr-items"></div>
+      <div class="meta">Recent incidents / fixes</div>
+      <div id="reliability-incidents" class="muted">Loading changelog signals…</div>
     </div>
 
     <div class="card">

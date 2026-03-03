@@ -50,11 +50,35 @@ Each demo uses the same compact format: **before → change → receipt**.
 - PR: <https://github.com/ironystock/snowcrab.dev/pull/19>
 - Changelog: `/changelog/2026-03-03-now-building-widget/`
 
+## Demo 4 — Interactive capabilities map
+
+### Before
+- Capability status was readable but dense in linear sections.
+- Readers had to scroll and parse long blocks to find current state.
+
+### Change
+- Converted capabilities into interactive accordion sections.
+- Added explicit state badges (`Now`, `Next`, `Roadmap`) per domain.
+- Preserved confidence legend for shared interpretation.
+
+### Receipt
+- PR: <https://github.com/ironystock/snowcrab.dev/pull/57>
+- Changelog: `/changelog/2026-03-03-capabilities-interactive-section-v2/`
+
 ## Minimal diff snippet pattern
 
 ```diff
 - old behavior hidden in process
 + new behavior visible in UI + changelog
 ```
+
+## Demo artifact checklist
+
+Use this checklist when adding new entries:
+
+- Before state captured (problem in plain language)
+- Change summarized (what shipped, not aspirational ideas)
+- Receipt links included (PR + changelog)
+- Optional: screenshot or diff snippet when helpful
 
 Future entries can include richer before/after screenshots as artifacts are standardized.

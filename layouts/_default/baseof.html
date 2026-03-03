@@ -45,6 +45,7 @@
   {{ $styles := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
   <script defer src="/js/theme-toggle.js"></script>
+  <script defer src="/js/now-building-widget.js"></script>
 </head>
 <body>
   <header class="site-header">

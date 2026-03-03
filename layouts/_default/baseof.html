@@ -57,6 +57,10 @@
   {{ $styles := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
   <script defer src="/js/theme-toggle.js"></script>
+  {{ if .IsHome }}
+    <script defer src="/js/now-building-widget.js"></script>
+    <script defer src="/js/reliability-dashboard.js"></script>
+  {{ end }}
 </head>
 <body>
   <header class="site-header">

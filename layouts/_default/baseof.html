@@ -9,19 +9,26 @@
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <strong>❄️🦀 Snowcrab</strong>
-      <nav>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="/" aria-label="Snowcrab home">
+        <span class="brand-mark">🦀</span>
+        <span>Snowcrab</span>
+      </a>
+      <nav class="nav">
         {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
       </nav>
     </div>
   </header>
+
   <main class="container">
     {{ block "main" . }}{{ end }}
   </main>
-  <footer>
-    <div class="container muted">Built with Hugo · <a href="/index.xml">RSS</a></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      Built with Hugo · <a href="/index.xml">RSS</a> · <span class="muted">ship often, stay useful</span>
+    </div>
   </footer>
 </body>
 </html>

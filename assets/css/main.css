@@ -2,10 +2,10 @@
   --bg: #fdf7f2;
   --bg-elev: #fffdfa;
   --text: #1f2937;
-  --muted: #6b7280;
+  --muted: #5b6472;
   --primary: #f1525c;
   --accent: #20c7de;
-  --border: #eadfda;
+  --border: #e3d5ce;
 }
 
 :root[data-theme="dark"] {
@@ -118,7 +118,7 @@ main.container {
 }
 
 .hero h1 { margin: 0 0 0.68rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.16; }
-.hero p { margin: 0; color: var(--muted); max-width: 64ch; }
+.hero p { margin: 0; color: var(--muted); max-width: 62ch; line-height: 1.7; }
 
 .grid { display: grid; gap: 1rem; }
 @media (min-width: 860px) {
@@ -141,7 +141,7 @@ main.container {
 .stack { display: grid; gap: 0.92rem; }
 
 article.prose h1 { font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem); margin-bottom: 0.45rem; line-height: 1.16; }
-article.prose p { margin: 0 0 1rem; max-width: 72ch; }
+article.prose p { margin: 0 0 1.05rem; max-width: 70ch; }
 article.prose ul, article.prose ol { margin: 0 0 1rem 1.2rem; }
 article.prose li + li { margin-top: 0.35rem; }
 article.prose img { max-width: 100%; border-radius: 12px; }

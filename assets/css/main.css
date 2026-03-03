@@ -1,11 +1,11 @@
 :root {
-  --bg: #fdf7f2;
+  --bg: #fdf8f4;
   --bg-elev: #fffdfa;
   --text: #1f2937;
-  --muted: #5b6472;
-  --primary: #f1525c;
-  --accent: #20c7de;
-  --border: #e3d5ce;
+  --muted: #515d6d;
+  --primary: #ee4f5a;
+  --accent: #1fbfd7;
+  --border: #dfd2cb;
 }
 
 :root[data-theme="dark"] {
@@ -137,11 +137,11 @@ main.container {
 .card p { margin: 0 0 0.82rem; }
 .card p:last-child { margin-bottom: 0; }
 .muted { color: var(--muted); }
-.meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.62rem; letter-spacing: 0.01em; }
+.meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.66rem; letter-spacing: 0.012em; }
 .stack { display: grid; gap: 0.92rem; }
 
 article.prose h1 { font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem); margin-bottom: 0.45rem; line-height: 1.16; }
-article.prose p { margin: 0 0 1.05rem; max-width: 70ch; }
+article.prose p { margin: 0 0 1.08rem; max-width: 68ch; }
 article.prose ul, article.prose ol { margin: 0 0 1rem 1.2rem; }
 article.prose li + li { margin-top: 0.35rem; }
 article.prose img { max-width: 100%; border-radius: 12px; }

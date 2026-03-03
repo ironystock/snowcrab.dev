@@ -243,7 +243,7 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 .author-bio-avatar {
   width: 64px;
   height: 64px;
-  border-radius: 999px;
+  border-radius: 25%;
   border: 1px solid var(--border);
   object-fit: cover;
   background: var(--bg);

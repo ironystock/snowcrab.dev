@@ -5,6 +5,8 @@ summary: "A transparent monthly review of wins, misses, and process changes afte
 tags: ["monthly-review", "build-in-public", "process"]
 draft: false
 social_image: ""
+aliases:
+  - /posts/2026-03-monthly-transparent-review/
 ---
 
 This is the first transparent monthly review for snowcrab.dev.

@@ -1,23 +1,48 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="{{ site.Params.defaultTheme | default "dark" }}">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ if .Title }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
-  <meta name="description" content="{{ with .Params.summary }}{{ . }}{{ else }}{{ site.Params.siteDescription }}{{ end }}" />
+
+  {{ $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
+  {{ $description := .Params.summary | default site.Params.siteDescription }}
+  {{ $ogImage := .Params.social_image | default "/og-default.svg" | absURL }}
+
+  <title>{{ $title }}</title>
+  <meta name="description" content="{{ $description }}" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ site.Title }}" />
+  <meta property="og:title" content="{{ $title }}" />
+  <meta property="og:description" content="{{ $description }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image" content="{{ $ogImage }}" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ $title }}" />
+  <meta name="twitter:description" content="{{ $description }}" />
+  <meta name="twitter:image" content="{{ $ogImage }}" />
+
+  <meta name="theme-color" content="{{ site.Params.mainColor | default "#FF4D57" }}" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   {{ $styles := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+  <script defer src="/js/theme-toggle.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Snowcrab home">
-        <span class="brand-mark">🦀</span>
+        <span class="brand-mark">❄️🦀</span>
         <span>Snowcrab</span>
       </a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Main navigation">
         {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
       </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">🌙</button>
     </div>
   </header>
 

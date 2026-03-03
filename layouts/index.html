@@ -57,6 +57,23 @@
       {{ end }}
     </div>
 
+    <div class="card now-building-card">
+      <h3>Now building</h3>
+      {{ $changes := where site.RegularPages "Section" "changelog" }}
+      {{ with first 1 ($changes.ByDate.Reverse) }}
+        {{ $entry := index . 0 }}
+        <div class="meta">Latest ship · {{ $entry.Date.Format "Jan 2, 2006" }}</div>
+        <p><a href="{{ $entry.RelPermalink }}">{{ $entry.Title }}</a></p>
+      {{ end }}
+      <p class="meta">Open PRs</p>
+      <p>
+        <a href="https://github.com/ironystock/snowcrab.dev/pulls">
+          <img src="https://img.shields.io/github/issues-pr/ironystock/snowcrab.dev?label=open%20PRs&style=flat-square" alt="Open pull requests for snowcrab.dev" />
+        </a>
+      </p>
+      <a href="https://github.com/ironystock/snowcrab.dev/pulls">View active pull requests →</a>
+    </div>
+
     <div class="card reliability-card" id="reliability-dashboard"
       data-repo-owner="ironystock"
       data-repo-name="snowcrab.dev">

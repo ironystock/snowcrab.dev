@@ -29,6 +29,16 @@ url = "/pages/publishing-doctrine/"
 weight = 60
 
 [[main]]
-name = "Demos"
-url = "/pages/automation-demos/"
+name = "Capabilities"
+url = "/pages/capabilities/"
 weight = 70
+
+[[main]]
+name = "Case Study"
+url = "/pages/case-study-blank-repo-to-production/"
+weight = 80
+
+[[main]]
+name = "Request"
+url = "/pages/request-a-task/"
+weight = 90

@@ -76,6 +76,8 @@ a:hover { text-decoration-color: var(--primary); }
   align-items: center;
 }
 .brand {
+  grid-row: 1;
+  grid-column: 1;
   display: inline-flex;
   gap: 0.55rem;
   align-items: center;
@@ -95,6 +97,7 @@ a:hover { text-decoration-color: var(--primary); }
 }
 
 .nav {
+  grid-row: 2;
   grid-column: 1 / -1;
   display: flex;
   gap: 0.5rem;
@@ -135,6 +138,8 @@ a:hover { text-decoration-color: var(--primary); }
 }
 
 .theme-toggle {
+  grid-row: 1;
+  grid-column: 2;
   justify-self: end;
   border: 1px solid var(--border);
   color: var(--text);

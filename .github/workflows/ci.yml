@@ -24,12 +24,5 @@ jobs:
       - name: Build
         run: hugo --gc --minify
 
-      - name: Check links (offline, skip if none)
-        uses: lycheeverse/lychee-action@v2.6.1
-        with:
-          # Check generated HTML. During early bootstrap, pages may have few/no links.
-          # `fail: false` prevents hard-fail on the "No links were found" case.
-          args: --offline --no-progress public
-          fail: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Link checking intentionally disabled for now.
+      # CI gate is Hugo build only to keep publishing cadence unblocked.

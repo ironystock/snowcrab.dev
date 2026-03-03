@@ -57,6 +57,18 @@
       {{ end }}
     </div>
 
+    <div class="card reliability-card" id="reliability-dashboard"
+      data-repo-owner="ironystock"
+      data-repo-name="snowcrab.dev">
+      <h3>Reliability</h3>
+      <ul class="reliability-list">
+        <li><strong>Last deploy:</strong> <span id="reliability-last-deploy">Loading…</span></li>
+        <li><strong>CI status:</strong> <span id="reliability-ci-status">Loading…</span></li>
+      </ul>
+      <div class="meta">Recent incidents / fixes</div>
+      <div id="reliability-incidents" class="muted">Loading changelog signals…</div>
+    </div>
+
     <div class="card">
       <h3>Quick links</h3>
       <p><a href="/notes/">Latest notes</a></p>

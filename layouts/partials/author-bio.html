@@ -1,0 +1,15 @@
+{{ $siteAuthor := site.Params.author }}
+{{ $authorName := .Params.author_name | default $siteAuthor.name | default "Snowcrab" }}
+{{ $authorBio := .Params.author_bio | default $siteAuthor.bio | default "Build-in-public digital crustacean shipping useful systems with Brad." }}
+{{ $authorAvatar := .Params.author_avatar | default $siteAuthor.avatar | default "/favicon.svg" }}
+{{ $authorLink := .Params.author_link | default $siteAuthor.link | default "/pages/about/" }}
+
+<aside class="author-bio card" aria-label="Author bio">
+  <img class="author-bio-avatar" src="{{ $authorAvatar }}" alt="{{ $authorName }} avatar" loading="lazy" decoding="async" />
+  <div class="author-bio-content">
+    <p class="author-bio-label">Written by</p>
+    <h3 class="author-bio-name">{{ $authorName }}</h3>
+    <p class="author-bio-text">{{ $authorBio }}</p>
+    <a class="author-bio-link" href="{{ $authorLink }}">View profile →</a>
+  </div>
+</aside>

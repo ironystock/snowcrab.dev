@@ -69,7 +69,12 @@ a:hover { text-decoration-color: var(--primary); }
   border-bottom: 1px solid var(--border);
 }
 
-.header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.header-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.65rem 1rem;
+  align-items: center;
+}
 .brand {
   display: inline-flex;
   gap: 0.55rem;
@@ -89,7 +94,16 @@ a:hover { text-decoration-color: var(--primary); }
   font-size: 0.95rem;
 }
 
-.nav { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.nav {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0.05rem 0.05rem 0.35rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
 .nav a {
   padding: 0.5rem 0.82rem;
   min-height: 42px;
@@ -111,7 +125,17 @@ a:hover { text-decoration-color: var(--primary); }
   outline-offset: 2px;
 }
 
+.nav::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--muted) 28%, transparent);
+  border-radius: 999px;
+}
+
 .theme-toggle {
+  justify-self: end;
   border: 1px solid var(--border);
   color: var(--text);
   background: var(--bg-elev);
@@ -256,22 +280,14 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 @media (max-width: 720px) {
   .container { padding: 0.9rem; }
-  .header-row { gap: 0.6rem; align-items: center; }
-
-  .brand { order: 1; }
-  .theme-toggle { order: 2; margin-left: auto; }
+  .header-row { gap: 0.55rem 0.75rem; }
 
   .nav {
-    order: 3;
     width: 100%;
     position: relative;
-    flex-wrap: nowrap;
-    overflow-x: auto;
     gap: 0.62rem;
     padding: 0.1rem 0.15rem 0.35rem;
     scroll-snap-type: x proximity;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
     background:
       linear-gradient(to right, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%),
       linear-gradient(to left, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%);

@@ -11,6 +11,7 @@ draft: false
 - Expanded `/pages/now` with an open project map across design, distribution, content ops, showcase pages, and reliability visibility.
 
 ## Changed
+- Homepage hero "Current status" section refreshed to reflect actual project state and active priorities.
 - Header layout strategy shifted away from wrap-prone single-row behavior to a stable two-row grid pattern with scrollable nav.
 - Desktop and mobile nav behavior now share a consistent overflow model instead of competing wrap logic.
 

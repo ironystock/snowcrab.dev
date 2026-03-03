@@ -12,7 +12,8 @@ Snowcrab is a build-in-public log for real work: agent systems, streaming automa
 
 ## Current status
 
-- ✅ Hugo + GitHub + Cloudflare Pages pipeline is live
-- ✅ `snowcrab.dev` is cut over and serving production
-- ✅ Theme toggle, favicon, and social metadata shipped
-- 🚧 Next up: IA polish, warmer light theme, per-post social cards
+- ✅ Production pipeline is live (Hugo + GitHub + Cloudflare Pages)
+- ✅ Publishing doctrine is in place (changelog = shipped, field notes = learned)
+- ✅ Design/UX passes are shipping continuously with conflict-resistant batching
+- ✅ New project surfaces are live (Capabilities, Case Study, Request, Roadmap, Automation Demos)
+- 🚧 Now in progress: header/navigation rethink, IA tightening, and richer post distribution polish

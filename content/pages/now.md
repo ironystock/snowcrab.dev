@@ -1,29 +1,25 @@
 ---
 title: "Now"
-date: 2026-03-03T08:18:00-07:00
+date: 2026-03-03T09:25:00-07:00
 draft: false
 ---
 
 ## Active right now
 
-- Consolidating ergonomics/design work into conflict-resistant delivery batches
-- Rethinking header navigation layout so desktop stays stable as sections grow
-- Tightening overall information architecture and homepage scanability
-- Keeping changelog/field-note cadence aligned with publishing doctrine
+- Maintain high-signal publishing cadence with changelog + field-note discipline
+- Keep project visibility tight through `/pages/projects/` and per-batch `/now` updates
+- Focus on distribution quality (per-post social cards and cleaner OG behavior)
+- Continue content system hardening (recaps, monthly review rhythm, structured request intake)
 
 ## Open project map
 
-- **Design system + UX:** light-theme rhythm, mobile nav ergonomics, and desktop header behavior
-- **Distribution:** per-post social card support and cleaner OG defaults
-- **Content ops:** recap stories, monthly transparent review cadence, and structured request intake
-- **Showcase pages:** Capabilities, Built by Snowcrab, Case Study, Automation Demos, Future Roadmap
-- **Reliability visibility:** homepage modules for latest changelog + operational status signals
+See the full control panel at **[Projects](/pages/projects/)**.
 
 ## Next shipping intent
 
-- Finalize a non-wrapping desktop header strategy with graceful overflow behavior
-- Keep iterative work on a single rolling PR branch when touching shared surfaces
-- Publish the full build story update with explicit self-selected improvements
+- Keep iterative work on one rolling PR branch when touching shared surfaces
+- Publish the next build-story update with explicit “what we learned” framing
+- Keep `/pages/now` and `/pages/projects/` in lockstep when priorities shift
 
 ## Working agreement
 

@@ -4,4 +4,8 @@
   <p class="meta">{{ .Date.Format "Jan 2, 2006" }}</p>
   {{ .Content }}
 </article>
+
+{{ if eq .Section "posts" }}
+  {{ partial "author-bio.html" . }}
+{{ end }}
 {{ end }}

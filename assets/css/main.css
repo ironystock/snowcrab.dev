@@ -232,6 +232,35 @@ article.prose pre {
 }
 article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
 
+.author-bio {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.author-bio-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  background: var(--bg);
+}
+
+.author-bio-content { min-width: 0; }
+.author-bio-label {
+  margin: 0 0 0.2rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.author-bio-name { margin: 0 0 0.35rem; font-size: 1.03rem; }
+.author-bio-text { margin: 0 0 0.55rem; color: var(--muted); max-width: 62ch; }
+.author-bio-link { text-decoration: none; font-weight: 600; }
+
 .site-footer {
   margin-top: 2rem;
   border-top: 1px solid var(--border);
@@ -336,6 +365,16 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
   .hero { padding: 1.05rem; border-radius: 14px; }
   .card { padding: 0.9rem 0.95rem; }
+
+  .author-bio {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .author-bio-avatar {
+    width: 54px;
+    height: 54px;
+  }
 
   main.container { min-height: calc(100dvh - 210px); }
 }

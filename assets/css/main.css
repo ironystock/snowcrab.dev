@@ -205,3 +205,16 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
   main.container { min-height: calc(100dvh - 210px); }
 }
+
+.now-building-list {
+  margin: 0.3rem 0 0.65rem 1rem;
+  padding: 0;
+}
+
+.now-building-list li + li {
+  margin-top: 0.35rem;
+}
+
+#now-building-pr-items > div + div {
+  margin-top: 0.35rem;
+}

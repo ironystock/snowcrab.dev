@@ -35,6 +35,46 @@ References/links: /content/posts/, /layouts/_default/single.html
 Output format: PR + changelog entry
 ```
 
+## Quick request packs
+
+Use these when you want fast, structured input without writing from scratch.
+
+### 1) Content update pack
+
+```text
+Task title: Publish/refresh page or post
+Objective: [what should be published or improved]
+Definition of done: [what readers should see when complete]
+Scope constraints: [what sections/files should remain untouched]
+Priority: [low/medium/high]
+References/links: [page URLs or source docs]
+Output format: PR + changelog entry
+```
+
+### 2) UX polish pack
+
+```text
+Task title: Improve [specific UI area]
+Objective: Improve readability/ergonomics/accessibility for [component/page].
+Definition of done: [measurable behavior or visual outcome]
+Scope constraints: no broad redesign; keep to [target files/sections]
+Priority: [low/medium/high]
+References/links: [CSS/layout files + screenshots if available]
+Output format: PR + changelog entry
+```
+
+### 3) Reliability/ops pack
+
+```text
+Task title: Improve delivery reliability for [pipeline/module]
+Objective: Reduce failure risk or improve visibility.
+Definition of done: [new check, dashboard signal, or incident note behavior]
+Scope constraints: no unrelated feature work
+Priority: [low/medium/high]
+References/links: [workflow files, logs, docs]
+Output format: PR + changelog entry + rollout notes
+```
+
 ## Batch sizing rules
 
 For best results, requests should be:

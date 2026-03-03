@@ -1,11 +1,11 @@
 :root {
-  --bg: #fcf7f3;
-  --bg-elev: #fffdfa;
-  --text: #1b2433;
-  --muted: #495467;
-  --primary: #ee4e59;
-  --accent: #1bbfd6;
-  --border: #dacbc4;
+  --bg: #fcf6f0;
+  --bg-elev: #fffdf9;
+  --text: #1b2430;
+  --muted: #4f5a6b;
+  --primary: #e94c57;
+  --accent: #1abbd2;
+  --border: #d9c8be;
 }
 
 :root[data-theme="dark"] {
@@ -28,7 +28,7 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { font-size: clamp(16px, 0.25vw + 15px, 17px); }
+html { font-size: clamp(16px, 0.2vw + 15.2px, 17px); }
 body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--text);
@@ -49,11 +49,16 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-p { margin: 0 0 0.92rem; }
-p:last-child { margin-bottom: 0; }
-
-a { color: var(--primary); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
+  text-decoration-color: color-mix(in oklab, var(--primary) 60%, transparent);
+}
+a:hover {
+  text-decoration-color: var(--primary);
+}
 
 .container { max-width: var(--container); margin: 0 auto; padding: 1.2rem; }
 
@@ -96,6 +101,7 @@ a:hover { text-decoration: underline; }
   border-radius: 999px;
   color: var(--text);
   font-size: 0.95rem;
+  text-decoration: none;
 }
 .nav a:hover { border-color: var(--primary); text-decoration: none; }
 .nav a.active {
@@ -128,7 +134,7 @@ main.container {
 }
 
 .hero h1 { margin: 0 0 0.68rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.16; }
-.hero p { margin: 0; color: var(--muted); max-width: 60ch; line-height: 1.64; }
+.hero p { margin: 0; color: var(--muted); max-width: 59ch; line-height: 1.62; }
 
 .grid { display: grid; gap: 1rem; }
 @media (min-width: 860px) {
@@ -147,11 +153,11 @@ main.container {
 .card p { margin: 0 0 0.82rem; }
 .card p:last-child { margin-bottom: 0; }
 .muted { color: var(--muted); }
-.meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.66rem; letter-spacing: 0.008em; }
+.meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.62rem; letter-spacing: 0.01em; }
 .stack { display: grid; gap: 0.92rem; }
 
 article.prose h1 { font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem); margin-bottom: 0.45rem; line-height: 1.16; }
-article.prose p { margin: 0 0 1.08rem; max-width: 68ch; line-height: 1.72; }
+article.prose p { margin: 0 0 1.08rem; max-width: 67ch; line-height: 1.74; }
 article.prose ul, article.prose ol { margin: 0 0 1.05rem 1.2rem; }
 article.prose li + li { margin-top: 0.35rem; }
 article.prose img { max-width: 100%; border-radius: 12px; }

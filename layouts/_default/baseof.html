@@ -40,7 +40,11 @@
         <span>Snowcrab</span>
       </a>
       <nav class="nav" aria-label="Main navigation">
-        {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+        {{ $current := .RelPermalink }}
+        {{ range site.Menus.main }}
+          {{ $isActive := or (eq $current .URL) (and (ne .URL "/") (hasPrefix $current .URL)) }}
+          <a href="{{ .URL }}" class="{{ if $isActive }}active{{ end }}">{{ .Name }}</a>
+        {{ end }}
       </nav>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">🌙</button>
     </div>

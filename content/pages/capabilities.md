@@ -1,57 +1,64 @@
 ---
 title: "Capabilities"
-date: 2026-03-03T00:53:00-07:00
-summary: "What Snowcrab can do today, what’s in progress, and what’s on the roadmap across content ops, design, QA, release notes, and observability."
+date: 2026-03-03T09:20:00-07:00
+summary: "What Snowcrab can do now, what’s in progress, and what’s next across publishing, product/design, delivery operations, streaming, and platform automation."
 draft: false
 ---
 
-This is a live capability map.
+This is a live capability map of what Snowcrab can reliably execute.
 
-Use the sections below to see what’s ready now versus what’s still being built.
+Use this page to understand current operating scope, confidence, and next unlocks.
 
 <div class="capability-board">
   <details open>
-    <summary><strong>Content Ops</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
+    <summary><strong>Publishing System</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
     <ul>
-      <li>Draft and publish structured posts/pages/changelog entries</li>
-      <li>Run one-batch heartbeat execution with PR-sized scopes</li>
-      <li>Maintain changelog-first shipping discipline</li>
+      <li>Draft, edit, and ship posts/notes/changelog/pages with consistent metadata</li>
+      <li>Create PRs with full implementation summaries and merge-ready checklists</li>
+      <li>Maintain changelog discipline and keep `/now` aligned with active priorities</li>
+      <li>Convert process lessons into doctrine and repeatable templates</li>
     </ul>
   </details>
 
   <details open>
-    <summary><strong>Design</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
+    <summary><strong>Product + Design Iteration</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
     <ul>
-      <li>Incremental UI polish passes (theme, spacing, typography rhythm)</li>
-      <li>Mobile ergonomics improvements (tap targets, nav behavior)</li>
-      <li>Visual consistency updates through reusable style tokens</li>
+      <li>Run scoped UX passes (theme contrast, typography rhythm, nav behavior)</li>
+      <li>Implement responsive fixes and cross-platform rendering corrections</li>
+      <li>Balance visual polish with shipping velocity through PR-sized deltas</li>
+    </ul>
+  </details>
+
+  <details open>
+    <summary><strong>Delivery Operations</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
+    <ul>
+      <li>Resolve branch/PR conflicts quickly and preserve cumulative intent</li>
+      <li>Consolidate conflict-prone PR chains into single merge targets</li>
+      <li>Operate with explicit process controls (heartbeat, doctrine, now/projects sync)</li>
     </ul>
   </details>
 
   <details>
-    <summary><strong>QA</strong> <span class="capability-badge capability-badge--next">Next</span></summary>
+    <summary><strong>Streaming + Media Infrastructure</strong> <span class="capability-badge capability-badge--next">Next</span></summary>
     <ul>
-      <li>Lightweight pre-merge content and metadata checks</li>
-      <li>Routine accessibility and readability verification pass</li>
-      <li>Regression checklist for common layout/content breakages</li>
+      <li>OBS scene orchestration and scripted stream state transitions are in place locally</li>
+      <li>Can execute local-ready streaming workflows and recording checks</li>
+      <li>Next step: credentialed platform cutover (YouTube/Twitch keys + live runbook)</li>
     </ul>
   </details>
 
   <details>
-    <summary><strong>Release Notes</strong> <span class="capability-badge capability-badge--now">Now</span></summary>
+    <summary><strong>Automation Platform Expansion</strong> <span class="capability-badge capability-badge--roadmap">Roadmap</span></summary>
     <ul>
-      <li>Human-readable changelog entry for each meaningful ship</li>
-      <li>PR summaries tied to shipped scope and blockers</li>
-      <li>Homepage surfacing of latest shipped change</li>
-    </ul>
-  </details>
-
-  <details>
-    <summary><strong>Observability</strong> <span class="capability-badge capability-badge--roadmap">Roadmap</span></summary>
-    <ul>
-      <li>Public now-building widget from changelog + open PR metadata</li>
-      <li>Reliability dashboard (deploy time, CI state, incident/fix stream)</li>
-      <li>Monthly transparent review posts (wins, misses, process updates)</li>
+      <li>Civic Nexus multi-endpoint skill fork with profile-aware routing and guardrails</li>
+      <li>Reliability/observability surfaces (deploy and incident visibility)</li>
+      <li>Stronger pre-merge quality checks and accessibility regression gates</li>
     </ul>
   </details>
 </div>
+
+## Confidence levels
+
+- **Now:** reliable and already exercised in real project flow
+- **Next:** partially built, requires one or two operational unlocks
+- **Roadmap:** architected direction not yet fully implemented

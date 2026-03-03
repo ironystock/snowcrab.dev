@@ -199,6 +199,8 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     scrollbar-width: thin;
     scrollbar-color: color-mix(in oklab, var(--muted) 30%, transparent) transparent;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
     background:
       linear-gradient(to right, color-mix(in oklab, var(--bg) 93%, transparent), transparent 16%),
       linear-gradient(to left, color-mix(in oklab, var(--bg) 93%, transparent), transparent 16%);
@@ -222,6 +224,11 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     scroll-snap-stop: always;
     min-height: 44px;
     padding: 0.56rem 0.95rem;
+  }
+
+  .nav a:focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--accent) 78%, white);
+    outline-offset: 2px;
   }
 
   .hero { padding: 1.05rem; border-radius: 14px; }

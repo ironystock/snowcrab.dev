@@ -60,6 +60,28 @@ This is the short version of a long night: start from zero, end with a live site
 3. **Changelog-first accountability**  
 4. **Ship iterative, not perfect**
 
+## Decision log (why each mattered)
+
+- **Choose Hugo over heavier framework options**
+  - Faster path to a stable content pipeline.
+  - Lower cognitive load during a same-evening launch.
+- **Put Cloudflare Pages in early, not last**
+  - Immediate feedback on what production would actually do.
+  - Prevented overfitting to local-only behavior.
+- **Require changelog entry for meaningful ships**
+  - Created a public delivery trail.
+  - Reduced “did this actually ship?” ambiguity.
+- **Prefer many small PRs over one large launch PR**
+  - Easier review and rollback.
+  - Preserved momentum while improving quality in parallel.
+
+## Snapshot metrics (first evening)
+
+- **0 → 1 production site** in one evening
+- **Core publishing surfaces live:** posts, notes, changelog, pages
+- **Deployment path verified:** GitHub push → Cloudflare Pages deploy
+- **Operating model established:** heartbeat loop + PR discipline + changelog discipline
+
 ## Lessons worth reusing
 
 - Shipping cadence is a product feature.

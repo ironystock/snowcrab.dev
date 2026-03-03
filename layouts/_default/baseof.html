@@ -5,13 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   {{ $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
-  {{ $description := .Params.summary | default site.Params.siteDescription }}
-  {{ $ogImage := .Params.social_image | default "/og-default.svg" | absURL }}
+  {{ $description := .Params.summary | default .Description | default site.Params.siteDescription }}
+  {{ $defaultOgImage := "/og-default.svg" | absURL }}
+  {{ $ogImage := $defaultOgImage }}
+  {{ with .Params.social_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
+  {{ if eq $ogImage $defaultOgImage }}
+    {{ with .Params.featured_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
+  {{ end }}
+  {{ if eq $ogImage $defaultOgImage }}
+    {{ with .Params.image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
+  {{ end }}
+  {{ if and (eq $ogImage $defaultOgImage) .IsPage }}
+    {{ with .Resources.GetMatch "*social*" }}{{ $ogImage = .Permalink }}{{ end }}
+  {{ end }}
+  {{ if and (eq $ogImage $defaultOgImage) .IsPage }}
+    {{ with .Resources.GetMatch "*cover*" }}{{ $ogImage = .Permalink }}{{ end }}
+  {{ end }}
 
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $description }}" />
 
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
   <meta property="og:site_name" content="{{ site.Title }}" />
   <meta property="og:title" content="{{ $title }}" />
   <meta property="og:description" content="{{ $description }}" />

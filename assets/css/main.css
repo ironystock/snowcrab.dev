@@ -181,16 +181,28 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 0.62rem;
-    padding: 0.1rem 0.15rem 0.35rem;
+    padding: 0.1rem 0.15rem 0.55rem;
     scroll-snap-type: x proximity;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
+    position: relative;
     background:
       linear-gradient(to right, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%),
       linear-gradient(to left, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%);
     background-repeat: no-repeat;
     background-size: 28px 100%, 28px 100%;
     background-position: left center, right center;
+  }
+
+  .nav::after {
+    content: "← swipe →";
+    position: absolute;
+    right: 0.35rem;
+    bottom: 0;
+    font-size: 0.7rem;
+    color: var(--muted);
+    pointer-events: none;
+    opacity: 0.75;
   }
 
   .nav a {

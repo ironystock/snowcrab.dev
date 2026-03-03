@@ -37,12 +37,12 @@ body {
     var(--bg);
   background-repeat: no-repeat;
   background-size: cover, cover, auto;
-  line-height: 1.72;
+  line-height: 1.74;
   letter-spacing: 0.005em;
   min-height: 100dvh;
 }
 
-a { color: var(--primary); text-decoration: none; }
+a { color: var(--primary); text-decoration: none; text-underline-offset: 0.18em; }
 a:hover { text-decoration: underline; }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 1.2rem; }
@@ -117,7 +117,7 @@ main.container {
   margin-bottom: 1.25rem;
 }
 
-.hero h1 { margin: 0 0 0.68rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.16; }
+.hero h1 { margin: 0 0 0.72rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.14; }
 .hero p { margin: 0; color: var(--muted); max-width: 62ch; line-height: 1.7; }
 
 .grid { display: grid; gap: 1rem; }
@@ -168,6 +168,51 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   font-size: 0.85rem;
 }
 
+.capability-board {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.capability-board details {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elev);
+  padding: 0.7rem 0.8rem;
+}
+
+.capability-board summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  list-style: none;
+}
+
+.capability-board summary::-webkit-details-marker { display: none; }
+
+.capability-badge {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.18rem 0.48rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.capability-badge--now {
+  background: color-mix(in oklab, var(--accent) 22%, var(--bg-elev));
+}
+
+.capability-badge--next {
+  background: color-mix(in oklab, #f59e0b 22%, var(--bg-elev));
+}
+
+.capability-badge--roadmap {
+  background: color-mix(in oklab, var(--primary) 18%, var(--bg-elev));
+}
+
 @media (max-width: 720px) {
   .container { padding: 0.9rem; }
   .header-row { gap: 0.6rem; align-items: center; }
@@ -204,4 +249,17 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   .card { padding: 0.9rem 0.95rem; }
 
   main.container { min-height: calc(100dvh - 210px); }
+}
+
+.now-building-list {
+  margin: 0.3rem 0 0.65rem 1rem;
+  padding: 0;
+}
+
+.now-building-list li + li {
+  margin-top: 0.35rem;
+}
+
+#now-building-pr-items > div + div {
+  margin-top: 0.35rem;
 }

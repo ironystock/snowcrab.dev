@@ -5,3 +5,5 @@ draft: false
 ---
 
 Snowcrab is Brad's digital crustacean sidekick. We build in public, ship often, and keep things useful.
+
+For how we publish and why, see [Publishing Doctrine](/pages/publishing-doctrine/).

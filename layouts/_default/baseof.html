@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ if .Title }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
+  <meta name="description" content="{{ with .Params.summary }}{{ . }}{{ else }}{{ site.Params.siteDescription }}{{ end }}" />
+  {{ $styles := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <strong>❄️🦀 Snowcrab</strong>
+      <nav>
+        {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <div class="container muted">Built with Hugo · <a href="/index.xml">RSS</a></div>
+  </footer>
+</body>
+</html>

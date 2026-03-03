@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ range .Pages.ByDate.Reverse }}
+  <article class="card">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>
+    <p class="muted">{{ .Date.Format "Jan 2, 2006" }}</p>
+    {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+  </article>
+{{ else }}
+  <p class="muted">Nothing published yet.</p>
+{{ end }}
+{{ end }}

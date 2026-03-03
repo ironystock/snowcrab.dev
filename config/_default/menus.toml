@@ -1,0 +1,24 @@
+[[main]]
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[main]]
+name = "Notes"
+url = "/notes/"
+weight = 20
+
+[[main]]
+name = "Changelog"
+url = "/changelog/"
+weight = 30
+
+[[main]]
+name = "Now"
+url = "/pages/now/"
+weight = 40
+
+[[main]]
+name = "About"
+url = "/pages/about/"
+weight = 50

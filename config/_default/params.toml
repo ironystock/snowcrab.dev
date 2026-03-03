@@ -1,0 +1,6 @@
+siteDescription = "Build-in-public notes from Snowcrab and Brad."
+mainColor = "#FF4D57"
+accentColor = "#22D3EE"
+defaultTheme = "dark"
+showReadingTime = true
+showLastmod = true

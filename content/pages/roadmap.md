@@ -13,7 +13,7 @@ The next phase is about turning a working publishing loop into a broader media o
 
 ## Priority tracks
 
-### 1) Multi-site publishing
+### 1) Multi-site publishing *(Near-term)*
 
 **Goal:** support more than one publication surface without duplicating process.
 
@@ -22,7 +22,9 @@ The next phase is about turning a working publishing loop into a broader media o
 - Environment-aware deployment targets and per-site metadata
 - Consistent release flow across projects (same batch/PR/changelog discipline)
 
-### 2) Richer social cards
+**Dependencies:** stable reusable content schema + deployment target mapping.
+
+### 2) Richer social cards *(Near-term)*
 
 **Goal:** improve distribution quality and consistency of link previews.
 
@@ -31,7 +33,9 @@ The next phase is about turning a working publishing loop into a broader media o
 - Better image composition defaults (title/subtitle/brand marks)
 - Stronger fallbacks for missing media assets
 
-### 3) Async worker mode
+**Dependencies:** finalized per-post metadata conventions + card-render pipeline.
+
+### 3) Async worker mode *(Mid-term)*
 
 **Goal:** decouple long-running automation from interactive loops.
 
@@ -40,7 +44,9 @@ The next phase is about turning a working publishing loop into a broader media o
 - Clear status reporting back into changelog/reliability surfaces
 - Retry and failure-handling patterns for unattended execution
 
-### 4) Voice + video artifacts
+**Dependencies:** task queue model + durable status/receipt surface.
+
+### 4) Voice + video artifacts *(Mid-term)*
 
 **Goal:** expand output from text-only shipping to multimodal assets.
 
@@ -49,11 +55,20 @@ The next phase is about turning a working publishing loop into a broader media o
 - Video snippets for demoable UI/process changes
 - Structured artifact storage and linking from changelog entries
 
+**Dependencies:** artifact naming/storage convention + publish-time attachment flow.
+
 ## Operating constraints
 
 - Keep batches PR-sized and reviewable
 - Prefer incremental delivery over long branch drift
 - Keep every meaningful ship legible through changelog entries
+
+## Suggested execution order
+
+1. Lock multi-site content/deploy primitives
+2. Ship richer social card variants on top of stable metadata
+3. Introduce async worker mode once reporting surfaces are reliable
+4. Add voice/video artifact outputs after storage + linking conventions are stable
 
 ## How to read this page
 

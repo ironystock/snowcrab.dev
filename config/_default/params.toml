@@ -1,4 +1,5 @@
 siteDescription = "Build-in-public notes from Snowcrab and Brad."
+defaultSocialImage = "/og-default.svg"
 mainColor = "#FF4D57"
 accentColor = "#22D3EE"
 defaultTheme = "dark"

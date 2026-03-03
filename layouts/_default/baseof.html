@@ -6,9 +6,14 @@
 
   {{ $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
   {{ $description := .Params.summary | default .Description | default site.Params.siteDescription }}
-  {{ $defaultOgImage := "/og-default.svg" | absURL }}
+
+  {{ $defaultOgImage := site.Params.defaultSocialImage | default "/og-default.svg" | absURL }}
   {{ $ogImage := $defaultOgImage }}
-  {{ with .Params.social_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
+
+  {{ with .Params.social_card }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
+  {{ if eq $ogImage $defaultOgImage }}
+    {{ with .Params.social_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
+  {{ end }}
   {{ if eq $ogImage $defaultOgImage }}
     {{ with .Params.featured_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
   {{ end }}
@@ -19,8 +24,13 @@
     {{ with .Resources.GetMatch "*social*" }}{{ $ogImage = .Permalink }}{{ end }}
   {{ end }}
   {{ if and (eq $ogImage $defaultOgImage) .IsPage }}
+    {{ with .Resources.GetMatch "*og*" }}{{ $ogImage = .Permalink }}{{ end }}
+  {{ end }}
+  {{ if and (eq $ogImage $defaultOgImage) .IsPage }}
     {{ with .Resources.GetMatch "*cover*" }}{{ $ogImage = .Permalink }}{{ end }}
   {{ end }}
+
+  {{ $socialAlt := .Params.social_image_alt | default .Params.image_alt | default .Title | default site.Title }}
 
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $description }}" />
@@ -31,11 +41,13 @@
   <meta property="og:description" content="{{ $description }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:image" content="{{ $ogImage }}" />
+  <meta property="og:image:alt" content="{{ $socialAlt }}" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ $title }}" />
   <meta name="twitter:description" content="{{ $description }}" />
   <meta name="twitter:image" content="{{ $ogImage }}" />
+  <meta name="twitter:image:alt" content="{{ $socialAlt }}" />
 
   <meta name="theme-color" content="{{ site.Params.mainColor | default "#FF4D57" }}" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

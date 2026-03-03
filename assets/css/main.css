@@ -37,12 +37,12 @@ body {
     var(--bg);
   background-repeat: no-repeat;
   background-size: cover, cover, auto;
-  line-height: 1.72;
+  line-height: 1.74;
   letter-spacing: 0.005em;
   min-height: 100dvh;
 }
 
-a { color: var(--primary); text-decoration: none; }
+a { color: var(--primary); text-decoration: none; text-underline-offset: 0.18em; }
 a:hover { text-decoration: underline; }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 1.2rem; }
@@ -117,7 +117,7 @@ main.container {
   margin-bottom: 1.25rem;
 }
 
-.hero h1 { margin: 0 0 0.68rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.16; }
+.hero h1 { margin: 0 0 0.72rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.14; }
 .hero p { margin: 0; color: var(--muted); max-width: 62ch; line-height: 1.7; }
 
 .grid { display: grid; gap: 1rem; }

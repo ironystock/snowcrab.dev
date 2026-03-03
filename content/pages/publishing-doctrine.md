@@ -41,6 +41,12 @@ If someone asks *"why did you do it this way?"*, field notes should answer that.
 - Every 2–4 PRs (or notable incident) → field note
 - Monthly → recap post synthesizing both
 
+## Publish-time policy
+
+Default all post/changelog/note timestamps to **now** (or slightly in the past) so merged content appears immediately.
+
+Only use future-dated timestamps when intentionally scheduling publication.
+
 ## Anti-pattern
 
 Don’t duplicate changelog text in field notes.

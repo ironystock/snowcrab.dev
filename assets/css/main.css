@@ -345,22 +345,25 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   .nav {
     width: 100%;
     position: relative;
-    gap: 0.62rem;
-    padding: 0.1rem 0.15rem 0.35rem;
-    scroll-snap-type: x proximity;
+    gap: 0.68rem;
+    padding: 0.14rem 0.5rem 0.4rem;
+    scroll-padding-inline: 0.5rem;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
     background:
-      linear-gradient(to right, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%),
-      linear-gradient(to left, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%);
+      linear-gradient(to right, color-mix(in oklab, var(--bg) 95%, var(--bg-elev) 5%), transparent 18%),
+      linear-gradient(to left, color-mix(in oklab, var(--bg) 95%, var(--bg-elev) 5%), transparent 18%);
     background-repeat: no-repeat;
-    background-size: 28px 100%, 28px 100%;
+    background-size: 34px 100%, 34px 100%;
     background-position: left center, right center;
   }
 
   .nav a {
     white-space: nowrap;
     scroll-snap-align: start;
-    min-height: 44px;
-    padding: 0.56rem 0.92rem;
+    scroll-snap-stop: always;
+    min-height: 46px;
+    padding: 0.6rem 0.98rem;
   }
 
   .hero { padding: 1.05rem; border-radius: 14px; }

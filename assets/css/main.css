@@ -1,11 +1,11 @@
 :root {
-  --bg: #fbf5ef;
-  --bg-elev: #fffdf9;
-  --text: #162030;
-  --muted: #455368;
-  --primary: #e24652;
-  --accent: #16b5cb;
-  --border: #d5c3b9;
+  --bg: #f7efe7;
+  --bg-elev: #fffaf4;
+  --text: #192537;
+  --muted: #4b5b72;
+  --primary: #da4551;
+  --accent: #13acc3;
+  --border: #d5c4b9;
 }
 
 :root[data-theme="dark"] {
@@ -57,6 +57,11 @@ a {
   text-decoration-color: color-mix(in oklab, var(--primary) 60%, transparent);
 }
 a:hover { text-decoration-color: var(--primary); }
+a:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 .container { max-width: var(--container); margin: 0 auto; padding: 1.2rem; }
 

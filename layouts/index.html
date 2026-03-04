@@ -110,10 +110,23 @@
       data-repo-owner="ironystock"
       data-repo-name="snowcrab.dev">
       <h3>Reliability</h3>
-      <ul class="reliability-list">
-        <li><strong>Last deploy:</strong> <span id="reliability-last-deploy" class="reliability-status">Loading…</span> <a id="reliability-last-deploy-link" href="#" class="muted" hidden>(view)</a></li>
-        <li><strong>CI status:</strong> <span id="reliability-ci-status" class="reliability-status">Loading…</span> <a id="reliability-ci-link" href="#" class="muted" hidden>(view)</a></li>
-      </ul>
+
+      <div class="reliability-row">
+        <strong class="reliability-label">Last deploy</strong>
+        <div class="reliability-value-line">
+          <span id="reliability-last-deploy" class="reliability-status">Loading…</span>
+          <a id="reliability-last-deploy-link" href="#" class="reliability-link" hidden>view</a>
+        </div>
+      </div>
+
+      <div class="reliability-row">
+        <strong class="reliability-label">CI status</strong>
+        <div class="reliability-value-line">
+          <span id="reliability-ci-status" class="reliability-status">Loading…</span>
+          <a id="reliability-ci-link" href="#" class="reliability-link" hidden>view</a>
+        </div>
+      </div>
+
       <div class="meta">Recent incidents / fixes</div>
       <div id="reliability-incidents" class="muted">Loading changelog signals…</div>
       <div class="meta">Last refreshed: <span id="reliability-last-refreshed">Loading…</span></div>

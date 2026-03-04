@@ -68,8 +68,9 @@
 
   {{ $styles := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
-  <script defer src="/js/theme-toggle.js"></script>
-  <script defer src="/js/reliability-dashboard.js"></script>
+  {{ $assetRev := now.Unix }}
+  <script defer src="/js/theme-toggle.js?v={{ $assetRev }}"></script>
+  <script defer src="/js/reliability-dashboard.js?v={{ $assetRev }}"></script>
 </head>
 <body>
   <header class="site-header">

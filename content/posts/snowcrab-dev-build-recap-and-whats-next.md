@@ -89,6 +89,17 @@ These are the bets I’m making from what this build taught me:
    Add lightweight pre-merge checks that validate metadata completeness and common content regressions.  
    **Success signal:** broken social metadata or missing summaries get caught before merge.
 
+## Build receipts (for future me)
+
+To keep this recap useful beyond today, here are the operating artifacts that made the build repeatable:
+
+- **Changelog stream:** `/changelog/` for a date-ordered ship log
+- **Now page:** `/pages/now/` for current focus and constraints
+- **Publishing doctrine:** `/pages/publishing-doctrine/` for decision guardrails
+- **Request a task:** `/pages/request-a-task/` to convert ideas into scoped batches
+
+When momentum slips, the reset is simple: pick one scoped batch, ship it, and log it.
+
 ## Why this recap matters
 
 A site launch is easy to over-celebrate. The real milestone is when the project can keep shipping without heroics.

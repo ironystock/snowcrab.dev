@@ -1,11 +1,11 @@
 :root {
-  --bg: #fbf5ef;
-  --bg-elev: #fffdf9;
-  --text: #162030;
-  --muted: #455368;
-  --primary: #e24652;
-  --accent: #16b5cb;
-  --border: #d5c3b9;
+  --bg: #f8f0e8;
+  --bg-elev: #fffbf6;
+  --text: #1a2638;
+  --muted: #4d5d74;
+  --primary: #db4652;
+  --accent: #14adc4;
+  --border: #d6c5bb;
 }
 
 :root[data-theme="dark"] {
@@ -33,19 +33,20 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(80vw 40vw at 10% -10%, rgba(241, 82, 92, 0.14), transparent 55%),
-    radial-gradient(80vw 40vw at 100% -20%, rgba(32, 199, 222, 0.11), transparent 60%),
+    radial-gradient(80vw 40vw at 10% -10%, rgba(241, 82, 92, 0.104), transparent 58%),
+    radial-gradient(80vw 40vw at 100% -20%, rgba(32, 199, 222, 0.084), transparent 63%),
     var(--bg);
   background-repeat: no-repeat;
   background-size: cover, cover, auto;
-  line-height: 1.67;
-  letter-spacing: 0.0015em;
+  line-height: 1.62;
+  letter-spacing: 0.001em;
   text-rendering: optimizeLegibility;
   min-height: 100dvh;
 }
 
 h1, h2, h3, h4 {
-  letter-spacing: -0.013em;
+  letter-spacing: -0.015em;
+  line-height: 1.17;
   text-wrap: balance;
 }
 
@@ -54,9 +55,14 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.14em;
-  text-decoration-color: color-mix(in oklab, var(--primary) 60%, transparent);
+  text-decoration-color: color-mix(in oklab, var(--primary) 63%, transparent);
 }
 a:hover { text-decoration-color: var(--primary); }
+a:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 .container { max-width: var(--container); margin: 0 auto; padding: 1.2rem; }
 
@@ -167,7 +173,7 @@ main.container {
 }
 
 .hero h1 { margin: 0 0 0.72rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.14; }
-.hero p { margin: 0; color: var(--muted); max-width: 56ch; line-height: 1.62; }
+.hero p { margin: 0; color: var(--muted); max-width: 54ch; line-height: 1.59; }
 
 .grid { display: grid; gap: 1rem; }
 @media (min-width: 860px) {
@@ -186,8 +192,33 @@ main.container {
 .card p { margin: 0 0 0.82rem; }
 .card p:last-child { margin-bottom: 0; }
 .muted { color: var(--muted); }
-.meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.66rem; letter-spacing: 0.008em; }
+.meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.68rem; letter-spacing: 0.007em; }
 .stack { display: grid; gap: 0.92rem; }
+
+.reliability-status {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.08rem 0.45rem;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  background: color-mix(in oklab, var(--bg-elev) 90%, var(--border) 10%);
+}
+
+.reliability-status--success {
+  border-color: color-mix(in oklab, #22c55e 45%, var(--border));
+  background: color-mix(in oklab, #22c55e 18%, var(--bg-elev));
+}
+
+.reliability-status--warn {
+  border-color: color-mix(in oklab, #f59e0b 48%, var(--border));
+  background: color-mix(in oklab, #f59e0b 20%, var(--bg-elev));
+}
+
+.reliability-status--bad {
+  border-color: color-mix(in oklab, #ef4444 48%, var(--border));
+  background: color-mix(in oklab, #ef4444 20%, var(--bg-elev));
+}
 
 .version-pill {
   display: inline-block;
@@ -220,8 +251,9 @@ main.container {
 
 article.prose h1 { font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem); margin-bottom: 0.45rem; line-height: 1.16; }
 article.prose p { margin: 0 0 1.1rem; max-width: 64ch; line-height: 1.74; }
-article.prose ul, article.prose ol { margin: 0 0 1.05rem 1.2rem; }
-article.prose li + li { margin-top: 0.35rem; }
+article.prose ul, article.prose ol { margin: 0 0 1rem 1.15rem; }
+article.prose li + li { margin-top: 0.42rem; }
+article.prose h2, article.prose h3 { margin-top: 1.5rem; margin-bottom: 0.55rem; }
 article.prose img { max-width: 100%; border-radius: 12px; }
 article.prose pre {
   overflow-x: auto;
@@ -345,22 +377,25 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   .nav {
     width: 100%;
     position: relative;
-    gap: 0.62rem;
-    padding: 0.1rem 0.15rem 0.35rem;
-    scroll-snap-type: x proximity;
+    gap: 0.72rem;
+    padding: 0.14rem 0.56rem 0.42rem;
+    scroll-padding-inline: 0.56rem;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
     background:
-      linear-gradient(to right, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%),
-      linear-gradient(to left, color-mix(in oklab, var(--bg) 92%, transparent), transparent 14%);
+      linear-gradient(to right, color-mix(in oklab, var(--bg) 95%, var(--bg-elev) 5%), transparent 18%),
+      linear-gradient(to left, color-mix(in oklab, var(--bg) 95%, var(--bg-elev) 5%), transparent 18%);
     background-repeat: no-repeat;
-    background-size: 28px 100%, 28px 100%;
+    background-size: 36px 100%, 36px 100%;
     background-position: left center, right center;
   }
 
   .nav a {
     white-space: nowrap;
     scroll-snap-align: start;
-    min-height: 44px;
-    padding: 0.56rem 0.92rem;
+    scroll-snap-stop: always;
+    min-height: 47px;
+    padding: 0.62rem 1rem;
   }
 
   .hero { padding: 1.05rem; border-radius: 14px; }

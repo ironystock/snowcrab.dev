@@ -28,6 +28,20 @@
       <a href="/pages/now/">See now page →</a>
     </div>
 
+    <div class="card monthly-review-card">
+      <h3>Monthly review</h3>
+      {{ $reviews := where (where site.RegularPages "Section" "posts") "Params.tags" "intersect" (slice "monthly-review") }}
+      {{ with first 1 ($reviews.ByDate.Reverse) }}
+        {{ $review := index . 0 }}
+        <div class="meta">Latest review · {{ $review.Date.Format "Jan 2006" }}</div>
+        <p><a href="{{ $review.RelPermalink }}">{{ $review.Title }}</a></p>
+        {{ with $review.Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
+        <a href="{{ $review.RelPermalink }}">Read monthly review →</a>
+      {{ else }}
+        <p class="muted">No monthly review published yet.</p>
+      {{ end }}
+    </div>
+
     <div class="card latest-changelog-card">
       <h3>Latest changelog</h3>
       {{ $changes := where site.RegularPages "Section" "changelog" }}
@@ -37,6 +51,16 @@
         <h4><a href="{{ $entry.RelPermalink }}">{{ $entry.Title }}</a></h4>
         {{ with $entry.Params.version }}<p class="meta">Version <span class="version-pill">{{ . }}</span></p>{{ end }}
         {{ with $entry.Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
+
+        {{ $changeBullets := findRE `(?m)^-\s+.+$` $entry.RawContent }}
+        {{ with first 3 $changeBullets }}
+          <p class="meta">What changed</p>
+          <ul class="mini-list">
+            {{ range . }}
+              <li>{{ replaceRE `(?m)^-\s+` "" . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
 
         {{ $recent := first 3 ($changes.ByDate.Reverse) }}
         {{ if gt (len $recent) 1 }}
@@ -51,7 +75,9 @@
           </ul>
         {{ end }}
 
-        <a href="{{ $entry.RelPermalink }}">Read latest change →</a>
+        <p class="meta">{{ len $changes }} total changelog entries</p>
+        <p><a href="{{ $entry.RelPermalink }}">Read latest change →</a></p>
+        <p><a href="/changelog/">Browse full changelog →</a></p>
       {{ else }}
         <p class="muted">No changelog entries yet.</p>
       {{ end }}
@@ -71,6 +97,12 @@
           <img src="https://img.shields.io/github/issues-pr/ironystock/snowcrab.dev?label=open%20PRs&style=flat-square" alt="Open pull requests for snowcrab.dev" />
         </a>
       </p>
+      <p class="meta">Open issues</p>
+      <p>
+        <a href="https://github.com/ironystock/snowcrab.dev/issues">
+          <img src="https://img.shields.io/github/issues/ironystock/snowcrab.dev?label=open%20issues&style=flat-square" alt="Open issues for snowcrab.dev" />
+        </a>
+      </p>
       <a href="https://github.com/ironystock/snowcrab.dev/pulls">View active pull requests →</a>
     </div>
 
@@ -79,17 +111,19 @@
       data-repo-name="snowcrab.dev">
       <h3>Reliability</h3>
       <ul class="reliability-list">
-        <li><strong>Last deploy:</strong> <span id="reliability-last-deploy">Loading…</span> <a id="reliability-last-deploy-link" href="#" class="muted" hidden>(view)</a></li>
-        <li><strong>CI status:</strong> <span id="reliability-ci-status">Loading…</span> <a id="reliability-ci-link" href="#" class="muted" hidden>(view)</a></li>
+        <li><strong>Last deploy:</strong> <span id="reliability-last-deploy" class="reliability-status">Loading…</span> <a id="reliability-last-deploy-link" href="#" class="muted" hidden>(view)</a></li>
+        <li><strong>CI status:</strong> <span id="reliability-ci-status" class="reliability-status">Loading…</span> <a id="reliability-ci-link" href="#" class="muted" hidden>(view)</a></li>
       </ul>
       <div class="meta">Recent incidents / fixes</div>
       <div id="reliability-incidents" class="muted">Loading changelog signals…</div>
+      <div class="meta">Last refreshed: <span id="reliability-last-refreshed">Loading…</span></div>
     </div>
 
     <div class="card">
       <h3>Quick links</h3>
       <p><a href="/notes/">Latest notes</a></p>
       <p><a href="/changelog/">Changelog</a></p>
+      <p><a href="/pages/roadmap/">Roadmap</a></p>
       <p><a href="/pages/built-by-snowcrab/">Built by Snowcrab</a></p>
       <p><a href="/posts/">All posts</a></p>
     </div>

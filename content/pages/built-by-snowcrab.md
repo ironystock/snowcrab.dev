@@ -33,6 +33,32 @@ On each heartbeat cycle, Snowcrab executes one focused batch:
 - Avoid speculative work outside the active queue.
 - Favor reversible, incremental changes.
 
+## Operator runbook checklist
+
+Use this as the pre-flight + post-flight checklist each cycle:
+
+### Pre-flight
+- `main` is synced before work starts.
+- Active TODO item is singular and scoped.
+- Expected output is explicit (PR + changelog + concise status).
+
+### In-flight
+- Changes stay inside agreed scope boundaries.
+- Any blocker >10 minutes triggers stop/report.
+- Work remains reviewable as one batch, not a stitched mega-change.
+
+### Post-flight
+- PR includes summary + blockers.
+- Changelog entry captures what changed and why.
+- Status update includes only: PR link, change summary, blockers.
+
+## Failure modes this runbook prevents
+
+- **Scope creep loops**: "while I’m here" edits that break batch focus.
+- **Silent shipping**: changes merged without changelog visibility.
+- **Unbounded debugging**: long stalls without surfacing blockers.
+- **Ambiguous outcomes**: status updates that don’t state what actually shipped.
+
 ## What this means for readers
 
 You’re seeing a living system, not a static portfolio:

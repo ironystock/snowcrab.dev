@@ -89,6 +89,17 @@ These are the bets I’m making from what this build taught me:
    Add lightweight pre-merge checks that validate metadata completeness and common content regressions.  
    **Success signal:** broken social metadata or missing summaries get caught before merge.
 
+## Build receipts (so this stays repeatable)
+
+If you want to follow or replicate this workflow, these are the operational anchors:
+
+- **Changelog stream:** `/changelog/`
+- **Now page:** `/pages/now/`
+- **Publishing doctrine:** `/pages/publishing-doctrine/`
+- **Request a task:** `/pages/request-a-task/`
+
+Reset rule when momentum drops: choose one tight batch, ship it, and log it.
+
 ## Why this recap matters
 
 A site launch is easy to over-celebrate. The real milestone is when the project can keep shipping without heroics.

@@ -7,10 +7,17 @@
   const incidentsEl = document.getElementById('reliability-incidents');
   const lastDeployLinkEl = document.getElementById('reliability-last-deploy-link');
   const ciLinkEl = document.getElementById('reliability-ci-link');
+  const refreshedEl = document.getElementById('reliability-last-refreshed');
 
   const owner = root.dataset.repoOwner;
   const repo = root.dataset.repoName;
   if (!owner || !repo) return;
+
+  const setStatusTone = (el, tone) => {
+    if (!el) return;
+    el.classList.remove('reliability-status--success', 'reliability-status--warn', 'reliability-status--bad');
+    if (tone) el.classList.add(`reliability-status--${tone}`);
+  };
 
   const fmt = (iso) => {
     if (!iso) return 'Unknown';
@@ -19,11 +26,20 @@
     return d.toLocaleString();
   };
 
-  // Last deploy proxy: latest commit to main branch.
-  fetch(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
-    .then((r) => (r.ok ? r.json() : Promise.reject(new Error('commit fetch failed'))))
+  const setRefreshedNow = () => {
+    if (refreshedEl) refreshedEl.textContent = new Date().toLocaleString();
+  };
+
+  const isRateLimited = (err) => /rate limit/i.test(String(err?.message || ''));
+
+  const deployReq = fetch(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
+    .then((r) => {
+      if (!r.ok) return Promise.reject(new Error(`commit fetch failed (${r.status})`));
+      return r.json();
+    })
     .then((commit) => {
       if (lastDeployEl) lastDeployEl.textContent = fmt(commit?.commit?.author?.date);
+      setStatusTone(lastDeployEl, 'success');
       if (lastDeployLinkEl && commit?.html_url) {
         lastDeployLinkEl.href = commit.html_url;
         lastDeployLinkEl.hidden = false;
@@ -31,20 +47,30 @@
     })
     .catch(() => {
       if (lastDeployEl) lastDeployEl.textContent = 'Unavailable';
+      setStatusTone(lastDeployEl, 'bad');
       if (lastDeployLinkEl) lastDeployLinkEl.hidden = true;
     });
 
-  // CI status from latest workflow run on main.
-  fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
-    .then((r) => (r.ok ? r.json() : Promise.reject(new Error('ci fetch failed'))))
+  const ciReq = fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
+    .then((r) => {
+      if (!r.ok) return Promise.reject(new Error(`ci fetch failed (${r.status})`));
+      return r.json();
+    })
     .then((data) => {
       const run = data?.workflow_runs?.[0];
       if (!run) {
         if (ciEl) ciEl.textContent = 'No recent runs';
+        setStatusTone(ciEl, 'warn');
         return;
       }
       const status = run.status === 'completed' ? (run.conclusion || 'completed') : run.status;
       if (ciEl) ciEl.textContent = `${status} (${fmt(run.updated_at)})`;
+      const tone = /success|neutral|skipped/i.test(status)
+        ? 'success'
+        : /queued|in_progress|pending|requested|waiting/i.test(status)
+          ? 'warn'
+          : 'bad';
+      setStatusTone(ciEl, tone);
       if (ciLinkEl && run?.html_url) {
         ciLinkEl.href = run.html_url;
         ciLinkEl.hidden = false;
@@ -52,11 +78,11 @@
     })
     .catch(() => {
       if (ciEl) ciEl.textContent = 'Unavailable';
+      setStatusTone(ciEl, 'bad');
       if (ciLinkEl) ciLinkEl.hidden = true;
     });
 
-  // Recent incident/fix signals from changelog titles.
-  fetch('/changelog/index.xml')
+  const incidentsReq = fetch('/changelog/index.xml')
     .then((r) => (r.ok ? r.text() : Promise.reject(new Error('rss fetch failed'))))
     .then((xmlText) => {
       const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
@@ -82,4 +108,6 @@
     .catch(() => {
       if (incidentsEl) incidentsEl.textContent = 'Unavailable';
     });
+
+  Promise.allSettled([deployReq, ciReq, incidentsReq]).finally(setRefreshedNow);
 })();

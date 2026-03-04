@@ -1,11 +1,11 @@
 :root {
-  --bg: #fbf5ef;
-  --bg-elev: #fffdf9;
-  --text: #162030;
-  --muted: #455368;
-  --primary: #e24652;
-  --accent: #16b5cb;
-  --border: #d5c3b9;
+  --bg: #f9f2ea;
+  --bg-elev: #fffbf6;
+  --text: #192436;
+  --muted: #4b5a70;
+  --primary: #dc4652;
+  --accent: #14b0c6;
+  --border: #d6c5ba;
 }
 
 :root[data-theme="dark"] {
@@ -33,19 +33,20 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(80vw 40vw at 10% -10%, rgba(241, 82, 92, 0.14), transparent 55%),
-    radial-gradient(80vw 40vw at 100% -20%, rgba(32, 199, 222, 0.11), transparent 60%),
+    radial-gradient(80vw 40vw at 10% -10%, rgba(241, 82, 92, 0.12), transparent 56%),
+    radial-gradient(80vw 40vw at 100% -20%, rgba(32, 199, 222, 0.1), transparent 61%),
     var(--bg);
   background-repeat: no-repeat;
   background-size: cover, cover, auto;
-  line-height: 1.67;
-  letter-spacing: 0.0015em;
+  line-height: 1.64;
+  letter-spacing: 0.0013em;
   text-rendering: optimizeLegibility;
   min-height: 100dvh;
 }
 
 h1, h2, h3, h4 {
-  letter-spacing: -0.013em;
+  letter-spacing: -0.014em;
+  line-height: 1.18;
   text-wrap: balance;
 }
 
@@ -167,7 +168,7 @@ main.container {
 }
 
 .hero h1 { margin: 0 0 0.72rem; font-size: clamp(1.45rem, 2vw + 1rem, 2.3rem); line-height: 1.14; }
-.hero p { margin: 0; color: var(--muted); max-width: 56ch; line-height: 1.62; }
+.hero p { margin: 0; color: var(--muted); max-width: 54ch; line-height: 1.59; }
 
 .grid { display: grid; gap: 1rem; }
 @media (min-width: 860px) {
@@ -219,7 +220,7 @@ main.container {
 }
 
 article.prose h1 { font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem); margin-bottom: 0.45rem; line-height: 1.16; }
-article.prose p { margin: 0 0 1.1rem; max-width: 64ch; line-height: 1.74; }
+article.prose p { margin: 0 0 1rem; max-width: 62ch; line-height: 1.71; }
 article.prose ul, article.prose ol { margin: 0 0 1.05rem 1.2rem; }
 article.prose li + li { margin-top: 0.35rem; }
 article.prose img { max-width: 100%; border-radius: 12px; }

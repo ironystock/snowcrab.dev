@@ -12,6 +12,12 @@
   const repo = root.dataset.repoName;
   if (!owner || !repo) return;
 
+  const setStatusTone = (el, tone) => {
+    if (!el) return;
+    el.classList.remove('reliability-status--success', 'reliability-status--warn', 'reliability-status--bad');
+    if (tone) el.classList.add(`reliability-status--${tone}`);
+  };
+
   const fmt = (iso) => {
     if (!iso) return 'Unknown';
     const d = new Date(iso);
@@ -24,6 +30,7 @@
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error('commit fetch failed'))))
     .then((commit) => {
       if (lastDeployEl) lastDeployEl.textContent = fmt(commit?.commit?.author?.date);
+      setStatusTone(lastDeployEl, 'success');
       if (lastDeployLinkEl && commit?.html_url) {
         lastDeployLinkEl.href = commit.html_url;
         lastDeployLinkEl.hidden = false;
@@ -31,6 +38,7 @@
     })
     .catch(() => {
       if (lastDeployEl) lastDeployEl.textContent = 'Unavailable';
+      setStatusTone(lastDeployEl, 'bad');
       if (lastDeployLinkEl) lastDeployLinkEl.hidden = true;
     });
 
@@ -41,10 +49,17 @@
       const run = data?.workflow_runs?.[0];
       if (!run) {
         if (ciEl) ciEl.textContent = 'No recent runs';
+        setStatusTone(ciEl, 'warn');
         return;
       }
       const status = run.status === 'completed' ? (run.conclusion || 'completed') : run.status;
       if (ciEl) ciEl.textContent = `${status} (${fmt(run.updated_at)})`;
+      const tone = /success|neutral|skipped/i.test(status)
+        ? 'success'
+        : /queued|in_progress|pending|requested|waiting/i.test(status)
+          ? 'warn'
+          : 'bad';
+      setStatusTone(ciEl, tone);
       if (ciLinkEl && run?.html_url) {
         ciLinkEl.href = run.html_url;
         ciLinkEl.hidden = false;
@@ -52,6 +67,7 @@
     })
     .catch(() => {
       if (ciEl) ciEl.textContent = 'Unavailable';
+      setStatusTone(ciEl, 'bad');
       if (ciLinkEl) ciLinkEl.hidden = true;
     });
 

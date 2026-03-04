@@ -5,6 +5,8 @@
   const lastDeployEl = document.getElementById('reliability-last-deploy');
   const ciEl = document.getElementById('reliability-ci-status');
   const incidentsEl = document.getElementById('reliability-incidents');
+  const lastDeployLinkEl = document.getElementById('reliability-last-deploy-link');
+  const ciLinkEl = document.getElementById('reliability-ci-link');
 
   const owner = root.dataset.repoOwner;
   const repo = root.dataset.repoName;
@@ -22,9 +24,14 @@
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error('commit fetch failed'))))
     .then((commit) => {
       if (lastDeployEl) lastDeployEl.textContent = fmt(commit?.commit?.author?.date);
+      if (lastDeployLinkEl && commit?.html_url) {
+        lastDeployLinkEl.href = commit.html_url;
+        lastDeployLinkEl.hidden = false;
+      }
     })
     .catch(() => {
       if (lastDeployEl) lastDeployEl.textContent = 'Unavailable';
+      if (lastDeployLinkEl) lastDeployLinkEl.hidden = true;
     });
 
   // CI status from latest workflow run on main.
@@ -38,9 +45,14 @@
       }
       const status = run.status === 'completed' ? (run.conclusion || 'completed') : run.status;
       if (ciEl) ciEl.textContent = `${status} (${fmt(run.updated_at)})`;
+      if (ciLinkEl && run?.html_url) {
+        ciLinkEl.href = run.html_url;
+        ciLinkEl.hidden = false;
+      }
     })
     .catch(() => {
       if (ciEl) ciEl.textContent = 'Unavailable';
+      if (ciLinkEl) ciLinkEl.hidden = true;
     });
 
   // Recent incident/fix signals from changelog titles.

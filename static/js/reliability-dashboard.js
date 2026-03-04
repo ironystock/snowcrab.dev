@@ -7,6 +7,7 @@
   const incidentsEl = document.getElementById('reliability-incidents');
   const lastDeployLinkEl = document.getElementById('reliability-last-deploy-link');
   const ciLinkEl = document.getElementById('reliability-ci-link');
+  const refreshedEl = document.getElementById('reliability-last-refreshed');
 
   const owner = root.dataset.repoOwner;
   const repo = root.dataset.repoName;
@@ -19,9 +20,17 @@
     return d.toLocaleString();
   };
 
-  // Last deploy proxy: latest commit to main branch.
-  fetch(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
-    .then((r) => (r.ok ? r.json() : Promise.reject(new Error('commit fetch failed'))))
+  const setRefreshedNow = () => {
+    if (refreshedEl) refreshedEl.textContent = new Date().toLocaleString();
+  };
+
+  const isRateLimited = (err) => /rate limit/i.test(String(err?.message || ''));
+
+  const deployReq = fetch(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
+    .then((r) => {
+      if (!r.ok) return Promise.reject(new Error(`commit fetch failed (${r.status})`));
+      return r.json();
+    })
     .then((commit) => {
       if (lastDeployEl) lastDeployEl.textContent = fmt(commit?.commit?.author?.date);
       if (lastDeployLinkEl && commit?.html_url) {
@@ -29,14 +38,16 @@
         lastDeployLinkEl.hidden = false;
       }
     })
-    .catch(() => {
-      if (lastDeployEl) lastDeployEl.textContent = 'Unavailable';
+    .catch((err) => {
+      if (lastDeployEl) lastDeployEl.textContent = isRateLimited(err) ? 'Rate-limited' : 'Unavailable';
       if (lastDeployLinkEl) lastDeployLinkEl.hidden = true;
     });
 
-  // CI status from latest workflow run on main.
-  fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
-    .then((r) => (r.ok ? r.json() : Promise.reject(new Error('ci fetch failed'))))
+  const ciReq = fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
+    .then((r) => {
+      if (!r.ok) return Promise.reject(new Error(`ci fetch failed (${r.status})`));
+      return r.json();
+    })
     .then((data) => {
       const run = data?.workflow_runs?.[0];
       if (!run) {
@@ -50,13 +61,12 @@
         ciLinkEl.hidden = false;
       }
     })
-    .catch(() => {
-      if (ciEl) ciEl.textContent = 'Unavailable';
+    .catch((err) => {
+      if (ciEl) ciEl.textContent = isRateLimited(err) ? 'Rate-limited' : 'Unavailable';
       if (ciLinkEl) ciLinkEl.hidden = true;
     });
 
-  // Recent incident/fix signals from changelog titles.
-  fetch('/changelog/index.xml')
+  const incidentsReq = fetch('/changelog/index.xml')
     .then((r) => (r.ok ? r.text() : Promise.reject(new Error('rss fetch failed'))))
     .then((xmlText) => {
       const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
@@ -82,4 +92,6 @@
     .catch(() => {
       if (incidentsEl) incidentsEl.textContent = 'Unavailable';
     });
+
+  Promise.allSettled([deployReq, ciReq, incidentsReq]).finally(setRefreshedNow);
 })();

@@ -38,6 +38,16 @@
         {{ with $entry.Params.version }}<p class="meta">Version <span class="version-pill">{{ . }}</span></p>{{ end }}
         {{ with $entry.Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
 
+        {{ $changeBullets := findRE `(?m)^-\s+.+$` $entry.RawContent }}
+        {{ with first 3 $changeBullets }}
+          <p class="meta">What changed</p>
+          <ul class="mini-list">
+            {{ range . }}
+              <li>{{ replaceRE `(?m)^-\s+` "" . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
+
         {{ $recent := first 3 ($changes.ByDate.Reverse) }}
         {{ if gt (len $recent) 1 }}
           <p class="meta">Recent entries</p>

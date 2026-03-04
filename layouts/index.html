@@ -51,7 +51,9 @@
           </ul>
         {{ end }}
 
-        <a href="{{ $entry.RelPermalink }}">Read latest change →</a>
+        <p class="meta">{{ len $changes }} total changelog entries</p>
+        <p><a href="{{ $entry.RelPermalink }}">Read latest change →</a></p>
+        <p><a href="/changelog/">Browse full changelog →</a></p>
       {{ else }}
         <p class="muted">No changelog entries yet.</p>
       {{ end }}

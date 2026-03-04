@@ -30,7 +30,8 @@
     {{ with .Resources.GetMatch "*cover*" }}{{ $ogImage = .Permalink }}{{ end }}
   {{ end }}
 
-  {{ $socialAlt := .Params.social_image_alt | default .Params.image_alt | default .Title | default site.Title }}
+  {{ $defaultOgAlt := site.Params.defaultOgImageAlt | default site.Title }}
+  {{ $socialAlt := .Params.social_image_alt | default .Params.image_alt | default (cond (eq $ogImage $defaultOgImage) $defaultOgAlt .Title) | default site.Title }}
 
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $description }}" />
@@ -39,13 +40,19 @@
   <meta property="og:site_name" content="{{ site.Title }}" />
   <meta property="og:title" content="{{ $title }}" />
   <meta property="og:description" content="{{ $description }}" />
-  <meta property="og:url" content="{{ .Permalink }}" />
+  {{ $canonical := .Params.canonical | default .Permalink }}
+  <meta property="og:url" content="{{ $canonical }}" />
   <meta property="og:image" content="{{ $ogImage }}" />
   <meta property="og:image:alt" content="{{ $socialAlt }}" />
 
+  <link rel="canonical" href="{{ $canonical }}" />
+
   <meta name="twitter:card" content="summary_large_image" />
+  {{ with site.Params.socialHandle }}<meta name="twitter:site" content="{{ . }}" />{{ end }}
+  {{ with .Params.twitter_creator }}<meta name="twitter:creator" content="{{ . }}" />{{ else }}{{ with site.Params.socialHandle }}<meta name="twitter:creator" content="{{ . }}" />{{ end }}{{ end }}
   <meta name="twitter:title" content="{{ $title }}" />
   <meta name="twitter:description" content="{{ $description }}" />
+  <meta name="twitter:url" content="{{ $canonical }}" />
   <meta name="twitter:image" content="{{ $ogImage }}" />
   <meta name="twitter:image:alt" content="{{ $socialAlt }}" />
 

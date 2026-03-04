@@ -1,11 +1,11 @@
 :root {
-  --bg: #fbf5ef;
-  --bg-elev: #fffdf9;
-  --text: #162030;
-  --muted: #455368;
-  --primary: #e24652;
-  --accent: #16b5cb;
-  --border: #d5c3b9;
+  --bg: #f8f0e8;
+  --bg-elev: #fffbf6;
+  --text: #1a2638;
+  --muted: #4d5d74;
+  --primary: #db4652;
+  --accent: #14adc4;
+  --border: #d6c5bb;
 }
 
 :root[data-theme="dark"] {
@@ -33,13 +33,13 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(80vw 40vw at 10% -10%, rgba(241, 82, 92, 0.14), transparent 55%),
-    radial-gradient(80vw 40vw at 100% -20%, rgba(32, 199, 222, 0.11), transparent 60%),
+    radial-gradient(80vw 40vw at 10% -10%, rgba(241, 82, 92, 0.104), transparent 58%),
+    radial-gradient(80vw 40vw at 100% -20%, rgba(32, 199, 222, 0.084), transparent 63%),
     var(--bg);
   background-repeat: no-repeat;
   background-size: cover, cover, auto;
-  line-height: 1.67;
-  letter-spacing: 0.0015em;
+  line-height: 1.62;
+  letter-spacing: 0.001em;
   text-rendering: optimizeLegibility;
   min-height: 100dvh;
 }

@@ -38,7 +38,7 @@
       return r.json();
     })
     .then((commit) => {
-      if (lastDeployEl) lastDeployEl.textContent = fmt(commit?.commit?.author?.date);
+      if (lastDeployEl) lastDeployEl.textContent = `✅ ${fmt(commit?.commit?.author?.date)}`;
       setStatusTone(lastDeployEl, 'success');
       if (lastDeployLinkEl && commit?.html_url) {
         lastDeployLinkEl.href = commit.html_url;
@@ -46,7 +46,7 @@
       }
     })
     .catch(() => {
-      if (lastDeployEl) lastDeployEl.textContent = 'Unavailable';
+      if (lastDeployEl) lastDeployEl.textContent = '❌ Unavailable';
       setStatusTone(lastDeployEl, 'bad');
       if (lastDeployLinkEl) lastDeployLinkEl.hidden = true;
     });
@@ -59,17 +59,18 @@
     .then((data) => {
       const run = data?.workflow_runs?.[0];
       if (!run) {
-        if (ciEl) ciEl.textContent = 'No recent runs';
+        if (ciEl) ciEl.textContent = '⚪ No runs';
         setStatusTone(ciEl, 'warn');
         return;
       }
       const status = run.status === 'completed' ? (run.conclusion || 'completed') : run.status;
-      if (ciEl) ciEl.textContent = `${status} (${fmt(run.updated_at)})`;
       const tone = /success|neutral|skipped/i.test(status)
         ? 'success'
         : /queued|in_progress|pending|requested|waiting/i.test(status)
           ? 'warn'
           : 'bad';
+      const emoji = tone === 'success' ? '✅' : tone === 'warn' ? '🟡' : '❌';
+      if (ciEl) ciEl.textContent = `${emoji} ${status} · ${fmt(run.updated_at)}`;
       setStatusTone(ciEl, tone);
       if (ciLinkEl && run?.html_url) {
         ciLinkEl.href = run.html_url;
@@ -77,7 +78,7 @@
       }
     })
     .catch(() => {
-      if (ciEl) ciEl.textContent = 'Unavailable';
+      if (ciEl) ciEl.textContent = '❌ Unavailable';
       setStatusTone(ciEl, 'bad');
       if (ciLinkEl) ciLinkEl.hidden = true;
     });

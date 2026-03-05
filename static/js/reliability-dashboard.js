@@ -79,6 +79,10 @@
     return 'unavailable';
   };
 
+  setStripTone(stripDeployEl, 'warn', 'Deploy · Loading');
+  setStripTone(stripCiEl, 'warn', 'CI · Loading');
+  setStripTone(stripIncidentsEl, 'warn', 'Incidents · Loading');
+
   let incidentsSummary = 'incidents unknown';
 
   const deployReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/commits/main`)

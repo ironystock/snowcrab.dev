@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 16:10 MST
+- Last updated: 2026-03-05 16:25 MST
 
 ## Last shipped batch
-- Reliability pass 61: compact status strip chips now receive explicit runtime `aria-label` annotations plus `data-state` markers (`ok/warn/bad`) for clearer semantic status interpretation.
+- Reliability pass 62: compact strip chips now initialize with explicit loading-state text/tone through the same semantic annotation path (`aria-label` + `data-state`) used for resolved states.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

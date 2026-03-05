@@ -472,6 +472,20 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .capability-board summary::-webkit-details-marker { display: none; }
 
+.project-health-strip {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0.95rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--bg-elev) 88%, var(--accent) 12%);
+}
+
+.project-health-strip p {
+  margin: 0;
+}
+
 .project-health-grid {
   display: grid;
   gap: 0.8rem;
@@ -510,6 +524,16 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 .status-pill--ok {
   background: color-mix(in oklab, #22c55e 18%, var(--bg-elev));
   border-color: color-mix(in oklab, #22c55e 45%, var(--border));
+}
+
+.status-pill--now {
+  background: color-mix(in oklab, #2563eb 20%, var(--bg-elev));
+  border-color: color-mix(in oklab, #2563eb 45%, var(--border));
+}
+
+.status-pill--next {
+  background: color-mix(in oklab, #7c3aed 18%, var(--bg-elev));
+  border-color: color-mix(in oklab, #7c3aed 42%, var(--border));
 }
 
 .status-pill--watch {

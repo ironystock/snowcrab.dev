@@ -7,13 +7,20 @@ draft: false
 
 This page is the cross-project control panel.
 
-_Last verified: 2026-03-05 02:48 MST_
+_Last verified: 2026-03-05 03:03 MST_
 
 ## Project health dashboard
+
+<div class="project-health-strip" aria-label="Dashboard summary">
+  <p><strong>Now:</strong> 2 immediate execution tracks</p>
+  <p><strong>Next:</strong> 2 queued follow-ups</p>
+  <p><strong>Watch:</strong> 1 dependency-risk stream</p>
+</div>
 
 <div class="project-health-grid" role="list" aria-label="Project health dashboard">
   <section class="project-health-card" role="listitem" aria-labelledby="ph-snowcrab">
     <h3 id="ph-snowcrab">snowcrab.dev</h3>
+    <p><strong>Priority:</strong> <span class="status-pill status-pill--now">Now</span></p>
     <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active</span></p>
     <p><strong>Milestone:</strong> Reliability + accessibility hardening with cleaner operational visibility</p>
     <p><strong>Next action:</strong> Finish accessibility sweep, then ship changelog filters</p>
@@ -22,6 +29,7 @@ _Last verified: 2026-03-05 02:48 MST_
 
   <section class="project-health-card" role="listitem" aria-labelledby="ph-hockey">
     <h3 id="ph-hockey">Hockeyclaw</h3>
+    <p><strong>Priority:</strong> <span class="status-pill status-pill--next">Next</span></p>
     <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active</span></p>
     <p><strong>Milestone:</strong> End-to-end ingestion + deterministic query MVP</p>
     <p><strong>Next action:</strong> Add standings movement + nightly recap automation</p>
@@ -30,6 +38,7 @@ _Last verified: 2026-03-05 02:48 MST_
 
   <section class="project-health-card" role="listitem" aria-labelledby="ph-discordclaws">
     <h3 id="ph-discordclaws">discord-claws</h3>
+    <p><strong>Priority:</strong> <span class="status-pill status-pill--now">Now</span></p>
     <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active (M1 shipped)</span></p>
     <p><strong>Milestone:</strong> Real-time sync + durable state backend</p>
     <p><strong>Next action:</strong> Implement SSE/WebSocket sync spike</p>
@@ -38,6 +47,7 @@ _Last verified: 2026-03-05 02:48 MST_
 
   <section class="project-health-card" role="listitem" aria-labelledby="ph-promptmark">
     <h3 id="ph-promptmark">Promptmark capture</h3>
+    <p><strong>Priority:</strong> <span class="status-pill status-pill--watch">Watch</span></p>
     <p><strong>Status:</strong> <span class="status-pill status-pill--watch">Pilot</span></p>
     <p><strong>Milestone:</strong> Reliable capture pipeline with production-safe hygiene</p>
     <p><strong>Next action:</strong> Expand pilot scope + reliability metrics</p>

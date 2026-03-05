@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 14:40 MST
+- Last updated: 2026-03-05 14:55 MST
 
 ## Last shipped batch
-- Accessibility pass 55: changelog filters now preserve keyboard context by redirecting focus to summary/panel anchors when the currently focused entry is hidden by a filter change.
+- Accessibility pass 56: reliability incidents subregion no longer uses live-region semantics; module-level consolidated summary remains the single announcement channel.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

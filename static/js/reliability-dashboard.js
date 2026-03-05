@@ -16,6 +16,14 @@
 
   root.setAttribute('aria-busy', 'true');
 
+  const fetchWithTimeout = (url, timeoutMs = 8000) => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+    return fetch(url, { signal: controller.signal })
+      .finally(() => clearTimeout(timer));
+  };
+
   const setStatusTone = (el, tone) => {
     if (!el) return;
     el.classList.remove('reliability-status--success', 'reliability-status--warn', 'reliability-status--bad');
@@ -43,7 +51,7 @@
 
   const isRateLimited = (err) => /rate limit/i.test(String(err?.message || ''));
 
-  const deployReq = fetch(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
+  const deployReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
     .then((r) => {
       if (!r.ok) return Promise.reject(new Error(`commit fetch failed (${r.status})`));
       return r.json();
@@ -62,7 +70,7 @@
       if (lastDeployLinkEl) lastDeployLinkEl.hidden = false;
     });
 
-  const ciReq = fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
+  const ciReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
     .then((r) => {
       if (!r.ok) return Promise.reject(new Error(`ci fetch failed (${r.status})`));
       return r.json();
@@ -96,7 +104,7 @@
 
   if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'true');
 
-  const incidentsReq = fetch('/changelog/index.xml')
+  const incidentsReq = fetchWithTimeout('/changelog/index.xml')
     .then((r) => (r.ok ? r.text() : Promise.reject(new Error('rss fetch failed'))))
     .then((xmlText) => {
       const xml = new DOMParser().parseFromString(xmlText, 'text/xml');

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 12:10 MST
+- Last updated: 2026-03-05 12:25 MST
 
 ## Last shipped batch
-- Accessibility pass 45: reliability dashboard action links now ship with real fallback destinations and remain visible during API/runtime fetch failures.
+- Accessibility pass 46: reliability module requests are now timeout-bounded (8s) so stalled network/API calls cannot indefinitely block busy-state resolution and fallback rendering.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

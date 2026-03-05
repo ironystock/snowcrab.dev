@@ -8,7 +8,8 @@
   <h2 id="published-entries-heading" class="sr-only">Published entries</h2>
   {{ if and (eq .Section "changelog") (gt (len .Pages) 0) }}
     <div class="changelog-filters-wrap">
-      <nav class="changelog-filters" aria-label="Filter changelog by category" role="tablist" aria-orientation="horizontal">
+      <h3 id="changelog-filters-heading" class="sr-only">Filter changelog by category</h3>
+      <nav class="changelog-filters" aria-labelledby="changelog-filters-heading" role="tablist" aria-orientation="horizontal">
         <button class="chip is-active" id="changelog-filter-all" type="button" role="tab" data-filter="all" aria-selected="true" tabindex="0" aria-controls="changelog-results-panel">All</button>
         <button class="chip" id="changelog-filter-design" type="button" role="tab" data-filter="design" aria-selected="false" tabindex="-1" aria-controls="changelog-results-panel">Design</button>
         <button class="chip" id="changelog-filter-ops" type="button" role="tab" data-filter="ops" aria-selected="false" tabindex="-1" aria-controls="changelog-results-panel">Ops</button>

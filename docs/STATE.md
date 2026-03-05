@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 10:10 MST
+- Last updated: 2026-03-05 10:25 MST
 
 ## Last shipped batch
-- Accessibility pass 37: removed redundant `aria-label` usage on header brand link and reliability action links where visible/link-adjacent context already provides clear naming.
+- Accessibility pass 38: converted changelog filter landmark labeling to heading-linked semantics and removed redundant aria-label usage on author profile link text.
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on remaining high-impact keyboard/semantic validation (especially interactive module behavior under no-JS and reduced-motion conditions).
+- Continue accessibility sweep with a focused pass on interactive behavior edge-cases (no-JS fallback clarity + keyboard/focus behavior validation on dynamic modules).
 
 ## Active blockers
 - None

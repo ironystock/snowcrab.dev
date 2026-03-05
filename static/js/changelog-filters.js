@@ -91,6 +91,12 @@
         if (summary) {
           summary.tabIndex = -1;
           summary.focus({ preventScroll: true });
+
+          const cleanupSummaryTabindex = () => {
+            summary.removeAttribute('tabindex');
+            summary.removeEventListener('blur', cleanupSummaryTabindex);
+          };
+          summary.addEventListener('blur', cleanupSummaryTabindex);
         } else if (panel) {
           panel.focus({ preventScroll: true });
         }

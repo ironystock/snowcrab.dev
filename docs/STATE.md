@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 14:55 MST
+- Last updated: 2026-03-05 15:10 MST
 
 ## Last shipped batch
-- Accessibility pass 56: reliability incidents subregion no longer uses live-region semantics; module-level consolidated summary remains the single announcement channel.
+- Accessibility pass 57: improved changelog focus handoff visibility and cleanup by adding a visible summary focus style and removing temporary summary tabindex after blur.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

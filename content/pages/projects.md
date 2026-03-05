@@ -1,13 +1,13 @@
 ---
 title: "Projects"
-date: 2026-03-05T00:24:00-07:00
+date: 2026-03-05T00:30:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
 ---
 
 This page is the cross-project control panel.
 
-_Last verified: 2026-03-05 00:24 MST_
+_Last verified: 2026-03-05 00:30 MST_
 
 ## Active
 
@@ -23,12 +23,25 @@ _Last verified: 2026-03-05 00:24 MST_
 - **Next action:** Add standings movement and nightly recap automation
 - **Blockers:** None currently flagged
 
-### discord-claws (Discord Activities baseline)
-- **Status:** Active (new milestone)
-- **Current milestone:** Runnable activity baseline with auth + identity + shared instance state
-- **Next action:** Build richer interaction features on top of authenticated multi-participant state
-- **Blockers:** None currently flagged
+### discord-claws (Discord Activity / Web App)
+- **Status:** Active (Milestone 1 shipped)
+- **Current milestone:** Prototype foundation complete (runtime + auth + identity + shared state demo)
+- **Latest update:** Authenticated multi-user baseline is running with runbook support
+- **Completed milestones:**
+  - M1: SDK handshake + participants + invite dialog
+  - M2: OAuth token exchange + authenticate + identity panel
+  - M3: Shared instance counter + health/runbook
+- **Next action:** Implement real-time sync (SSE/WebSocket), then durable state backend
+- **Blockers:** None hard; dev velocity tied to Discord local/tunnel test cadence
 - **Repository:** [snowcrab-dev/discord-claws](https://github.com/snowcrab-dev/discord-claws)
+
+### Promptmark Capture Pipeline (pilot)
+- **Status:** Active (pilot)
+- **Current milestone:** Working prompt-capture backbone with OAuth + queue/worker architecture
+- **Latest update:** Hook runtime mismatch diagnosed and mitigated with explicit config path in worker
+- **Next action:** Expand pilot scope and baseline reliability metrics against production traffic patterns
+- **Blockers:** No hard blockers; careful guardrail hygiene required to keep sensitive data out of published outputs
+- **External:** [Promptmark beta](https://beta.promptmark.ai)
 
 ### OBS / Streaming Infrastructure
 - **Status:** Active (local-ready)

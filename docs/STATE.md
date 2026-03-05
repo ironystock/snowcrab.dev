@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 16:40 MST
+- Last updated: 2026-03-05 16:55 MST
 
 ## Last shipped batch
-- Reliability pass 63: compact strip ARIA labels now use explicit `"<label> status: <state>"` phrasing for clearer assistive-tech output.
+- Reliability pass 64: compact strip chips are now actionable jump links to deploy/CI/incidents detail rows for faster in-card navigation and scanability.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

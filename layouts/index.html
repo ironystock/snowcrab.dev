@@ -123,13 +123,13 @@
 
       <h4 id="reliability-strip-heading" class="sr-only">Reliability summary strip</h4>
       <ul class="reliability-strip" aria-labelledby="reliability-strip-heading">
-        <li><span id="reliability-strip-deploy" class="status-pill">Deploy · Loading</span></li>
-        <li><span id="reliability-strip-ci" class="status-pill">CI · Loading</span></li>
-        <li><span id="reliability-strip-incidents" class="status-pill">Incidents · Loading</span></li>
+        <li><a id="reliability-strip-deploy" class="status-pill reliability-strip-link" href="#reliability-row-deploy">Deploy · Loading</a></li>
+        <li><a id="reliability-strip-ci" class="status-pill reliability-strip-link" href="#reliability-row-ci">CI · Loading</a></li>
+        <li><a id="reliability-strip-incidents" class="status-pill reliability-strip-link" href="#reliability-row-incidents">Incidents · Loading</a></li>
       </ul>
 
       <dl class="reliability-metrics">
-        <div class="reliability-row">
+        <div class="reliability-row" id="reliability-row-deploy">
           <dt class="reliability-label">Last deploy</dt>
           <dd class="reliability-value-line">
             <span id="reliability-last-deploy" class="reliability-status">Loading…</span>
@@ -137,7 +137,7 @@
           </dd>
         </div>
 
-        <div class="reliability-row">
+        <div class="reliability-row" id="reliability-row-ci">
           <dt class="reliability-label">CI status</dt>
           <dd class="reliability-value-line">
             <span id="reliability-ci-status" class="reliability-status">Loading…</span>
@@ -146,7 +146,7 @@
         </div>
       </dl>
 
-      <p class="meta">Recent incidents / fixes</p>
+      <p class="meta" id="reliability-row-incidents">Recent incidents / fixes</p>
       <div id="reliability-incidents" class="muted">Loading changelog signals…</div>
       <p class="meta">Last refreshed: <span id="reliability-last-refreshed">Loading…</span></p>
       <span id="reliability-summary-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>

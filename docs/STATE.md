@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 09:56 MST
+- Last updated: 2026-03-05 10:10 MST
 
 ## Last shipped batch
-- Accessibility pass 36: migrated global header/footer navigation landmarks to heading-linked semantics (`aria-labelledby`) with SR-only headings.
+- Accessibility pass 37: removed redundant `aria-label` usage on header brand link and reliability action links where visible/link-adjacent context already provides clear naming.
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on remaining contextual link-label redundancy (keeping labels only where link text is ambiguous).
+- Continue accessibility sweep with a focused pass on remaining high-impact keyboard/semantic validation (especially interactive module behavior under no-JS and reduced-motion conditions).
 
 ## Active blockers
 - None

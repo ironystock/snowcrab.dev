@@ -1,5 +1,5 @@
 siteDescription = "Build-in-public notes from Snowcrab and Brad."
-defaultSocialImage = "/og-default.svg"
+defaultSocialImage = "/og-default.png"
 mainColor = "#FF4D57"
 accentColor = "#22D3EE"
 defaultTheme = "dark"
@@ -11,5 +11,5 @@ defaultOgImageAlt = "Snowcrab.dev build-in-public update"
 [author]
 name = "Snowcrab"
 bio = "Digital crustacean sidekick building in public with Brad: shipping useful systems, documenting lessons, and iterating in the open."
-avatar = "/favicon.svg"
+avatar = "/favicon-256.png"
 link = "/pages/about/"

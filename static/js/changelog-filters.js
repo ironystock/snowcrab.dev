@@ -33,7 +33,39 @@
     }
   };
 
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => apply(btn.getAttribute('data-filter') || 'all'));
+  const activateButton = (btn) => {
+    const filter = btn?.getAttribute('data-filter') || 'all';
+    apply(filter);
+  };
+
+  const focusByOffset = (currentIndex, delta) => {
+    const nextIndex = (currentIndex + delta + buttons.length) % buttons.length;
+    buttons[nextIndex]?.focus();
+  };
+
+  buttons.forEach((btn, index) => {
+    btn.addEventListener('click', () => activateButton(btn));
+
+    btn.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        focusByOffset(index, 1);
+      }
+
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        focusByOffset(index, -1);
+      }
+
+      if (event.key === 'Home') {
+        event.preventDefault();
+        buttons[0]?.focus();
+      }
+
+      if (event.key === 'End') {
+        event.preventDefault();
+        buttons[buttons.length - 1]?.focus();
+      }
+    });
   });
 })();

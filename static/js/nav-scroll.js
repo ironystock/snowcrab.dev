@@ -2,27 +2,58 @@
   const nav = document.querySelector('.nav');
   if (!nav) return;
 
+  const links = Array.from(nav.querySelectorAll('a[href]'));
   const step = 120;
 
-  nav.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight') {
-      event.preventDefault();
-      nav.scrollBy({ left: step, behavior: 'smooth' });
-    }
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
-    if (event.key === 'ArrowLeft') {
+  const revealLink = (link) => {
+    if (!link) return;
+    link.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+  };
+
+  nav.addEventListener('keydown', (event) => {
+    const activeEl = document.activeElement;
+    const activeIndex = links.indexOf(activeEl);
+    const focusIsLink = activeIndex >= 0;
+
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
       event.preventDefault();
-      nav.scrollBy({ left: -step, behavior: 'smooth' });
+
+      if (focusIsLink) {
+        const delta = event.key === 'ArrowRight' ? 1 : -1;
+        const nextIndex = clamp(activeIndex + delta, 0, links.length - 1);
+        const nextLink = links[nextIndex];
+        if (nextLink) {
+          nextLink.focus();
+          revealLink(nextLink);
+        }
+        return;
+      }
+
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      nav.scrollBy({ left: step * direction, behavior: 'smooth' });
     }
 
     if (event.key === 'Home') {
       event.preventDefault();
-      nav.scrollTo({ left: 0, behavior: 'smooth' });
+      if (focusIsLink && links[0]) {
+        links[0].focus();
+        revealLink(links[0]);
+      } else {
+        nav.scrollTo({ left: 0, behavior: 'smooth' });
+      }
     }
 
     if (event.key === 'End') {
       event.preventDefault();
-      nav.scrollTo({ left: nav.scrollWidth, behavior: 'smooth' });
+      if (focusIsLink && links.length > 0) {
+        const last = links[links.length - 1];
+        last.focus();
+        revealLink(last);
+      } else {
+        nav.scrollTo({ left: nav.scrollWidth, behavior: 'smooth' });
+      }
     }
   });
 })();

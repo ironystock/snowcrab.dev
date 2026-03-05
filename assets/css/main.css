@@ -109,16 +109,14 @@ a:focus-visible {
   font-weight: 800;
   letter-spacing: 0.2px;
 }
-.brand-mark {
-  min-width: 42px;
+.brand-logo {
+  width: 34px;
   height: 34px;
-  display: grid;
-  place-items: center;
-  padding: 0 0.45rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), #ff7a62);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
   box-shadow: var(--shadow);
-  font-size: 0.95rem;
+  object-fit: cover;
 }
 
 .nav {

@@ -20,7 +20,8 @@
     buttons.forEach((btn) => {
       const active = btn.getAttribute('data-filter') === filter;
       btn.classList.toggle('is-active', active);
-      btn.setAttribute('aria-pressed', String(active));
+      btn.setAttribute('aria-selected', String(active));
+      btn.setAttribute('tabindex', active ? '0' : '-1');
     });
 
     if (summary) {
@@ -40,7 +41,10 @@
 
   const focusByOffset = (currentIndex, delta) => {
     const nextIndex = (currentIndex + delta + buttons.length) % buttons.length;
-    buttons[nextIndex]?.focus();
+    const next = buttons[nextIndex];
+    if (!next) return;
+    next.focus();
+    activateButton(next);
   };
 
   buttons.forEach((btn, index) => {
@@ -60,11 +64,18 @@
       if (event.key === 'Home') {
         event.preventDefault();
         buttons[0]?.focus();
+        activateButton(buttons[0]);
       }
 
       if (event.key === 'End') {
         event.preventDefault();
         buttons[buttons.length - 1]?.focus();
+        activateButton(buttons[buttons.length - 1]);
+      }
+
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        activateButton(btn);
       }
     });
   });

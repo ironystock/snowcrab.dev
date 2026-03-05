@@ -7,12 +7,12 @@
 <section class="stack" aria-label="Published entries">
   {{ if and (eq .Section "changelog") (gt (len .Pages) 0) }}
     <div class="changelog-filters-wrap">
-      <nav class="changelog-filters" aria-label="Filter changelog by category">
-        <button class="chip is-active" type="button" data-filter="all" aria-pressed="true" aria-controls="changelog-entry-list">All</button>
-        <button class="chip" type="button" data-filter="design" aria-pressed="false" aria-controls="changelog-entry-list">Design</button>
-        <button class="chip" type="button" data-filter="ops" aria-pressed="false" aria-controls="changelog-entry-list">Ops</button>
-        <button class="chip" type="button" data-filter="content" aria-pressed="false" aria-controls="changelog-entry-list">Content</button>
-        <button class="chip" type="button" data-filter="reliability" aria-pressed="false" aria-controls="changelog-entry-list">Reliability</button>
+      <nav class="changelog-filters" aria-label="Filter changelog by category" role="tablist" aria-orientation="horizontal">
+        <button class="chip is-active" type="button" role="tab" data-filter="all" aria-selected="true" tabindex="0" aria-controls="changelog-entry-list">All</button>
+        <button class="chip" type="button" role="tab" data-filter="design" aria-selected="false" tabindex="-1" aria-controls="changelog-entry-list">Design</button>
+        <button class="chip" type="button" role="tab" data-filter="ops" aria-selected="false" tabindex="-1" aria-controls="changelog-entry-list">Ops</button>
+        <button class="chip" type="button" role="tab" data-filter="content" aria-selected="false" tabindex="-1" aria-controls="changelog-entry-list">Content</button>
+        <button class="chip" type="button" role="tab" data-filter="reliability" aria-selected="false" tabindex="-1" aria-controls="changelog-entry-list">Reliability</button>
       </nav>
       <p class="meta changelog-filter-summary" id="changelog-filter-summary" role="status" aria-live="polite" aria-atomic="true">Showing all entries</p>
     </div>

@@ -194,6 +194,16 @@ main.container {
   min-height: calc(100dvh - 180px);
 }
 
+#main-content {
+  scroll-margin-top: 5.5rem;
+}
+
+#main-content:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 .hero {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);

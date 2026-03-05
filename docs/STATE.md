@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 10:56 MST
+- Last updated: 2026-03-05 11:10 MST
 
 ## Last shipped batch
-- Accessibility pass 40: changelog filters now support URL-backed category state (`?category=`), with validated restore-on-load and non-reload URL updates.
+- Accessibility pass 41: changelog filter now responds to browser back/forward (`popstate`) so URL category history restores active tab/filter state without reload.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

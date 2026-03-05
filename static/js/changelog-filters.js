@@ -130,4 +130,14 @@
   if (initiallyActive) {
     activateButton(initiallyActive, { syncUrl: false });
   }
+
+  window.addEventListener('popstate', () => {
+    const nextFilter = readFilterFromUrl();
+    apply(nextFilter, { syncUrl: false });
+
+    const nextButton = buttons.find((btn) => btn.getAttribute('data-filter') === nextFilter);
+    if (nextButton) {
+      nextButton.setAttribute('tabindex', '0');
+    }
+  });
 })();

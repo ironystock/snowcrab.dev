@@ -12,10 +12,11 @@
       {{ if gt (len $posts) 0 }}
         <ul class="posts-feed" aria-label="Recent posts">
           {{ range first 5 ($posts.ByDate.Reverse) }}
+            {{ $postTitleId := printf "home-post-title-%s" (.File.TranslationBaseName | default .Slug) }}
             <li>
-              <article>
+              <article aria-labelledby="{{ $postTitleId }}">
                 <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></div>
-                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <h3 id="{{ $postTitleId }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                 {{ with .Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
               </article>
             </li>

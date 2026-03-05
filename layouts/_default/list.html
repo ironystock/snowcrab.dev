@@ -24,6 +24,7 @@
       {{ range .Pages.ByDate.Reverse }}
         {{ $rawCategory := .Params.category | default "" | lower }}
         {{ $title := .Title | lower }}
+        {{ $itemId := printf "entry-title-%s" (.File.TranslationBaseName | default .Slug) }}
         {{ $category := $rawCategory }}
         {{ if eq $category "" }}
           {{ if or (in $title "reliability") (in $title "incident") (in $title "stabil") }}{{ $category = "reliability" }}{{ end }}
@@ -33,9 +34,9 @@
         {{ end }}
         {{ if eq $category "" }}{{ $category = "ops" }}{{ end }}
         <li data-category="{{ $category }}">
-          <article class="card">
+          <article class="card" aria-labelledby="{{ $itemId }}">
             <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ $category | title }}</div>
-            <h2><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>
+            <h2 id="{{ $itemId }}"><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>
             {{ with .Summary }}<p class="muted">{{ . }}</p>{{ end }}
           </article>
         </li>

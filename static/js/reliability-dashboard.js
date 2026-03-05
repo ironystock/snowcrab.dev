@@ -143,9 +143,19 @@
       }
 
       incidentsSummary = `${filtered.length} incident-related entr${filtered.length === 1 ? 'y' : 'ies'}`;
-      incidentsEl.innerHTML = `<ul class="mini-list">${filtered
-        .map(({ title, link }) => `<li><a href="${link}">${title}</a></li>`)
-        .join('')}</ul>`;
+      const list = document.createElement('ul');
+      list.className = 'mini-list';
+
+      filtered.forEach(({ title, link }) => {
+        const item = document.createElement('li');
+        const anchor = document.createElement('a');
+        anchor.href = link || '#';
+        anchor.textContent = title;
+        item.appendChild(anchor);
+        list.appendChild(item);
+      });
+
+      incidentsEl.replaceChildren(list);
     })
     .catch((error) => {
       const kind = classifyError(error);

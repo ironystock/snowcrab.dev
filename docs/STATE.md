@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 13:40 MST
+- Last updated: 2026-03-05 13:55 MST
 
 ## Last shipped batch
-- Accessibility pass 51: changelog filter empty-state announcements now include active-category context, with atomic live-region behavior for clearer assistive feedback.
+- Accessibility pass 52: reliability incident feed rendering moved from `innerHTML` strings to DOM-safe list node construction, improving robustness while preserving current behavior.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

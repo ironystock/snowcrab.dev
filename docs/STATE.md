@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 15:55 MST
+- Last updated: 2026-03-05 16:10 MST
 
 ## Last shipped batch
-- Reliability pass 60: summary strip status chips now use heading-linked list semantics (`ul/li`) instead of a generic wrapper, with CSS list resets to preserve compact layout.
+- Reliability pass 61: compact status strip chips now receive explicit runtime `aria-label` annotations plus `data-state` markers (`ok/warn/bad`) for clearer semantic status interpretation.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

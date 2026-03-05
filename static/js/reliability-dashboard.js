@@ -39,7 +39,17 @@
     if (tone === 'ok') el.classList.add('status-pill--ok');
     if (tone === 'warn') el.classList.add('status-pill--watch');
     if (tone === 'bad') el.classList.add('status-pill--bad');
-    if (text) el.textContent = text;
+
+    if (text) {
+      el.textContent = text;
+      el.setAttribute('aria-label', text.replace('·', 'status'));
+    }
+
+    if (tone) {
+      el.dataset.state = tone;
+    } else {
+      delete el.dataset.state;
+    }
   };
 
   const fmt = (iso) => {

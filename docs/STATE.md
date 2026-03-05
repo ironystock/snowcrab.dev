@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 12:40 MST
+- Last updated: 2026-03-05 12:55 MST
 
 ## Last shipped batch
-- Accessibility pass 47: reliability consolidated live-summary now includes incident-feed outcome context (count/none/unavailable), improving single-announcement clarity for assistive-tech users.
+- Accessibility pass 48: reliability dashboard now distinguishes timeout/rate-limit/unavailable fetch failures with explicit user-facing status text and warning/error tone mapping.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

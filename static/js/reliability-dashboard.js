@@ -49,6 +49,14 @@
     return 'unknown';
   };
 
+  const classifyError = (error) => {
+    if (error?.name === 'AbortError') return 'timeout';
+
+    const message = String(error?.message || '').toLowerCase();
+    if (message.includes('429') || message.includes('rate limit')) return 'rate-limit';
+    return 'unavailable';
+  };
+
   let incidentsSummary = 'incidents unknown';
 
   const deployReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
@@ -64,9 +72,14 @@
         lastDeployLinkEl.hidden = false;
       }
     })
-    .catch(() => {
-      if (lastDeployEl) lastDeployEl.textContent = '❌ Unavailable';
-      setStatusTone(lastDeployEl, 'bad');
+    .catch((error) => {
+      const kind = classifyError(error);
+      if (lastDeployEl) {
+        if (kind === 'timeout') lastDeployEl.textContent = '🟡 Timed out';
+        else if (kind === 'rate-limit') lastDeployEl.textContent = '🟡 Rate limited';
+        else lastDeployEl.textContent = '❌ Unavailable';
+      }
+      setStatusTone(lastDeployEl, kind === 'unavailable' ? 'bad' : 'warn');
       if (lastDeployLinkEl) lastDeployLinkEl.hidden = false;
     });
 
@@ -96,9 +109,14 @@
         ciLinkEl.hidden = false;
       }
     })
-    .catch(() => {
-      if (ciEl) ciEl.textContent = '❌ Unavailable';
-      setStatusTone(ciEl, 'bad');
+    .catch((error) => {
+      const kind = classifyError(error);
+      if (ciEl) {
+        if (kind === 'timeout') ciEl.textContent = '🟡 Timed out';
+        else if (kind === 'rate-limit') ciEl.textContent = '🟡 Rate limited';
+        else ciEl.textContent = '❌ Unavailable';
+      }
+      setStatusTone(ciEl, kind === 'unavailable' ? 'bad' : 'warn');
       if (ciLinkEl) ciLinkEl.hidden = false;
     });
 
@@ -129,7 +147,20 @@
         .map(({ title, link }) => `<li><a href="${link}">${title}</a></li>`)
         .join('')}</ul>`;
     })
-    .catch(() => {
+    .catch((error) => {
+      const kind = classifyError(error);
+      if (kind === 'timeout') {
+        incidentsSummary = 'incident feed timed out';
+        if (incidentsEl) incidentsEl.textContent = 'Timed out';
+        return;
+      }
+
+      if (kind === 'rate-limit') {
+        incidentsSummary = 'incident feed rate limited';
+        if (incidentsEl) incidentsEl.textContent = 'Rate limited';
+        return;
+      }
+
       incidentsSummary = 'incidents unavailable';
       if (incidentsEl) incidentsEl.textContent = 'Unavailable';
     })

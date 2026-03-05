@@ -4,7 +4,8 @@
   {{ with .Content }}<div class="muted">{{ . }}</div>{{ end }}
 </section>
 
-<section class="stack" aria-label="Published entries">
+<section class="stack" aria-labelledby="published-entries-heading">
+  <h2 id="published-entries-heading" class="sr-only">Published entries</h2>
   {{ if and (eq .Section "changelog") (gt (len .Pages) 0) }}
     <div class="changelog-filters-wrap">
       <nav class="changelog-filters" aria-label="Filter changelog by category" role="tablist" aria-orientation="horizontal">
@@ -20,7 +21,7 @@
 
   {{ if gt (len .Pages) 0 }}
     {{ if eq .Section "changelog" }}<div id="changelog-results-panel" role="tabpanel" tabindex="-1" aria-labelledby="changelog-filter-all">{{ end }}
-    <ul class="posts-feed {{ if eq .Section "changelog" }}changelog-timeline{{ end }}" aria-label="Entry list" id="changelog-entry-list">
+    <ul class="posts-feed {{ if eq .Section "changelog" }}changelog-timeline{{ end }}" aria-labelledby="published-entries-heading" id="changelog-entry-list">
       {{ range .Pages.ByDate.Reverse }}
         {{ $rawCategory := .Params.category | default "" | lower }}
         {{ $title := .Title | lower }}

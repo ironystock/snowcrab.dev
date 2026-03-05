@@ -10,7 +10,7 @@
       <h2 id="latest-posts-heading">Latest posts</h2>
       {{ $posts := where site.RegularPages "Section" "posts" }}
       {{ if gt (len $posts) 0 }}
-        <ul class="posts-feed" aria-label="Recent posts">
+        <ul class="posts-feed" id="latest-posts-list" aria-labelledby="latest-posts-heading">
           {{ range first 5 ($posts.ByDate.Reverse) }}
             {{ $postTitleId := printf "home-post-title-%s" (.File.TranslationBaseName | default .Slug) }}
             <li>
@@ -145,7 +145,7 @@
     <section class="card" aria-labelledby="quick-links-heading">
       <h3 id="quick-links-heading">Quick links</h3>
       <nav aria-labelledby="quick-links-heading">
-        <ul class="link-list" aria-label="Quick links list">
+        <ul class="link-list">
           <li><a href="/notes/">Latest notes</a></li>
           <li><a href="/changelog/">Changelog</a></li>
           <li><a href="/pages/roadmap/">Roadmap</a></li>

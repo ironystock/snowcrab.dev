@@ -665,6 +665,36 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   }
 }
 
+@media (forced-colors: active) {
+  a:focus-visible,
+  .nav-list a:focus-visible,
+  .footer-links a:focus-visible,
+  .theme-toggle:focus-visible,
+  .chip:focus-visible,
+  .skip-link:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  .nav-list a,
+  .theme-toggle,
+  .chip,
+  .card,
+  .status-pill,
+  .reliability-status {
+    forced-color-adjust: auto;
+    border-color: CanvasText;
+  }
+
+  .nav-list a.active,
+  .chip.is-active,
+  .footer-links a[aria-current="page"] {
+    background: Highlight;
+    color: HighlightText;
+    border-color: Highlight;
+  }
+}
+
 @media (max-width: 720px) {
   .container { padding: 0.9rem; }
   .header-row { gap: 0.55rem 0.75rem; }

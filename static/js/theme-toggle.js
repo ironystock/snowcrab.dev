@@ -2,15 +2,19 @@
   const key = 'snowcrab-theme';
   const root = document.documentElement;
   const btn = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-toggle-icon');
+  const label = document.getElementById('theme-toggle-label');
 
   const apply = (theme) => {
     root.setAttribute('data-theme', theme);
     if (btn) {
       const isDark = theme === 'dark';
-      btn.textContent = isDark ? '🌙' : '☀️';
+      const nextAction = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+      if (icon) icon.textContent = isDark ? '🌙' : '☀️';
+      if (label) label.textContent = nextAction;
       btn.setAttribute('aria-pressed', String(!isDark));
-      btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
-      btn.title = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+      btn.setAttribute('aria-label', nextAction);
+      btn.title = nextAction;
     }
   };
 

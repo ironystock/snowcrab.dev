@@ -19,7 +19,7 @@
   {{ end }}
 
   {{ if gt (len .Pages) 0 }}
-    <ul class="posts-feed" aria-label="Entry list" id="changelog-entry-list">
+    <ul class="posts-feed {{ if eq .Section "changelog" }}changelog-timeline{{ end }}" aria-label="Entry list" id="changelog-entry-list">
       {{ range .Pages.ByDate.Reverse }}
         {{ $rawCategory := .Params.category | default "" | lower }}
         {{ $title := .Title | lower }}

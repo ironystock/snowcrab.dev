@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-date: 2026-03-03T09:20:00-07:00
+date: 2026-03-04T21:45:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
 ---
@@ -11,9 +11,15 @@ This page is the cross-project control panel.
 
 ### snowcrab.dev
 - **Status:** Active (production)
-- **Current milestone:** Visibility + publishing cadence hardening
-- **Next action:** Add field-note rhythm and maintain accurate `/now` + project state
-- **Blockers:** None hard; mostly prioritization and scope discipline
+- **Current milestone:** Reliability + accessibility hardening with cleaner operational visibility
+- **Next action:** Run full accessibility sweep and continue high-signal shipping cadence
+- **Blockers:** None hard; maintain scope discipline and avoid micro-pass churn
+
+### Hockeyclaw (NHL data MVP)
+- **Status:** Active (new kickoff)
+- **Current milestone:** End-to-end ingestion + deterministic query MVP
+- **Next action:** Add standings movement and nightly recap automation
+- **Blockers:** None currently flagged
 
 ### OBS / Streaming Infrastructure
 - **Status:** Active (local-ready)
@@ -37,4 +43,4 @@ This page is the cross-project control panel.
 
 ## Working rule
 
-Whenever priorities change, update this page in the same PR (or immediately after) and sync `/pages/now`.
+Whenever priorities change, update this page in the same batch and sync `/pages/now`.

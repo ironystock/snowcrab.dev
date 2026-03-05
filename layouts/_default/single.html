@@ -1,8 +1,12 @@
 {{ define "main" }}
-<article class="prose card">
-  <h1>{{ .Title }}</h1>
-  <p class="meta">{{ .Date.Format "Jan 2, 2006" }}</p>
-  {{ .Content }}
+<article class="prose card" aria-labelledby="page-title">
+  <header>
+    <h1 id="page-title">{{ .Title }}</h1>
+    <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+  </header>
+  <section aria-label="Article content">
+    {{ .Content }}
+  </section>
 </article>
 
 {{ if eq .Section "posts" }}

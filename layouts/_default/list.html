@@ -1,16 +1,22 @@
 {{ define "main" }}
-<section class="hero">
-  <h1>{{ .Title }}</h1>
+<section class="hero" aria-labelledby="list-page-title">
+  <h1 id="list-page-title">{{ .Title }}</h1>
   {{ with .Content }}<div class="muted">{{ . }}</div>{{ end }}
 </section>
 
-<section class="stack">
-  {{ range .Pages.ByDate.Reverse }}
-    <article class="card">
-      <div class="meta">{{ .Date.Format "Jan 2, 2006" }}</div>
-      <h2><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>
-      {{ with .Summary }}<p class="muted">{{ . }}</p>{{ end }}
-    </article>
+<section class="stack" aria-label="Published entries">
+  {{ if gt (len .Pages) 0 }}
+    <ul class="posts-feed" aria-label="Entry list">
+      {{ range .Pages.ByDate.Reverse }}
+        <li>
+          <article class="card">
+            <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></div>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>
+            {{ with .Summary }}<p class="muted">{{ . }}</p>{{ end }}
+          </article>
+        </li>
+      {{ end }}
+    </ul>
   {{ else }}
     <p class="muted">Nothing published yet.</p>
   {{ end }}

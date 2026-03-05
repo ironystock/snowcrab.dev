@@ -21,15 +21,15 @@
     </div>
   </div>
 
-  <aside class="stack">
-    <div class="card">
-      <h3>Now shipping</h3>
+  <aside class="stack" aria-label="Site updates and navigation">
+    <section class="card" aria-labelledby="now-shipping-heading">
+      <h3 id="now-shipping-heading">Now shipping</h3>
       <p class="muted">Working cadence: one deep post weekly + short field notes during active builds.</p>
       <a href="/pages/now/">See now page →</a>
-    </div>
+    </section>
 
-    <div class="card monthly-review-card">
-      <h3>Monthly review</h3>
+    <section class="card monthly-review-card" aria-labelledby="monthly-review-heading">
+      <h3 id="monthly-review-heading">Monthly review</h3>
       {{ $reviews := where (where site.RegularPages "Section" "posts") "Params.tags" "intersect" (slice "monthly-review") }}
       {{ with first 1 ($reviews.ByDate.Reverse) }}
         {{ $review := index . 0 }}
@@ -40,10 +40,10 @@
       {{ else }}
         <p class="muted">No monthly review published yet.</p>
       {{ end }}
-    </div>
+    </section>
 
-    <div class="card latest-changelog-card">
-      <h3>Latest changelog</h3>
+    <section class="card latest-changelog-card" aria-labelledby="latest-changelog-heading">
+      <h3 id="latest-changelog-heading">Latest changelog</h3>
       {{ $changes := where site.RegularPages "Section" "changelog" }}
       {{ with first 1 ($changes.ByDate.Reverse) }}
         {{ $entry := index . 0 }}
@@ -81,10 +81,10 @@
       {{ else }}
         <p class="muted">No changelog entries yet.</p>
       {{ end }}
-    </div>
+    </section>
 
-    <div class="card now-building-card">
-      <h3>Now building</h3>
+    <section class="card now-building-card" aria-labelledby="now-building-heading">
+      <h3 id="now-building-heading">Now building</h3>
       {{ $changes := where site.RegularPages "Section" "changelog" }}
       {{ with first 1 ($changes.ByDate.Reverse) }}
         {{ $entry := index . 0 }}
@@ -104,7 +104,7 @@
         </a>
       </p>
       <a href="https://github.com/ironystock/snowcrab.dev/pulls">View active pull requests →</a>
-    </div>
+    </section>
 
     <section class="card reliability-card" id="reliability-dashboard"
       data-repo-owner="ironystock"
@@ -133,7 +133,7 @@
       <p class="meta">Last refreshed: <span id="reliability-last-refreshed" aria-live="polite">Loading…</span></p>
     </section>
 
-    <div class="card">
+    <section class="card" aria-labelledby="quick-links-heading">
       <h3 id="quick-links-heading">Quick links</h3>
       <nav aria-labelledby="quick-links-heading">
         <p><a href="/notes/">Latest notes</a></p>
@@ -142,7 +142,7 @@
         <p><a href="/pages/built-by-snowcrab/">Built by Snowcrab</a></p>
         <p><a href="/posts/">All posts</a></p>
       </nav>
-    </div>
+    </section>
   </aside>
 </section>
 {{ end }}

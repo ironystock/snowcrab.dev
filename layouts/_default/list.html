@@ -5,12 +5,32 @@
 </section>
 
 <section class="stack" aria-label="Published entries">
+  {{ if and (eq .Section "changelog") (gt (len .Pages) 0) }}
+    <div class="changelog-filters" aria-label="Changelog filters">
+      <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="design" aria-pressed="false">Design</button>
+      <button class="chip" type="button" data-filter="ops" aria-pressed="false">Ops</button>
+      <button class="chip" type="button" data-filter="content" aria-pressed="false">Content</button>
+      <button class="chip" type="button" data-filter="reliability" aria-pressed="false">Reliability</button>
+    </div>
+  {{ end }}
+
   {{ if gt (len .Pages) 0 }}
-    <ul class="posts-feed" aria-label="Entry list">
+    <ul class="posts-feed" aria-label="Entry list" id="changelog-entry-list">
       {{ range .Pages.ByDate.Reverse }}
-        <li>
+        {{ $rawCategory := .Params.category | default "" | lower }}
+        {{ $title := .Title | lower }}
+        {{ $category := $rawCategory }}
+        {{ if eq $category "" }}
+          {{ if or (in $title "reliability") (in $title "incident") (in $title "stabil") }}{{ $category = "reliability" }}{{ end }}
+          {{ if and (eq $category "") (or (in $title "ops") (in $title "deploy") (in $title "pipeline") (in $title "automation")) }}{{ $category = "ops" }}{{ end }}
+          {{ if and (eq $category "") (or (in $title "post") (in $title "copy") (in $title "content") (in $title "recap")) }}{{ $category = "content" }}{{ end }}
+          {{ if and (eq $category "") (or (in $title "theme") (in $title "design") (in $title "ui") (in $title "typography")) }}{{ $category = "design" }}{{ end }}
+        {{ end }}
+        {{ if eq $category "" }}{{ $category = "ops" }}{{ end }}
+        <li data-category="{{ $category }}">
           <article class="card">
-            <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></div>
+            <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ $category | title }}</div>
             <h2><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>
             {{ with .Summary }}<p class="muted">{{ . }}</p>{{ end }}
           </article>

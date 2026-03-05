@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 11:56 MST
+- Last updated: 2026-03-05 12:10 MST
 
 ## Last shipped batch
-- Accessibility pass 44: reliability no-JS fallback now provides direct links to latest deploy commits and main-branch CI runs instead of non-actionable guidance.
+- Accessibility pass 45: reliability dashboard action links now ship with real fallback destinations and remain visible during API/runtime fetch failures.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

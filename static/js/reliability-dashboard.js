@@ -59,7 +59,7 @@
     .catch(() => {
       if (lastDeployEl) lastDeployEl.textContent = '❌ Unavailable';
       setStatusTone(lastDeployEl, 'bad');
-      if (lastDeployLinkEl) lastDeployLinkEl.hidden = true;
+      if (lastDeployLinkEl) lastDeployLinkEl.hidden = false;
     });
 
   const ciReq = fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
@@ -91,7 +91,7 @@
     .catch(() => {
       if (ciEl) ciEl.textContent = '❌ Unavailable';
       setStatusTone(ciEl, 'bad');
-      if (ciLinkEl) ciLinkEl.hidden = true;
+      if (ciLinkEl) ciLinkEl.hidden = false;
     });
 
   if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'true');

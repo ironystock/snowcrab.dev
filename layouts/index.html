@@ -14,7 +14,7 @@
           {{ range first 5 ($posts.ByDate.Reverse) }}
             <li>
               <article>
-                <div class="meta">{{ .Date.Format "Jan 2, 2006" }}</div>
+                <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></div>
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                 {{ with .Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
               </article>
@@ -53,7 +53,7 @@
       {{ $changes := where site.RegularPages "Section" "changelog" }}
       {{ with first 1 ($changes.ByDate.Reverse) }}
         {{ $entry := index . 0 }}
-        <div class="meta">{{ $entry.Date.Format "Jan 2, 2006" }}</div>
+        <div class="meta"><time datetime="{{ $entry.Date.Format "2006-01-02" }}">{{ $entry.Date.Format "Jan 2, 2006" }}</time></div>
         <h4><a href="{{ $entry.RelPermalink }}">{{ $entry.Title }}</a></h4>
         {{ with $entry.Params.version }}<p class="meta">Version <span class="version-pill">{{ . }}</span></p>{{ end }}
         {{ with $entry.Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
@@ -75,7 +75,7 @@
             {{ range after 1 $recent }}
               <li>
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <span class="muted">· {{ .Date.Format "Jan 2" }}</span>
+                <span class="muted">· <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time></span>
               </li>
             {{ end }}
           </ul>
@@ -94,7 +94,7 @@
       {{ $changes := where site.RegularPages "Section" "changelog" }}
       {{ with first 1 ($changes.ByDate.Reverse) }}
         {{ $entry := index . 0 }}
-        <div class="meta">Latest ship · {{ $entry.Date.Format "Jan 2, 2006" }}</div>
+        <div class="meta">Latest ship · <time datetime="{{ $entry.Date.Format "2006-01-02" }}">{{ $entry.Date.Format "Jan 2, 2006" }}</time></div>
         <p><a href="{{ $entry.RelPermalink }}">{{ $entry.Title }}</a></p>
       {{ end }}
       <p class="meta">Open PRs</p>

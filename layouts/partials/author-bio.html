@@ -4,12 +4,12 @@
 {{ $authorAvatar := .Params.author_avatar | default $siteAuthor.avatar | default "/favicon-256.png" }}
 {{ $authorLink := .Params.author_link | default $siteAuthor.link | default "/pages/about/" }}
 
-<aside class="author-bio card" aria-label="Author bio">
+<aside class="author-bio card" aria-labelledby="author-bio-heading">
   <img class="author-bio-avatar" src="{{ $authorAvatar }}" alt="{{ $authorName }} avatar" loading="lazy" decoding="async" />
   <div class="author-bio-content">
     <p class="author-bio-label">Written by</p>
-    <h3 class="author-bio-name">{{ $authorName }}</h3>
+    <h3 id="author-bio-heading" class="author-bio-name">{{ $authorName }}</h3>
     <p class="author-bio-text">{{ $authorBio }}</p>
-    <a class="author-bio-link" href="{{ $authorLink }}">View profile →</a>
+    <a class="author-bio-link" rel="author" href="{{ $authorLink }}" aria-label="View profile for {{ $authorName }}">View profile →</a>
   </div>
 </aside>

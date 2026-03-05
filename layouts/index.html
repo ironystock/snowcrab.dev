@@ -117,8 +117,7 @@
     <section class="card reliability-card" id="reliability-dashboard"
       data-repo-owner="ironystock"
       data-repo-name="snowcrab.dev"
-      aria-labelledby="reliability-heading"
-      aria-busy="true">
+      aria-labelledby="reliability-heading">
       <h3 id="reliability-heading">Reliability</h3>
 
       <dl class="reliability-metrics">
@@ -143,6 +142,7 @@
       <div id="reliability-incidents" class="muted" role="status" aria-live="polite">Loading changelog signals…</div>
       <p class="meta">Last refreshed: <span id="reliability-last-refreshed">Loading…</span></p>
       <span id="reliability-summary-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+      <noscript><p class="meta">Live reliability status requires JavaScript. Use GitHub links above for current deploy and CI status.</p></noscript>
     </section>
 
     <section class="card" aria-labelledby="quick-links-heading">

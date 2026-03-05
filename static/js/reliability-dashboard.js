@@ -14,6 +14,8 @@
   const repo = root.dataset.repoName;
   if (!owner || !repo) return;
 
+  root.setAttribute('aria-busy', 'true');
+
   const setStatusTone = (el, tone) => {
     if (!el) return;
     el.classList.remove('reliability-status--success', 'reliability-status--warn', 'reliability-status--bad');

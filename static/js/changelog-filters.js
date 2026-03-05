@@ -1,4 +1,7 @@
 (() => {
+  const jsOnlyWrap = document.querySelector('[data-js-only="true"]');
+  if (jsOnlyWrap) jsOnlyWrap.hidden = false;
+
   const filterWrap = document.querySelector('.changelog-filters');
   const list = document.getElementById('changelog-entry-list');
   if (!filterWrap || !list) return;

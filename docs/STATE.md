@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 10:25 MST
+- Last updated: 2026-03-05 10:40 MST
 
 ## Last shipped batch
-- Accessibility pass 38: converted changelog filter landmark labeling to heading-linked semantics and removed redundant aria-label usage on author profile link text.
+- Accessibility pass 39: improved no-JS fallbacks on dynamic modules by hiding JS-only changelog filters until script activation, adding explicit no-script guidance, and moving reliability busy state to runtime.
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on interactive behavior edge-cases (no-JS fallback clarity + keyboard/focus behavior validation on dynamic modules).
+- Continue accessibility sweep with a focused pass on keyboard/focus validation for dynamic modules under reduced-motion and forced-colors combinations.
 
 ## Active blockers
 - None

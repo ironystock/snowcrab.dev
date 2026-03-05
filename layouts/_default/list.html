@@ -7,7 +7,7 @@
 <section class="stack" aria-labelledby="published-entries-heading">
   <h2 id="published-entries-heading" class="sr-only">Published entries</h2>
   {{ if and (eq .Section "changelog") (gt (len .Pages) 0) }}
-    <div class="changelog-filters-wrap">
+    <div class="changelog-filters-wrap" hidden data-js-only="true">
       <h3 id="changelog-filters-heading" class="sr-only">Filter changelog by category</h3>
       <nav class="changelog-filters" aria-labelledby="changelog-filters-heading" role="tablist" aria-orientation="horizontal">
         <button class="chip is-active" id="changelog-filter-all" type="button" role="tab" data-filter="all" aria-selected="true" tabindex="0" aria-controls="changelog-results-panel">All</button>
@@ -18,6 +18,7 @@
       </nav>
       <p class="meta changelog-filter-summary" id="changelog-filter-summary" role="status" aria-live="polite" aria-atomic="true">Showing all entries</p>
     </div>
+    <noscript><p class="meta">Category filters require JavaScript. Showing all changelog entries.</p></noscript>
   {{ end }}
 
   {{ if gt (len .Pages) 0 }}

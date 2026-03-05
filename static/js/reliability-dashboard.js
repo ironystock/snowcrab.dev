@@ -42,7 +42,12 @@
 
     if (text) {
       el.textContent = text;
-      el.setAttribute('aria-label', text.replace('·', 'status'));
+      const [label, state] = text.split('·').map((part) => part.trim());
+      if (label && state) {
+        el.setAttribute('aria-label', `${label} status: ${state}`);
+      } else {
+        el.setAttribute('aria-label', text);
+      }
     }
 
     if (tone) {

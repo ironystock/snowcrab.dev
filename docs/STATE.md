@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 16:25 MST
+- Last updated: 2026-03-05 16:40 MST
 
 ## Last shipped batch
-- Reliability pass 62: compact strip chips now initialize with explicit loading-state text/tone through the same semantic annotation path (`aria-label` + `data-state`) used for resolved states.
+- Reliability pass 63: compact strip ARIA labels now use explicit `"<label> status: <state>"` phrasing for clearer assistive-tech output.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

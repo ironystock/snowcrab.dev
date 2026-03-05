@@ -22,7 +22,10 @@
   const readFilterFromUrl = () => {
     const url = new URL(window.location.href);
     const queryFilter = url.searchParams.get('category');
-    return normalizeFilter(queryFilter);
+    return {
+      normalized: normalizeFilter(queryFilter),
+      raw: queryFilter,
+    };
   };
 
   const writeFilterToUrl = (filter) => {
@@ -139,7 +142,11 @@
     });
   });
 
-  const urlFilter = readFilterFromUrl();
+  const { normalized: urlFilter, raw: rawUrlFilter } = readFilterFromUrl();
+  if (rawUrlFilter && rawUrlFilter !== urlFilter) {
+    writeFilterToUrl(urlFilter);
+  }
+
   const initiallyActive = buttons.find((btn) => btn.getAttribute('data-filter') === urlFilter)
     || buttons.find((btn) => btn.getAttribute('aria-selected') === 'true')
     || buttons[0];
@@ -149,7 +156,7 @@
   }
 
   window.addEventListener('popstate', () => {
-    const nextFilter = readFilterFromUrl();
+    const { normalized: nextFilter } = readFilterFromUrl();
     apply(nextFilter, { syncUrl: false });
 
     const nextButton = buttons.find((btn) => btn.getAttribute('data-filter') === nextFilter);

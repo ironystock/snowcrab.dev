@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 14:10 MST
+- Last updated: 2026-03-05 14:25 MST
 
 ## Last shipped batch
-- Accessibility pass 53: homepage primary content column is now a heading-linked semantic section landmark (`aria-labelledby`) instead of a generic wrapper.
+- Accessibility pass 54: changelog filter URL parsing now canonicalizes invalid category query values to valid state (`all`) and normalizes deep-link behavior.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

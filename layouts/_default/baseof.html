@@ -95,10 +95,11 @@
           {{ end }}
         </ul>
       </nav>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" aria-describedby="theme-status-live">
         <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
         <span id="theme-toggle-label" class="sr-only">Switch to light theme</span>
       </button>
+      <span id="theme-status-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
     </div>
   </header>
 

@@ -47,7 +47,7 @@
       {{ end }}
     </ul>
     {{ if eq .Section "changelog" }}
-      <p class="muted" id="changelog-empty-state" role="status" aria-live="polite" hidden>No entries match this filter yet.</p>
+      <p class="muted" id="changelog-empty-state" role="status" aria-live="polite" aria-atomic="true" hidden>No entries match this filter yet.</p>
     </div>{{ end }}
   {{ else }}
     <p class="muted">Nothing published yet.</p>

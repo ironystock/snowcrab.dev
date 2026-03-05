@@ -68,7 +68,15 @@
     }
 
     if (empty) {
-      empty.hidden = visibleCount !== 0;
+      if (visibleCount === 0) {
+        const emptyLabel = selectedFilter === 'all'
+          ? 'No changelog entries available yet.'
+          : `No entries match the ${selectedFilter} category yet.`;
+        empty.textContent = emptyLabel;
+        empty.hidden = false;
+      } else {
+        empty.hidden = true;
+      }
     }
 
     if (syncUrl) {

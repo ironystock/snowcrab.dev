@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 13:25 MST
+- Last updated: 2026-03-05 13:40 MST
 
 ## Last shipped batch
-- Accessibility pass 50: added explicit keyboard shortcut guidance for changelog filters and connected it to the tablist with `aria-describedby` for better discoverability.
+- Accessibility pass 51: changelog filter empty-state announcements now include active-category context, with atomic live-region behavior for clearer assistive feedback.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

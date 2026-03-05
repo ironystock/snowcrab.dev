@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 15:25 MST
+- Last updated: 2026-03-05 15:40 MST
 
 ## Last shipped batch
-- Projects dashboard pass 58: converted project health card internals to semantic definition-list metadata (`dl/dt/dd`) and added hierarchy-focused styling for clearer scanability.
+- Reliability dashboard pass 59: added compact deploy/CI/incidents status strip with live healthy/degraded/down pill mapping for faster scanability.
 
 ## Next queued action
-- Continue dashboard refinement with compact status strip + scanability follow-through, then return to remaining accessibility sweep items as needed.
+- Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.
 
 ## Active blockers
 - None

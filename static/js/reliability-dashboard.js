@@ -9,6 +9,9 @@
   const ciLinkEl = document.getElementById('reliability-ci-link');
   const refreshedEl = document.getElementById('reliability-last-refreshed');
   const summaryLiveEl = document.getElementById('reliability-summary-live');
+  const stripDeployEl = document.getElementById('reliability-strip-deploy');
+  const stripCiEl = document.getElementById('reliability-strip-ci');
+  const stripIncidentsEl = document.getElementById('reliability-strip-incidents');
 
   const owner = root.dataset.repoOwner;
   const repo = root.dataset.repoName;
@@ -28,6 +31,15 @@
     if (!el) return;
     el.classList.remove('reliability-status--success', 'reliability-status--warn', 'reliability-status--bad');
     if (tone) el.classList.add(`reliability-status--${tone}`);
+  };
+
+  const setStripTone = (el, tone, text) => {
+    if (!el) return;
+    el.classList.remove('status-pill--ok', 'status-pill--watch', 'status-pill--bad');
+    if (tone === 'ok') el.classList.add('status-pill--ok');
+    if (tone === 'warn') el.classList.add('status-pill--watch');
+    if (tone === 'bad') el.classList.add('status-pill--bad');
+    if (text) el.textContent = text;
   };
 
   const fmt = (iso) => {
@@ -67,6 +79,7 @@
     .then((commit) => {
       if (lastDeployEl) lastDeployEl.textContent = `✅ ${fmt(commit?.commit?.author?.date)}`;
       setStatusTone(lastDeployEl, 'success');
+      setStripTone(stripDeployEl, 'ok', 'Deploy · Healthy');
       if (lastDeployLinkEl && commit?.html_url) {
         lastDeployLinkEl.href = commit.html_url;
         lastDeployLinkEl.hidden = false;
@@ -80,6 +93,7 @@
         else lastDeployEl.textContent = '❌ Unavailable';
       }
       setStatusTone(lastDeployEl, kind === 'unavailable' ? 'bad' : 'warn');
+      setStripTone(stripDeployEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'Deploy · Down' : 'Deploy · Degraded');
       if (lastDeployLinkEl) lastDeployLinkEl.hidden = false;
     });
 
@@ -93,6 +107,7 @@
       if (!run) {
         if (ciEl) ciEl.textContent = '⚪ No runs';
         setStatusTone(ciEl, 'warn');
+        setStripTone(stripCiEl, 'warn', 'CI · No runs');
         return;
       }
       const status = run.status === 'completed' ? (run.conclusion || 'completed') : run.status;
@@ -104,6 +119,7 @@
       const emoji = tone === 'success' ? '✅' : tone === 'warn' ? '🟡' : '❌';
       if (ciEl) ciEl.textContent = `${emoji} ${status} · ${fmt(run.updated_at)}`;
       setStatusTone(ciEl, tone);
+      setStripTone(stripCiEl, tone === 'success' ? 'ok' : tone === 'warn' ? 'warn' : 'bad', tone === 'success' ? 'CI · Healthy' : tone === 'warn' ? 'CI · Running' : 'CI · Failing');
       if (ciLinkEl && run?.html_url) {
         ciLinkEl.href = run.html_url;
         ciLinkEl.hidden = false;
@@ -117,6 +133,7 @@
         else ciEl.textContent = '❌ Unavailable';
       }
       setStatusTone(ciEl, kind === 'unavailable' ? 'bad' : 'warn');
+      setStripTone(stripCiEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'CI · Down' : 'CI · Degraded');
       if (ciLinkEl) ciLinkEl.hidden = false;
     });
 
@@ -139,10 +156,12 @@
       if (filtered.length === 0) {
         incidentsEl.textContent = 'No recent incident/fix-tagged entries.';
         incidentsSummary = 'no recent incident-tagged entries';
+        setStripTone(stripIncidentsEl, 'ok', 'Incidents · Clear');
         return;
       }
 
       incidentsSummary = `${filtered.length} incident-related entr${filtered.length === 1 ? 'y' : 'ies'}`;
+      setStripTone(stripIncidentsEl, 'warn', `Incidents · ${filtered.length}`);
       const list = document.createElement('ul');
       list.className = 'mini-list';
 
@@ -161,17 +180,20 @@
       const kind = classifyError(error);
       if (kind === 'timeout') {
         incidentsSummary = 'incident feed timed out';
+        setStripTone(stripIncidentsEl, 'warn', 'Incidents · Delayed');
         if (incidentsEl) incidentsEl.textContent = 'Timed out';
         return;
       }
 
       if (kind === 'rate-limit') {
         incidentsSummary = 'incident feed rate limited';
+        setStripTone(stripIncidentsEl, 'warn', 'Incidents · Limited');
         if (incidentsEl) incidentsEl.textContent = 'Rate limited';
         return;
       }
 
       incidentsSummary = 'incidents unavailable';
+      setStripTone(stripIncidentsEl, 'bad', 'Incidents · Down');
       if (incidentsEl) incidentsEl.textContent = 'Unavailable';
     })
     .finally(() => {

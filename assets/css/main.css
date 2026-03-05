@@ -369,6 +369,17 @@ main.container {
   font-weight: 600;
   text-decoration-thickness: 0.11em;
 }
+.reliability-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin: 0 0 0.72rem;
+}
+
+.reliability-strip .status-pill {
+  font-size: 0.75rem;
+}
+
 .reliability-metrics {
   margin: 0 0 0.4rem;
 }
@@ -667,6 +678,11 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 .status-pill--watch {
   background: color-mix(in oklab, #f59e0b 20%, var(--bg-elev));
   border-color: color-mix(in oklab, #f59e0b 45%, var(--border));
+}
+
+.status-pill--bad {
+  background: color-mix(in oklab, #ef4444 20%, var(--bg-elev));
+  border-color: color-mix(in oklab, #ef4444 45%, var(--border));
 }
 
 .capability-badge {

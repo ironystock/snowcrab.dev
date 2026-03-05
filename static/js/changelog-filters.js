@@ -119,6 +119,15 @@
         event.preventDefault();
         activateButton(btn);
       }
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        const allButton = buttons.find((candidate) => candidate.getAttribute('data-filter') === 'all') || buttons[0];
+        if (allButton) {
+          allButton.focus();
+          activateButton(allButton);
+        }
+      }
     });
   });
 

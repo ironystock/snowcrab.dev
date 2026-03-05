@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 12:55 MST
+- Last updated: 2026-03-05 13:10 MST
 
 ## Last shipped batch
-- Accessibility pass 48: reliability dashboard now distinguishes timeout/rate-limit/unavailable fetch failures with explicit user-facing status text and warning/error tone mapping.
+- Accessibility pass 49: changelog filter keyboard flow now supports `Escape` to reset to `All`, including focus, filter state, and URL synchronization.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

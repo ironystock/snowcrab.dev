@@ -248,6 +248,15 @@ main.container {
   border-top: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
 }
 
+.link-list {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.link-list li + li {
+  margin-top: 0.38rem;
+}
+
 .reliability-row {
   margin: 0 0 0.72rem;
 }

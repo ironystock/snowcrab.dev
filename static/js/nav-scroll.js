@@ -3,9 +3,24 @@
   if (!nav) return;
 
   const links = Array.from(nav.querySelectorAll('a[href]'));
+  const navHint = document.getElementById('main-nav-hint');
   const step = 120;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+
+  const syncOverflowA11y = () => {
+    const hasOverflow = nav.scrollWidth > nav.clientWidth + 2;
+    nav.tabIndex = hasOverflow ? 0 : -1;
+    if (hasOverflow) {
+      nav.setAttribute('aria-describedby', 'main-nav-hint');
+    } else {
+      nav.removeAttribute('aria-describedby');
+    }
+    if (navHint) navHint.hidden = !hasOverflow;
+  };
+
+  syncOverflowA11y();
+  window.addEventListener('resize', syncOverflowA11y, { passive: true });
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 

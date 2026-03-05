@@ -73,6 +73,7 @@
   <script defer src="/js/theme-toggle.js?v={{ $assetRev }}"></script>
   <script defer src="/js/reliability-dashboard.js?v={{ $assetRev }}"></script>
   <script defer src="/js/changelog-filters.js?v={{ $assetRev }}"></script>
+  <script defer src="/js/nav-scroll.js?v={{ $assetRev }}"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -82,7 +83,8 @@
         <img class="brand-logo" src="/favicon-256.png" width="34" height="34" alt="" />
         <span>Snowcrab</span>
       </a>
-      <nav class="nav" aria-label="Main navigation">
+      <nav class="nav" aria-label="Main navigation" aria-describedby="main-nav-hint" tabindex="0">
+        <span id="main-nav-hint" class="sr-only">Main navigation is horizontally scrollable on smaller screens. Use left and right arrow keys to move through links.</span>
         {{ $current := .RelPermalink }}
         <ul class="nav-list">
           {{ range site.Menus.main }}

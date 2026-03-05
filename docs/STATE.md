@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 11:10 MST
+- Last updated: 2026-03-05 11:25 MST
 
 ## Last shipped batch
-- Accessibility pass 41: changelog filter now responds to browser back/forward (`popstate`) so URL category history restores active tab/filter state without reload.
+- Accessibility pass 42: overflow-nav keyboard scroll behavior now live-syncs with runtime `prefers-reduced-motion` changes (no reload required), including legacy listener fallback.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

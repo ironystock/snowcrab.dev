@@ -5,8 +5,12 @@
   const links = Array.from(nav.querySelectorAll('a[href]'));
   const navHint = document.getElementById('main-nav-hint');
   const step = 120;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+  const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let scrollBehavior = reducedMotionQuery.matches ? 'auto' : 'smooth';
+
+  const syncMotionPreference = () => {
+    scrollBehavior = reducedMotionQuery.matches ? 'auto' : 'smooth';
+  };
 
   const syncOverflowA11y = () => {
     const hasOverflow = nav.scrollWidth > nav.clientWidth + 2;
@@ -19,8 +23,15 @@
     if (navHint) navHint.hidden = !hasOverflow;
   };
 
+  syncMotionPreference();
   syncOverflowA11y();
+
   window.addEventListener('resize', syncOverflowA11y, { passive: true });
+  if (typeof reducedMotionQuery.addEventListener === 'function') {
+    reducedMotionQuery.addEventListener('change', syncMotionPreference);
+  } else if (typeof reducedMotionQuery.addListener === 'function') {
+    reducedMotionQuery.addListener(syncMotionPreference);
+  }
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 

@@ -40,7 +40,7 @@
       {{ $reviews := where (where site.RegularPages "Section" "posts") "Params.tags" "intersect" (slice "monthly-review") }}
       {{ with first 1 ($reviews.ByDate.Reverse) }}
         {{ $review := index . 0 }}
-        <div class="meta">Latest review · {{ $review.Date.Format "Jan 2006" }}</div>
+        <div class="meta">Latest review · <time datetime="{{ $review.Date.Format "2006-01-02" }}">{{ $review.Date.Format "Jan 2006" }}</time></div>
         <p><a href="{{ $review.RelPermalink }}">{{ $review.Title }}</a></p>
         {{ with $review.Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
         <a href="{{ $review.RelPermalink }}">Read monthly review →</a>

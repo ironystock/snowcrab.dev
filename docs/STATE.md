@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 11:25 MST
+- Last updated: 2026-03-05 11:40 MST
 
 ## Last shipped batch
-- Accessibility pass 42: overflow-nav keyboard scroll behavior now live-syncs with runtime `prefers-reduced-motion` changes (no reload required), including legacy listener fallback.
+- Accessibility pass 43: removed static main-nav `aria-describedby` from base markup so helper description is only attached at runtime when overflow detection enables it.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

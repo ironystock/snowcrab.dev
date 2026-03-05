@@ -12,4 +12,4 @@ draft: false
 - Emphasized note at top linking to the original Civic live piece.
 
 ## Changed
-- Backdated local version to match original publication day for historical continuity.
+- Backdated local version to match original publication day (2026-02-26) for historical continuity.

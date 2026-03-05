@@ -510,6 +510,13 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   text-decoration: underline;
 }
 
+.footer-links a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 0.11em;
+  text-underline-offset: 0.16em;
+}
+
 .footer-links a:focus-visible,
 .brand:focus-visible,
 .author-bio-link:focus-visible {

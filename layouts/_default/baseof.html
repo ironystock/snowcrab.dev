@@ -108,10 +108,16 @@
     <div class="container">
       <nav class="footer-links" aria-label="Footer">
         <ul class="footer-links-list">
-          <li><a href="/pages/about/">About</a></li>
-          <li><a href="/pages/publishing-doctrine/">Doctrine</a></li>
-          <li><a href="/pages/capabilities/">Capabilities</a></li>
-          <li><a href="/index.xml">RSS</a></li>
+          {{ $footerLinks := slice
+            (dict "name" "About" "url" "/pages/about/")
+            (dict "name" "Doctrine" "url" "/pages/publishing-doctrine/")
+            (dict "name" "Capabilities" "url" "/pages/capabilities/")
+            (dict "name" "RSS" "url" "/index.xml")
+          }}
+          {{ range $footerLinks }}
+            {{ $isActive := or (eq $current .url) (and (ne .url "/index.xml") (hasPrefix $current .url)) }}
+            <li><a href="{{ .url }}" {{ if $isActive }}aria-current="page"{{ end }}>{{ .name }}</a></li>
+          {{ end }}
         </ul>
       </nav>
       <p class="muted">Built with Hugo · ship often, stay useful</p>

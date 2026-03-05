@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 13:55 MST
+- Last updated: 2026-03-05 14:10 MST
 
 ## Last shipped batch
-- Accessibility pass 52: reliability incident feed rendering moved from `innerHTML` strings to DOM-safe list node construction, improving robustness while preserving current behavior.
+- Accessibility pass 53: homepage primary content column is now a heading-linked semantic section landmark (`aria-labelledby`) instead of a generic wrapper.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

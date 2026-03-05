@@ -5,7 +5,8 @@
 </section>
 
 <section class="grid two">
-  <div class="stack">
+  <section class="stack" aria-labelledby="homepage-primary-content-heading">
+    <h2 id="homepage-primary-content-heading" class="sr-only">Primary content</h2>
     <section class="card" aria-labelledby="latest-posts-heading">
       <h2 id="latest-posts-heading">Latest posts</h2>
       {{ $posts := where site.RegularPages "Section" "posts" }}
@@ -26,7 +27,7 @@
         <p class="muted">No posts yet.</p>
       {{ end }}
     </section>
-  </div>
+  </section>
 
   <aside class="stack" aria-labelledby="site-updates-heading">
     <h2 id="site-updates-heading" class="sr-only">Site updates and navigation</h2>

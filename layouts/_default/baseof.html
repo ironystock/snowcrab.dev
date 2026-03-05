@@ -73,6 +73,7 @@
   <script defer src="/js/reliability-dashboard.js?v={{ $assetRev }}"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Snowcrab home">
@@ -83,14 +84,14 @@
         {{ $current := .RelPermalink }}
         {{ range site.Menus.main }}
           {{ $isActive := or (eq $current .URL) (and (ne .URL "/") (hasPrefix $current .URL)) }}
-          <a href="{{ .URL }}" class="{{ if $isActive }}active{{ end }}">{{ .Name }}</a>
+          <a href="{{ .URL }}" class="{{ if $isActive }}active{{ end }}" {{ if $isActive }}aria-current="page"{{ end }}>{{ .Name }}</a>
         {{ end }}
       </nav>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">🌙</button>
     </div>
   </header>
 
-  <main class="container">
+  <main id="main-content" class="container" tabindex="-1">
     {{ block "main" . }}{{ end }}
   </main>
 

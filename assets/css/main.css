@@ -66,6 +66,25 @@ a:focus-visible {
 
 .container { max-width: var(--container); margin: 0 auto; padding: 1.2rem; }
 
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  top: 0.75rem;
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -157,6 +176,10 @@ a:focus-visible {
   cursor: pointer;
 }
 .theme-toggle:hover { border-color: var(--primary); }
+.theme-toggle:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+}
 
 main.container {
   padding-top: 1.8rem;

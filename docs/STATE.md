@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 10:40 MST
+- Last updated: 2026-03-05 10:56 MST
 
 ## Last shipped batch
-- Accessibility pass 39: improved no-JS fallbacks on dynamic modules by hiding JS-only changelog filters until script activation, adding explicit no-script guidance, and moving reliability busy state to runtime.
+- Accessibility pass 40: changelog filters now support URL-backed category state (`?category=`), with validated restore-on-load and non-reload URL updates.
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on keyboard/focus validation for dynamic modules under reduced-motion and forced-colors combinations.
+- Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.
 
 ## Active blockers
 - None

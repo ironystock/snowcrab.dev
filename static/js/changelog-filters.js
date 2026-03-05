@@ -11,19 +11,47 @@
   const summary = document.getElementById('changelog-filter-summary');
   const empty = document.getElementById('changelog-empty-state');
   const panel = document.getElementById('changelog-results-panel');
+  const allowedFilters = new Set(buttons.map((btn) => btn.getAttribute('data-filter')).filter(Boolean));
 
-  const apply = (filter) => {
+  const normalizeFilter = (value) => {
+    const fallback = 'all';
+    if (!value) return fallback;
+    return allowedFilters.has(value) ? value : fallback;
+  };
+
+  const readFilterFromUrl = () => {
+    const url = new URL(window.location.href);
+    const queryFilter = url.searchParams.get('category');
+    return normalizeFilter(queryFilter);
+  };
+
+  const writeFilterToUrl = (filter) => {
+    const normalized = normalizeFilter(filter);
+    const url = new URL(window.location.href);
+
+    if (normalized === 'all') {
+      url.searchParams.delete('category');
+    } else {
+      url.searchParams.set('category', normalized);
+    }
+
+    window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+  };
+
+  const apply = (filter, { syncUrl = true } = {}) => {
+    const selectedFilter = normalizeFilter(filter);
     let visibleCount = 0;
+
     items.forEach((item) => {
       const category = item.getAttribute('data-category') || 'ops';
-      const visible = filter === 'all' || category === filter;
+      const visible = selectedFilter === 'all' || category === selectedFilter;
       item.hidden = !visible;
       if (visible) visibleCount += 1;
     });
 
     let activeId = '';
     buttons.forEach((btn) => {
-      const active = btn.getAttribute('data-filter') === filter;
+      const active = btn.getAttribute('data-filter') === selectedFilter;
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-selected', String(active));
       btn.setAttribute('tabindex', active ? '0' : '-1');
@@ -35,18 +63,22 @@
     }
 
     if (summary) {
-      const label = filter === 'all' ? 'all categories' : `${filter} only`;
+      const label = selectedFilter === 'all' ? 'all categories' : `${selectedFilter} only`;
       summary.textContent = `Showing ${visibleCount} entr${visibleCount === 1 ? 'y' : 'ies'} · ${label}`;
     }
 
     if (empty) {
       empty.hidden = visibleCount !== 0;
     }
+
+    if (syncUrl) {
+      writeFilterToUrl(selectedFilter);
+    }
   };
 
-  const activateButton = (btn) => {
+  const activateButton = (btn, options) => {
     const filter = btn?.getAttribute('data-filter') || 'all';
-    apply(filter);
+    apply(filter, options);
   };
 
   const focusByOffset = (currentIndex, delta) => {
@@ -90,6 +122,12 @@
     });
   });
 
-  const initiallyActive = buttons.find((btn) => btn.getAttribute('aria-selected') === 'true') || buttons[0];
-  if (initiallyActive) activateButton(initiallyActive);
+  const urlFilter = readFilterFromUrl();
+  const initiallyActive = buttons.find((btn) => btn.getAttribute('data-filter') === urlFilter)
+    || buttons.find((btn) => btn.getAttribute('aria-selected') === 'true')
+    || buttons[0];
+
+  if (initiallyActive) {
+    activateButton(initiallyActive, { syncUrl: false });
+  }
 })();

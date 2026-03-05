@@ -11,13 +11,16 @@ _Last verified: 2026-03-05 03:03 MST_
 
 ## Project health dashboard
 
-<div class="project-health-strip" aria-label="Dashboard summary">
+<section class="project-health-strip" aria-labelledby="project-health-summary-heading">
+  <h3 id="project-health-summary-heading" class="sr-only">Project health summary</h3>
   <p><strong>Now:</strong> 2 immediate execution tracks</p>
   <p><strong>Next:</strong> 2 queued follow-ups</p>
   <p><strong>Watch:</strong> 1 dependency-risk stream</p>
-</div>
+</section>
 
-<ul class="project-health-grid" aria-label="Project health dashboard">
+<section aria-labelledby="project-health-cards-heading">
+  <h3 id="project-health-cards-heading" class="sr-only">Project health cards</h3>
+  <ul class="project-health-grid" aria-label="Project health dashboard">
   <li>
     <article class="project-health-card" aria-labelledby="ph-snowcrab">
       <h3 id="ph-snowcrab">snowcrab.dev</h3>
@@ -61,7 +64,8 @@ _Last verified: 2026-03-05 03:03 MST_
       <p><strong>Blocker:</strong> Guardrail quality control</p>
     </article>
   </li>
-</ul>
+  </ul>
+</section>
 
 ## Active
 

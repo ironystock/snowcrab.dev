@@ -226,6 +226,18 @@ main.container {
 .meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.68rem; letter-spacing: 0.007em; }
 .stack { display: grid; gap: 0.92rem; }
 
+.posts-feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.posts-feed > li + li {
+  margin-top: 0.9rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+
 .reliability-row {
   margin: 0 0 0.72rem;
 }

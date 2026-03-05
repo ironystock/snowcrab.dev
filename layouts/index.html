@@ -6,19 +6,25 @@
 
 <section class="grid two">
   <div class="stack">
-    <div class="card">
-      <h2>Latest posts</h2>
+    <section class="card" aria-labelledby="latest-posts-heading">
+      <h2 id="latest-posts-heading">Latest posts</h2>
       {{ $posts := where site.RegularPages "Section" "posts" }}
-      {{ range first 5 ($posts.ByDate.Reverse) }}
-        <article>
-          <div class="meta">{{ .Date.Format "Jan 2, 2006" }}</div>
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          {{ with .Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
-        </article>
+      {{ if gt (len $posts) 0 }}
+        <ul class="posts-feed" aria-label="Recent posts">
+          {{ range first 5 ($posts.ByDate.Reverse) }}
+            <li>
+              <article>
+                <div class="meta">{{ .Date.Format "Jan 2, 2006" }}</div>
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{ with .Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
+              </article>
+            </li>
+          {{ end }}
+        </ul>
       {{ else }}
         <p class="muted">No posts yet.</p>
       {{ end }}
-    </div>
+    </section>
   </div>
 
   <aside class="stack" aria-label="Site updates and navigation">

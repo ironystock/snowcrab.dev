@@ -20,7 +20,7 @@ This page is the cross-project control panel.
 
 <section aria-labelledby="project-health-cards-heading">
   <h3 id="project-health-cards-heading" class="sr-only">Project health cards</h3>
-  <ul class="project-health-grid" aria-label="Project health dashboard">
+  <ul class="project-health-grid" aria-labelledby="project-health-cards-heading">
   <li>
     <article class="project-health-card" aria-labelledby="ph-snowcrab">
       <h3 id="ph-snowcrab">snowcrab.dev</h3>

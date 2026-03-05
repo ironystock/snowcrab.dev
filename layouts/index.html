@@ -106,15 +106,16 @@
       <a href="https://github.com/ironystock/snowcrab.dev/pulls">View active pull requests →</a>
     </div>
 
-    <div class="card reliability-card" id="reliability-dashboard"
+    <section class="card reliability-card" id="reliability-dashboard"
       data-repo-owner="ironystock"
-      data-repo-name="snowcrab.dev">
-      <h3>Reliability</h3>
+      data-repo-name="snowcrab.dev"
+      aria-labelledby="reliability-heading">
+      <h3 id="reliability-heading">Reliability</h3>
 
       <div class="reliability-row">
         <strong class="reliability-label">Last deploy</strong>
         <div class="reliability-value-line">
-          <span id="reliability-last-deploy" class="reliability-status">Loading…</span>
+          <span id="reliability-last-deploy" class="reliability-status" aria-live="polite">Loading…</span>
           <a id="reliability-last-deploy-link" href="#" class="reliability-link" hidden>view</a>
         </div>
       </div>
@@ -122,15 +123,15 @@
       <div class="reliability-row">
         <strong class="reliability-label">CI status</strong>
         <div class="reliability-value-line">
-          <span id="reliability-ci-status" class="reliability-status">Loading…</span>
+          <span id="reliability-ci-status" class="reliability-status" aria-live="polite">Loading…</span>
           <a id="reliability-ci-link" href="#" class="reliability-link" hidden>view</a>
         </div>
       </div>
 
-      <div class="meta">Recent incidents / fixes</div>
-      <div id="reliability-incidents" class="muted">Loading changelog signals…</div>
-      <div class="meta">Last refreshed: <span id="reliability-last-refreshed">Loading…</span></div>
-    </div>
+      <p class="meta">Recent incidents / fixes</p>
+      <div id="reliability-incidents" class="muted" role="status" aria-live="polite">Loading changelog signals…</div>
+      <p class="meta">Last refreshed: <span id="reliability-last-refreshed" aria-live="polite">Loading…</span></p>
+    </section>
 
     <div class="card">
       <h3>Quick links</h3>

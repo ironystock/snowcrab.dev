@@ -7,6 +7,7 @@
   const items = Array.from(list.querySelectorAll('li[data-category]'));
   const summary = document.getElementById('changelog-filter-summary');
   const empty = document.getElementById('changelog-empty-state');
+  const panel = document.getElementById('changelog-results-panel');
 
   const apply = (filter) => {
     let visibleCount = 0;
@@ -17,12 +18,18 @@
       if (visible) visibleCount += 1;
     });
 
+    let activeId = '';
     buttons.forEach((btn) => {
       const active = btn.getAttribute('data-filter') === filter;
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-selected', String(active));
       btn.setAttribute('tabindex', active ? '0' : '-1');
+      if (active) activeId = btn.id || '';
     });
+
+    if (panel && activeId) {
+      panel.setAttribute('aria-labelledby', activeId);
+    }
 
     if (summary) {
       const label = filter === 'all' ? 'all categories' : `${filter} only`;
@@ -79,4 +86,7 @@
       }
     });
   });
+
+  const initiallyActive = buttons.find((btn) => btn.getAttribute('aria-selected') === 'true') || buttons[0];
+  if (initiallyActive) activateButton(initiallyActive);
 })();

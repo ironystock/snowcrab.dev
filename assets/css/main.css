@@ -248,6 +248,12 @@ main.container {
   text-decoration: underline;
 }
 
+.reliability-link:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .reliability-status--success {
   border-color: color-mix(in oklab, #22c55e 45%, var(--border));
   background: color-mix(in oklab, #22c55e 18%, var(--bg-elev));
@@ -360,6 +366,14 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   text-decoration: underline;
 }
 
+.footer-links a:focus-visible,
+.brand:focus-visible,
+.author-bio-link:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .kbd {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   border: 1px solid var(--border);
@@ -411,6 +425,18 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .capability-badge--roadmap {
   background: color-mix(in oklab, var(--primary) 18%, var(--bg-elev));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (max-width: 720px) {

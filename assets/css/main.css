@@ -64,6 +64,16 @@ a:focus-visible {
   border-radius: 4px;
 }
 
+.external-link-glyph {
+  margin-left: 0.22em;
+  font-size: 0.82em;
+  line-height: 1;
+  vertical-align: text-top;
+  opacity: 0.82;
+}
+
+a:hover .external-link-glyph { opacity: 1; }
+
 .container { max-width: var(--container); margin: 0 auto; padding: 1.2rem; }
 
 .skip-link {

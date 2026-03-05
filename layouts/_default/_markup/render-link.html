@@ -4,4 +4,5 @@
   {{- with .Title }} title="{{ . }}"{{ end -}}
   {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end -}}>
   {{- .Text | safeHTML -}}
+  {{- if $isExternal }}<span class="external-link-glyph" aria-hidden="true">↗</span>{{ end -}}
 </a>

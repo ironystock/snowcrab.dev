@@ -132,15 +132,22 @@ a:hover .external-link-glyph { opacity: 1; }
 .nav {
   grid-row: 2;
   grid-column: 1 / -1;
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: nowrap;
   overflow-x: auto;
   padding: 0.05rem 0.05rem 0.35rem;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
 }
-.nav a {
+
+.nav-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
   padding: 0.5rem 0.82rem;
   min-height: 42px;
   display: inline-flex;
@@ -153,12 +160,12 @@ a:hover .external-link-glyph { opacity: 1; }
   white-space: nowrap;
   text-decoration: none;
 }
-.nav a:hover { border-color: var(--primary); text-decoration: none; }
-.nav a.active {
+.nav-list a:hover { border-color: var(--primary); text-decoration: none; }
+.nav-list a.active {
   border-color: color-mix(in oklab, var(--primary) 65%, var(--border));
   background: color-mix(in oklab, var(--primary) 10%, var(--bg-elev));
 }
-.nav a:focus-visible {
+.nav-list a:focus-visible {
   outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
   outline-offset: 2px;
 }
@@ -390,10 +397,16 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 }
 
 .footer-links {
+  margin-bottom: 0.45rem;
+}
+
+.footer-links-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem 1rem;
-  margin-bottom: 0.45rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-links a {
@@ -487,7 +500,6 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   .nav {
     width: 100%;
     position: relative;
-    gap: 0.72rem;
     padding: 0.14rem 0.56rem 0.42rem;
     scroll-padding-inline: 0.56rem;
     scroll-snap-type: x mandatory;
@@ -500,7 +512,11 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     background-position: left center, right center;
   }
 
-  .nav a {
+  .nav-list {
+    gap: 0.72rem;
+  }
+
+  .nav-list a {
     white-space: nowrap;
     scroll-snap-align: start;
     scroll-snap-stop: always;

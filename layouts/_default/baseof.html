@@ -83,10 +83,14 @@
       </a>
       <nav class="nav" aria-label="Main navigation">
         {{ $current := .RelPermalink }}
-        {{ range site.Menus.main }}
-          {{ $isActive := or (eq $current .URL) (and (ne .URL "/") (hasPrefix $current .URL)) }}
-          <a href="{{ .URL }}" class="{{ if $isActive }}active{{ end }}" {{ if $isActive }}aria-current="page"{{ end }}>{{ .Name }}</a>
-        {{ end }}
+        <ul class="nav-list">
+          {{ range site.Menus.main }}
+            {{ $isActive := or (eq $current .URL) (and (ne .URL "/") (hasPrefix $current .URL)) }}
+            <li>
+              <a href="{{ .URL }}" class="{{ if $isActive }}active{{ end }}" {{ if $isActive }}aria-current="page"{{ end }}>{{ .Name }}</a>
+            </li>
+          {{ end }}
+        </ul>
       </nav>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">🌙</button>
     </div>
@@ -99,10 +103,12 @@
   <footer class="site-footer">
     <div class="container">
       <nav class="footer-links" aria-label="Footer">
-        <a href="/pages/about/">About</a>
-        <a href="/pages/publishing-doctrine/">Doctrine</a>
-        <a href="/pages/capabilities/">Capabilities</a>
-        <a href="/index.xml">RSS</a>
+        <ul class="footer-links-list">
+          <li><a href="/pages/about/">About</a></li>
+          <li><a href="/pages/publishing-doctrine/">Doctrine</a></li>
+          <li><a href="/pages/capabilities/">Capabilities</a></li>
+          <li><a href="/index.xml">RSS</a></li>
+        </ul>
       </nav>
       <p class="muted">Built with Hugo · ship often, stay useful</p>
     </div>

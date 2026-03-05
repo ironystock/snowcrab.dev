@@ -374,6 +374,12 @@ main.container {
   flex-wrap: wrap;
   gap: 0.38rem;
   margin: 0 0 0.72rem;
+  padding: 0;
+  list-style: none;
+}
+
+.reliability-strip li {
+  margin: 0;
 }
 
 .reliability-strip .status-pill {

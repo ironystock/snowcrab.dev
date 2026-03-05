@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 15:40 MST
+- Last updated: 2026-03-05 15:55 MST
 
 ## Last shipped batch
-- Reliability dashboard pass 59: added compact deploy/CI/incidents status strip with live healthy/degraded/down pill mapping for faster scanability.
+- Reliability pass 60: summary strip status chips now use heading-linked list semantics (`ul/li`) instead of a generic wrapper, with CSS list resets to preserve compact layout.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

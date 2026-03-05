@@ -121,11 +121,12 @@
       aria-labelledby="reliability-heading">
       <h3 id="reliability-heading">Reliability</h3>
 
-      <div class="reliability-strip" aria-label="Reliability summary strip">
-        <span id="reliability-strip-deploy" class="status-pill">Deploy · Loading</span>
-        <span id="reliability-strip-ci" class="status-pill">CI · Loading</span>
-        <span id="reliability-strip-incidents" class="status-pill">Incidents · Loading</span>
-      </div>
+      <h4 id="reliability-strip-heading" class="sr-only">Reliability summary strip</h4>
+      <ul class="reliability-strip" aria-labelledby="reliability-strip-heading">
+        <li><span id="reliability-strip-deploy" class="status-pill">Deploy · Loading</span></li>
+        <li><span id="reliability-strip-ci" class="status-pill">CI · Loading</span></li>
+        <li><span id="reliability-strip-incidents" class="status-pill">Incidents · Loading</span></li>
+      </ul>
 
       <dl class="reliability-metrics">
         <div class="reliability-row">

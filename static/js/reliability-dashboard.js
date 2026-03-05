@@ -83,6 +83,8 @@
       if (ciLinkEl) ciLinkEl.hidden = true;
     });
 
+  if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'true');
+
   const incidentsReq = fetch('/changelog/index.xml')
     .then((r) => (r.ok ? r.text() : Promise.reject(new Error('rss fetch failed'))))
     .then((xmlText) => {
@@ -102,12 +104,15 @@
         return;
       }
 
-      incidentsEl.innerHTML = filtered
-        .map(({ title, link }) => `<div><a href="${link}">${title}</a></div>`)
-        .join('');
+      incidentsEl.innerHTML = `<ul class="mini-list">${filtered
+        .map(({ title, link }) => `<li><a href="${link}">${title}</a></li>`)
+        .join('')}</ul>`;
     })
     .catch(() => {
       if (incidentsEl) incidentsEl.textContent = 'Unavailable';
+    })
+    .finally(() => {
+      if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'false');
     });
 
   Promise.allSettled([deployReq, ciReq, incidentsReq]).finally(setRefreshedNow);

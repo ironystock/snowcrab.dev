@@ -5,11 +5,20 @@
 
   const apply = (theme) => {
     root.setAttribute('data-theme', theme);
-    if (btn) btn.textContent = theme === 'dark' ? '🌙' : '☀️';
+    if (btn) {
+      const isDark = theme === 'dark';
+      btn.textContent = isDark ? '🌙' : '☀️';
+      btn.setAttribute('aria-pressed', String(!isDark));
+      btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+      btn.title = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+    }
   };
 
   const saved = localStorage.getItem(key);
-  if (saved === 'dark' || saved === 'light') apply(saved);
+  const initial = saved === 'dark' || saved === 'light'
+    ? saved
+    : (root.getAttribute('data-theme') || 'dark');
+  apply(initial);
 
   if (btn) {
     btn.addEventListener('click', () => {

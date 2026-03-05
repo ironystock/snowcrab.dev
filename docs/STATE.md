@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 09:48 MST
+- Last updated: 2026-03-05 09:56 MST
 
 ## Last shipped batch
-- Accessibility pass 35: reliability dashboard metric rows migrated to semantic definition-list structure (`dl/dt/dd`) with layout-safe CSS normalization.
+- Accessibility pass 36: migrated global header/footer navigation landmarks to heading-linked semantics (`aria-labelledby`) with SR-only headings.
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on remaining inline aria-label usage and region-name consistency on homepage/system surfaces.
+- Continue accessibility sweep with a focused pass on remaining contextual link-label redundancy (keeping labels only where link text is ambiguous).
 
 ## Active blockers
 - None

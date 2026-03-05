@@ -83,7 +83,8 @@
         <img class="brand-logo" src="/favicon-256.png" width="34" height="34" alt="" />
         <span>Snowcrab</span>
       </a>
-      <nav class="nav" aria-label="Main navigation" aria-describedby="main-nav-hint">
+      <span id="main-nav-heading" class="sr-only">Main navigation</span>
+      <nav class="nav" aria-labelledby="main-nav-heading" aria-describedby="main-nav-hint">
         <span id="main-nav-hint" class="sr-only" hidden>Main navigation is horizontally scrollable on smaller screens. Use left and right arrow keys to move through links.</span>
         {{ $current := .RelPermalink }}
         <ul class="nav-list">
@@ -109,7 +110,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <nav class="footer-links" aria-label="Footer">
+      <h2 id="footer-links-heading" class="sr-only">Footer links</h2>
+      <nav class="footer-links" aria-labelledby="footer-links-heading">
         <ul class="footer-links-list">
           {{ $footerLinks := slice
             (dict "name" "About" "url" "/pages/about/")

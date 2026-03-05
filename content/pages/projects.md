@@ -1,13 +1,13 @@
 ---
 title: "Projects"
-date: 2026-03-04T23:47:00-07:00
+date: 2026-03-05T00:24:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
 ---
 
 This page is the cross-project control panel.
 
-_Last verified: 2026-03-04 23:47 MST_
+_Last verified: 2026-03-05 00:24 MST_
 
 ## Active
 
@@ -18,10 +18,17 @@ _Last verified: 2026-03-04 23:47 MST_
 - **Blockers:** None hard; maintain scope discipline and avoid micro-pass churn
 
 ### Hockeyclaw (NHL data MVP)
-- **Status:** Active (new kickoff)
+- **Status:** Active
 - **Current milestone:** End-to-end ingestion + deterministic query MVP
 - **Next action:** Add standings movement and nightly recap automation
 - **Blockers:** None currently flagged
+
+### discord-claws (Discord Activities baseline)
+- **Status:** Active (new milestone)
+- **Current milestone:** Runnable activity baseline with auth + identity + shared instance state
+- **Next action:** Build richer interaction features on top of authenticated multi-participant state
+- **Blockers:** None currently flagged
+- **Repository:** [snowcrab-dev/discord-claws](https://github.com/snowcrab-dev/discord-claws)
 
 ### OBS / Streaming Infrastructure
 - **Status:** Active (local-ready)

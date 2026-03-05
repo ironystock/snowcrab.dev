@@ -6,12 +6,15 @@
 
 <section class="stack" aria-label="Published entries">
   {{ if and (eq .Section "changelog") (gt (len .Pages) 0) }}
-    <div class="changelog-filters" aria-label="Changelog filters">
-      <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-      <button class="chip" type="button" data-filter="design" aria-pressed="false">Design</button>
-      <button class="chip" type="button" data-filter="ops" aria-pressed="false">Ops</button>
-      <button class="chip" type="button" data-filter="content" aria-pressed="false">Content</button>
-      <button class="chip" type="button" data-filter="reliability" aria-pressed="false">Reliability</button>
+    <div class="changelog-filters-wrap">
+      <div class="changelog-filters" aria-label="Changelog filters">
+        <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="design" aria-pressed="false">Design</button>
+        <button class="chip" type="button" data-filter="ops" aria-pressed="false">Ops</button>
+        <button class="chip" type="button" data-filter="content" aria-pressed="false">Content</button>
+        <button class="chip" type="button" data-filter="reliability" aria-pressed="false">Reliability</button>
+      </div>
+      <p class="meta changelog-filter-summary" id="changelog-filter-summary" role="status" aria-live="polite">Showing all entries</p>
     </div>
   {{ end }}
 
@@ -37,6 +40,9 @@
         </li>
       {{ end }}
     </ul>
+    {{ if eq .Section "changelog" }}
+      <p class="muted" id="changelog-empty-state" hidden>No entries match this filter yet.</p>
+    {{ end }}
   {{ else }}
     <p class="muted">Nothing published yet.</p>
   {{ end }}

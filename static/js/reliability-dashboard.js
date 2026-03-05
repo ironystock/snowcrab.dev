@@ -49,7 +49,7 @@
     return 'unknown';
   };
 
-  const isRateLimited = (err) => /rate limit/i.test(String(err?.message || ''));
+  let incidentsSummary = 'incidents unknown';
 
   const deployReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
     .then((r) => {
@@ -120,14 +120,17 @@
       if (!incidentsEl) return;
       if (filtered.length === 0) {
         incidentsEl.textContent = 'No recent incident/fix-tagged entries.';
+        incidentsSummary = 'no recent incident-tagged entries';
         return;
       }
 
+      incidentsSummary = `${filtered.length} incident-related entr${filtered.length === 1 ? 'y' : 'ies'}`;
       incidentsEl.innerHTML = `<ul class="mini-list">${filtered
         .map(({ title, link }) => `<li><a href="${link}">${title}</a></li>`)
         .join('')}</ul>`;
     })
     .catch(() => {
+      incidentsSummary = 'incidents unavailable';
       if (incidentsEl) incidentsEl.textContent = 'Unavailable';
     })
     .finally(() => {
@@ -141,7 +144,7 @@
     if (summaryLiveEl) {
       const deployTone = getToneLabel(lastDeployEl);
       const ciTone = getToneLabel(ciEl);
-      summaryLiveEl.textContent = `Reliability updated. Deploy status: ${deployTone}. CI status: ${ciTone}.`;
+      summaryLiveEl.textContent = `Reliability updated. Deploy status: ${deployTone}. CI status: ${ciTone}. Incident feed: ${incidentsSummary}.`;
     }
   });
 })();

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 13:10 MST
+- Last updated: 2026-03-05 13:25 MST
 
 ## Last shipped batch
-- Accessibility pass 49: changelog filter keyboard flow now supports `Escape` to reset to `All`, including focus, filter state, and URL synchronization.
+- Accessibility pass 50: added explicit keyboard shortcut guidance for changelog filters and connected it to the tablist with `aria-describedby` for better discoverability.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

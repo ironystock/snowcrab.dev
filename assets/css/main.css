@@ -320,6 +320,11 @@ main.container {
   margin-bottom: 0.25rem;
 }
 
+.changelog-filters-help {
+  margin: 0 0 0.35rem;
+  font-size: 0.84rem;
+}
+
 .changelog-filter-summary {
   margin: 0;
 }

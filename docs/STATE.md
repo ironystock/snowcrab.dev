@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 15:10 MST
+- Last updated: 2026-03-05 15:25 MST
 
 ## Last shipped batch
-- Accessibility pass 57: improved changelog focus handoff visibility and cleanup by adding a visible summary focus style and removing temporary summary tabindex after blur.
+- Projects dashboard pass 58: converted project health card internals to semantic definition-list metadata (`dl/dt/dd`) and added hierarchy-focused styling for clearer scanability.
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.
+- Continue dashboard refinement with compact status strip + scanability follow-through, then return to remaining accessibility sweep items as needed.
 
 ## Active blockers
 - None

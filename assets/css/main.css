@@ -623,8 +623,22 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin: 0 0 0.45rem;
 }
 
-.project-health-card p {
-  margin: 0.32rem 0;
+.project-health-meta {
+  margin: 0;
+}
+
+.project-health-meta dt {
+  margin-top: 0.45rem;
+  font-weight: 700;
+}
+
+.project-health-meta dt:first-child {
+  margin-top: 0;
+}
+
+.project-health-meta dd {
+  margin: 0.16rem 0 0;
+  color: var(--text);
 }
 
 .status-pill {

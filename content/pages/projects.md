@@ -24,44 +24,72 @@ This page is the cross-project control panel.
   <li>
     <article class="project-health-card" aria-labelledby="ph-snowcrab">
       <h3 id="ph-snowcrab">snowcrab.dev</h3>
-      <p><strong>Priority:</strong> <span class="status-pill status-pill--now">Now</span></p>
-      <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active</span></p>
-      <p><strong>Milestone:</strong> Reliability + accessibility hardening with cleaner operational visibility</p>
-      <p><strong>Next action:</strong> Finish accessibility sweep, then ship changelog filters</p>
-      <p><strong>Blocker:</strong> None hard</p>
+      <dl class="project-health-meta">
+        <dt>Priority</dt>
+        <dd><span class="status-pill status-pill--now">Now</span></dd>
+        <dt>Status</dt>
+        <dd><span class="status-pill status-pill--ok">Active</span></dd>
+        <dt>Milestone</dt>
+        <dd>Reliability + accessibility hardening with cleaner operational visibility</dd>
+        <dt>Next action</dt>
+        <dd>Finish accessibility sweep, then ship changelog filters</dd>
+        <dt>Blocker</dt>
+        <dd>None hard</dd>
+      </dl>
     </article>
   </li>
 
   <li>
     <article class="project-health-card" aria-labelledby="ph-hockey">
       <h3 id="ph-hockey">Hockeyclaw</h3>
-      <p><strong>Priority:</strong> <span class="status-pill status-pill--next">Next</span></p>
-      <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active</span></p>
-      <p><strong>Milestone:</strong> End-to-end ingestion + deterministic query MVP</p>
-      <p><strong>Next action:</strong> Add standings movement + nightly recap automation</p>
-      <p><strong>Blocker:</strong> None flagged</p>
+      <dl class="project-health-meta">
+        <dt>Priority</dt>
+        <dd><span class="status-pill status-pill--next">Next</span></dd>
+        <dt>Status</dt>
+        <dd><span class="status-pill status-pill--ok">Active</span></dd>
+        <dt>Milestone</dt>
+        <dd>End-to-end ingestion + deterministic query MVP</dd>
+        <dt>Next action</dt>
+        <dd>Add standings movement + nightly recap automation</dd>
+        <dt>Blocker</dt>
+        <dd>None flagged</dd>
+      </dl>
     </article>
   </li>
 
   <li>
     <article class="project-health-card" aria-labelledby="ph-discordclaws">
       <h3 id="ph-discordclaws">discord-claws</h3>
-      <p><strong>Priority:</strong> <span class="status-pill status-pill--now">Now</span></p>
-      <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active (M1 shipped)</span></p>
-      <p><strong>Milestone:</strong> Real-time sync + durable state backend</p>
-      <p><strong>Next action:</strong> Implement SSE/WebSocket sync spike</p>
-      <p><strong>Blocker:</strong> Tunnel/local test cadence</p>
+      <dl class="project-health-meta">
+        <dt>Priority</dt>
+        <dd><span class="status-pill status-pill--now">Now</span></dd>
+        <dt>Status</dt>
+        <dd><span class="status-pill status-pill--ok">Active (M1 shipped)</span></dd>
+        <dt>Milestone</dt>
+        <dd>Real-time sync + durable state backend</dd>
+        <dt>Next action</dt>
+        <dd>Implement SSE/WebSocket sync spike</dd>
+        <dt>Blocker</dt>
+        <dd>Tunnel/local test cadence</dd>
+      </dl>
     </article>
   </li>
 
   <li>
     <article class="project-health-card" aria-labelledby="ph-promptmark">
       <h3 id="ph-promptmark">Promptmark capture</h3>
-      <p><strong>Priority:</strong> <span class="status-pill status-pill--watch">Watch</span></p>
-      <p><strong>Status:</strong> <span class="status-pill status-pill--watch">Pilot</span></p>
-      <p><strong>Milestone:</strong> Reliable capture pipeline with production-safe hygiene</p>
-      <p><strong>Next action:</strong> Expand pilot scope + reliability metrics</p>
-      <p><strong>Blocker:</strong> Guardrail quality control</p>
+      <dl class="project-health-meta">
+        <dt>Priority</dt>
+        <dd><span class="status-pill status-pill--watch">Watch</span></dd>
+        <dt>Status</dt>
+        <dd><span class="status-pill status-pill--watch">Pilot</span></dd>
+        <dt>Milestone</dt>
+        <dd>Reliable capture pipeline with production-safe hygiene</dd>
+        <dt>Next action</dt>
+        <dd>Expand pilot scope + reliability metrics</dd>
+        <dt>Blocker</dt>
+        <dd>Guardrail quality control</dd>
+      </dl>
     </article>
   </li>
   </ul>

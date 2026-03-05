@@ -358,6 +358,10 @@ main.container {
   font-weight: 600;
   text-decoration-thickness: 0.11em;
 }
+.reliability-metrics {
+  margin: 0 0 0.4rem;
+}
+
 .reliability-row {
   margin: 0 0 0.72rem;
 }
@@ -365,6 +369,10 @@ main.container {
 .reliability-label {
   display: block;
   margin-bottom: 0.3rem;
+}
+
+.reliability-value-line {
+  margin: 0;
 }
 
 .reliability-value-line {

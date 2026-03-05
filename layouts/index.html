@@ -121,21 +121,23 @@
       aria-busy="true">
       <h3 id="reliability-heading">Reliability</h3>
 
-      <div class="reliability-row">
-        <strong class="reliability-label">Last deploy</strong>
-        <div class="reliability-value-line">
-          <span id="reliability-last-deploy" class="reliability-status">Loading…</span>
-          <a id="reliability-last-deploy-link" href="#" class="reliability-link" aria-label="View last deploy details" hidden>View deploy</a>
+      <dl class="reliability-metrics">
+        <div class="reliability-row">
+          <dt class="reliability-label">Last deploy</dt>
+          <dd class="reliability-value-line">
+            <span id="reliability-last-deploy" class="reliability-status">Loading…</span>
+            <a id="reliability-last-deploy-link" href="#" class="reliability-link" aria-label="View last deploy details" hidden>View deploy</a>
+          </dd>
         </div>
-      </div>
 
-      <div class="reliability-row">
-        <strong class="reliability-label">CI status</strong>
-        <div class="reliability-value-line">
-          <span id="reliability-ci-status" class="reliability-status">Loading…</span>
-          <a id="reliability-ci-link" href="#" class="reliability-link" aria-label="View latest CI run details" hidden>View CI</a>
+        <div class="reliability-row">
+          <dt class="reliability-label">CI status</dt>
+          <dd class="reliability-value-line">
+            <span id="reliability-ci-status" class="reliability-status">Loading…</span>
+            <a id="reliability-ci-link" href="#" class="reliability-link" aria-label="View latest CI run details" hidden>View CI</a>
+          </dd>
         </div>
-      </div>
+      </dl>
 
       <p class="meta">Recent incidents / fixes</p>
       <div id="reliability-incidents" class="muted" role="status" aria-live="polite">Loading changelog signals…</div>

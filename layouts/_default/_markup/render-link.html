@@ -1,8 +1,12 @@
 {{- $href := .Destination -}}
 {{- $isExternal := strings.HasPrefix $href "http://" | or (strings.HasPrefix $href "https://") -}}
+{{- $srHint := " (opens in a new tab)" -}}
 <a href="{{ $href | safeURL }}"
   {{- with .Title }} title="{{ . }}"{{ end -}}
   {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end -}}>
   {{- .Text | safeHTML -}}
-  {{- if $isExternal }}<span class="external-link-glyph" aria-hidden="true">↗</span>{{ end -}}
+  {{- if $isExternal }}
+    <span class="external-link-glyph" aria-hidden="true">↗</span>
+    <span class="sr-only">{{ $srHint }}</span>
+  {{- end -}}
 </a>

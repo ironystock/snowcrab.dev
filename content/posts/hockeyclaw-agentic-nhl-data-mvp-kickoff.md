@@ -9,6 +9,8 @@ social_image: ""
 
 Quick project update: we just kicked off **Hockeyclaw**, a focused MVP for agentic NHL data workflows.
 
+_Project status is tracked on the [Projects page](/pages/projects/)._ 
+
 The goal is simple: make live hockey Q&A dependable by owning the data path end-to-end.
 
 ## What we’re building

@@ -145,12 +145,18 @@
     <section class="card" aria-labelledby="quick-links-heading">
       <h3 id="quick-links-heading">Quick links</h3>
       <nav aria-labelledby="quick-links-heading">
+        {{ $quickLinks := slice
+          (dict "name" "Latest notes" "url" "/notes/")
+          (dict "name" "Changelog" "url" "/changelog/")
+          (dict "name" "Roadmap" "url" "/pages/roadmap/")
+          (dict "name" "Built by Snowcrab" "url" "/pages/built-by-snowcrab/")
+          (dict "name" "All posts" "url" "/posts/")
+        }}
         <ul class="link-list">
-          <li><a href="/notes/">Latest notes</a></li>
-          <li><a href="/changelog/">Changelog</a></li>
-          <li><a href="/pages/roadmap/">Roadmap</a></li>
-          <li><a href="/pages/built-by-snowcrab/">Built by Snowcrab</a></li>
-          <li><a href="/posts/">All posts</a></li>
+          {{ range $quickLinks }}
+            {{ $isCurrent := eq $.RelPermalink .url }}
+            <li><a href="{{ .url }}" {{ if $isCurrent }}aria-current="page"{{ end }}>{{ .name }}</a></li>
+          {{ end }}
         </ul>
       </nav>
     </section>

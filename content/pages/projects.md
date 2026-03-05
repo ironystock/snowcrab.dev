@@ -17,43 +17,51 @@ _Last verified: 2026-03-05 03:03 MST_
   <p><strong>Watch:</strong> 1 dependency-risk stream</p>
 </div>
 
-<div class="project-health-grid" role="list" aria-label="Project health dashboard">
-  <section class="project-health-card" role="listitem" aria-labelledby="ph-snowcrab">
-    <h3 id="ph-snowcrab">snowcrab.dev</h3>
-    <p><strong>Priority:</strong> <span class="status-pill status-pill--now">Now</span></p>
-    <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active</span></p>
-    <p><strong>Milestone:</strong> Reliability + accessibility hardening with cleaner operational visibility</p>
-    <p><strong>Next action:</strong> Finish accessibility sweep, then ship changelog filters</p>
-    <p><strong>Blocker:</strong> None hard</p>
-  </section>
+<ul class="project-health-grid" aria-label="Project health dashboard">
+  <li>
+    <article class="project-health-card" aria-labelledby="ph-snowcrab">
+      <h3 id="ph-snowcrab">snowcrab.dev</h3>
+      <p><strong>Priority:</strong> <span class="status-pill status-pill--now">Now</span></p>
+      <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active</span></p>
+      <p><strong>Milestone:</strong> Reliability + accessibility hardening with cleaner operational visibility</p>
+      <p><strong>Next action:</strong> Finish accessibility sweep, then ship changelog filters</p>
+      <p><strong>Blocker:</strong> None hard</p>
+    </article>
+  </li>
 
-  <section class="project-health-card" role="listitem" aria-labelledby="ph-hockey">
-    <h3 id="ph-hockey">Hockeyclaw</h3>
-    <p><strong>Priority:</strong> <span class="status-pill status-pill--next">Next</span></p>
-    <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active</span></p>
-    <p><strong>Milestone:</strong> End-to-end ingestion + deterministic query MVP</p>
-    <p><strong>Next action:</strong> Add standings movement + nightly recap automation</p>
-    <p><strong>Blocker:</strong> None flagged</p>
-  </section>
+  <li>
+    <article class="project-health-card" aria-labelledby="ph-hockey">
+      <h3 id="ph-hockey">Hockeyclaw</h3>
+      <p><strong>Priority:</strong> <span class="status-pill status-pill--next">Next</span></p>
+      <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active</span></p>
+      <p><strong>Milestone:</strong> End-to-end ingestion + deterministic query MVP</p>
+      <p><strong>Next action:</strong> Add standings movement + nightly recap automation</p>
+      <p><strong>Blocker:</strong> None flagged</p>
+    </article>
+  </li>
 
-  <section class="project-health-card" role="listitem" aria-labelledby="ph-discordclaws">
-    <h3 id="ph-discordclaws">discord-claws</h3>
-    <p><strong>Priority:</strong> <span class="status-pill status-pill--now">Now</span></p>
-    <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active (M1 shipped)</span></p>
-    <p><strong>Milestone:</strong> Real-time sync + durable state backend</p>
-    <p><strong>Next action:</strong> Implement SSE/WebSocket sync spike</p>
-    <p><strong>Blocker:</strong> Tunnel/local test cadence</p>
-  </section>
+  <li>
+    <article class="project-health-card" aria-labelledby="ph-discordclaws">
+      <h3 id="ph-discordclaws">discord-claws</h3>
+      <p><strong>Priority:</strong> <span class="status-pill status-pill--now">Now</span></p>
+      <p><strong>Status:</strong> <span class="status-pill status-pill--ok">Active (M1 shipped)</span></p>
+      <p><strong>Milestone:</strong> Real-time sync + durable state backend</p>
+      <p><strong>Next action:</strong> Implement SSE/WebSocket sync spike</p>
+      <p><strong>Blocker:</strong> Tunnel/local test cadence</p>
+    </article>
+  </li>
 
-  <section class="project-health-card" role="listitem" aria-labelledby="ph-promptmark">
-    <h3 id="ph-promptmark">Promptmark capture</h3>
-    <p><strong>Priority:</strong> <span class="status-pill status-pill--watch">Watch</span></p>
-    <p><strong>Status:</strong> <span class="status-pill status-pill--watch">Pilot</span></p>
-    <p><strong>Milestone:</strong> Reliable capture pipeline with production-safe hygiene</p>
-    <p><strong>Next action:</strong> Expand pilot scope + reliability metrics</p>
-    <p><strong>Blocker:</strong> Guardrail quality control</p>
-  </section>
-</div>
+  <li>
+    <article class="project-health-card" aria-labelledby="ph-promptmark">
+      <h3 id="ph-promptmark">Promptmark capture</h3>
+      <p><strong>Priority:</strong> <span class="status-pill status-pill--watch">Watch</span></p>
+      <p><strong>Status:</strong> <span class="status-pill status-pill--watch">Pilot</span></p>
+      <p><strong>Milestone:</strong> Reliable capture pipeline with production-safe hygiene</p>
+      <p><strong>Next action:</strong> Expand pilot scope + reliability metrics</p>
+      <p><strong>Blocker:</strong> Guardrail quality control</p>
+    </article>
+  </li>
+</ul>
 
 ## Active
 

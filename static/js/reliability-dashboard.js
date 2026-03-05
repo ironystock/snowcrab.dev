@@ -8,6 +8,7 @@
   const lastDeployLinkEl = document.getElementById('reliability-last-deploy-link');
   const ciLinkEl = document.getElementById('reliability-ci-link');
   const refreshedEl = document.getElementById('reliability-last-refreshed');
+  const summaryLiveEl = document.getElementById('reliability-summary-live');
 
   const owner = root.dataset.repoOwner;
   const repo = root.dataset.repoName;
@@ -28,6 +29,14 @@
 
   const setRefreshedNow = () => {
     if (refreshedEl) refreshedEl.textContent = new Date().toLocaleString();
+  };
+
+  const getToneLabel = (el) => {
+    if (!el) return 'unknown';
+    if (el.classList.contains('reliability-status--success')) return 'healthy';
+    if (el.classList.contains('reliability-status--warn')) return 'warning';
+    if (el.classList.contains('reliability-status--bad')) return 'error';
+    return 'unknown';
   };
 
   const isRateLimited = (err) => /rate limit/i.test(String(err?.message || ''));
@@ -115,5 +124,14 @@
       if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'false');
     });
 
-  Promise.allSettled([deployReq, ciReq, incidentsReq]).finally(setRefreshedNow);
+  Promise.allSettled([deployReq, ciReq, incidentsReq]).finally(() => {
+    setRefreshedNow();
+    root.setAttribute('aria-busy', 'false');
+
+    if (summaryLiveEl) {
+      const deployTone = getToneLabel(lastDeployEl);
+      const ciTone = getToneLabel(ciEl);
+      summaryLiveEl.textContent = `Reliability updated. Deploy status: ${deployTone}. CI status: ${ciTone}.`;
+    }
+  });
 })();

@@ -116,7 +116,8 @@
     <section class="card reliability-card" id="reliability-dashboard"
       data-repo-owner="ironystock"
       data-repo-name="snowcrab.dev"
-      aria-labelledby="reliability-heading">
+      aria-labelledby="reliability-heading"
+      aria-busy="true">
       <h3 id="reliability-heading">Reliability</h3>
 
       <div class="reliability-row">
@@ -138,6 +139,7 @@
       <p class="meta">Recent incidents / fixes</p>
       <div id="reliability-incidents" class="muted" role="status" aria-live="polite">Loading changelog signals…</div>
       <p class="meta">Last refreshed: <span id="reliability-last-refreshed" aria-live="polite">Loading…</span></p>
+      <span id="reliability-summary-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
     </section>
 
     <section class="card" aria-labelledby="quick-links-heading">

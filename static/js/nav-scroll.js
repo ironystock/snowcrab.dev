@@ -4,12 +4,14 @@
 
   const links = Array.from(nav.querySelectorAll('a[href]'));
   const step = 120;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
   const revealLink = (link) => {
     if (!link) return;
-    link.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+    link.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: scrollBehavior });
   };
 
   nav.addEventListener('keydown', (event) => {
@@ -32,7 +34,7 @@
       }
 
       const direction = event.key === 'ArrowRight' ? 1 : -1;
-      nav.scrollBy({ left: step * direction, behavior: 'smooth' });
+      nav.scrollBy({ left: step * direction, behavior: scrollBehavior });
     }
 
     if (event.key === 'Home') {
@@ -41,7 +43,7 @@
         links[0].focus();
         revealLink(links[0]);
       } else {
-        nav.scrollTo({ left: 0, behavior: 'smooth' });
+        nav.scrollTo({ left: 0, behavior: scrollBehavior });
       }
     }
 
@@ -52,7 +54,7 @@
         last.focus();
         revealLink(last);
       } else {
-        nav.scrollTo({ left: nav.scrollWidth, behavior: 'smooth' });
+        nav.scrollTo({ left: nav.scrollWidth, behavior: scrollBehavior });
       }
     }
   });

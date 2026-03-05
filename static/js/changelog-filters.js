@@ -43,6 +43,7 @@
 
   const apply = (filter, { syncUrl = true } = {}) => {
     const selectedFilter = normalizeFilter(filter);
+    const focusedBeforeUpdate = document.activeElement;
     let visibleCount = 0;
 
     items.forEach((item) => {
@@ -79,6 +80,20 @@
         empty.hidden = false;
       } else {
         empty.hidden = true;
+      }
+    }
+
+    if (focusedBeforeUpdate && focusedBeforeUpdate instanceof HTMLElement && focusedBeforeUpdate !== document.body) {
+      const focusedInsideList = list.contains(focusedBeforeUpdate);
+      const focusNowHidden = focusedInsideList && !!focusedBeforeUpdate.closest('li[hidden]');
+
+      if (focusNowHidden) {
+        if (summary) {
+          summary.tabIndex = -1;
+          summary.focus({ preventScroll: true });
+        } else if (panel) {
+          panel.focus({ preventScroll: true });
+        }
       }
     }
 

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 14:25 MST
+- Last updated: 2026-03-05 14:40 MST
 
 ## Last shipped batch
-- Accessibility pass 54: changelog filter URL parsing now canonicalizes invalid category query values to valid state (`all`) and normalizes deep-link behavior.
+- Accessibility pass 55: changelog filters now preserve keyboard context by redirecting focus to summary/panel anchors when the currently focused entry is hidden by a filter change.
 
 ## Next queued action
 - Continue accessibility sweep with a focused pass on dynamic-module focus behavior validation under reduced-motion + forced-colors combinations.

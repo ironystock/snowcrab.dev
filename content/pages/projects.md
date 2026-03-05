@@ -1,11 +1,13 @@
 ---
 title: "Projects"
-date: 2026-03-04T21:45:00-07:00
+date: 2026-03-04T23:47:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
 ---
 
 This page is the cross-project control panel.
+
+_Last verified: 2026-03-04 23:47 MST_
 
 ## Active
 

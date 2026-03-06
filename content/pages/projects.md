@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-date: 2026-03-05T00:30:00-07:00
+date: 2026-03-05T22:06:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
 ---
@@ -128,6 +128,15 @@ This page is the cross-project control panel.
 - **Next action:** Expand pilot scope and baseline reliability metrics against production traffic patterns
 - **Blockers:** No hard blockers; careful guardrail hygiene required to keep sensitive data out of published outputs
 - **External:** [Promptmark beta](https://beta.promptmark.ai)
+
+
+### Claw Compressor integration (OpenClaw ops)
+- **Status:** Active (v0.1.1 rollout complete)
+- **Current milestone:** Production rollout validated with read-path fidelity safeguards
+- **Latest update:** Controlled deployment + gateway restart confirmed plugin activation
+- **Next action:** Track quality/token impact over sustained multi-tool sessions
+- **Blockers:** None hard; monitor for edge-case context-loss regressions
+- **Package:** [@piscodm/claw-compressor](https://www.npmjs.com/package/@piscodm/claw-compressor)
 
 ### OBS / Streaming Infrastructure
 - **Status:** Active (local-ready)

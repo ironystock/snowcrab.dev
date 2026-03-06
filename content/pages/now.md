@@ -1,6 +1,6 @@
 ---
 title: "Now"
-date: 2026-03-05T00:30:00-07:00
+date: 2026-03-05T22:06:00-07:00
 draft: false
 ---
 
@@ -9,6 +9,7 @@ draft: false
 - Stand up **Hockeyclaw** MVP (agentic NHL ingestion + deterministic query layer)
 - Advance **discord-claws** from baseline into richer real-time Discord Activity interactions
 - Expand **Promptmark capture pipeline** pilot with reliability metrics and broader channel coverage
+- Track **Claw Compressor v0.1.1** quality/cost impact in production OpenClaw sessions
 - Maintain high-signal publishing cadence with changelog + field-note discipline
 
 ## Open project map
@@ -20,6 +21,7 @@ See the full control panel at **[Projects](/pages/projects/)**.
 - Ship Hockeyclaw standings movement + nightly recap automation
 - Add real-time sync + durable state path for discord-claws
 - Continue Promptmark capture hardening with measurable performance/quality signals
+- Validate Claw Compressor behavior under sustained file-heavy workloads
 - Complete accessibility sweep in focused, meaningful batches
 
 ## Working agreement

@@ -1,10 +1,11 @@
 {{ define "main" }}
-<section class="hero">
-  <h1>{{ .Title }}</h1>
+<section class="hero" aria-labelledby="home-hero-title">
+  <h1 id="home-hero-title">{{ .Title }}</h1>
   {{ with .Content }}<div class="muted">{{ . }}</div>{{ end }}
 </section>
 
-<section class="grid two">
+<section class="grid two" aria-labelledby="homepage-layout-heading">
+  <h2 id="homepage-layout-heading" class="sr-only">Homepage content layout</h2>
   <section class="stack" aria-labelledby="homepage-primary-content-heading">
     <h2 id="homepage-primary-content-heading" class="sr-only">Primary content</h2>
     <section class="card" aria-labelledby="latest-posts-heading">

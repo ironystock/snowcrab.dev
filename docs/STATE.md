@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 04:41 MST
+- Last updated: 2026-03-06 04:57 MST
 
 ## Last shipped batch
-- Accessibility sweep batch: refined changelog filter semantics by switching to a semantic-neutral tablist wrapper, adding explicit tab set position metadata, and signaling `aria-busy` during dynamic filter updates.
+- Accessibility sweep batch: completed homepage landmark labeling by adding explicit labels for previously unlabeled hero/layout regions to improve screen-reader section navigation.
 
 ## Next queued action
-- Continue accessibility sweep with a focused landmarks + heading hierarchy audit across non-changelog pages, then patch any gaps in one grouped batch.
+- Continue accessibility sweep with a focused form-label + interactive-control name audit across page templates and dashboard modules, then patch gaps in one grouped batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

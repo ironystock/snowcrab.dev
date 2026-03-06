@@ -428,6 +428,16 @@ main.container {
   border-color: color-mix(in oklab, var(--primary) 56%, var(--border));
 }
 
+.changelog-timeline.is-filtered-view article .meta {
+  margin-bottom: 0.48rem;
+  font-size: 0.82rem;
+}
+
+.changelog-timeline.is-filtered-view article h2 {
+  margin-bottom: 0.32rem;
+  line-height: 1.25;
+}
+
 .changelog-timeline.is-filtered-view > li[data-visible-index]::after {
   content: attr(data-visible-index);
   position: absolute;
@@ -468,12 +478,15 @@ main.container {
 }
 
 .changelog-filters-help {
-  margin: 0 0 0.35rem;
-  font-size: 0.84rem;
+  margin: 0 0 0.32rem;
+  font-size: 0.81rem;
+  letter-spacing: 0.01em;
 }
 
 .changelog-filter-summary {
   margin: 0;
+  font-size: 0.84rem;
+  color: var(--meta-high-contrast);
 }
 
 .changelog-filter-summary:focus-visible {
@@ -1657,6 +1670,10 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
   .changelog-filters-wrap {
     top: 6.2rem;
+  }
+
+  .changelog-filter-summary {
+    font-size: 0.8rem;
   }
 
   .changelog-timeline.is-filtered-view > li[data-visible-index]::after {

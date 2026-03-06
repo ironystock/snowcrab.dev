@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 10:43 MST
+- Last updated: 2026-03-06 10:58 MST
 
 ## Last shipped batch
-- Changelog interaction polish batch: added compact rank badges for filtered timeline entries so visible scan order is explicit after category filtering.
+- Changelog polish batch: tuned filter-panel micro-typography and filtered timeline meta/title spacing to improve post-filter scan rhythm and readability.
 
 ## Next queued action
-- Continue backlog with final changelog readability polish pass (micro-typography/spacing tuning under filters) in one focused batch.
+- Continue backlog with final reliability/changelog cross-check pass for reduced-motion + keyboard scan flow consistency in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

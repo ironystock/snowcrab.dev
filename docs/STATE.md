@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 07:13 MST
+- Last updated: 2026-03-06 07:28 MST
 
 ## Last shipped batch
-- Reliability refinement batch: added a compact strip state-mix summary (`Healthy/Degraded/Down` counts) driven by live strip statuses for faster dashboard scanability.
+- Reliability refinement batch: added explicit row-level state labels for Deploy/CI (`Loading/Healthy/Running/Degraded/Down`) with live tone-sync to improve scanability and loading/error clarity.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements (compact + scanability) by tightening row-level hierarchy and loading/error state clarity in one focused batch.
+- Continue backlog with reliability dashboard refinements by improving incidents row hierarchy/compactness in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

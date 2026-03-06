@@ -626,6 +626,27 @@ main.container {
   background: color-mix(in oklab, var(--bg-elev) 90%, var(--border) 10%);
 }
 
+.reliability-row-state {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--meta-high-contrast);
+}
+
+.reliability-row-state--ok {
+  color: var(--state-ok-ink);
+}
+
+.reliability-row-state--warn {
+  color: var(--state-watch-ink);
+}
+
+.reliability-row-state--bad {
+  color: var(--state-bad-ink);
+}
+
 .reliability-link {
   font-size: 0.86rem;
   color: var(--muted);

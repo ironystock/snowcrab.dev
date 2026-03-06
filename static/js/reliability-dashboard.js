@@ -16,6 +16,8 @@
   const refreshBtn = document.getElementById('reliability-refresh');
   const overallEl = document.getElementById('reliability-overall');
   const stripSummaryEl = document.getElementById('reliability-strip-summary');
+  const deployRowStateEl = document.getElementById('reliability-row-deploy-state');
+  const ciRowStateEl = document.getElementById('reliability-row-ci-state');
   const stripLinks = [stripDeployEl, stripCiEl, stripIncidentsEl].filter(Boolean);
 
   const owner = root.dataset.repoOwner;
@@ -44,6 +46,15 @@
     if (!el) return;
     el.classList.remove('reliability-status--success', 'reliability-status--warn', 'reliability-status--bad');
     if (tone) el.classList.add(`reliability-status--${tone}`);
+  };
+
+  const setRowState = (el, tone, text) => {
+    if (!el) return;
+    el.classList.remove('reliability-row-state--ok', 'reliability-row-state--warn', 'reliability-row-state--bad');
+    if (tone === 'ok') el.classList.add('reliability-row-state--ok');
+    if (tone === 'warn') el.classList.add('reliability-row-state--warn');
+    if (tone === 'bad') el.classList.add('reliability-row-state--bad');
+    if (text) el.textContent = text;
   };
 
   const setStripTone = (el, tone, text) => {
@@ -177,6 +188,8 @@
     setStripTone(stripDeployEl, 'warn', 'Deploy · Loading');
     setStripTone(stripCiEl, 'warn', 'CI · Loading');
     setStripTone(stripIncidentsEl, 'warn', 'Incidents · Loading');
+    setRowState(deployRowStateEl, 'warn', 'Loading');
+    setRowState(ciRowStateEl, 'warn', 'Loading');
 
     let incidentsSummary = 'incidents unknown';
 
@@ -189,6 +202,7 @@
         if (lastDeployEl) lastDeployEl.textContent = `✅ ${fmt(commit?.commit?.author?.date)}`;
         setStatusTone(lastDeployEl, 'success');
         setStripTone(stripDeployEl, 'ok', 'Deploy · Healthy');
+        setRowState(deployRowStateEl, 'ok', 'Healthy');
         if (lastDeployLinkEl && commit?.html_url) {
           lastDeployLinkEl.href = commit.html_url;
           lastDeployLinkEl.hidden = false;
@@ -203,6 +217,7 @@
         }
         setStatusTone(lastDeployEl, kind === 'unavailable' ? 'bad' : 'warn');
         setStripTone(stripDeployEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'Deploy · Down' : 'Deploy · Degraded');
+        setRowState(deployRowStateEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'Down' : 'Degraded');
         if (lastDeployLinkEl) lastDeployLinkEl.hidden = false;
       });
 
@@ -217,6 +232,7 @@
           if (ciEl) ciEl.textContent = '⚪ No runs';
           setStatusTone(ciEl, 'warn');
           setStripTone(stripCiEl, 'warn', 'CI · No runs');
+          setRowState(ciRowStateEl, 'warn', 'No runs');
           return;
         }
         const status = run.status === 'completed' ? (run.conclusion || 'completed') : run.status;
@@ -229,6 +245,7 @@
         if (ciEl) ciEl.textContent = `${emoji} ${status} · ${fmt(run.updated_at)}`;
         setStatusTone(ciEl, tone);
         setStripTone(stripCiEl, tone === 'success' ? 'ok' : tone === 'warn' ? 'warn' : 'bad', tone === 'success' ? 'CI · Healthy' : tone === 'warn' ? 'CI · Running' : 'CI · Failing');
+        setRowState(ciRowStateEl, tone === 'success' ? 'ok' : tone === 'warn' ? 'warn' : 'bad', tone === 'success' ? 'Healthy' : tone === 'warn' ? 'Running' : 'Failing');
         if (ciLinkEl && run?.html_url) {
           ciLinkEl.href = run.html_url;
           ciLinkEl.hidden = false;
@@ -243,6 +260,7 @@
         }
         setStatusTone(ciEl, kind === 'unavailable' ? 'bad' : 'warn');
         setStripTone(stripCiEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'CI · Down' : 'CI · Degraded');
+        setRowState(ciRowStateEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'Down' : 'Degraded');
         if (ciLinkEl) ciLinkEl.hidden = false;
       });
 

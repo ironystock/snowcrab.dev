@@ -52,11 +52,38 @@ html { font-size: clamp(16px, 0.2vw + 15.2px, 17px); }
   :root {
     --container: 1100px;
   }
+
+  .grid.two {
+    grid-template-columns: minmax(0, 2.15fr) minmax(320px, 1fr);
+    align-items: start;
+  }
+
+  .hero p {
+    max-width: 62ch;
+  }
+
+  article.prose p {
+    max-width: 66ch;
+  }
+
+  .capability-explorer-grid,
+  .automation-demos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1580px) {
   :root {
     --container: 1360px;
+  }
+
+  .grid.two {
+    grid-template-columns: minmax(0, 2.25fr) minmax(360px, 1fr);
+  }
+
+  .capability-explorer-grid,
+  .automation-demos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

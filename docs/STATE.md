@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 08:43 MST
+- Last updated: 2026-03-06 08:59 MST
 
 ## Last shipped batch
-- Automation demos batch: upgraded `/pages/automation-demos` to a structured before/after card gallery with per-demo diff snippets and receipt links.
+- Large-screen responsiveness batch: extended 1200px/1580px breakpoints to rebalance two-column layout and move capabilities + automation demos to multi-column grids on wide displays.
 
 ## Next queued action
 - Continue backlog with reliability dashboard refinements (final compactness + readability polish) in one focused batch.

@@ -615,10 +615,16 @@ main.container {
 
 .reliability-metrics {
   margin: 0 0 0.4rem;
+  display: grid;
+  gap: 0.62rem;
 }
 
 .reliability-row {
-  margin: 0 0 0.72rem;
+  margin: 0;
+  padding: 0.4rem 0.45rem;
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--bg-elev) 96%, var(--border) 4%);
 }
 
 .reliability-incidents-heading {
@@ -635,7 +641,11 @@ main.container {
 
 .reliability-label {
   display: block;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--meta-high-contrast);
+  text-transform: uppercase;
 }
 
 .reliability-value-line {
@@ -645,7 +655,7 @@ main.container {
 .reliability-value-line {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.48rem;
   flex-wrap: wrap;
 }
 

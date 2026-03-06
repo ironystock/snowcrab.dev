@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 08:13 MST
+- Last updated: 2026-03-06 08:28 MST
 
 ## Last shipped batch
-- Reliability refinement batch: aligned loading-state semantics across strip pills, overall status, strip summary, and row-state labels so the dashboard clearly reports `Loading` before live status resolves.
+- Reliability refinement batch: tightened row density/alignment by adding compact row containers, stronger label hierarchy, and denser value spacing across Deploy/CI metric rows.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements by tightening heading/value spacing and alignment for denser row scanability in one focused batch.
+- Continue backlog with automation demos gallery (before/after cards + diff snippets) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

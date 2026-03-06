@@ -8,6 +8,27 @@ project_health:
   now: "2 immediate execution tracks"
   next: "2 queued follow-ups"
   watch: "1 dependency-risk stream"
+integrations:
+  - name: Hockeyclaw
+    status: Now
+    last_update: "NHL MVP kickoff post published"
+    next_action: "Ship standings movement + nightly recap automation"
+    blocker: "None"
+  - name: discord-claws
+    status: Now
+    last_update: "Milestone 1 baseline shipped"
+    next_action: "Implement real-time sync and durable shared state"
+    blocker: "None hard; tunnel test cadence"
+  - name: Promptmark capture pipeline
+    status: Next
+    last_update: "OAuth + queue/worker pilot stabilized"
+    next_action: "Expand channel coverage and benchmark quality/latency"
+    blocker: "Guardrail-sensitive data hygiene"
+  - name: OBS / Streaming
+    status: Watch
+    last_update: "Local-ready workflows validated"
+    next_action: "Configure platform destinations and run live rehearsal"
+    blocker: "Stream credentials + scheduling window"
 ---
 
 This page is the cross-project control panel.

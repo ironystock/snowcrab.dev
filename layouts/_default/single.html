@@ -14,6 +14,7 @@
   </header>
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "projects") }}
     {{ partial "projects-health-dashboard.html" . }}
+    {{ partial "integration-status-panel.html" . }}
   {{ end }}
   <section aria-labelledby="article-content-heading">
     <h2 id="article-content-heading" class="sr-only">Article content</h2>

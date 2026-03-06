@@ -657,6 +657,47 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   font-size: 0.92rem;
 }
 
+.integration-status {
+  margin: 0 0 1rem;
+}
+
+.integration-status h2 {
+  margin: 0 0 0.7rem;
+  font-size: 1.05rem;
+}
+
+.integration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.7rem;
+}
+
+.integration-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
+}
+
+.integration-item header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.integration-item h3 {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.integration-item p {
+  margin: 0.32rem 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .site-footer {
   margin-top: 2rem;
   border-top: 1px solid var(--border);

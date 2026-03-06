@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 12:24 MST
+- Last updated: 2026-03-06 12:39 MST
 
 ## Last shipped batch
-- Capability explorer expansion: added domain filter chips and combined stage+domain filtering so capabilities can be narrowed by both execution state and functional domain.
+- Reliability deep-link polish: strip links now track active hash target state (`aria-current=location`) with matching visual active-target styling for clearer keyboard/deep-link orientation.
 
 ## Next queued action
-- Reliability dashboard final QA sweep (reduced-motion, forced-colors, keyboard deep-link flow) with one focused patch batch only if meaningful inconsistencies are found.
+- Changelog interaction final QA sweep (filtered timeline + command palette cross-flow) and patch only meaningful inconsistencies.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

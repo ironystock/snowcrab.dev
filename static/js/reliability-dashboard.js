@@ -25,14 +25,33 @@
   const repo = root.dataset.repoName;
   if (!owner || !repo) return;
 
+  const updateActiveStripLink = () => {
+    const hash = window.location.hash;
+
+    stripLinks.forEach((link) => {
+      const href = link.getAttribute('href') || '';
+      const active = !!hash && hash.startsWith('#reliability-row-') && href === hash;
+      link.classList.toggle('is-active-target', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
   const focusHashTarget = () => {
     const hash = window.location.hash;
-    if (!hash || !hash.startsWith('#reliability-row-')) return;
+    if (!hash || !hash.startsWith('#reliability-row-')) {
+      updateActiveStripLink();
+      return;
+    }
 
     const target = document.querySelector(hash);
-    if (!(target instanceof HTMLElement)) return;
+    if (!(target instanceof HTMLElement)) {
+      updateActiveStripLink();
+      return;
+    }
 
     target.focus({ preventScroll: true });
+    updateActiveStripLink();
   };
 
   const fetchWithTimeout = (url, timeoutMs = 8000) => {

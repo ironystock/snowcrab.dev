@@ -612,6 +612,12 @@ main.container {
   text-decoration: underline;
 }
 
+.reliability-strip-link.is-active-target {
+  border-color: color-mix(in oklab, var(--primary) 74%, var(--border));
+  background: color-mix(in oklab, var(--primary) 18%, var(--bg-elev));
+  text-decoration: underline;
+}
+
 #reliability-row-deploy,
 #reliability-row-ci,
 #reliability-row-incidents {

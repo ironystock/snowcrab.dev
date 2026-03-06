@@ -859,8 +859,17 @@ main.container {
   flex-wrap: wrap;
 }
 
+.home-tabpanel {
+  display: grid;
+  gap: 0.7rem;
+}
+
 .home-tabpanel[hidden] {
   display: none !important;
+}
+
+.home-tabpanel > .card {
+  margin: 0;
 }
 
 .impact-split-list {

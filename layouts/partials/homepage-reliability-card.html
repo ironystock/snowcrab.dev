@@ -1,0 +1,64 @@
+<section class="card reliability-card" id="reliability-dashboard"
+  data-repo-owner="ironystock"
+  data-repo-name="snowcrab.dev"
+  aria-labelledby="reliability-heading">
+  <div class="reliability-heading-row">
+    <h3 id="reliability-heading">Reliability</h3>
+    <div class="reliability-heading-actions">
+      <span id="reliability-overall" class="status-pill reliability-overall" role="status" aria-live="polite" aria-atomic="true">Overall · Loading</span>
+      <button id="reliability-refresh" class="reliability-refresh" type="button">Refresh status</button>
+    </div>
+  </div>
+
+  <h4 id="reliability-strip-heading" class="sr-only">Reliability summary strip</h4>
+  <ul class="reliability-strip" aria-labelledby="reliability-strip-heading">
+    <li><a id="reliability-strip-deploy" class="status-pill reliability-strip-link" href="#reliability-row-deploy" aria-controls="reliability-row-deploy">Deploy · Loading</a></li>
+    <li><a id="reliability-strip-ci" class="status-pill reliability-strip-link" href="#reliability-row-ci" aria-controls="reliability-row-ci">CI · Loading</a></li>
+    <li><a id="reliability-strip-incidents" class="status-pill reliability-strip-link" href="#reliability-row-incidents" aria-controls="reliability-row-incidents">Incidents · Loading</a></li>
+  </ul>
+  <div class="reliability-strip-footer">
+    <p class="meta reliability-strip-summary" id="reliability-strip-summary" role="status" aria-live="polite" aria-atomic="true">State mix · Loading</p>
+    <div class="meta reliability-strip-legend" role="group" aria-labelledby="reliability-strip-legend-heading">
+      <span id="reliability-strip-legend-heading" class="reliability-strip-legend-label">Key:</span>
+      <ul class="reliability-strip-legend-list" aria-label="Reliability state legend">
+        <li><span class="status-pill status-pill--ok">Healthy</span></li>
+        <li><span class="status-pill status-pill--watch">Degraded</span></li>
+        <li><span class="status-pill status-pill--bad">Down</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <dl class="reliability-metrics">
+    <div class="reliability-row" id="reliability-row-deploy" tabindex="-1">
+      <dt class="reliability-label">Last deploy</dt>
+      <dd class="reliability-value-line">
+        <span class="reliability-value-main">
+          <span id="reliability-last-deploy" class="reliability-status">Loading…</span>
+          <span id="reliability-row-deploy-state" class="reliability-row-state" aria-live="polite">Loading</span>
+        </span>
+        <a id="reliability-last-deploy-link" href="https://github.com/ironystock/snowcrab.dev/commits/main" class="reliability-link" hidden>View deploy</a>
+      </dd>
+    </div>
+
+    <div class="reliability-row" id="reliability-row-ci" tabindex="-1">
+      <dt class="reliability-label">CI status</dt>
+      <dd class="reliability-value-line">
+        <span class="reliability-value-main">
+          <span id="reliability-ci-status" class="reliability-status">Loading…</span>
+          <span id="reliability-row-ci-state" class="reliability-row-state" aria-live="polite">Loading</span>
+        </span>
+        <a id="reliability-ci-link" href="https://github.com/ironystock/snowcrab.dev/actions?query=branch%3Amain" class="reliability-link" hidden>View CI</a>
+      </dd>
+    </div>
+  </dl>
+
+  <div class="reliability-row reliability-row--incidents" id="reliability-row-incidents" tabindex="-1">
+    <div class="reliability-incidents-heading">
+      <p class="meta">Recent incidents / fixes</p>
+      <span id="reliability-row-incidents-state" class="reliability-row-state" aria-live="polite">Loading</span>
+    </div>
+    <div id="reliability-incidents" class="muted">Loading changelog signals…</div>
+  </div>
+  <p class="meta">Last refreshed: <time id="reliability-last-refreshed" datetime="">Loading…</time> <span id="reliability-last-refreshed-relative">(pending)</span></p>
+  <span id="reliability-summary-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
+</section>

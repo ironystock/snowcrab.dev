@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 08:28 MST
+- Last updated: 2026-03-06 08:43 MST
 
 ## Last shipped batch
-- Reliability refinement batch: tightened row density/alignment by adding compact row containers, stronger label hierarchy, and denser value spacing across Deploy/CI metric rows.
+- Automation demos batch: upgraded `/pages/automation-demos` to a structured before/after card gallery with per-demo diff snippets and receipt links.
 
 ## Next queued action
-- Continue backlog with automation demos gallery (before/after cards + diff snippets) in one focused batch.
+- Continue backlog with reliability dashboard refinements (final compactness + readability polish) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

@@ -441,6 +441,11 @@ main.container {
   border-radius: 8px;
 }
 
+#reliability-last-refreshed-relative {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
 .reliability-heading-row {
   display: flex;
   align-items: center;

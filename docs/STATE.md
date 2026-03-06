@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 18:40 MST
+- Last updated: 2026-03-05 18:55 MST
 
 ## Last shipped batch
-- Reliability pass 71: upgraded compact-strip legend to grouped list semantics (`role=group` + labeled `ul/li`) for clearer structural meaning while preserving compact scanability.
+- Reliability pass 72: added continuously updating relative refresh-age text beside the absolute last-refreshed timestamp for faster recency scanning.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

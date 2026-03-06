@@ -8,6 +8,7 @@
   const lastDeployLinkEl = document.getElementById('reliability-last-deploy-link');
   const ciLinkEl = document.getElementById('reliability-ci-link');
   const refreshedEl = document.getElementById('reliability-last-refreshed');
+  const refreshedRelativeEl = document.getElementById('reliability-last-refreshed-relative');
   const summaryLiveEl = document.getElementById('reliability-summary-live');
   const stripDeployEl = document.getElementById('reliability-strip-deploy');
   const stripCiEl = document.getElementById('reliability-strip-ci');
@@ -63,11 +64,38 @@
     return d.toLocaleString();
   };
 
+  let lastRefreshedAt = null;
+
+  const formatRelativeTime = (date) => {
+    if (!date) return '(pending)';
+    const diffMs = Math.max(0, Date.now() - date.getTime());
+    const diffSec = Math.floor(diffMs / 1000);
+
+    if (diffSec < 5) return '(just now)';
+    if (diffSec < 60) return `(${diffSec}s ago)`;
+
+    const diffMin = Math.floor(diffSec / 60);
+    if (diffMin < 60) return `(${diffMin}m ago)`;
+
+    const diffHr = Math.floor(diffMin / 60);
+    if (diffHr < 24) return `(${diffHr}h ago)`;
+
+    const diffDay = Math.floor(diffHr / 24);
+    return `(${diffDay}d ago)`;
+  };
+
+  const updateRelativeRefreshed = () => {
+    if (!refreshedRelativeEl) return;
+    refreshedRelativeEl.textContent = formatRelativeTime(lastRefreshedAt);
+  };
+
   const setRefreshedNow = () => {
     if (!refreshedEl) return;
     const now = new Date();
+    lastRefreshedAt = now;
     refreshedEl.textContent = now.toLocaleString();
     refreshedEl.setAttribute('datetime', now.toISOString());
+    updateRelativeRefreshed();
   };
 
   const getToneLabel = (el) => {
@@ -249,6 +277,9 @@
   if (refreshBtn) {
     refreshBtn.addEventListener('click', runRefresh);
   }
+
+  updateRelativeRefreshed();
+  window.setInterval(updateRelativeRefreshed, 30000);
 
   runRefresh();
 })();

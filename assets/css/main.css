@@ -475,7 +475,10 @@ main.container {
 
 #reliability-row-deploy:target,
 #reliability-row-ci:target,
-#reliability-row-incidents:target {
+#reliability-row-incidents:target,
+#reliability-row-deploy:focus-visible,
+#reliability-row-ci:focus-visible,
+#reliability-row-incidents:focus-visible {
   outline: 2px solid color-mix(in oklab, var(--primary) 54%, var(--border));
   outline-offset: 4px;
   border-radius: 8px;

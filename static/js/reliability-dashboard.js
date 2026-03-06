@@ -14,10 +14,21 @@
   const stripCiEl = document.getElementById('reliability-strip-ci');
   const stripIncidentsEl = document.getElementById('reliability-strip-incidents');
   const refreshBtn = document.getElementById('reliability-refresh');
+  const stripLinks = [stripDeployEl, stripCiEl, stripIncidentsEl].filter(Boolean);
 
   const owner = root.dataset.repoOwner;
   const repo = root.dataset.repoName;
   if (!owner || !repo) return;
+
+  const focusHashTarget = () => {
+    const hash = window.location.hash;
+    if (!hash || !hash.startsWith('#reliability-row-')) return;
+
+    const target = document.querySelector(hash);
+    if (!(target instanceof HTMLElement)) return;
+
+    target.focus({ preventScroll: true });
+  };
 
   const fetchWithTimeout = (url, timeoutMs = 8000) => {
     const controller = new AbortController();
@@ -278,8 +289,17 @@
     refreshBtn.addEventListener('click', runRefresh);
   }
 
+  stripLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      window.requestAnimationFrame(focusHashTarget);
+    });
+  });
+
+  window.addEventListener('hashchange', focusHashTarget);
+
   updateRelativeRefreshed();
   window.setInterval(updateRelativeRefreshed, 30000);
 
   runRefresh();
+  focusHashTarget();
 })();

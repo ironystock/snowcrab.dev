@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 10:58 MST
+- Last updated: 2026-03-06 11:13 MST
 
 ## Last shipped batch
-- Changelog polish batch: tuned filter-panel micro-typography and filtered timeline meta/title spacing to improve post-filter scan rhythm and readability.
+- Command palette polish batch: added Home/End keyboard navigation and explicit focus-visible styling on result links for faster keyboard scan flow.
 
 ## Next queued action
-- Continue backlog with final reliability/changelog cross-check pass for reduced-motion + keyboard scan flow consistency in one focused batch.
+- Continue backlog with final reliability/changelog cross-check pass for reduced-motion + keyboard scan-flow consistency in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

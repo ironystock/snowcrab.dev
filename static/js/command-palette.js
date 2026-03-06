@@ -119,6 +119,20 @@
       return;
     }
 
+    if (event.key === 'Home') {
+      event.preventDefault();
+      activeIndex = 0;
+      render(input.value);
+      return;
+    }
+
+    if (event.key === 'End') {
+      event.preventDefault();
+      activeIndex = links.length - 1;
+      render(input.value);
+      return;
+    }
+
     if (event.key === 'Enter') {
       event.preventDefault();
       const active = links[activeIndex];

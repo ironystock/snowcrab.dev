@@ -941,6 +941,11 @@ main.container {
   background: color-mix(in oklab, var(--primary) 14%, var(--bg));
 }
 
+.command-result:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+}
+
 .command-palette-empty {
   color: var(--muted);
   padding: 0.42rem 0.2rem;

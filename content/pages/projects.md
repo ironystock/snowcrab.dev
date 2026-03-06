@@ -11,89 +11,9 @@ This page is the cross-project control panel.
 
 ## Project health dashboard
 
-<section class="project-health-strip" aria-labelledby="project-health-summary-heading">
-  <h3 id="project-health-summary-heading" class="sr-only">Project health summary</h3>
-  <p><strong>Now:</strong> 2 immediate execution tracks</p>
-  <p><strong>Next:</strong> 2 queued follow-ups</p>
-  <p><strong>Watch:</strong> 1 dependency-risk stream</p>
-</section>
-
-<section aria-labelledby="project-health-cards-heading">
-  <h3 id="project-health-cards-heading" class="sr-only">Project health cards</h3>
-  <ul class="project-health-grid" aria-labelledby="project-health-cards-heading">
-  <li>
-    <article class="project-health-card" aria-labelledby="ph-snowcrab">
-      <h3 id="ph-snowcrab">snowcrab.dev</h3>
-      <dl class="project-health-meta">
-        <dt>Priority</dt>
-        <dd><span class="status-pill status-pill--now">Now</span></dd>
-        <dt>Status</dt>
-        <dd><span class="status-pill status-pill--ok">Active</span></dd>
-        <dt>Milestone</dt>
-        <dd>Reliability + accessibility hardening with cleaner operational visibility</dd>
-        <dt>Next action</dt>
-        <dd>Finish accessibility sweep, then ship changelog filters</dd>
-        <dt>Blocker</dt>
-        <dd>None hard</dd>
-      </dl>
-    </article>
-  </li>
-
-  <li>
-    <article class="project-health-card" aria-labelledby="ph-hockey">
-      <h3 id="ph-hockey">Hockeyclaw</h3>
-      <dl class="project-health-meta">
-        <dt>Priority</dt>
-        <dd><span class="status-pill status-pill--next">Next</span></dd>
-        <dt>Status</dt>
-        <dd><span class="status-pill status-pill--ok">Active</span></dd>
-        <dt>Milestone</dt>
-        <dd>End-to-end ingestion + deterministic query MVP</dd>
-        <dt>Next action</dt>
-        <dd>Add standings movement + nightly recap automation</dd>
-        <dt>Blocker</dt>
-        <dd>None flagged</dd>
-      </dl>
-    </article>
-  </li>
-
-  <li>
-    <article class="project-health-card" aria-labelledby="ph-discordclaws">
-      <h3 id="ph-discordclaws">discord-claws</h3>
-      <dl class="project-health-meta">
-        <dt>Priority</dt>
-        <dd><span class="status-pill status-pill--now">Now</span></dd>
-        <dt>Status</dt>
-        <dd><span class="status-pill status-pill--ok">Active (M1 shipped)</span></dd>
-        <dt>Milestone</dt>
-        <dd>Real-time sync + durable state backend</dd>
-        <dt>Next action</dt>
-        <dd>Implement SSE/WebSocket sync spike</dd>
-        <dt>Blocker</dt>
-        <dd>Tunnel/local test cadence</dd>
-      </dl>
-    </article>
-  </li>
-
-  <li>
-    <article class="project-health-card" aria-labelledby="ph-promptmark">
-      <h3 id="ph-promptmark">Promptmark capture</h3>
-      <dl class="project-health-meta">
-        <dt>Priority</dt>
-        <dd><span class="status-pill status-pill--watch">Watch</span></dd>
-        <dt>Status</dt>
-        <dd><span class="status-pill status-pill--watch">Pilot</span></dd>
-        <dt>Milestone</dt>
-        <dd>Reliable capture pipeline with production-safe hygiene</dd>
-        <dt>Next action</dt>
-        <dd>Expand pilot scope + reliability metrics</dd>
-        <dt>Blocker</dt>
-        <dd>Guardrail quality control</dd>
-      </dl>
-    </article>
-  </li>
-  </ul>
-</section>
+- **Now:** 2 immediate execution tracks
+- **Next:** 2 queued follow-ups
+- **Watch:** 1 dependency-risk stream
 
 ## Active
 

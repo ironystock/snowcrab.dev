@@ -666,6 +666,14 @@ main.container {
   margin: 0;
 }
 
+.reliability-row--incidents {
+  padding-top: 0.36rem;
+}
+
+#reliability-incidents {
+  font-size: 0.9rem;
+}
+
 .reliability-label {
   display: block;
   margin-bottom: 0.2rem;

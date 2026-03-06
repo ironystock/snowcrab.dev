@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 09:13 MST
+- Last updated: 2026-03-06 09:28 MST
 
 ## Last shipped batch
-- Accessibility sweep batch: upgraded command palette semantics to a proper combobox/listbox pattern with active-descendant tracking and explicit option selection states.
+- Reliability refinement batch: unified incidents layout with Deploy/CI by moving incidents heading/body into the same compact row container pattern, improving row-to-row scan consistency.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements (final compactness/readability polish) in one focused batch.
+- Continue backlog with "what changed since last visit" refinements (multi-entry highlights instead of single latest item) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

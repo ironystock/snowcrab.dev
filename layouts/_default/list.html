@@ -28,7 +28,7 @@
       {{ range .Pages.ByDate.Reverse }}
         {{ $rawCategory := .Params.category | default "" | lower }}
         {{ $title := .Title | lower }}
-        {{ $itemId := printf "entry-title-%s" (.File.TranslationBaseName | default .Slug) }}
+        {{ $itemId := printf "entry-title-%s" (md5 .RelPermalink) }}
         {{ $category := $rawCategory }}
         {{ if eq $category "" }}
           {{ if or (in $title "reliability") (in $title "incident") (in $title "stabil") }}{{ $category = "reliability" }}{{ end }}

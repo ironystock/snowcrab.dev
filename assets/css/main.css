@@ -394,6 +394,20 @@ main.container {
   text-decoration: underline;
 }
 
+#reliability-row-deploy,
+#reliability-row-ci,
+#reliability-row-incidents {
+  scroll-margin-top: 6.2rem;
+}
+
+#reliability-row-deploy:target,
+#reliability-row-ci:target,
+#reliability-row-incidents:target {
+  outline: 2px solid color-mix(in oklab, var(--primary) 54%, var(--border));
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 .reliability-metrics {
   margin: 0 0 0.4rem;
 }

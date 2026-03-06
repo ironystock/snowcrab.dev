@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 16:55 MST
+- Last updated: 2026-03-05 17:10 MST
 
 ## Last shipped batch
-- Reliability pass 64: compact strip chips are now actionable jump links to deploy/CI/incidents detail rows for faster in-card navigation and scanability.
+- Reliability pass 65: improved compact-strip jump-link ergonomics with sticky-header-safe target offsets and visible `:target` highlight styling for deploy/CI/incidents destinations.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

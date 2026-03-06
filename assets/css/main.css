@@ -30,6 +30,18 @@
 html, body { margin: 0; padding: 0; }
 html { font-size: clamp(16px, 0.2vw + 15.2px, 17px); }
 
+@media (min-width: 1200px) {
+  :root {
+    --container: 1100px;
+  }
+}
+
+@media (min-width: 1580px) {
+  :root {
+    --container: 1360px;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

@@ -5,10 +5,10 @@
 - Last updated: 2026-03-06 07:58 MST
 
 ## Last shipped batch
-- Reliability refinement batch: compacted the incidents list with tighter spacing and bounded height/overflow so incident details remain readable without expanding dashboard height excessively.
+- Changelog timeline behavior batch: added month-group labels that recompute on category filter changes so visible entries remain chronologically scannable.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements by tightening loading-state visual consistency across strip/rows in one focused batch.
+- Continue backlog with capability explorer filter chips (`Now/Next/Roadmap`) + domain tag pass as the next focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

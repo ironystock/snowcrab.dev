@@ -55,7 +55,10 @@
       const visible = selectedFilter === 'all' || category === selectedFilter;
       item.hidden = !visible;
       item.classList.remove('is-latest-visible');
+      item.classList.remove('is-timeline-group-start');
       item.removeAttribute('data-visible-index');
+      item.style.removeProperty('--timeline-group-label');
+      item.removeAttribute('data-timeline-group-label');
 
       if (visible) {
         visibleCount += 1;
@@ -68,8 +71,26 @@
 
     if (visibleItems.length > 0) {
       visibleItems[0].classList.add('is-latest-visible');
+      let lastTimelineGroup = '';
+
       visibleItems.forEach((item, index) => {
         item.setAttribute('data-visible-index', String(index + 1));
+
+        const timelineGroup = item.getAttribute('data-timeline-group') || '';
+        const isGroupStart = index === 0 || (timelineGroup && timelineGroup !== lastTimelineGroup);
+        item.classList.toggle('is-timeline-group-start', isGroupStart);
+
+        if (isGroupStart) {
+          const timelineLabel = item.getAttribute('data-timeline-label') || '';
+          if (timelineLabel) {
+            item.style.setProperty('--timeline-group-label', `"${timelineLabel}"`);
+            item.setAttribute('data-timeline-group-label', timelineLabel);
+          }
+        }
+
+        if (timelineGroup) {
+          lastTimelineGroup = timelineGroup;
+        }
       });
     }
 

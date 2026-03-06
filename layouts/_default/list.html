@@ -37,7 +37,7 @@
           {{ if and (eq $category "") (or (in $title "theme") (in $title "design") (in $title "ui") (in $title "typography")) }}{{ $category = "design" }}{{ end }}
         {{ end }}
         {{ if eq $category "" }}{{ $category = "ops" }}{{ end }}
-        <li data-category="{{ $category }}">
+        <li data-category="{{ $category }}" data-timeline-group="{{ .Date.Format "2006-01" }}" data-timeline-label="{{ .Date.Format "Jan 2006" }}">
           <article class="card" aria-labelledby="{{ $itemId }}">
             <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ $category | title }}</div>
             <h2 id="{{ $itemId }}"><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>

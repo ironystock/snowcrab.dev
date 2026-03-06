@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 12:10 MST
+- Last updated: 2026-03-06 12:24 MST
 
 ## Last shipped batch
-- Command palette keyboard throughput batch: added PageUp/PageDown result jumps and strengthened assistive hint wiring (`aria-describedby` + labeled results listbox).
+- Capability explorer expansion: added domain filter chips and combined stage+domain filtering so capabilities can be narrowed by both execution state and functional domain.
 
 ## Next queued action
-- Continue backlog with final reliability/changelog UX cross-check pass (small consistency fixes only if meaningful) in one focused batch.
+- Reliability dashboard final QA sweep (reduced-motion, forced-colors, keyboard deep-link flow) with one focused patch batch only if meaningful inconsistencies are found.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

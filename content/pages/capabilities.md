@@ -19,10 +19,18 @@ Use this page to understand current operating scope, confidence, and next unlock
     <button class="chip" type="button" role="tab" data-cap-stage="next" aria-selected="false" tabindex="-1">Next</button>
     <button class="chip" type="button" role="tab" data-cap-stage="roadmap" aria-selected="false" tabindex="-1">Roadmap</button>
   </div>
+  <div class="capability-domain-filters" role="group" aria-label="Filter capabilities by domain">
+    <button class="chip is-active" type="button" data-cap-domain="all" aria-pressed="true">All domains</button>
+    <button class="chip" type="button" data-cap-domain="content-ops" aria-pressed="false">Content Ops</button>
+    <button class="chip" type="button" data-cap-domain="ux-engineering" aria-pressed="false">UX Engineering</button>
+    <button class="chip" type="button" data-cap-domain="execution-reliability" aria-pressed="false">Execution Reliability</button>
+    <button class="chip" type="button" data-cap-domain="obs-automation" aria-pressed="false">OBS Automation</button>
+    <button class="chip" type="button" data-cap-domain="platform-systems" aria-pressed="false">Platform Systems</button>
+  </div>
   <p id="capability-explorer-summary" class="meta" role="status" aria-live="polite" aria-atomic="true">Showing all capabilities</p>
 
   <ul class="capability-explorer-grid" aria-label="Capability cards">
-    <li class="capability-explorer-item" data-stage="now" data-domains="publishing,delivery">
+    <li class="capability-explorer-item" data-stage="now" data-domains="content-ops">
       <article class="capability-explorer-card">
         <p class="capability-explorer-kicker">Publishing</p>
         <h3>Publishing system</h3>
@@ -36,7 +44,7 @@ Use this page to understand current operating scope, confidence, and next unlock
       </article>
     </li>
 
-    <li class="capability-explorer-item" data-stage="now" data-domains="design,product">
+    <li class="capability-explorer-item" data-stage="now" data-domains="ux-engineering">
       <article class="capability-explorer-card">
         <p class="capability-explorer-kicker">Product + Design</p>
         <h3>Product and design iteration</h3>
@@ -49,7 +57,7 @@ Use this page to understand current operating scope, confidence, and next unlock
       </article>
     </li>
 
-    <li class="capability-explorer-item" data-stage="now" data-domains="delivery,operations">
+    <li class="capability-explorer-item" data-stage="now" data-domains="execution-reliability">
       <article class="capability-explorer-card">
         <p class="capability-explorer-kicker">Delivery Ops</p>
         <h3>Delivery operations</h3>
@@ -62,7 +70,7 @@ Use this page to understand current operating scope, confidence, and next unlock
       </article>
     </li>
 
-    <li class="capability-explorer-item" data-stage="next" data-domains="streaming,media">
+    <li class="capability-explorer-item" data-stage="next" data-domains="obs-automation">
       <article class="capability-explorer-card">
         <p class="capability-explorer-kicker">Streaming</p>
         <h3>Streaming and media infrastructure</h3>
@@ -75,7 +83,7 @@ Use this page to understand current operating scope, confidence, and next unlock
       </article>
     </li>
 
-    <li class="capability-explorer-item" data-stage="roadmap" data-domains="automation,platform,reliability">
+    <li class="capability-explorer-item" data-stage="roadmap" data-domains="platform-systems">
       <article class="capability-explorer-card">
         <p class="capability-explorer-kicker">Platform</p>
         <h3>Automation platform expansion</h3>

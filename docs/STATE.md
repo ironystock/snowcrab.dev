@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 04:28 MST
+- Last updated: 2026-03-06 04:41 MST
 
 ## Last shipped batch
-- Accessibility sweep batch: shipped a focused contrast pass across active changelog chips, reliability strip status pills, and reliability meta/timestamp text via theme-aware high-contrast tokens and stronger small-label readability.
+- Accessibility sweep batch: refined changelog filter semantics by switching to a semantic-neutral tablist wrapper, adding explicit tab set position metadata, and signaling `aria-busy` during dynamic filter updates.
 
 ## Next queued action
-- Continue accessibility sweep with semantic landmarks + form labeling audit on remaining pages/components, then patch any gaps in one grouped batch.
+- Continue accessibility sweep with a focused landmarks + heading hierarchy audit across non-changelog pages, then patch any gaps in one grouped batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

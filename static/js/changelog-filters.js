@@ -46,6 +46,8 @@
     const focusedBeforeUpdate = document.activeElement;
     let visibleCount = 0;
 
+    if (panel) panel.setAttribute('aria-busy', 'true');
+
     items.forEach((item) => {
       const category = item.getAttribute('data-category') || 'ops';
       const visible = selectedFilter === 'all' || category === selectedFilter;
@@ -106,6 +108,8 @@
     if (syncUrl) {
       writeFilterToUrl(selectedFilter);
     }
+
+    if (panel) panel.setAttribute('aria-busy', 'false');
   };
 
   const activateButton = (btn, options) => {

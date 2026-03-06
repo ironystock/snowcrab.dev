@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 00:59 MST
+- Last updated: 2026-03-06 01:56 MST
 
 ## Last shipped batch
-- Accessibility sweep batch: expanded skip navigation into a 3-link pack (content, primary nav, footer links) with stable jump targets and non-overlapping focus presentation.
+- Accessibility sweep batch: strengthened status chip/pill contrast and focus treatment across light/dark themes (state ink tokens + consistent `:focus-visible` + stronger chip legibility).
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on color contrast + visible focus consistency for status chips/pills across light/dark themes.
+- Continue accessibility sweep with a focused pass on form labeling + keyboard flow checks (contact surfaces, search/filter controls, and any input-adjacent helper text).
 
 ## Active blockers
 - None

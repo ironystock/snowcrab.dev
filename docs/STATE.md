@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 04:58 MST
+- Last updated: 2026-03-06 05:12 MST
 
 ## Last shipped batch
-- Projects dashboard hierarchy batch on `/pages/projects`: added milestone-forward integration metadata, converted integration status details to semantic definition-list structure, and refreshed card styling to improve scanability of status/milestone/next-action/blocker in one pass.
+- Accessibility sweep batch: improved interactive control naming for external GitHub links on homepage status modules by adding explicit open-in-new-tab labels and safer external link attributes.
 
 ## Next queued action
-- Continue accessibility sweep with a focused landmarks + heading hierarchy audit across remaining non-changelog templates, then patch any discovered gaps in one grouped batch.
+- Continue accessibility sweep with a focused heading hierarchy + landmark consistency pass on single/list templates and shared partials, then patch any gaps in one grouped batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

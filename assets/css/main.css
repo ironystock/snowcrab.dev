@@ -470,6 +470,11 @@ main.container {
   font-weight: 700;
 }
 
+.reliability-strip-summary {
+  margin: -0.1rem 0 0.45rem;
+  font-size: 0.82rem;
+}
+
 .reliability-strip-legend {
   display: flex;
   flex-wrap: wrap;

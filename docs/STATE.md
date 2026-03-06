@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 07:00 MST
+- Last updated: 2026-03-06 07:13 MST
 
 ## Last shipped batch
-- Reliability dashboard scanability batch: added a compact live `Overall` pill in the homepage reliability header that rolls up deploy/CI/incidents strip state.
+- Reliability refinement batch: added a compact strip state-mix summary (`Healthy/Degraded/Down` counts) driven by live strip statuses for faster dashboard scanability.
 
 ## Next queued action
-- Continue backlog with responsive layout optimization at 1200px and 1580px for better large-screen (4K) width utilization.
+- Continue backlog with reliability dashboard refinements (compact + scanability) by tightening row-level hierarchy and loading/error state clarity in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

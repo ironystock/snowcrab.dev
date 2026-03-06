@@ -678,8 +678,14 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 }
 
 .projects-health h2 {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.4rem;
   font-size: 1.05rem;
+}
+
+.projects-health-intro {
+  margin: 0 0 0.7rem;
+  color: var(--meta-high-contrast);
+  font-size: 0.89rem;
 }
 
 .projects-health-grid {
@@ -694,14 +700,36 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 .projects-health-item {
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 0.7rem;
+  padding: 0.72rem;
   background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
+}
+
+.projects-health-item--now {
+  border-color: color-mix(in oklab, #2563eb 52%, var(--border));
+  background: color-mix(in oklab, #2563eb 10%, var(--bg-elev));
+}
+
+.projects-health-item--next {
+  border-color: color-mix(in oklab, #7c3aed 48%, var(--border));
+}
+
+.projects-health-item--watch {
+  border-color: color-mix(in oklab, #f59e0b 48%, var(--border));
+}
+
+.projects-health-kicker {
+  margin: 0 0 0.28rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--meta-high-contrast);
 }
 
 .projects-health-item-title {
   margin: 0 0 0.45rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+  letter-spacing: 0.015em;
   display: flex;
   align-items: center;
   gap: 0.45rem;

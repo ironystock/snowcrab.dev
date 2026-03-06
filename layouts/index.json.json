@@ -1,0 +1,15 @@
+{{- $items := slice -}}
+{{- range first 30 (where site.RegularPages "Section" "in" (slice "posts" "changelog" "pages") ).ByDate.Reverse -}}
+  {{- $items = $items | append (dict
+    "title" .Title
+    "url" .Permalink
+    "section" .Section
+    "date" (.Date.Format "2006-01-02T15:04:05Z07:00")
+    "summary" (.Summary | plainify)
+  ) -}}
+{{- end -}}
+{{ dict
+  "site" site.Title
+  "generatedAt" (now.Format "2006-01-02T15:04:05Z07:00")
+  "items" $items
+| jsonify }}

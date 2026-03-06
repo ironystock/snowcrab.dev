@@ -17,7 +17,7 @@ series = "series"
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = false
+      unsafe = true
   [markup.highlight]
     noClasses = false
     codeFences = true

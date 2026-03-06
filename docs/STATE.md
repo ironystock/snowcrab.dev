@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 13:14 MST
+- Last updated: 2026-03-06 13:39 MST
 
 ## Last shipped batch
-- Ops unblock batch: restored local Hugo build validation in this runtime and updated deprecated pagination config (`paginate` → `pagination.pagerSize`) for forward compatibility.
+- Build hygiene completion batch: cleared remaining Hugo warnings by enabling intended raw HTML rendering and adding a home JSON layout template; local build validation now runs cleanly.
 
 ## Next queued action
-- Run a focused follow-up build hygiene pass to review/scope remaining non-blocking Hugo warnings (raw HTML omissions + missing JSON home layout) and patch only if meaningful.
+- No queued product batches currently; next heartbeat should report `no meaningful batch` unless a new TODO is added.
 
 ## Active blockers
 - None

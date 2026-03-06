@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 04:57 MST
+- Last updated: 2026-03-06 04:58 MST
 
 ## Last shipped batch
-- Accessibility sweep batch: completed homepage landmark labeling by adding explicit labels for previously unlabeled hero/layout regions to improve screen-reader section navigation.
+- Projects dashboard hierarchy batch on `/pages/projects`: added milestone-forward integration metadata, converted integration status details to semantic definition-list structure, and refreshed card styling to improve scanability of status/milestone/next-action/blocker in one pass.
 
 ## Next queued action
-- Continue accessibility sweep with a focused form-label + interactive-control name audit across page templates and dashboard modules, then patch gaps in one grouped batch.
+- Continue accessibility sweep with a focused landmarks + heading hierarchy audit across remaining non-changelog templates, then patch any discovered gaps in one grouped batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

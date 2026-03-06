@@ -744,7 +744,7 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
 }
 
-.integration-item header {
+.integration-item-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -757,10 +757,45 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   font-size: 0.98rem;
 }
 
-.integration-item p {
-  margin: 0.32rem 0;
-  font-size: 0.9rem;
+.integration-item-milestone {
+  margin: 0 0 0.5rem;
+  padding: 0.42rem 0.55rem;
+  border-radius: 9px;
+  background: color-mix(in oklab, var(--bg) 82%, var(--primary) 18%);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.integration-item-details {
+  margin: 0;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.integration-item-row {
+  margin: 0;
+  padding-top: 0.36rem;
+  border-top: 1px solid color-mix(in oklab, var(--border) 82%, transparent);
+}
+
+.integration-item-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.integration-item-details dt {
+  margin: 0;
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: var(--muted);
+}
+
+.integration-item-details dd {
+  margin: 0.18rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text);
 }
 
 .site-footer {

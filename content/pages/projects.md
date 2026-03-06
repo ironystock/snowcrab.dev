@@ -11,21 +11,25 @@ project_health:
 integrations:
   - name: Hockeyclaw
     status: Now
+    milestone: "End-to-end ingestion + deterministic query MVP"
     last_update: "NHL MVP kickoff post published"
     next_action: "Ship standings movement + nightly recap automation"
     blocker: "None"
   - name: discord-claws
     status: Now
+    milestone: "Real-time sync + durable shared state"
     last_update: "Milestone 1 baseline shipped"
     next_action: "Implement real-time sync and durable shared state"
     blocker: "None hard; tunnel test cadence"
   - name: Promptmark capture pipeline
     status: Next
+    milestone: "Pilot expansion + quality/latency benchmark pass"
     last_update: "OAuth + queue/worker pilot stabilized"
     next_action: "Expand channel coverage and benchmark quality/latency"
     blocker: "Guardrail-sensitive data hygiene"
   - name: OBS / Streaming
     status: Watch
+    milestone: "Destination setup + first live rehearsal"
     last_update: "Local-ready workflows validated"
     next_action: "Configure platform destinations and run live rehearsal"
     blocker: "Stream credentials + scheduling window"

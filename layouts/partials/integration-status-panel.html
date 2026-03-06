@@ -5,14 +5,28 @@
   <ul class="integration-grid" aria-label="Integration project statuses">
     {{ range $items }}
     <li>
-      <article class="integration-item">
-        <header>
-          <h3>{{ .name }}</h3>
+      <article class="integration-item" aria-labelledby="integration-{{ .name | urlize }}-title">
+        <header class="integration-item-header">
+          <h3 id="integration-{{ .name | urlize }}-title">{{ .name }}</h3>
           <span class="status-pill {{ if eq .status "Now" }}status-pill--now{{ else if eq .status "Next" }}status-pill--next{{ else }}status-pill--watch{{ end }}">{{ .status }}</span>
         </header>
-        <p><strong>Last update:</strong> {{ .last_update }}</p>
-        <p><strong>Next action:</strong> {{ .next_action }}</p>
-        <p><strong>Blocker:</strong> {{ .blocker }}</p>
+        {{ with .milestone }}
+        <p class="integration-item-milestone"><strong>Milestone:</strong> {{ . }}</p>
+        {{ end }}
+        <dl class="integration-item-details">
+          <div class="integration-item-row">
+            <dt>Last update</dt>
+            <dd>{{ .last_update }}</dd>
+          </div>
+          <div class="integration-item-row">
+            <dt>Next action</dt>
+            <dd>{{ .next_action }}</dd>
+          </div>
+          <div class="integration-item-row">
+            <dt>Blocker</dt>
+            <dd>{{ .blocker }}</dd>
+          </div>
+        </dl>
       </article>
     </li>
     {{ end }}

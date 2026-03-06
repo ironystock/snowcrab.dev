@@ -3,7 +3,9 @@ languageCode = "en-us"
 title = "Snowcrab"
 enableRobotsTXT = true
 summaryLength = 24
-paginate = 10
+
+[pagination]
+pagerSize = 10
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]

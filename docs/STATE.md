@@ -2,16 +2,16 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 13:10 MST
+- Last updated: 2026-03-06 13:14 MST
 
 ## Last shipped batch
-- Reliability final QA batch: added roving keyboard navigation on reliability strip links (Arrow/Home/End + Enter/Space) with synchronized hash activation and focus targeting.
+- Ops unblock batch: restored local Hugo build validation in this runtime and updated deprecated pagination config (`paginate` → `pagination.pagerSize`) for forward compatibility.
 
 ## Next queued action
-- Install local Hugo binary in this runtime to restore build validation and remove the recurring blocker line.
+- Run a focused follow-up build hygiene pass to review/scope remaining non-blocking Hugo warnings (raw HTML omissions + missing JSON home layout) and patch only if meaningful.
 
 ## Active blockers
-- Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.
+- None
 
 
 ## Imported Context Snapshot (2026-03-05)

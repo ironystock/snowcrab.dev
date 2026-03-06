@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 07:43 MST
+- Last updated: 2026-03-06 07:58 MST
 
 ## Last shipped batch
-- Reliability refinement batch: improved incidents-row hierarchy with a compact heading + live row-state label (`Loading/Clear/N recent/Delayed/Limited/Down`) synchronized to incidents fetch outcomes.
+- Reliability refinement batch: compacted the incidents list with tighter spacing and bounded height/overflow so incident details remain readable without expanding dashboard height excessively.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements by tightening incidents list compactness/visual density while preserving readability, in one focused batch.
+- Continue backlog with reliability dashboard refinements by tightening loading-state visual consistency across strip/rows in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

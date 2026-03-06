@@ -705,6 +705,21 @@ main.container {
   margin-top: 0.32rem;
 }
 
+.reliability-incidents-list {
+  margin: 0 0 0.45rem 0.95rem;
+  max-height: 7.2rem;
+  overflow: auto;
+  padding-right: 0.25rem;
+}
+
+.reliability-incidents-list li + li {
+  margin-top: 0.2rem;
+}
+
+.reliability-incidents-list a {
+  text-decoration-thickness: 0.08em;
+}
+
 .latest-changelog-card h4 {
   margin-bottom: 0.35rem;
 }

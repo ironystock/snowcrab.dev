@@ -294,7 +294,7 @@
         setStripTone(stripIncidentsEl, 'warn', `Incidents · ${filtered.length}`);
         setRowState(incidentsRowStateEl, 'warn', `${filtered.length} recent`);
         const list = document.createElement('ul');
-        list.className = 'mini-list';
+        list.className = 'mini-list reliability-incidents-list';
 
         filtered.forEach(({ title, link }) => {
           const item = document.createElement('li');

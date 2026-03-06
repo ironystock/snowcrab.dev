@@ -2,16 +2,16 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 13:06 MST
+- Last updated: 2026-03-06 13:10 MST
 
 ## Last shipped batch
-- Local Hugo runtime install + build validation batch: added a no-sudo pinned Hugo installer script, updated local dev/install docs, and verified `~/.local/bin/hugo --gc --minify` succeeds in this runtime.
+- Reliability final QA batch: added roving keyboard navigation on reliability strip links (Arrow/Home/End + Enter/Space) with synchronized hash activation and focus targeting.
 
 ## Next queued action
-- Reliability dashboard final QA sweep (reduced-motion, forced-colors, keyboard deep-link flow) and patch only meaningful inconsistencies.
+- Install local Hugo binary in this runtime to restore build validation and remove the recurring blocker line.
 
 ## Active blockers
-- (none)
+- Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.
 
 
 ## Imported Context Snapshot (2026-03-05)

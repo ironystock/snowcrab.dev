@@ -392,9 +392,53 @@
     refreshBtn.addEventListener('click', runRefresh);
   }
 
-  stripLinks.forEach((link) => {
+  const activateStripLink = (link) => {
+    if (!(link instanceof HTMLElement)) return;
+    const href = link.getAttribute('href') || '';
+
+    if (!href.startsWith('#reliability-row-')) return;
+
+    if (window.location.hash === href) {
+      focusHashTarget();
+      return;
+    }
+
+    window.location.hash = href;
+  };
+
+  stripLinks.forEach((link, index) => {
     link.addEventListener('click', () => {
       window.requestAnimationFrame(focusHashTarget);
+    });
+
+    link.addEventListener('keydown', (event) => {
+      if (!['ArrowRight', 'ArrowLeft', 'Home', 'End', 'Enter', ' '].includes(event.key)) return;
+      event.preventDefault();
+
+      if (event.key === 'Enter' || event.key === ' ') {
+        activateStripLink(link);
+        return;
+      }
+
+      if (event.key === 'Home') {
+        const first = stripLinks[0];
+        first?.focus();
+        activateStripLink(first);
+        return;
+      }
+
+      if (event.key === 'End') {
+        const last = stripLinks[stripLinks.length - 1];
+        last?.focus();
+        activateStripLink(last);
+        return;
+      }
+
+      const delta = event.key === 'ArrowRight' ? 1 : -1;
+      const nextIndex = (index + delta + stripLinks.length) % stripLinks.length;
+      const next = stripLinks[nextIndex];
+      next?.focus();
+      activateStripLink(next);
     });
   });
 

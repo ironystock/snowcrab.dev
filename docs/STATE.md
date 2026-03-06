@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 05:28 MST
+- Last updated: 2026-03-06 05:43 MST
 
 ## Last shipped batch
-- Projects dashboard hierarchy batch: improved `/pages/projects` health module scanability with explicit lane context labels, lane-specific visual framing, and stronger emphasis on the active `Now` lane.
+- Interactive changelog timeline batch: category-filtered views now visually emphasize the newest visible matching entry and apply clearer filtered-state timeline styling for faster scanability.
 
 ## Next queued action
-- Continue backlog with interactive changelog filters timeline behavior refinements, keeping scope to one focused UI batch.
+- Continue backlog with post-level "receipts" module (linked commits/changelog references) in one focused implementation batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

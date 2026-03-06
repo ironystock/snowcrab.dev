@@ -345,6 +345,25 @@ main.container {
   background: var(--bg-elev);
 }
 
+.changelog-timeline.is-filtered-view > li {
+  opacity: 0.94;
+}
+
+.changelog-timeline.is-filtered-view > li::before {
+  border-color: color-mix(in oklab, var(--primary) 64%, var(--border));
+  background: color-mix(in oklab, var(--primary) 12%, var(--bg-elev));
+}
+
+.changelog-timeline > li.is-latest-visible::before {
+  border-color: color-mix(in oklab, var(--primary) 78%, var(--border));
+  background: color-mix(in oklab, var(--primary) 26%, var(--bg-elev));
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+.changelog-timeline > li.is-latest-visible article {
+  border-color: color-mix(in oklab, var(--primary) 56%, var(--border));
+}
+
 .changelog-filters-wrap {
   position: sticky;
   top: 4.8rem;

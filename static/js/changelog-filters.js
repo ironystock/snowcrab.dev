@@ -48,12 +48,30 @@
 
     if (panel) panel.setAttribute('aria-busy', 'true');
 
+    const visibleItems = [];
+
     items.forEach((item) => {
       const category = item.getAttribute('data-category') || 'ops';
       const visible = selectedFilter === 'all' || category === selectedFilter;
       item.hidden = !visible;
-      if (visible) visibleCount += 1;
+      item.classList.remove('is-latest-visible');
+      item.removeAttribute('data-visible-index');
+
+      if (visible) {
+        visibleCount += 1;
+        visibleItems.push(item);
+      }
     });
+
+    list.dataset.activeFilter = selectedFilter;
+    list.classList.toggle('is-filtered-view', selectedFilter !== 'all');
+
+    if (visibleItems.length > 0) {
+      visibleItems[0].classList.add('is-latest-visible');
+      visibleItems.forEach((item, index) => {
+        item.setAttribute('data-visible-index', String(index + 1));
+      });
+    }
 
     let activeId = '';
     buttons.forEach((btn) => {

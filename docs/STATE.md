@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 09:43 MST
+- Last updated: 2026-03-06 09:58 MST
 
 ## Last shipped batch
-- Return-visitor module refinement: upgraded “What changed since last visit” to detect multiple new changelog entries and show up to three recent highlights with dates/links.
+- Reliability readability batch: grouped strip summary + legend into a compact footer row and grouped deploy/CI primary value + row-state labels into a single status cluster for cleaner scan flow.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements (final compactness/readability polish) in one focused batch.
+- Continue backlog with reliability dashboard refinements by validating compact row readability in reduced-motion/forced-color modes and patching any gaps in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

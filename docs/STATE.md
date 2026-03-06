@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 18:25 MST
+- Last updated: 2026-03-05 18:40 MST
 
 ## Last shipped batch
-- Reliability pass 70: added a compact status legend below the reliability strip to clarify color/state semantics (Healthy, Degraded, Down) for faster scanning.
+- Reliability pass 71: upgraded compact-strip legend to grouped list semantics (`role=group` + labeled `ul/li`) for clearer structural meaning while preserving compact scanability.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

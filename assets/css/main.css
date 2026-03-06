@@ -394,6 +394,20 @@ main.container {
   margin: -0.2rem 0 0.65rem;
 }
 
+.reliability-strip-legend-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reliability-strip-legend-list li {
+  margin: 0;
+}
+
 .reliability-strip-legend .status-pill {
   font-size: 0.68rem;
 }

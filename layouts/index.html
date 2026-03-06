@@ -130,7 +130,14 @@
         <li><a id="reliability-strip-ci" class="status-pill reliability-strip-link" href="#reliability-row-ci">CI · Loading</a></li>
         <li><a id="reliability-strip-incidents" class="status-pill reliability-strip-link" href="#reliability-row-incidents">Incidents · Loading</a></li>
       </ul>
-      <p class="meta reliability-strip-legend">Legend: <span class="status-pill status-pill--ok">Healthy</span> <span class="status-pill status-pill--watch">Degraded</span> <span class="status-pill status-pill--bad">Down</span></p>
+      <div class="meta reliability-strip-legend" role="group" aria-labelledby="reliability-strip-legend-heading">
+        <span id="reliability-strip-legend-heading">Legend:</span>
+        <ul class="reliability-strip-legend-list" aria-label="Reliability state legend">
+          <li><span class="status-pill status-pill--ok">Healthy</span></li>
+          <li><span class="status-pill status-pill--watch">Degraded</span></li>
+          <li><span class="status-pill status-pill--bad">Down</span></li>
+        </ul>
+      </div>
 
       <dl class="reliability-metrics">
         <div class="reliability-row" id="reliability-row-deploy">

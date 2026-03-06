@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 10:28 MST
+- Last updated: 2026-03-06 10:43 MST
 
 ## Last shipped batch
-- Reliability mobile polish batch: tightened small-screen strip/row spacing and typography in the reliability module to improve compactness and scan flow on phones.
+- Changelog interaction polish batch: added compact rank badges for filtered timeline entries so visible scan order is explicit after category filtering.
 
 ## Next queued action
-- Continue backlog with changelog timeline interaction polish (final scan/readability refinements) in one focused batch.
+- Continue backlog with final changelog readability polish pass (micro-typography/spacing tuning under filters) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

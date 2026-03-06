@@ -663,6 +663,37 @@ article.prose pre {
 }
 article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
 
+.post-receipts {
+  margin-top: 1rem;
+}
+
+.post-receipts h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.post-receipts-intro {
+  margin-bottom: 0.6rem;
+}
+
+.post-receipts-group + .post-receipts-group {
+  margin-top: 0.7rem;
+}
+
+.post-receipts-group h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.92rem;
+}
+
+.post-receipts-list {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.post-receipts-list li + li {
+  margin-top: 0.28rem;
+}
+
 .author-bio {
   margin-top: 1rem;
   display: grid;
@@ -1054,6 +1085,51 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .capability-badge--roadmap {
   background: color-mix(in oklab, var(--primary) 18%, var(--bg-elev));
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --muted: #233146;
+    --meta-high-contrast: #1b273a;
+    --focus-ring: color-mix(in oklab, var(--primary) 85%, white 15%);
+  }
+
+  :root[data-theme="dark"] {
+    --muted: #c1cfdf;
+    --meta-high-contrast: #d8e3f2;
+    --focus-ring: color-mix(in oklab, var(--primary) 88%, white 12%);
+  }
+
+  a {
+    text-decoration-thickness: 0.13em;
+    text-underline-offset: 0.18em;
+  }
+
+  .card,
+  .projects-health-item,
+  .integration-item,
+  .project-health-card,
+  .status-pill,
+  .reliability-status,
+  .nav-list a,
+  .chip,
+  .theme-toggle {
+    border-width: 2px;
+  }
+
+  .muted,
+  .meta,
+  .reliability-card .meta,
+  #reliability-last-refreshed-relative,
+  .projects-health-copy,
+  .author-bio-text {
+    color: var(--meta-high-contrast);
+  }
+
+  :where(a, button, [role="button"], input, select, textarea, summary, .chip, .nav-list a):focus-visible {
+    outline-width: 3px;
+    outline-offset: 3px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

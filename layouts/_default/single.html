@@ -23,6 +23,7 @@
 </article>
 
 {{ if eq .Section "posts" }}
+  {{ partial "post-receipts-module.html" . }}
   {{ partial "author-bio.html" . }}
 {{ end }}
 {{ end }}

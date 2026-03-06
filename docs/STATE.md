@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 05:43 MST
+- Last updated: 2026-03-06 05:58 MST
 
 ## Last shipped batch
-- Interactive changelog timeline batch: category-filtered views now visually emphasize the newest visible matching entry and apply clearer filtered-state timeline styling for faster scanability.
+- Post receipts batch: added a reusable Receipts module on post pages that links nearby changelog artifacts and supports optional explicit front matter references.
 
 ## Next queued action
-- Continue backlog with post-level "receipts" module (linked commits/changelog references) in one focused implementation batch.
+- Continue backlog with capability explorer filters (`Now/Next/Roadmap`) and domain tag surfacing in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

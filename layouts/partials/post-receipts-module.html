@@ -1,0 +1,43 @@
+{{ if eq .Section "posts" }}
+{{ $changes := where site.RegularPages "Section" "changelog" }}
+{{ $windowStart := .Date.AddDate 0 0 -21 }}
+{{ $windowEnd := .Date.AddDate 0 0 21 }}
+{{ $nearby := where (where $changes "Date" ">=" $windowStart) "Date" "<=" $windowEnd }}
+{{ $nearby = first 3 ($nearby.ByDate.Reverse) }}
+{{ $customReceipts := .Params.receipts }}
+{{ $hasCustom := and $customReceipts (gt (len $customReceipts) 0) }}
+{{ $hasNearby := gt (len $nearby) 0 }}
+{{ if or $hasCustom $hasNearby }}
+<section class="post-receipts card" aria-labelledby="post-receipts-heading">
+  <h2 id="post-receipts-heading">Receipts</h2>
+  <p class="meta post-receipts-intro">Linked shipping artifacts connected to this post.</p>
+
+  {{ if $hasNearby }}
+  <div class="post-receipts-group">
+    <h3>Related changelog entries</h3>
+    <ul class="post-receipts-list">
+      {{ range $nearby }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="muted">· <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{ if $hasCustom }}
+  <div class="post-receipts-group">
+    <h3>Referenced links</h3>
+    <ul class="post-receipts-list">
+      {{ range $customReceipts }}
+      <li>
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label | default .url }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 18:55 MST
+- Last updated: 2026-03-06 00:59 MST
 
 ## Last shipped batch
-- Reliability pass 72: added continuously updating relative refresh-age text beside the absolute last-refreshed timestamp for faster recency scanning.
+- Accessibility sweep batch: expanded skip navigation into a 3-link pack (content, primary nav, footer links) with stable jump targets and non-overlapping focus presentation.
 
 ## Next queued action
-- Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.
+- Continue accessibility sweep with a focused pass on color contrast + visible focus consistency for status chips/pills across light/dark themes.
 
 ## Active blockers
 - None

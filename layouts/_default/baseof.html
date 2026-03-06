@@ -76,7 +76,11 @@
   <script defer src="/js/nav-scroll.js?v={{ $assetRev }}"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="skip-links" aria-label="Skip links">
+    <a class="skip-link" style="--skip-index: 0" href="#main-content">Skip to content</a>
+    <a class="skip-link" style="--skip-index: 1" href="#main-navigation">Skip to navigation</a>
+    <a class="skip-link" style="--skip-index: 2" href="#footer-links">Skip to footer links</a>
+  </div>
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/">
@@ -84,7 +88,7 @@
         <span>Snowcrab</span>
       </a>
       <span id="main-nav-heading" class="sr-only">Main navigation</span>
-      <nav class="nav" aria-labelledby="main-nav-heading">
+      <nav id="main-navigation" class="nav" aria-labelledby="main-nav-heading">
         <span id="main-nav-hint" class="sr-only" hidden>Main navigation is horizontally scrollable on smaller screens. Use left and right arrow keys to move through links.</span>
         {{ $current := .RelPermalink }}
         <ul class="nav-list">
@@ -111,7 +115,7 @@
   <footer class="site-footer">
     <div class="container">
       <h2 id="footer-links-heading" class="sr-only">Footer links</h2>
-      <nav class="footer-links" aria-labelledby="footer-links-heading">
+      <nav id="footer-links" class="footer-links" aria-labelledby="footer-links-heading">
         <ul class="footer-links-list">
           {{ $footerLinks := slice
             (dict "name" "About" "url" "/pages/about/")

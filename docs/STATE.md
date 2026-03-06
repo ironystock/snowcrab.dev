@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 02:59 MST
+- Last updated: 2026-03-06 04:00 MST
 
 ## Last shipped batch
-- Accessibility sweep batch: improved keyboard focus wayfinding by making skip links a semantic navigation landmark, extending focus-within treatment to project/integration/details cards, and adding explicit `summary:focus-visible` (including forced-colors support).
+- Accessibility sweep batch: replaced non-semantic project/integration dashboard wrappers with semantic list structures, fixed invalid `dl` grouping patterns on project health cards, and preserved visual behavior with updated list + heading/copy styles.
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on semantic landmarks + heading hierarchy checks across home/projects/changelog, then tackle any remaining color-contrast edge cases.
+- Continue accessibility sweep with a focused pass on keyboard flow + focus order in dynamic UI areas (changelog filters/reliability controls), then run a targeted contrast verification pass.
 
 ## Active blockers
 - None

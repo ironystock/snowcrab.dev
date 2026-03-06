@@ -671,6 +671,8 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0.7rem;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .projects-health-item {
@@ -680,18 +682,16 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
 }
 
-.projects-health-item dt {
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--muted);
+.projects-health-item-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
-.projects-health-item dd {
-  margin: 0.35rem 0 0.45rem;
-}
-
-.projects-health-item p {
+.projects-health-copy {
   margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
@@ -710,6 +710,9 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 860px) {

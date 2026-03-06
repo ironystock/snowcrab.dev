@@ -93,6 +93,22 @@
       {{ end }}
     </section>
 
+    {{ $lastVisitChanges := where site.RegularPages "Section" "changelog" }}
+    {{ $lastVisitLatest := first 1 ($lastVisitChanges.ByDate.Reverse) }}
+    <section class="card" id="last-visit-module" aria-labelledby="last-visit-heading"
+      {{ with $lastVisitLatest }}
+      {{ $entry := index . 0 }}
+      data-latest-date="{{ $entry.Date.Format "2006-01-02T15:04:05Z07:00" }}"
+      data-latest-title="{{ $entry.Title }}"
+      data-latest-url="{{ $entry.RelPermalink }}"
+      {{ end }}>
+      <h3 id="last-visit-heading">What changed since last visit</h3>
+      <p class="meta" id="last-visit-summary">Checking recent changes…</p>
+      <p class="muted" id="last-visit-details">Comparing your previous visit with the latest changelog updates.</p>
+      <p class="meta">Last seen: <span id="last-visit-seen-at">Loading…</span></p>
+      <p><a href="/changelog/">Browse full changelog →</a></p>
+    </section>
+
     <section class="card now-building-card" aria-labelledby="now-building-heading">
       <h3 id="now-building-heading">Now building</h3>
       {{ $changes := where site.RegularPages "Section" "changelog" }}

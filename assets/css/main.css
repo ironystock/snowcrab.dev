@@ -642,6 +642,15 @@ main.container {
   margin-bottom: 0.35rem;
 }
 
+#last-visit-module .meta {
+  margin-bottom: 0.45rem;
+}
+
+#last-visit-seen-at {
+  color: var(--meta-high-contrast);
+  font-weight: 600;
+}
+
 .now-building-card img {
   max-width: 100%;
   height: auto;

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 06:14 MST
+- Last updated: 2026-03-06 06:28 MST
 
 ## Last shipped batch
-- Capability explorer batch: rebuilt `/pages/capabilities` as a filterable stage-based explorer with `Now/Next/Roadmap` chips, domain tags, and keyboard-friendly tablist filtering behavior.
+- Homepage return-visitor batch: added a “What changed since last visit” module using localStorage + latest changelog metadata to indicate whether new updates landed since prior visit.
 
 ## Next queued action
-- Continue backlog with “what changed since last visit” module using localStorage + changelog feed in one focused batch.
+- Continue backlog with lightweight command/search bar (`/` or `Cmd/Ctrl+K`) for posts/pages/changelog in one focused implementation batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

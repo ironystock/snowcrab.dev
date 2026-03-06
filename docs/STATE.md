@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 05:58 MST
+- Last updated: 2026-03-06 06:04 MST
 
 ## Last shipped batch
-- Post receipts batch: added a reusable Receipts module on post pages that links nearby changelog artifacts and supports optional explicit front matter references.
+- Accessibility landmark labeling pass: added explicit labels for header/main/footer landmarks and clarified home-link announcement intent for assistive tech.
 
 ## Next queued action
-- Continue backlog with capability explorer filters (`Now/Next/Roadmap`) and domain tag surfacing in one focused batch.
+- Continue accessibility sweep with a focused keyboard-flow + form-labeling audit batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

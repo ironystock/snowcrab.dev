@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 06:44 MST
+- Last updated: 2026-03-06 06:59 MST
 
 ## Last shipped batch
-- Global navigation batch: added a lightweight command/search bar (open with `/` or `Cmd/Ctrl+K`) for fast lookup across posts, pages, and changelog entries.
+- Reading-mode batch: added post-page reading controls (`Default/Comfortable/Focus/High contrast`) with localStorage persistence and preset-aware typography/surface styling.
 
 ## Next queued action
-- Continue backlog with reading mode controls on post pages (font size/line width/contrast presets) in one focused UI batch.
+- Continue backlog with reliability dashboard refinements (compact status strip + scanability) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

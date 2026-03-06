@@ -549,6 +549,19 @@ main.container {
   margin-bottom: 0;
 }
 
+.reliability-heading-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.reliability-overall {
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
 .reliability-refresh {
   border: 1px solid var(--border);
   background: var(--bg-elev);
@@ -768,6 +781,43 @@ article.prose pre {
   background: color-mix(in oklab, var(--bg-elev) 86%, black 14%);
 }
 article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.reading-mode-controls {
+  margin: 0.35rem 0 0.9rem;
+}
+
+.reading-mode-controls .meta {
+  margin-bottom: 0.45rem;
+}
+
+.reading-mode-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.post-reading-surface[data-reading-preset="comfortable"] p,
+.post-reading-surface[data-reading-preset="comfortable"] li {
+  line-height: 1.82;
+  max-width: 66ch;
+}
+
+.post-reading-surface[data-reading-preset="focus"] p,
+.post-reading-surface[data-reading-preset="focus"] li {
+  line-height: 1.9;
+  max-width: 58ch;
+  font-size: 1.03rem;
+}
+
+.post-reading-surface[data-reading-preset="high-contrast"] {
+  background: color-mix(in oklab, var(--bg-elev) 92%, #ffffff 8%);
+  border-color: color-mix(in oklab, var(--text) 40%, var(--border));
+}
+
+:root[data-theme="dark"] .post-reading-surface[data-reading-preset="high-contrast"] {
+  background: color-mix(in oklab, var(--bg-elev) 88%, #ffffff 12%);
+  border-color: color-mix(in oklab, #ffffff 42%, var(--border));
+}
 
 .post-receipts {
   margin-top: 1rem;
@@ -1385,6 +1435,16 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
   .hero { padding: 1.05rem; border-radius: 14px; }
   .card { padding: 0.9rem 0.95rem; }
+
+  .reliability-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .reliability-heading-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
 
   .author-bio {
     grid-template-columns: 1fr;

@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="prose card" aria-labelledby="page-title" aria-describedby="page-meta">
+<article class="prose card {{ if eq .Section "posts" }}post-reading-surface{{ end }}" aria-labelledby="page-title" aria-describedby="page-meta" {{ if eq .Section "posts" }}id="post-reading-surface"{{ end }}>
   <header>
     <h1 id="page-title">{{ .Title }}</h1>
     <p class="meta" id="page-meta">
@@ -15,6 +15,18 @@
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "projects") }}
     {{ partial "projects-health-dashboard.html" . }}
     {{ partial "integration-status-panel.html" . }}
+  {{ end }}
+  {{ if eq .Section "posts" }}
+  <section class="reading-mode-controls" aria-labelledby="reading-mode-heading" id="reading-mode-controls">
+    <h2 id="reading-mode-heading" class="sr-only">Reading mode controls</h2>
+    <p class="meta">Reading mode</p>
+    <div class="reading-mode-chips" role="group" aria-label="Adjust post reading mode">
+      <button class="chip is-active" type="button" data-reading-preset="default" aria-pressed="true">Default</button>
+      <button class="chip" type="button" data-reading-preset="comfortable" aria-pressed="false">Comfortable</button>
+      <button class="chip" type="button" data-reading-preset="focus" aria-pressed="false">Focus</button>
+      <button class="chip" type="button" data-reading-preset="high-contrast" aria-pressed="false">High contrast</button>
+    </div>
+  </section>
   {{ end }}
   <section aria-labelledby="article-content-heading">
     <h2 id="article-content-heading" class="sr-only">Article content</h2>

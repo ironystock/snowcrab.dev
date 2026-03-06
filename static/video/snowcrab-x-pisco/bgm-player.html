@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;background:transparent;width:100%;height:100%}</style></head><body>
+<audio id="bgm" autoplay loop playsinline>
+  <source src="http://192.168.4.159:8787/media/crunch-de-lune.mp3" type="audio/mpeg">
+</audio>
+<script>
+  const a=document.getElementById('bgm');
+  a.volume=0.38;
+  const kick=()=>a.play().catch(()=>{});
+  setInterval(kick,2000);
+  kick();
+</script>
+</body></html>

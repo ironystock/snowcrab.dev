@@ -18,6 +18,7 @@
   const stripSummaryEl = document.getElementById('reliability-strip-summary');
   const deployRowStateEl = document.getElementById('reliability-row-deploy-state');
   const ciRowStateEl = document.getElementById('reliability-row-ci-state');
+  const incidentsRowStateEl = document.getElementById('reliability-row-incidents-state');
   const stripLinks = [stripDeployEl, stripCiEl, stripIncidentsEl].filter(Boolean);
 
   const owner = root.dataset.repoOwner;
@@ -190,6 +191,7 @@
     setStripTone(stripIncidentsEl, 'warn', 'Incidents · Loading');
     setRowState(deployRowStateEl, 'warn', 'Loading');
     setRowState(ciRowStateEl, 'warn', 'Loading');
+    setRowState(incidentsRowStateEl, 'warn', 'Loading');
 
     let incidentsSummary = 'incidents unknown';
 
@@ -284,11 +286,13 @@
           incidentsEl.textContent = 'No recent incident/fix-tagged entries.';
           incidentsSummary = 'no recent incident-tagged entries';
           setStripTone(stripIncidentsEl, 'ok', 'Incidents · Clear');
+          setRowState(incidentsRowStateEl, 'ok', 'Clear');
           return;
         }
 
         incidentsSummary = `${filtered.length} incident-related entr${filtered.length === 1 ? 'y' : 'ies'}`;
         setStripTone(stripIncidentsEl, 'warn', `Incidents · ${filtered.length}`);
+        setRowState(incidentsRowStateEl, 'warn', `${filtered.length} recent`);
         const list = document.createElement('ul');
         list.className = 'mini-list';
 
@@ -308,6 +312,7 @@
         if (kind === 'timeout') {
           incidentsSummary = 'incident feed timed out';
           setStripTone(stripIncidentsEl, 'warn', 'Incidents · Delayed');
+          setRowState(incidentsRowStateEl, 'warn', 'Delayed');
           if (incidentsEl) incidentsEl.textContent = 'Timed out';
           return;
         }
@@ -315,12 +320,14 @@
         if (kind === 'rate-limit') {
           incidentsSummary = 'incident feed rate limited';
           setStripTone(stripIncidentsEl, 'warn', 'Incidents · Limited');
+          setRowState(incidentsRowStateEl, 'warn', 'Limited');
           if (incidentsEl) incidentsEl.textContent = 'Rate limited';
           return;
         }
 
         incidentsSummary = 'incidents unavailable';
         setStripTone(stripIncidentsEl, 'bad', 'Incidents · Down');
+        setRowState(incidentsRowStateEl, 'bad', 'Down');
         if (incidentsEl) incidentsEl.textContent = 'Unavailable';
       })
       .finally(() => {

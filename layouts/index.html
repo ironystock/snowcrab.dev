@@ -180,7 +180,10 @@
         </div>
       </dl>
 
-      <p class="meta" id="reliability-row-incidents" tabindex="-1">Recent incidents / fixes</p>
+      <div class="reliability-incidents-heading" id="reliability-row-incidents" tabindex="-1">
+        <p class="meta">Recent incidents / fixes</p>
+        <span id="reliability-row-incidents-state" class="reliability-row-state" aria-live="polite">Loading</span>
+      </div>
       <div id="reliability-incidents" class="muted">Loading changelog signals…</div>
       <p class="meta">Last refreshed: <time id="reliability-last-refreshed" datetime="">Loading…</time> <span id="reliability-last-refreshed-relative">(pending)</span></p>
       <span id="reliability-summary-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>

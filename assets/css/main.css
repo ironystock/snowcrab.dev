@@ -600,6 +600,18 @@ main.container {
   margin: 0 0 0.72rem;
 }
 
+.reliability-incidents-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+  margin: 0 0 0.3rem;
+}
+
+.reliability-incidents-heading .meta {
+  margin: 0;
+}
+
 .reliability-label {
   display: block;
   margin-bottom: 0.3rem;

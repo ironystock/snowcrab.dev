@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 07:28 MST
+- Last updated: 2026-03-06 07:43 MST
 
 ## Last shipped batch
-- Reliability refinement batch: added explicit row-level state labels for Deploy/CI (`Loading/Healthy/Running/Degraded/Down`) with live tone-sync to improve scanability and loading/error clarity.
+- Reliability refinement batch: improved incidents-row hierarchy with a compact heading + live row-state label (`Loading/Clear/N recent/Delayed/Limited/Down`) synchronized to incidents fetch outcomes.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements by improving incidents row hierarchy/compactness in one focused batch.
+- Continue backlog with reliability dashboard refinements by tightening incidents list compactness/visual density while preserving readability, in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

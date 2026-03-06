@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 11:40 MST
+- Last updated: 2026-03-06 11:59 MST
 
 ## Last shipped batch
-- Cross-surface keyboard polish batch: active items now auto-scroll into view in both command palette results and changelog filter tabs, with reduced-motion-aware behavior.
+- Post receipts evidence pass: post pages now auto-surface linked GitHub commits and inline changelog references from post content in the Receipts module (plus new changelog entry documenting the batch).
 
 ## Next queued action
-- Continue backlog with final reliability/changelog UX cross-check pass (small consistency fixes only if meaningful) in one focused batch.
+- Start capability explorer filter-chip batch (`Now/Next/Roadmap` + domain tags) as the next meaningful backlog item.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

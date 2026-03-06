@@ -7,7 +7,26 @@
 {{ $customReceipts := .Params.receipts }}
 {{ $hasCustom := and $customReceipts (gt (len $customReceipts) 0) }}
 {{ $hasNearby := gt (len $nearby) 0 }}
-{{ if or $hasCustom $hasNearby }}
+
+{{ $raw := .RawContent }}
+{{ $commitPattern := `https?://github\.com/[\w\-.]+/[\w\-.]+/commit/[0-9a-fA-F]{7,40}` }}
+{{ $foundCommitUrls := uniq (findRE $commitPattern $raw) }}
+{{ $hasCommitLinks := gt (len $foundCommitUrls) 0 }}
+
+{{ $changelogPattern := `(?:https?://[^\s)]+)?/changelog/[\w\-/]+/?` }}
+{{ $foundChangelogUrls := uniq (findRE $changelogPattern $raw) }}
+{{ $normalizedChangelogUrls := slice }}
+{{ range $foundChangelogUrls }}
+  {{ $entry := . }}
+  {{ if hasPrefix $entry "http" }}
+    {{ $entry = replaceRE `https?://[^/]+` "" $entry }}
+  {{ end }}
+  {{ $normalizedChangelogUrls = $normalizedChangelogUrls | append $entry }}
+{{ end }}
+{{ $normalizedChangelogUrls = uniq $normalizedChangelogUrls }}
+{{ $hasInlineChangelogRefs := gt (len $normalizedChangelogUrls) 0 }}
+
+{{ if or $hasCustom $hasNearby $hasCommitLinks $hasInlineChangelogRefs }}
 <section class="post-receipts card" aria-labelledby="post-receipts-heading">
   <h2 id="post-receipts-heading">Receipts</h2>
   <p class="meta post-receipts-intro">Linked shipping artifacts connected to this post.</p>
@@ -20,6 +39,30 @@
       <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         <span class="muted">· <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{ if $hasInlineChangelogRefs }}
+  <div class="post-receipts-group">
+    <h3>Referenced changelog links</h3>
+    <ul class="post-receipts-list">
+      {{ range first 5 $normalizedChangelogUrls }}
+      <li><a href="{{ . }}">{{ . }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{ if $hasCommitLinks }}
+  <div class="post-receipts-group">
+    <h3>Linked commits</h3>
+    <ul class="post-receipts-list">
+      {{ range first 5 $foundCommitUrls }}
+      <li>
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ replaceRE `(.*/commit/)([0-9a-fA-F]{7}).*` "$1$2" . }}</a>
       </li>
       {{ end }}
     </ul>

@@ -992,6 +992,16 @@ main.container {
   background: color-mix(in oklab, var(--primary) 14%, var(--bg));
 }
 
+.command-meta-tag {
+  display: inline-block;
+  padding: 0.02rem 0.34rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  line-height: 1.15;
+  color: var(--meta-high-contrast);
+}
+
 .command-result:focus-visible {
   outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
   outline-offset: 2px;

@@ -46,7 +46,7 @@
     const filtered = items
       .filter((item) => {
         if (!q) return true;
-        return `${item.title} ${item.section}`.toLowerCase().includes(q);
+        return `${item.title} ${item.section} ${item.category || ''}`.toLowerCase().includes(q);
       })
       .slice(0, 12);
 
@@ -60,14 +60,19 @@
     }
 
     results.innerHTML = filtered
-      .map((item, idx) => `
+      .map((item, idx) => {
+        const sectionLabel = item.section || 'content';
+        const categoryLabel = item.category ? ` · ${item.category}` : '';
+
+        return `
         <li role="presentation">
           <a id="command-result-${idx}" href="${item.url}" role="option" aria-selected="${idx === activeIndex ? 'true' : 'false'}" class="command-result ${idx === activeIndex ? 'is-active' : ''}" data-index="${idx}">
             <span>${item.title}</span>
-            <span class="meta">${item.section} · ${item.date}</span>
+            <span class="meta"><span class="command-meta-tag">${sectionLabel}</span>${categoryLabel} · ${item.date}</span>
           </a>
         </li>
-      `)
+      `;
+      })
       .join('');
 
     const links = Array.from(results.querySelectorAll('.command-result'));

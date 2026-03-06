@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 12:39 MST
+- Last updated: 2026-03-06 12:55 MST
 
 ## Last shipped batch
-- Reliability deep-link polish: strip links now track active hash target state (`aria-current=location`) with matching visual active-target styling for clearer keyboard/deep-link orientation.
+- Changelog/command cross-flow batch: command palette now indexes category metadata, matches category terms in search, and surfaces section/category context directly in result rows.
 
 ## Next queued action
-- Changelog interaction final QA sweep (filtered timeline + command palette cross-flow) and patch only meaningful inconsistencies.
+- Reliability dashboard final QA sweep (reduced-motion, forced-colors, keyboard deep-link flow) and patch only meaningful inconsistencies.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

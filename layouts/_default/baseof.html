@@ -144,7 +144,8 @@
   {{ $commandPages := where site.RegularPages "Section" "in" (slice "posts" "pages" "changelog") }}
   {{ $commandItems := slice }}
   {{ range first 140 ($commandPages.ByDate.Reverse) }}
-    {{ $commandItems = $commandItems | append (dict "title" .Title "url" .RelPermalink "section" .Section "date" (.Date.Format "2006-01-02")) }}
+    {{ $commandCategory := .Params.category | default "" | lower }}
+    {{ $commandItems = $commandItems | append (dict "title" .Title "url" .RelPermalink "section" .Section "category" $commandCategory "date" (.Date.Format "2006-01-02")) }}
   {{ end }}
   <dialog id="command-palette" class="command-palette" aria-labelledby="command-palette-title">
     <form method="dialog" class="command-palette-sheet">

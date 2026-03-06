@@ -9,12 +9,19 @@
 
   let items = [];
   let activeIndex = 0;
+  let activeResults = [];
 
   try {
     items = JSON.parse(dataEl.textContent || '[]');
   } catch (_) {
     items = [];
   }
+
+  const setActiveDescendant = () => {
+    const links = Array.from(results.querySelectorAll('.command-result'));
+    const active = links[activeIndex];
+    input.setAttribute('aria-activedescendant', active?.id || '');
+  };
 
   const render = (query = '') => {
     const q = query.trim().toLowerCase();
@@ -25,16 +32,19 @@
       })
       .slice(0, 12);
 
+    activeResults = filtered;
+
     if (!filtered.length) {
-      results.innerHTML = '<li class="command-palette-empty">No matches found.</li>';
+      results.innerHTML = '<li class="command-palette-empty" role="status">No matches found.</li>';
       activeIndex = 0;
+      input.setAttribute('aria-activedescendant', '');
       return;
     }
 
     results.innerHTML = filtered
       .map((item, idx) => `
-        <li>
-          <a href="${item.url}" class="command-result ${idx === activeIndex ? 'is-active' : ''}" data-index="${idx}">
+        <li role="presentation">
+          <a id="command-result-${idx}" href="${item.url}" role="option" aria-selected="${idx === activeIndex ? 'true' : 'false'}" class="command-result ${idx === activeIndex ? 'is-active' : ''}" data-index="${idx}">
             <span>${item.title}</span>
             <span class="meta">${item.section} · ${item.date}</span>
           </a>
@@ -49,10 +59,13 @@
         render(query);
       });
     });
+
+    setActiveDescendant();
   };
 
   const openPalette = () => {
     dialog.showModal();
+    input.setAttribute('aria-expanded', 'true');
     activeIndex = 0;
     input.value = '';
     render('');
@@ -61,6 +74,8 @@
 
   const closePalette = () => {
     if (dialog.open) dialog.close();
+    input.setAttribute('aria-expanded', 'false');
+    input.setAttribute('aria-activedescendant', '');
     toggle.focus({ preventScroll: true });
   };
 
@@ -107,7 +122,8 @@
     if (event.key === 'Enter') {
       event.preventDefault();
       const active = links[activeIndex];
-      if (active) window.location.href = active.getAttribute('href') || '/';
+      const href = active?.getAttribute('href') || activeResults[activeIndex]?.url || '/';
+      window.location.href = href;
     }
   });
 
@@ -122,6 +138,8 @@
   });
 
   dialog.addEventListener('close', () => {
+    input.setAttribute('aria-expanded', 'false');
+    input.setAttribute('aria-activedescendant', '');
     toggle.focus({ preventScroll: true });
   });
 })();

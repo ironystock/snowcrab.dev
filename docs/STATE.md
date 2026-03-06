@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 08:58 MST
+- Last updated: 2026-03-06 09:13 MST
 
 ## Last shipped batch
-- Wide-screen density batch: rebalanced desktop homepage columns, tuned paragraph line lengths, and enabled responsive multi-column capability/demo grids for better large-screen scanability.
+- Accessibility sweep batch: upgraded command palette semantics to a proper combobox/listbox pattern with active-descendant tracking and explicit option selection states.
 
 ## Next queued action
 - Continue backlog with reliability dashboard refinements (final compactness/readability polish) in one focused batch.

@@ -152,9 +152,9 @@
         <button value="cancel" class="command-palette-close" aria-label="Close search">×</button>
       </div>
       <label for="command-palette-input" class="sr-only">Search content</label>
-      <input id="command-palette-input" class="command-palette-input" type="search" placeholder="Type to search..." autocomplete="off" />
+      <input id="command-palette-input" class="command-palette-input" type="search" placeholder="Type to search..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="command-palette-results" aria-autocomplete="list" aria-activedescendant="" />
       <p class="meta command-palette-hint">Use ↑/↓ to navigate, Enter to open, Esc to close.</p>
-      <ul id="command-palette-results" class="command-palette-results" aria-live="polite"></ul>
+      <ul id="command-palette-results" class="command-palette-results" role="listbox" aria-live="polite"></ul>
     </form>
   </dialog>
   <script id="command-palette-data" type="application/json">{{ $commandItems | jsonify }}</script>

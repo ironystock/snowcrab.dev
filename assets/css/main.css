@@ -11,6 +11,10 @@
   --state-next-ink: #4c1d95;
   --state-watch-ink: #7c2d12;
   --state-bad-ink: #7f1d1d;
+  --chip-active-ink: #7f1d1d;
+  --chip-active-bg: color-mix(in oklab, #db4652 20%, var(--bg-elev));
+  --chip-active-border: color-mix(in oklab, #db4652 70%, var(--border));
+  --meta-high-contrast: #2f3f56;
 }
 
 :root[data-theme="dark"] {
@@ -26,6 +30,10 @@
   --state-next-ink: #c4b5fd;
   --state-watch-ink: #fcd34d;
   --state-bad-ink: #fca5a5;
+  --chip-active-ink: #ffe4e6;
+  --chip-active-bg: color-mix(in oklab, #ff6470 30%, var(--bg-elev));
+  --chip-active-border: color-mix(in oklab, #ff6470 76%, var(--border));
+  --meta-high-contrast: #b4c3d9;
 }
 
 :root {
@@ -386,9 +394,9 @@ main.container {
 }
 
 .chip.is-active {
-  border-color: color-mix(in oklab, var(--primary) 65%, var(--border));
-  background: color-mix(in oklab, var(--primary) 12%, var(--bg-elev));
-  color: color-mix(in oklab, var(--primary) 48%, var(--text));
+  border-color: var(--chip-active-border);
+  background: var(--chip-active-bg);
+  color: var(--chip-active-ink);
 }
 
 .chip:focus-visible {
@@ -424,6 +432,7 @@ main.container {
 
 .reliability-strip .status-pill {
   font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .reliability-strip-legend {
@@ -485,8 +494,12 @@ main.container {
 }
 
 #reliability-last-refreshed-relative {
-  color: var(--muted);
+  color: var(--meta-high-contrast);
   font-size: 0.85em;
+}
+
+.reliability-card .meta {
+  color: var(--meta-high-contrast);
 }
 
 .reliability-heading-row {

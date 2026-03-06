@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 11:59 MST
+- Last updated: 2026-03-06 12:10 MST
 
 ## Last shipped batch
-- Post receipts evidence pass: post pages now auto-surface linked GitHub commits and inline changelog references from post content in the Receipts module (plus new changelog entry documenting the batch).
+- Command palette keyboard throughput batch: added PageUp/PageDown result jumps and strengthened assistive hint wiring (`aria-describedby` + labeled results listbox).
 
 ## Next queued action
-- Start capability explorer filter-chip batch (`Now/Next/Roadmap` + domain tags) as the next meaningful backlog item.
+- Continue backlog with final reliability/changelog UX cross-check pass (small consistency fixes only if meaningful) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

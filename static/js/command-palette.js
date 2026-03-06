@@ -17,7 +17,7 @@
   const shortcutLabel = isMac ? '⌘K' : 'Ctrl+K';
 
   if (shortcutEl) shortcutEl.textContent = shortcutLabel;
-  if (hintEl) hintEl.textContent = `Use ↑/↓ to navigate, Enter to open, Esc to close. Shortcut: ${shortcutLabel} (or /).`;
+  if (hintEl) hintEl.textContent = `Use ↑/↓ (or PageUp/PageDown) to navigate, Enter to open, Esc to close. Shortcut: ${shortcutLabel} (or /).`;
 
   try {
     items = JSON.parse(dataEl.textContent || '[]');
@@ -133,6 +133,20 @@
     if (event.key === 'ArrowUp') {
       event.preventDefault();
       activeIndex = (activeIndex - 1 + links.length) % links.length;
+      render(input.value);
+      return;
+    }
+
+    if (event.key === 'PageDown') {
+      event.preventDefault();
+      activeIndex = Math.min(links.length - 1, activeIndex + 5);
+      render(input.value);
+      return;
+    }
+
+    if (event.key === 'PageUp') {
+      event.preventDefault();
+      activeIndex = Math.max(0, activeIndex - 5);
       render(input.value);
       return;
     }

@@ -14,6 +14,7 @@
   const stripCiEl = document.getElementById('reliability-strip-ci');
   const stripIncidentsEl = document.getElementById('reliability-strip-incidents');
   const refreshBtn = document.getElementById('reliability-refresh');
+  const overallEl = document.getElementById('reliability-overall');
   const stripLinks = [stripDeployEl, stripCiEl, stripIncidentsEl].filter(Boolean);
 
   const owner = root.dataset.repoOwner;
@@ -66,6 +67,39 @@
     } else {
       delete el.dataset.state;
     }
+
+    updateOverallTone();
+  };
+
+  const updateOverallTone = () => {
+    if (!overallEl) return;
+
+    const states = [stripDeployEl, stripCiEl, stripIncidentsEl]
+      .map((el) => el?.dataset?.state)
+      .filter(Boolean);
+
+    let state = 'warn';
+    if (states.some((entry) => entry === 'bad')) state = 'bad';
+    else if (states.length > 0 && states.every((entry) => entry === 'ok')) state = 'ok';
+
+    overallEl.classList.remove('status-pill--ok', 'status-pill--watch', 'status-pill--bad');
+    if (state === 'ok') {
+      overallEl.classList.add('status-pill--ok');
+      overallEl.textContent = 'Overall · Healthy';
+      overallEl.setAttribute('aria-label', 'Overall reliability status: healthy');
+      return;
+    }
+
+    if (state === 'bad') {
+      overallEl.classList.add('status-pill--bad');
+      overallEl.textContent = 'Overall · Down';
+      overallEl.setAttribute('aria-label', 'Overall reliability status: down');
+      return;
+    }
+
+    overallEl.classList.add('status-pill--watch');
+    overallEl.textContent = 'Overall · Degraded';
+    overallEl.setAttribute('aria-label', 'Overall reliability status: degraded');
   };
 
   const fmt = (iso) => {

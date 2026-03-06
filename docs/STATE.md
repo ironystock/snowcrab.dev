@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 06:59 MST
+- Last updated: 2026-03-06 07:00 MST
 
 ## Last shipped batch
-- Reading-mode batch: added post-page reading controls (`Default/Comfortable/Focus/High contrast`) with localStorage persistence and preset-aware typography/surface styling.
+- Reliability dashboard scanability batch: added a compact live `Overall` pill in the homepage reliability header that rolls up deploy/CI/incidents strip state.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements (compact status strip + scanability) in one focused batch.
+- Continue backlog with responsive layout optimization at 1200px and 1580px for better large-screen (4K) width utilization.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

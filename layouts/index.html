@@ -138,7 +138,10 @@
       aria-labelledby="reliability-heading">
       <div class="reliability-heading-row">
         <h3 id="reliability-heading">Reliability</h3>
-        <button id="reliability-refresh" class="reliability-refresh" type="button">Refresh status</button>
+        <div class="reliability-heading-actions">
+          <span id="reliability-overall" class="status-pill reliability-overall" role="status" aria-live="polite" aria-atomic="true">Overall · Loading</span>
+          <button id="reliability-refresh" class="reliability-refresh" type="button">Refresh status</button>
+        </div>
       </div>
 
       <h4 id="reliability-strip-heading" class="sr-only">Reliability summary strip</h4>

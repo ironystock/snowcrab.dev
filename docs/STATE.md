@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 06:28 MST
+- Last updated: 2026-03-06 06:44 MST
 
 ## Last shipped batch
-- Homepage return-visitor batch: added a “What changed since last visit” module using localStorage + latest changelog metadata to indicate whether new updates landed since prior visit.
+- Global navigation batch: added a lightweight command/search bar (open with `/` or `Cmd/Ctrl+K`) for fast lookup across posts, pages, and changelog entries.
 
 ## Next queued action
-- Continue backlog with lightweight command/search bar (`/` or `Cmd/Ctrl+K`) for posts/pages/changelog in one focused implementation batch.
+- Continue backlog with reading mode controls on post pages (font size/line width/contrast presets) in one focused UI batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

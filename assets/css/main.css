@@ -229,10 +229,8 @@ a:hover .external-link-glyph { opacity: 1; }
   border-radius: 999px;
 }
 
+.command-toggle,
 .theme-toggle {
-  grid-row: 1;
-  grid-column: 2;
-  justify-self: end;
   border: 1px solid var(--border);
   color: var(--text);
   background: var(--bg-elev);
@@ -240,7 +238,25 @@ a:hover .external-link-glyph { opacity: 1; }
   padding: 0.42rem 0.7rem;
   cursor: pointer;
 }
+
+.command-toggle {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
+  font-size: 0.8rem;
+  margin-right: 3.9rem;
+}
+
+.theme-toggle {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
+}
+
+.command-toggle:hover,
 .theme-toggle:hover { border-color: var(--primary); }
+
+.command-toggle:focus-visible,
 .theme-toggle:focus-visible {
   outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
   outline-offset: 2px;
@@ -649,6 +665,87 @@ main.container {
 #last-visit-seen-at {
   color: var(--meta-high-contrast);
   font-weight: 600;
+}
+
+.command-palette {
+  width: min(720px, calc(100vw - 1.2rem));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0;
+  background: var(--bg-elev);
+  color: var(--text);
+}
+
+.command-palette::backdrop {
+  background: rgba(10, 15, 24, 0.56);
+}
+
+.command-palette-sheet {
+  padding: 0.75rem;
+}
+
+.command-palette-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.command-palette-head h2 {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.command-palette-close {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.1rem 0.45rem;
+  cursor: pointer;
+}
+
+.command-palette-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.52rem 0.62rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.command-palette-hint {
+  margin: 0.4rem 0 0.5rem;
+}
+
+.command-palette-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 45vh;
+  overflow: auto;
+}
+
+.command-result {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.42rem 0.45rem;
+  border-radius: 9px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.command-result:hover,
+.command-result.is-active {
+  background: color-mix(in oklab, var(--primary) 14%, var(--bg));
+}
+
+.command-palette-empty {
+  color: var(--muted);
+  padding: 0.42rem 0.2rem;
 }
 
 .now-building-card img {
@@ -1225,6 +1322,7 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   }
 
   .nav-list a,
+  .command-toggle,
   .theme-toggle,
   .chip,
   .card,
@@ -1276,6 +1374,13 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
   .changelog-filters-wrap {
     top: 6.2rem;
+  }
+
+  .command-toggle {
+    margin-right: 0;
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 0.36rem 0.58rem;
   }
 
   .hero { padding: 1.05rem; border-radius: 14px; }

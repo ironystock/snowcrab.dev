@@ -76,6 +76,8 @@
   <script defer src="/js/nav-scroll.js?v={{ $assetRev }}"></script>
   <script defer src="/js/capability-explorer.js?v={{ $assetRev }}"></script>
   <script defer src="/js/last-visit-changes.js?v={{ $assetRev }}"></script>
+  <script defer src="/js/command-palette.js?v={{ $assetRev }}"></script>
+  <script defer src="/js/command-palette.js?v={{ $assetRev }}"></script>
 </head>
 <body>
   <nav class="skip-links" aria-label="Skip links">
@@ -102,6 +104,9 @@
           {{ end }}
         </ul>
       </nav>
+      <button class="command-toggle" id="command-toggle" type="button" aria-haspopup="dialog" aria-controls="command-palette" aria-label="Open search and command bar">
+        Search <span aria-hidden="true">⌘K</span>
+      </button>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" aria-describedby="theme-status-live">
         <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
         <span id="theme-toggle-label" class="sr-only">Switch to light theme</span>
@@ -134,5 +139,24 @@
       <p class="muted">Built with Hugo · ship often, stay useful</p>
     </div>
   </footer>
+
+  {{ $commandPages := where site.RegularPages "Section" "in" (slice "posts" "pages" "changelog") }}
+  {{ $commandItems := slice }}
+  {{ range first 140 ($commandPages.ByDate.Reverse) }}
+    {{ $commandItems = $commandItems | append (dict "title" .Title "url" .RelPermalink "section" .Section "date" (.Date.Format "2006-01-02")) }}
+  {{ end }}
+  <dialog id="command-palette" class="command-palette" aria-labelledby="command-palette-title">
+    <form method="dialog" class="command-palette-sheet">
+      <div class="command-palette-head">
+        <h2 id="command-palette-title">Search posts, pages, changelog</h2>
+        <button value="cancel" class="command-palette-close" aria-label="Close search">×</button>
+      </div>
+      <label for="command-palette-input" class="sr-only">Search content</label>
+      <input id="command-palette-input" class="command-palette-input" type="search" placeholder="Type to search..." autocomplete="off" />
+      <p class="meta command-palette-hint">Use ↑/↓ to navigate, Enter to open, Esc to close.</p>
+      <ul id="command-palette-results" class="command-palette-results" aria-live="polite"></ul>
+    </form>
+  </dialog>
+  <script id="command-palette-data" type="application/json">{{ $commandItems | jsonify }}</script>
 </body>
 </html>

@@ -93,6 +93,42 @@
       {{ end }}
     </section>
 
+    <section class="card impact-split-card" aria-labelledby="impact-split-heading">
+      <h3 id="impact-split-heading">Changelog impact split</h3>
+      {{ $changes := where site.RegularPages "Section" "changelog" }}
+      {{ $cats := newScratch }}
+      {{ $cats.Set "design" 0 }}
+      {{ $cats.Set "ops" 0 }}
+      {{ $cats.Set "content" 0 }}
+      {{ $cats.Set "reliability" 0 }}
+      {{ range $changes }}
+        {{ $raw := .Params.category | default "" | lower }}
+        {{ $title := .Title | lower }}
+        {{ $cat := $raw }}
+        {{ if eq $cat "" }}
+          {{ if or (in $title "reliability") (in $title "incident") (in $title "stabil") }}{{ $cat = "reliability" }}{{ end }}
+          {{ if and (eq $cat "") (or (in $title "ops") (in $title "deploy") (in $title "pipeline") (in $title "automation")) }}{{ $cat = "ops" }}{{ end }}
+          {{ if and (eq $cat "") (or (in $title "post") (in $title "copy") (in $title "content") (in $title "recap")) }}{{ $cat = "content" }}{{ end }}
+          {{ if and (eq $cat "") (or (in $title "theme") (in $title "design") (in $title "ui") (in $title "typography")) }}{{ $cat = "design" }}{{ end }}
+        {{ end }}
+        {{ if eq $cat "" }}{{ $cat = "ops" }}{{ end }}
+        {{ $cats.Set $cat (add ($cats.Get $cat) 1) }}
+      {{ end }}
+      {{ $total := len $changes }}
+      {{ if gt $total 0 }}
+      <ul class="impact-split-list">
+        <li><span>Design</span><strong>{{ $cats.Get "design" }}</strong></li>
+        <li><span>Ops</span><strong>{{ $cats.Get "ops" }}</strong></li>
+        <li><span>Content</span><strong>{{ $cats.Get "content" }}</strong></li>
+        <li><span>Reliability</span><strong>{{ $cats.Get "reliability" }}</strong></li>
+      </ul>
+      <p class="meta">Based on {{ $total }} changelog entries.</p>
+      <p><a href="/changelog/">Explore timeline + filters →</a></p>
+      {{ else }}
+      <p class="muted">No changelog entries yet.</p>
+      {{ end }}
+    </section>
+
     {{ $lastVisitChanges := where site.RegularPages "Section" "changelog" }}
     {{ $lastVisitLatest := first 1 ($lastVisitChanges.ByDate.Reverse) }}
     {{ $lastVisitItems := slice }}

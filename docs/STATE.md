@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 11:13 MST
+- Last updated: 2026-03-06 11:18 MST
 
 ## Last shipped batch
-- Command palette polish batch: added Home/End keyboard navigation and explicit focus-visible styling on result links for faster keyboard scan flow.
+- Homepage impact split module: added a new changelog category distribution card on the homepage sidebar, with auto-counts for Design/Ops/Content/Reliability and direct handoff to full timeline filters.
 
 ## Next queued action
-- Continue backlog with final reliability/changelog cross-check pass for reduced-motion + keyboard scan-flow consistency in one focused batch.
+- Add post receipts module on post pages (linked commits/changelog references) as the next focused snazzy batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

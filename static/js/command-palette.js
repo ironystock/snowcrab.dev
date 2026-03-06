@@ -4,12 +4,20 @@
   const input = document.getElementById('command-palette-input');
   const results = document.getElementById('command-palette-results');
   const dataEl = document.getElementById('command-palette-data');
+  const shortcutEl = document.getElementById('command-toggle-shortcut');
+  const hintEl = document.getElementById('command-palette-hint');
 
   if (!dialog || !toggle || !input || !results || !dataEl) return;
 
   let items = [];
   let activeIndex = 0;
   let activeResults = [];
+
+  const isMac = /Mac|iPhone|iPad|iPod/.test(window.navigator.platform || '');
+  const shortcutLabel = isMac ? '⌘K' : 'Ctrl+K';
+
+  if (shortcutEl) shortcutEl.textContent = shortcutLabel;
+  if (hintEl) hintEl.textContent = `Use ↑/↓ to navigate, Enter to open, Esc to close. Shortcut: ${shortcutLabel} (or /).`;
 
   try {
     items = JSON.parse(dataEl.textContent || '[]');

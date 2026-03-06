@@ -104,8 +104,8 @@
           {{ end }}
         </ul>
       </nav>
-      <button class="command-toggle" id="command-toggle" type="button" aria-haspopup="dialog" aria-controls="command-palette" aria-label="Open search and command bar">
-        Search <span aria-hidden="true">⌘K</span>
+      <button class="command-toggle" id="command-toggle" type="button" aria-haspopup="dialog" aria-controls="command-palette" aria-label="Open search and command bar" aria-keyshortcuts="Control+K Meta+K /">
+        Search <span id="command-toggle-shortcut" aria-hidden="true">⌘K</span>
       </button>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" aria-describedby="theme-status-live">
         <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
@@ -153,7 +153,7 @@
       </div>
       <label for="command-palette-input" class="sr-only">Search content</label>
       <input id="command-palette-input" class="command-palette-input" type="search" placeholder="Type to search..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="command-palette-results" aria-autocomplete="list" aria-activedescendant="" />
-      <p class="meta command-palette-hint">Use ↑/↓ to navigate, Enter to open, Esc to close.</p>
+      <p id="command-palette-hint" class="meta command-palette-hint">Use ↑/↓ to navigate, Enter to open, Esc to close. Shortcut: ⌘K (or /).</p>
       <ul id="command-palette-results" class="command-palette-results" role="listbox" aria-live="polite"></ul>
     </form>
   </dialog>

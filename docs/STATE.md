@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 11:18 MST
+- Last updated: 2026-03-06 11:20 MST
 
 ## Last shipped batch
-- Homepage impact split module: added a new changelog category distribution card on the homepage sidebar, with auto-counts for Design/Ops/Content/Reliability and direct handoff to full timeline filters.
+- Command palette UX polish: added platform-aware shortcut hints (`⌘K` on Apple, `Ctrl+K` elsewhere), explicit shortcut metadata, and dynamic header hint labeling.
 
 ## Next queued action
-- Add post receipts module on post pages (linked commits/changelog references) as the next focused snazzy batch.
+- Continue backlog with final reliability/changelog cross-check pass for reduced-motion + keyboard scan-flow consistency in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

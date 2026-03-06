@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 18:10 MST
+- Last updated: 2026-03-05 18:25 MST
 
 ## Last shipped batch
-- Reliability pass 69: converted last-refreshed metadata to semantic `<time>` markup and now update both readable text + machine-readable `datetime` on each refresh cycle.
+- Reliability pass 70: added a compact status legend below the reliability strip to clarify color/state semantics (Healthy, Degraded, Down) for faster scanning.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

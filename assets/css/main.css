@@ -1087,6 +1087,65 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   background: color-mix(in oklab, var(--primary) 18%, var(--bg-elev));
 }
 
+.capability-explorer {
+  margin: 0.8rem 0 1rem;
+}
+
+.capability-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.capability-explorer-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.capability-explorer-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.72rem;
+  background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
+}
+
+.capability-explorer-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.98rem;
+}
+
+.capability-explorer-kicker {
+  margin: 0 0 0.25rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--meta-high-contrast);
+  font-weight: 700;
+}
+
+.capability-domain-tag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.08rem 0.42rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--meta-high-contrast);
+}
+
+.capability-explorer-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.capability-explorer-card li + li {
+  margin-top: 0.25rem;
+}
+
 @media (prefers-contrast: more) {
   :root {
     --muted: #233146;

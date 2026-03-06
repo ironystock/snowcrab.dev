@@ -1657,10 +1657,40 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     justify-content: flex-start;
   }
 
+  .reliability-strip {
+    gap: 0.28rem;
+    margin-bottom: 0.52rem;
+  }
+
+  .reliability-strip .status-pill {
+    font-size: 0.71rem;
+    padding-inline: 0.42rem;
+  }
+
   .reliability-strip-footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 0.22rem;
+  }
+
+  .reliability-metrics {
+    gap: 0.5rem;
+  }
+
+  .reliability-row {
+    padding: 0.34rem 0.38rem;
+  }
+
+  .reliability-value-line {
+    gap: 0.35rem;
+  }
+
+  .reliability-row-state {
+    font-size: 0.7rem;
+  }
+
+  .reliability-link {
+    font-size: 0.8rem;
   }
 
   .author-bio {

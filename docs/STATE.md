@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 10:13 MST
+- Last updated: 2026-03-06 10:28 MST
 
 ## Last shipped batch
-- Reliability accessibility batch: improved forced-colors readability by extending row container contrast handling and normalizing reliability row/summary text to high-contrast system colors.
+- Reliability mobile polish batch: tightened small-screen strip/row spacing and typography in the reliability module to improve compactness and scan flow on phones.
 
 ## Next queued action
-- Continue backlog with final reliability polish pass on compact mobile spacing/scan flow in one focused batch.
+- Continue backlog with changelog timeline interaction polish (final scan/readability refinements) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

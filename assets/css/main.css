@@ -278,7 +278,11 @@ main.container {
   box-shadow: var(--shadow);
 }
 
-.card:focus-within {
+.card:focus-within,
+.projects-health-item:focus-within,
+.integration-item:focus-within,
+.project-health-card:focus-within,
+.capability-board details:focus-within {
   border-color: color-mix(in oklab, var(--primary) 58%, var(--border));
   box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 22%, transparent), var(--shadow);
 }
@@ -817,6 +821,12 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .capability-board summary::-webkit-details-marker { display: none; }
 
+.capability-board summary:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
 .project-health-strip {
   display: grid;
   gap: 0.4rem;
@@ -963,7 +973,8 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   .footer-links a:focus-visible,
   .theme-toggle:focus-visible,
   .chip:focus-visible,
-  .skip-link:focus-visible {
+  .skip-link:focus-visible,
+  .capability-board summary:focus-visible {
     outline: 2px solid Highlight;
     outline-offset: 2px;
   }

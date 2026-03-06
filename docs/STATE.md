@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 01:56 MST
+- Last updated: 2026-03-06 02:59 MST
 
 ## Last shipped batch
-- Accessibility sweep batch: strengthened status chip/pill contrast and focus treatment across light/dark themes (state ink tokens + consistent `:focus-visible` + stronger chip legibility).
+- Accessibility sweep batch: improved keyboard focus wayfinding by making skip links a semantic navigation landmark, extending focus-within treatment to project/integration/details cards, and adding explicit `summary:focus-visible` (including forced-colors support).
 
 ## Next queued action
-- Continue accessibility sweep with a focused pass on form labeling + keyboard flow checks (contact surfaces, search/filter controls, and any input-adjacent helper text).
+- Continue accessibility sweep with a focused pass on semantic landmarks + heading hierarchy checks across home/projects/changelog, then tackle any remaining color-contrast edge cases.
 
 ## Active blockers
 - None

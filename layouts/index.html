@@ -95,6 +95,10 @@
 
     {{ $lastVisitChanges := where site.RegularPages "Section" "changelog" }}
     {{ $lastVisitLatest := first 1 ($lastVisitChanges.ByDate.Reverse) }}
+    {{ $lastVisitItems := slice }}
+    {{ range first 24 ($lastVisitChanges.ByDate.Reverse) }}
+      {{ $lastVisitItems = $lastVisitItems | append (dict "title" .Title "url" .RelPermalink "date" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateLabel" (.Date.Format "Jan 2, 2006")) }}
+    {{ end }}
     <section class="card" id="last-visit-module" aria-labelledby="last-visit-heading"
       {{ with $lastVisitLatest }}
       {{ $entry := index . 0 }}
@@ -105,9 +109,11 @@
       <h3 id="last-visit-heading">What changed since last visit</h3>
       <p class="meta" id="last-visit-summary">Checking recent changes…</p>
       <p class="muted" id="last-visit-details">Comparing your previous visit with the latest changelog updates.</p>
+      <ul id="last-visit-list" class="mini-list" hidden></ul>
       <p class="meta">Last seen: <span id="last-visit-seen-at">Loading…</span></p>
       <p><a href="/changelog/">Browse full changelog →</a></p>
     </section>
+    <script id="last-visit-data" type="application/json">{{ $lastVisitItems | jsonify }}</script>
 
     <section class="card now-building-card" aria-labelledby="now-building-heading">
       <h3 id="now-building-heading">Now building</h3>

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 09:28 MST
+- Last updated: 2026-03-06 09:43 MST
 
 ## Last shipped batch
-- Reliability refinement batch: unified incidents layout with Deploy/CI by moving incidents heading/body into the same compact row container pattern, improving row-to-row scan consistency.
+- Return-visitor module refinement: upgraded “What changed since last visit” to detect multiple new changelog entries and show up to three recent highlights with dates/links.
 
 ## Next queued action
-- Continue backlog with "what changed since last visit" refinements (multi-entry highlights instead of single latest item) in one focused batch.
+- Continue backlog with reliability dashboard refinements (final compactness/readability polish) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

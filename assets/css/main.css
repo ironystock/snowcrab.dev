@@ -799,6 +799,14 @@ main.container {
   margin-bottom: 0.45rem;
 }
 
+#last-visit-list {
+  margin-bottom: 0.55rem;
+}
+
+#last-visit-list li + li {
+  margin-top: 0.24rem;
+}
+
 #last-visit-seen-at {
   color: var(--meta-high-contrast);
   font-weight: 600;

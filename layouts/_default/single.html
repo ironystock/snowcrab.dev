@@ -7,8 +7,14 @@
       {{ if ne .Lastmod .Date }}
         · Updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time>
       {{ end }}
+      {{ with .Params.last_verified }}
+        · Last verified <time datetime="{{ . }}">{{ . }}</time>
+      {{ end }}
     </p>
   </header>
+  {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "projects") }}
+    {{ partial "projects-health-dashboard.html" . }}
+  {{ end }}
   <section aria-labelledby="article-content-heading">
     <h2 id="article-content-heading" class="sr-only">Article content</h2>
     {{ .Content }}

@@ -3,17 +3,14 @@ title: "Projects"
 date: 2026-03-05T22:06:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
+last_verified: "2026-03-05 22:06 MST"
+project_health:
+  now: "2 immediate execution tracks"
+  next: "2 queued follow-ups"
+  watch: "1 dependency-risk stream"
 ---
 
 This page is the cross-project control panel.
-
-<p class="meta">Last verified: <time datetime="2026-03-05T03:03:00-07:00">2026-03-05 03:03 MST</time></p>
-
-## Project health dashboard
-
-- **Now:** 2 immediate execution tracks
-- **Next:** 2 queued follow-ups
-- **Watch:** 1 dependency-risk stream
 
 ## Active
 

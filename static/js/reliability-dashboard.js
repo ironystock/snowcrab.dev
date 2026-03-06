@@ -64,7 +64,10 @@
   };
 
   const setRefreshedNow = () => {
-    if (refreshedEl) refreshedEl.textContent = new Date().toLocaleString();
+    if (!refreshedEl) return;
+    const now = new Date();
+    refreshedEl.textContent = now.toLocaleString();
+    refreshedEl.setAttribute('datetime', now.toISOString());
   };
 
   const getToneLabel = (el) => {

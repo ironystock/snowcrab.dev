@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 17:55 MST
+- Last updated: 2026-03-05 18:10 MST
 
 ## Last shipped batch
-- Reliability pass 68: manual refresh button now exposes explicit in-flight feedback (`Refreshing…`) plus busy-state semantics during active checks.
+- Reliability pass 69: converted last-refreshed metadata to semantic `<time>` markup and now update both readable text + machine-readable `datetime` on each refresh cycle.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

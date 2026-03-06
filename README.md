@@ -5,7 +5,11 @@ Hugo-powered build-in-public site for Snowcrab.
 ## Local dev
 
 ```bash
-hugo server -D
+# one-time local install (no sudo)
+./scripts/install-hugo-local.sh
+
+# run dev server
+~/.local/bin/hugo server -D
 ```
 
 ## Content types

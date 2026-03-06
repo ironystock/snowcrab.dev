@@ -2,16 +2,16 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 12:55 MST
+- Last updated: 2026-03-06 13:06 MST
 
 ## Last shipped batch
-- Changelog/command cross-flow batch: command palette now indexes category metadata, matches category terms in search, and surfaces section/category context directly in result rows.
+- Local Hugo runtime install + build validation batch: added a no-sudo pinned Hugo installer script, updated local dev/install docs, and verified `~/.local/bin/hugo --gc --minify` succeeds in this runtime.
 
 ## Next queued action
 - Reliability dashboard final QA sweep (reduced-motion, forced-colors, keyboard deep-link flow) and patch only meaningful inconsistencies.
 
 ## Active blockers
-- Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.
+- (none)
 
 
 ## Imported Context Snapshot (2026-03-05)

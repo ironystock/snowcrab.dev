@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 09:58 MST
+- Last updated: 2026-03-06 10:13 MST
 
 ## Last shipped batch
-- Reliability readability batch: grouped strip summary + legend into a compact footer row and grouped deploy/CI primary value + row-state labels into a single status cluster for cleaner scan flow.
+- Reliability accessibility batch: improved forced-colors readability by extending row container contrast handling and normalizing reliability row/summary text to high-contrast system colors.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements by validating compact row readability in reduced-motion/forced-color modes and patching any gaps in one focused batch.
+- Continue backlog with final reliability polish pass on compact mobile spacing/scan flow in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

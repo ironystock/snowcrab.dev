@@ -1574,9 +1574,23 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   .chip,
   .card,
   .status-pill,
-  .reliability-status {
+  .reliability-status,
+  .reliability-row {
     forced-color-adjust: auto;
     border-color: CanvasText;
+  }
+
+  .reliability-strip-summary,
+  .reliability-row-state,
+  .reliability-label {
+    color: CanvasText;
+  }
+
+  .reliability-row-state--ok,
+  .reliability-row-state--warn,
+  .reliability-row-state--bad,
+  .reliability-row-state--loading {
+    color: CanvasText;
   }
 
   .nav-list a.active,

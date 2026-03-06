@@ -151,9 +151,19 @@
     if (panel) panel.setAttribute('aria-busy', 'false');
   };
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const activateButton = (btn, options) => {
     const filter = btn?.getAttribute('data-filter') || 'all';
     apply(filter, options);
+
+    if (btn instanceof HTMLElement) {
+      btn.scrollIntoView({
+        block: 'nearest',
+        inline: 'nearest',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      });
+    }
   };
 
   const focusByOffset = (currentIndex, delta) => {

@@ -25,10 +25,20 @@
     items = [];
   }
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const setActiveDescendant = () => {
     const links = Array.from(results.querySelectorAll('.command-result'));
     const active = links[activeIndex];
     input.setAttribute('aria-activedescendant', active?.id || '');
+
+    if (active) {
+      active.scrollIntoView({
+        block: 'nearest',
+        inline: 'nearest',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      });
+    }
   };
 
   const render = (query = '') => {

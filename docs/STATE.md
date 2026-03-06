@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 11:24 MST
+- Last updated: 2026-03-06 11:40 MST
 
 ## Last shipped batch
-- Homepage tabbed information architecture: hero now uses What/Status tabs and sidebar uses Signals/Links tabs to reduce visual sprawl while keeping content accessible.
+- Cross-surface keyboard polish batch: active items now auto-scroll into view in both command palette results and changelog filter tabs, with reduced-motion-aware behavior.
 
 ## Next queued action
-- Add post receipts module on post pages (linked commits/changelog references) as next focused snazzy batch.
+- Continue backlog with final reliability/changelog UX cross-check pass (small consistency fixes only if meaningful) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

@@ -12,12 +12,11 @@
   const stripDeployEl = document.getElementById('reliability-strip-deploy');
   const stripCiEl = document.getElementById('reliability-strip-ci');
   const stripIncidentsEl = document.getElementById('reliability-strip-incidents');
+  const refreshBtn = document.getElementById('reliability-refresh');
 
   const owner = root.dataset.repoOwner;
   const repo = root.dataset.repoName;
   if (!owner || !repo) return;
-
-  root.setAttribute('aria-busy', 'true');
 
   const fetchWithTimeout = (url, timeoutMs = 8000) => {
     const controller = new AbortController();
@@ -84,149 +83,161 @@
     return 'unavailable';
   };
 
-  setStripTone(stripDeployEl, 'warn', 'Deploy · Loading');
-  setStripTone(stripCiEl, 'warn', 'CI · Loading');
-  setStripTone(stripIncidentsEl, 'warn', 'Incidents · Loading');
+  const runRefresh = () => {
+    if (refreshBtn) refreshBtn.disabled = true;
+    root.setAttribute('aria-busy', 'true');
 
-  let incidentsSummary = 'incidents unknown';
+    setStripTone(stripDeployEl, 'warn', 'Deploy · Loading');
+    setStripTone(stripCiEl, 'warn', 'CI · Loading');
+    setStripTone(stripIncidentsEl, 'warn', 'Incidents · Loading');
 
-  const deployReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
-    .then((r) => {
-      if (!r.ok) return Promise.reject(new Error(`commit fetch failed (${r.status})`));
-      return r.json();
-    })
-    .then((commit) => {
-      if (lastDeployEl) lastDeployEl.textContent = `✅ ${fmt(commit?.commit?.author?.date)}`;
-      setStatusTone(lastDeployEl, 'success');
-      setStripTone(stripDeployEl, 'ok', 'Deploy · Healthy');
-      if (lastDeployLinkEl && commit?.html_url) {
-        lastDeployLinkEl.href = commit.html_url;
-        lastDeployLinkEl.hidden = false;
-      }
-    })
-    .catch((error) => {
-      const kind = classifyError(error);
-      if (lastDeployEl) {
-        if (kind === 'timeout') lastDeployEl.textContent = '🟡 Timed out';
-        else if (kind === 'rate-limit') lastDeployEl.textContent = '🟡 Rate limited';
-        else lastDeployEl.textContent = '❌ Unavailable';
-      }
-      setStatusTone(lastDeployEl, kind === 'unavailable' ? 'bad' : 'warn');
-      setStripTone(stripDeployEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'Deploy · Down' : 'Deploy · Degraded');
-      if (lastDeployLinkEl) lastDeployLinkEl.hidden = false;
-    });
+    let incidentsSummary = 'incidents unknown';
 
-  const ciReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
-    .then((r) => {
-      if (!r.ok) return Promise.reject(new Error(`ci fetch failed (${r.status})`));
-      return r.json();
-    })
-    .then((data) => {
-      const run = data?.workflow_runs?.[0];
-      if (!run) {
-        if (ciEl) ciEl.textContent = '⚪ No runs';
-        setStatusTone(ciEl, 'warn');
-        setStripTone(stripCiEl, 'warn', 'CI · No runs');
-        return;
-      }
-      const status = run.status === 'completed' ? (run.conclusion || 'completed') : run.status;
-      const tone = /success|neutral|skipped/i.test(status)
-        ? 'success'
-        : /queued|in_progress|pending|requested|waiting/i.test(status)
-          ? 'warn'
-          : 'bad';
-      const emoji = tone === 'success' ? '✅' : tone === 'warn' ? '🟡' : '❌';
-      if (ciEl) ciEl.textContent = `${emoji} ${status} · ${fmt(run.updated_at)}`;
-      setStatusTone(ciEl, tone);
-      setStripTone(stripCiEl, tone === 'success' ? 'ok' : tone === 'warn' ? 'warn' : 'bad', tone === 'success' ? 'CI · Healthy' : tone === 'warn' ? 'CI · Running' : 'CI · Failing');
-      if (ciLinkEl && run?.html_url) {
-        ciLinkEl.href = run.html_url;
-        ciLinkEl.hidden = false;
-      }
-    })
-    .catch((error) => {
-      const kind = classifyError(error);
-      if (ciEl) {
-        if (kind === 'timeout') ciEl.textContent = '🟡 Timed out';
-        else if (kind === 'rate-limit') ciEl.textContent = '🟡 Rate limited';
-        else ciEl.textContent = '❌ Unavailable';
-      }
-      setStatusTone(ciEl, kind === 'unavailable' ? 'bad' : 'warn');
-      setStripTone(stripCiEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'CI · Down' : 'CI · Degraded');
-      if (ciLinkEl) ciLinkEl.hidden = false;
-    });
-
-  if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'true');
-
-  const incidentsReq = fetchWithTimeout('/changelog/index.xml')
-    .then((r) => (r.ok ? r.text() : Promise.reject(new Error('rss fetch failed'))))
-    .then((xmlText) => {
-      const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
-      const items = Array.from(xml.querySelectorAll('item')).slice(0, 5);
-      const filtered = items
-        .map((item) => ({
-          title: item.querySelector('title')?.textContent || '',
-          link: item.querySelector('link')?.textContent || '#',
-        }))
-        .filter(({ title }) => /fix|incident|reliability|stabil|error|issue/i.test(title))
-        .slice(0, 3);
-
-      if (!incidentsEl) return;
-      if (filtered.length === 0) {
-        incidentsEl.textContent = 'No recent incident/fix-tagged entries.';
-        incidentsSummary = 'no recent incident-tagged entries';
-        setStripTone(stripIncidentsEl, 'ok', 'Incidents · Clear');
-        return;
-      }
-
-      incidentsSummary = `${filtered.length} incident-related entr${filtered.length === 1 ? 'y' : 'ies'}`;
-      setStripTone(stripIncidentsEl, 'warn', `Incidents · ${filtered.length}`);
-      const list = document.createElement('ul');
-      list.className = 'mini-list';
-
-      filtered.forEach(({ title, link }) => {
-        const item = document.createElement('li');
-        const anchor = document.createElement('a');
-        anchor.href = link || '#';
-        anchor.textContent = title;
-        item.appendChild(anchor);
-        list.appendChild(item);
+    const deployReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/commits/main`)
+      .then((r) => {
+        if (!r.ok) return Promise.reject(new Error(`commit fetch failed (${r.status})`));
+        return r.json();
+      })
+      .then((commit) => {
+        if (lastDeployEl) lastDeployEl.textContent = `✅ ${fmt(commit?.commit?.author?.date)}`;
+        setStatusTone(lastDeployEl, 'success');
+        setStripTone(stripDeployEl, 'ok', 'Deploy · Healthy');
+        if (lastDeployLinkEl && commit?.html_url) {
+          lastDeployLinkEl.href = commit.html_url;
+          lastDeployLinkEl.hidden = false;
+        }
+      })
+      .catch((error) => {
+        const kind = classifyError(error);
+        if (lastDeployEl) {
+          if (kind === 'timeout') lastDeployEl.textContent = '🟡 Timed out';
+          else if (kind === 'rate-limit') lastDeployEl.textContent = '🟡 Rate limited';
+          else lastDeployEl.textContent = '❌ Unavailable';
+        }
+        setStatusTone(lastDeployEl, kind === 'unavailable' ? 'bad' : 'warn');
+        setStripTone(stripDeployEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'Deploy · Down' : 'Deploy · Degraded');
+        if (lastDeployLinkEl) lastDeployLinkEl.hidden = false;
       });
 
-      incidentsEl.replaceChildren(list);
-    })
-    .catch((error) => {
-      const kind = classifyError(error);
-      if (kind === 'timeout') {
-        incidentsSummary = 'incident feed timed out';
-        setStripTone(stripIncidentsEl, 'warn', 'Incidents · Delayed');
-        if (incidentsEl) incidentsEl.textContent = 'Timed out';
-        return;
-      }
+    const ciReq = fetchWithTimeout(`https://api.github.com/repos/${owner}/${repo}/actions/runs?branch=main&per_page=1`)
+      .then((r) => {
+        if (!r.ok) return Promise.reject(new Error(`ci fetch failed (${r.status})`));
+        return r.json();
+      })
+      .then((data) => {
+        const run = data?.workflow_runs?.[0];
+        if (!run) {
+          if (ciEl) ciEl.textContent = '⚪ No runs';
+          setStatusTone(ciEl, 'warn');
+          setStripTone(stripCiEl, 'warn', 'CI · No runs');
+          return;
+        }
+        const status = run.status === 'completed' ? (run.conclusion || 'completed') : run.status;
+        const tone = /success|neutral|skipped/i.test(status)
+          ? 'success'
+          : /queued|in_progress|pending|requested|waiting/i.test(status)
+            ? 'warn'
+            : 'bad';
+        const emoji = tone === 'success' ? '✅' : tone === 'warn' ? '🟡' : '❌';
+        if (ciEl) ciEl.textContent = `${emoji} ${status} · ${fmt(run.updated_at)}`;
+        setStatusTone(ciEl, tone);
+        setStripTone(stripCiEl, tone === 'success' ? 'ok' : tone === 'warn' ? 'warn' : 'bad', tone === 'success' ? 'CI · Healthy' : tone === 'warn' ? 'CI · Running' : 'CI · Failing');
+        if (ciLinkEl && run?.html_url) {
+          ciLinkEl.href = run.html_url;
+          ciLinkEl.hidden = false;
+        }
+      })
+      .catch((error) => {
+        const kind = classifyError(error);
+        if (ciEl) {
+          if (kind === 'timeout') ciEl.textContent = '🟡 Timed out';
+          else if (kind === 'rate-limit') ciEl.textContent = '🟡 Rate limited';
+          else ciEl.textContent = '❌ Unavailable';
+        }
+        setStatusTone(ciEl, kind === 'unavailable' ? 'bad' : 'warn');
+        setStripTone(stripCiEl, kind === 'unavailable' ? 'bad' : 'warn', kind === 'unavailable' ? 'CI · Down' : 'CI · Degraded');
+        if (ciLinkEl) ciLinkEl.hidden = false;
+      });
 
-      if (kind === 'rate-limit') {
-        incidentsSummary = 'incident feed rate limited';
-        setStripTone(stripIncidentsEl, 'warn', 'Incidents · Limited');
-        if (incidentsEl) incidentsEl.textContent = 'Rate limited';
-        return;
-      }
+    if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'true');
 
-      incidentsSummary = 'incidents unavailable';
-      setStripTone(stripIncidentsEl, 'bad', 'Incidents · Down');
-      if (incidentsEl) incidentsEl.textContent = 'Unavailable';
-    })
-    .finally(() => {
-      if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'false');
+    const incidentsReq = fetchWithTimeout('/changelog/index.xml')
+      .then((r) => (r.ok ? r.text() : Promise.reject(new Error('rss fetch failed'))))
+      .then((xmlText) => {
+        const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+        const items = Array.from(xml.querySelectorAll('item')).slice(0, 5);
+        const filtered = items
+          .map((item) => ({
+            title: item.querySelector('title')?.textContent || '',
+            link: item.querySelector('link')?.textContent || '#',
+          }))
+          .filter(({ title }) => /fix|incident|reliability|stabil|error|issue/i.test(title))
+          .slice(0, 3);
+
+        if (!incidentsEl) return;
+        if (filtered.length === 0) {
+          incidentsEl.textContent = 'No recent incident/fix-tagged entries.';
+          incidentsSummary = 'no recent incident-tagged entries';
+          setStripTone(stripIncidentsEl, 'ok', 'Incidents · Clear');
+          return;
+        }
+
+        incidentsSummary = `${filtered.length} incident-related entr${filtered.length === 1 ? 'y' : 'ies'}`;
+        setStripTone(stripIncidentsEl, 'warn', `Incidents · ${filtered.length}`);
+        const list = document.createElement('ul');
+        list.className = 'mini-list';
+
+        filtered.forEach(({ title, link }) => {
+          const item = document.createElement('li');
+          const anchor = document.createElement('a');
+          anchor.href = link || '#';
+          anchor.textContent = title;
+          item.appendChild(anchor);
+          list.appendChild(item);
+        });
+
+        incidentsEl.replaceChildren(list);
+      })
+      .catch((error) => {
+        const kind = classifyError(error);
+        if (kind === 'timeout') {
+          incidentsSummary = 'incident feed timed out';
+          setStripTone(stripIncidentsEl, 'warn', 'Incidents · Delayed');
+          if (incidentsEl) incidentsEl.textContent = 'Timed out';
+          return;
+        }
+
+        if (kind === 'rate-limit') {
+          incidentsSummary = 'incident feed rate limited';
+          setStripTone(stripIncidentsEl, 'warn', 'Incidents · Limited');
+          if (incidentsEl) incidentsEl.textContent = 'Rate limited';
+          return;
+        }
+
+        incidentsSummary = 'incidents unavailable';
+        setStripTone(stripIncidentsEl, 'bad', 'Incidents · Down');
+        if (incidentsEl) incidentsEl.textContent = 'Unavailable';
+      })
+      .finally(() => {
+        if (incidentsEl) incidentsEl.setAttribute('aria-busy', 'false');
+      });
+
+    Promise.allSettled([deployReq, ciReq, incidentsReq]).finally(() => {
+      setRefreshedNow();
+      root.setAttribute('aria-busy', 'false');
+      if (refreshBtn) refreshBtn.disabled = false;
+
+      if (summaryLiveEl) {
+        const deployTone = getToneLabel(lastDeployEl);
+        const ciTone = getToneLabel(ciEl);
+        summaryLiveEl.textContent = `Reliability updated. Deploy status: ${deployTone}. CI status: ${ciTone}. Incident feed: ${incidentsSummary}.`;
+      }
     });
+  };
 
-  Promise.allSettled([deployReq, ciReq, incidentsReq]).finally(() => {
-    setRefreshedNow();
-    root.setAttribute('aria-busy', 'false');
+  if (refreshBtn) {
+    refreshBtn.addEventListener('click', runRefresh);
+  }
 
-    if (summaryLiveEl) {
-      const deployTone = getToneLabel(lastDeployEl);
-      const ciTone = getToneLabel(ciEl);
-      summaryLiveEl.textContent = `Reliability updated. Deploy status: ${deployTone}. CI status: ${ciTone}. Incident feed: ${incidentsSummary}.`;
-    }
-  });
+  runRefresh();
 })();

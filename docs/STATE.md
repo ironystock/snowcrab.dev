@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 17:25 MST
+- Last updated: 2026-03-05 17:40 MST
 
 ## Last shipped batch
-- Reliability pass 66: compact strip jump-link chips now have dedicated `:focus-visible` treatment (outline + underline) for stronger keyboard focus clarity.
+- Reliability pass 67: added a manual `Refresh status` control that re-runs deploy/CI/incidents checks on demand, with in-flight disable behavior and existing live-summary updates preserved.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

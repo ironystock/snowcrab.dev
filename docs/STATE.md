@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 17:40 MST
+- Last updated: 2026-03-05 17:55 MST
 
 ## Last shipped batch
-- Reliability pass 67: added a manual `Refresh status` control that re-runs deploy/CI/incidents checks on demand, with in-flight disable behavior and existing live-summary updates preserved.
+- Reliability pass 68: manual refresh button now exposes explicit in-flight feedback (`Refreshing…`) plus busy-state semantics during active checks.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

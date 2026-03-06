@@ -84,7 +84,11 @@
   };
 
   const runRefresh = () => {
-    if (refreshBtn) refreshBtn.disabled = true;
+    if (refreshBtn) {
+      refreshBtn.disabled = true;
+      refreshBtn.setAttribute('aria-busy', 'true');
+      refreshBtn.textContent = 'Refreshing…';
+    }
     root.setAttribute('aria-busy', 'true');
 
     setStripTone(stripDeployEl, 'warn', 'Deploy · Loading');
@@ -225,7 +229,11 @@
     Promise.allSettled([deployReq, ciReq, incidentsReq]).finally(() => {
       setRefreshedNow();
       root.setAttribute('aria-busy', 'false');
-      if (refreshBtn) refreshBtn.disabled = false;
+      if (refreshBtn) {
+        refreshBtn.disabled = false;
+        refreshBtn.setAttribute('aria-busy', 'false');
+        refreshBtn.textContent = 'Refresh status';
+      }
 
       if (summaryLiveEl) {
         const deployTone = getToneLabel(lastDeployEl);

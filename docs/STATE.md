@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 07:58 MST
+- Last updated: 2026-03-06 08:13 MST
 
 ## Last shipped batch
-- Changelog timeline behavior batch: added month-group labels that recompute on category filter changes so visible entries remain chronologically scannable.
+- Reliability refinement batch: aligned loading-state semantics across strip pills, overall status, strip summary, and row-state labels so the dashboard clearly reports `Loading` before live status resolves.
 
 ## Next queued action
-- Continue backlog with capability explorer filter chips (`Now/Next/Roadmap`) + domain tag pass as the next focused batch.
+- Continue backlog with reliability dashboard refinements by tightening heading/value spacing and alignment for denser row scanability in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

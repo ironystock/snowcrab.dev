@@ -680,6 +680,11 @@ main.container {
   color: var(--state-bad-ink);
 }
 
+.reliability-row-state--loading {
+  opacity: 0.82;
+  font-style: italic;
+}
+
 .reliability-link {
   font-size: 0.86rem;
   color: var(--muted);
@@ -1294,6 +1299,11 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   background: color-mix(in oklab, #ef4444 20%, var(--bg-elev));
   border-color: color-mix(in oklab, #ef4444 45%, var(--border));
   color: var(--state-bad-ink);
+}
+
+.status-pill--loading {
+  opacity: 0.82;
+  font-style: italic;
 }
 
 .capability-badge {

@@ -51,19 +51,26 @@
 
   const setRowState = (el, tone, text) => {
     if (!el) return;
-    el.classList.remove('reliability-row-state--ok', 'reliability-row-state--warn', 'reliability-row-state--bad');
+    el.classList.remove('reliability-row-state--ok', 'reliability-row-state--warn', 'reliability-row-state--bad', 'reliability-row-state--loading');
     if (tone === 'ok') el.classList.add('reliability-row-state--ok');
     if (tone === 'warn') el.classList.add('reliability-row-state--warn');
     if (tone === 'bad') el.classList.add('reliability-row-state--bad');
+
+    const normalized = String(text || '').toLowerCase();
+    if (normalized.startsWith('loading')) el.classList.add('reliability-row-state--loading');
+
     if (text) el.textContent = text;
   };
 
   const setStripTone = (el, tone, text) => {
     if (!el) return;
-    el.classList.remove('status-pill--ok', 'status-pill--watch', 'status-pill--bad');
+    el.classList.remove('status-pill--ok', 'status-pill--watch', 'status-pill--bad', 'status-pill--loading');
     if (tone === 'ok') el.classList.add('status-pill--ok');
     if (tone === 'warn') el.classList.add('status-pill--watch');
     if (tone === 'bad') el.classList.add('status-pill--bad');
+
+    const normalized = String(text || '').toLowerCase();
+    if (normalized.includes('loading')) el.classList.add('status-pill--loading');
 
     if (text) {
       el.textContent = text;
@@ -85,7 +92,8 @@
   };
 
   const updateOverallTone = () => {
-    const states = [stripDeployEl, stripCiEl, stripIncidentsEl]
+    const stripStates = [stripDeployEl, stripCiEl, stripIncidentsEl].filter(Boolean);
+    const states = stripStates
       .map((el) => el?.dataset?.state)
       .filter(Boolean);
 
@@ -95,13 +103,21 @@
       bad: states.filter((entry) => entry === 'bad').length,
     };
 
+    const loadingCount = stripStates.filter((el) => el.classList.contains('status-pill--loading')).length;
+    const allLoading = stripStates.length > 0 && loadingCount === stripStates.length;
+
     let state = 'warn';
     if (states.some((entry) => entry === 'bad')) state = 'bad';
     else if (states.length > 0 && states.every((entry) => entry === 'ok')) state = 'ok';
 
     if (overallEl) {
-      overallEl.classList.remove('status-pill--ok', 'status-pill--watch', 'status-pill--bad');
-      if (state === 'ok') {
+      overallEl.classList.remove('status-pill--ok', 'status-pill--watch', 'status-pill--bad', 'status-pill--loading');
+
+      if (allLoading) {
+        overallEl.classList.add('status-pill--watch', 'status-pill--loading');
+        overallEl.textContent = 'Overall · Loading';
+        overallEl.setAttribute('aria-label', 'Overall reliability status: loading');
+      } else if (state === 'ok') {
         overallEl.classList.add('status-pill--ok');
         overallEl.textContent = 'Overall · Healthy';
         overallEl.setAttribute('aria-label', 'Overall reliability status: healthy');
@@ -117,7 +133,9 @@
     }
 
     if (stripSummaryEl) {
-      stripSummaryEl.textContent = `State mix · Healthy ${counts.ok} · Degraded ${counts.warn} · Down ${counts.bad}`;
+      stripSummaryEl.textContent = allLoading
+        ? 'State mix · Loading'
+        : `State mix · Healthy ${counts.ok} · Degraded ${counts.warn} · Down ${counts.bad}`;
     }
   };
 

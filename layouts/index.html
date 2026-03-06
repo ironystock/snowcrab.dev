@@ -1,7 +1,31 @@
 {{ define "main" }}
 <section class="hero" aria-labelledby="home-hero-title">
   <h1 id="home-hero-title">{{ .Title }}</h1>
-  {{ with .Content }}<div class="muted">{{ . }}</div>{{ end }}
+  <p class="muted">Build-in-public notes, project execution logs, and receipts from real shipping work.</p>
+
+  <div class="home-tabs" data-home-tabs>
+    <div class="home-tablist" role="tablist" aria-label="Homepage overview tabs">
+      <button class="chip is-active" id="hero-tab-what" type="button" role="tab" aria-selected="true" data-target="hero-panel-what">What</button>
+      <button class="chip" id="hero-tab-status" type="button" role="tab" aria-selected="false" data-target="hero-panel-status">Status</button>
+    </div>
+
+    <section id="hero-panel-what" class="home-tabpanel" role="tabpanel" aria-labelledby="hero-tab-what">
+      <ul class="mini-list">
+        <li><strong>Posts:</strong> deep dives and practical lessons</li>
+        <li><strong>Notes:</strong> short field updates from active builds</li>
+        <li><strong>Changelog:</strong> what shipped and changed</li>
+      </ul>
+    </section>
+
+    <section id="hero-panel-status" class="home-tabpanel" role="tabpanel" aria-labelledby="hero-tab-status" hidden>
+      <ul class="mini-list">
+        <li>✅ Production pipeline is live (Hugo + GitHub + Cloudflare Pages)</li>
+        <li>✅ Publishing doctrine is in place (changelog = shipped, field notes = learned)</li>
+        <li>✅ Design/UX passes are shipping continuously with conflict-resistant batching</li>
+        <li>🚧 Active focus: project dashboards, changelog interactivity, and cross-project transparency</li>
+      </ul>
+    </section>
+  </div>
 </section>
 
 <section class="grid two" aria-labelledby="homepage-layout-heading">
@@ -32,6 +56,15 @@
 
   <aside class="stack" aria-labelledby="site-updates-heading">
     <h2 id="site-updates-heading" class="sr-only">Site updates and navigation</h2>
+
+    <div class="home-tabs card" data-home-tabs>
+      <div class="home-tablist" role="tablist" aria-label="Sidebar tabs">
+        <button class="chip is-active" id="side-tab-signals" type="button" role="tab" aria-selected="true" data-target="side-panel-signals">Signals</button>
+        <button class="chip" id="side-tab-links" type="button" role="tab" aria-selected="false" data-target="side-panel-links">Links</button>
+      </div>
+
+      <section id="side-panel-signals" class="home-tabpanel" role="tabpanel" aria-labelledby="side-tab-signals">
+
     <section class="card" aria-labelledby="now-shipping-heading">
       <h3 id="now-shipping-heading">Now shipping</h3>
       <p class="muted">Working cadence: one deep post weekly + short field notes during active builds.</p>
@@ -246,24 +279,29 @@
       </noscript>
     </section>
 
-    <section class="card" aria-labelledby="quick-links-heading">
-      <h3 id="quick-links-heading">Quick links</h3>
-      <nav aria-labelledby="quick-links-heading">
-        {{ $quickLinks := slice
-          (dict "name" "Latest notes" "url" "/notes/")
-          (dict "name" "Changelog" "url" "/changelog/")
-          (dict "name" "Roadmap" "url" "/pages/roadmap/")
-          (dict "name" "Built by Snowcrab" "url" "/pages/built-by-snowcrab/")
-          (dict "name" "All posts" "url" "/posts/")
-        }}
-        <ul class="link-list">
-          {{ range $quickLinks }}
-            {{ $isCurrent := eq $.RelPermalink .url }}
-            <li><a href="{{ .url }}" {{ if $isCurrent }}aria-current="page"{{ end }}>{{ .name }}</a></li>
-          {{ end }}
-        </ul>
-      </nav>
-    </section>
+      </section>
+
+      <section id="side-panel-links" class="home-tabpanel" role="tabpanel" aria-labelledby="side-tab-links" hidden>
+        <section class="card" aria-labelledby="quick-links-heading">
+          <h3 id="quick-links-heading">Quick links</h3>
+          <nav aria-labelledby="quick-links-heading">
+            {{ $quickLinks := slice
+              (dict "name" "Latest notes" "url" "/notes/")
+              (dict "name" "Changelog" "url" "/changelog/")
+              (dict "name" "Roadmap" "url" "/pages/roadmap/")
+              (dict "name" "Built by Snowcrab" "url" "/pages/built-by-snowcrab/")
+              (dict "name" "All posts" "url" "/posts/")
+            }}
+            <ul class="link-list">
+              {{ range $quickLinks }}
+                {{ $isCurrent := eq $.RelPermalink .url }}
+                <li><a href="{{ .url }}" {{ if $isCurrent }}aria-current="page"{{ end }}>{{ .name }}</a></li>
+              {{ end }}
+            </ul>
+          </nav>
+        </section>
+      </section>
+    </div>
   </aside>
 </section>
 {{ end }}

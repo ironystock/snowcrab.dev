@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 11:20 MST
+- Last updated: 2026-03-06 11:24 MST
 
 ## Last shipped batch
-- Command palette UX polish: added platform-aware shortcut hints (`⌘K` on Apple, `Ctrl+K` elsewhere), explicit shortcut metadata, and dynamic header hint labeling.
+- Homepage tabbed information architecture: hero now uses What/Status tabs and sidebar uses Signals/Links tabs to reduce visual sprawl while keeping content accessible.
 
 ## Next queued action
-- Continue backlog with final reliability/changelog cross-check pass for reduced-motion + keyboard scan-flow consistency in one focused batch.
+- Add post receipts module on post pages (linked commits/changelog references) as next focused snazzy batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

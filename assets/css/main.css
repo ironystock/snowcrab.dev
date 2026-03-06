@@ -848,6 +848,21 @@ main.container {
   margin-bottom: 0.35rem;
 }
 
+.home-tabs {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.home-tablist {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.home-tabpanel[hidden] {
+  display: none !important;
+}
+
 .impact-split-list {
   list-style: none;
   margin: 0 0 0.6rem;

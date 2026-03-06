@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 08:59 MST
+- Last updated: 2026-03-06 08:58 MST
 
 ## Last shipped batch
-- Large-screen responsiveness batch: extended 1200px/1580px breakpoints to rebalance two-column layout and move capabilities + automation demos to multi-column grids on wide displays.
+- Wide-screen density batch: rebalanced desktop homepage columns, tuned paragraph line lengths, and enabled responsive multi-column capability/demo grids for better large-screen scanability.
 
 ## Next queued action
-- Continue backlog with reliability dashboard refinements (final compactness + readability polish) in one focused batch.
+- Continue backlog with reliability dashboard refinements (final compactness/readability polish) in one focused batch.
 
 ## Active blockers
 - Local Hugo binary unavailable in this runtime (`hugo: command not found`), so build validation is currently limited to static diff review.

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-05 17:10 MST
+- Last updated: 2026-03-05 17:25 MST
 
 ## Last shipped batch
-- Reliability pass 65: improved compact-strip jump-link ergonomics with sticky-header-safe target offsets and visible `:target` highlight styling for deploy/CI/incidents destinations.
+- Reliability pass 66: compact strip jump-link chips now have dedicated `:focus-visible` treatment (outline + underline) for stronger keyboard focus clarity.
 
 ## Next queued action
 - Continue reliability dashboard refinement with remaining scanability polish, then return to targeted accessibility sweep validation passes.

@@ -394,6 +394,13 @@ main.container {
   text-decoration: underline;
 }
 
+.reliability-strip-link:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+  border-radius: 999px;
+  text-decoration: underline;
+}
+
 #reliability-row-deploy,
 #reliability-row-ci,
 #reliability-row-incidents {

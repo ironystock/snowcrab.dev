@@ -1,0 +1,54 @@
+{{ $projectsPage := site.GetPage "/pages/projects" }}
+{{ $integrations := slice }}
+{{ if $projectsPage }}
+  {{ $integrations = $projectsPage.Params.integrations }}
+{{ end }}
+{{ $detailLinks := dict
+  "Hockeyclaw" "/projects/hockeyclaw/"
+  "discord-claws" "/projects/discord-claws/"
+}}
+<section class="card active-projects-strip" aria-labelledby="active-projects-strip-heading">
+  <div class="active-projects-strip-head">
+    <h3 id="active-projects-strip-heading">Active projects</h3>
+    <a href="/pages/projects/">All projects →</a>
+  </div>
+
+  {{ if gt (len $integrations) 0 }}
+    <ul class="active-projects-strip-list">
+      {{ range first 4 $integrations }}
+        {{ $projectName := .name | default "Untitled project" }}
+        {{ $statusRaw := .status | default "Watch" }}
+        {{ $statusKey := lower $statusRaw }}
+        {{ $statusClass := "status-pill--watch" }}
+        {{ if eq $statusKey "now" }}
+          {{ $statusClass = "status-pill--now" }}
+        {{ else if eq $statusKey "next" }}
+          {{ $statusClass = "status-pill--next" }}
+        {{ else if eq $statusKey "watch" }}
+          {{ $statusClass = "status-pill--watch" }}
+        {{ else if eq $statusKey "ok" }}
+          {{ $statusClass = "status-pill--ok" }}
+        {{ end }}
+
+        {{ $projectHref := index $detailLinks $projectName }}
+        {{ if not $projectHref }}
+          {{ $projectHref = printf "/pages/projects/#%s" ($projectName | anchorize) }}
+        {{ end }}
+
+        <li class="active-projects-strip-item">
+          <div class="active-projects-strip-top">
+            <a class="active-projects-strip-link" href="{{ $projectHref }}">{{ $projectName }}</a>
+            <span class="status-pill {{ $statusClass }}">{{ $statusRaw }}</span>
+          </div>
+          {{ with .last_update }}
+            <p class="meta">Last update: {{ . }}</p>
+          {{ else }}
+            <p class="meta">Last update: not logged yet</p>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p class="muted">No active projects are listed yet. Check back after the next project sync.</p>
+  {{ end }}
+</section>

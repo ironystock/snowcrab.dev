@@ -80,6 +80,8 @@
       <a href="/pages/now/">See now page →</a>
     </section>
 
+    {{ partial "homepage-active-projects-strip.html" . }}
+
     <section class="card monthly-review-card" aria-labelledby="monthly-review-heading">
       <h3 id="monthly-review-heading">Monthly review</h3>
       {{ $reviews := where (where site.RegularPages "Section" "posts") "Params.tags" "intersect" (slice "monthly-review") }}

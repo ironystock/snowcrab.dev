@@ -2,16 +2,16 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 13:39 MST
+- Last updated: 2026-03-06 18:59 MST
 
 ## Last shipped batch
-- Build hygiene completion batch: cleared remaining Hugo warnings by enabling intended raw HTML rendering and adding a home JSON layout template; local build validation now runs cleanly.
+- Homepage active-projects strip shipped: added compact status pills + last-update lines on homepage Signals, with links to project detail pages; published initial detail pages for Hockeyclaw and discord-claws.
 
 ## Next queued action
-- No queued product batches currently; next heartbeat should report `no meaningful batch` unless a new TODO is added.
+- Build post series navigator (previous/next + part index) as the next focused heartbeat batch.
 
 ## Active blockers
-- None
+- Queue drift resolved: `HEARTBEAT.md` had an active TODO backlog while STATE previously said "no queued product batches".
 
 
 ## Imported Context Snapshot (2026-03-05)

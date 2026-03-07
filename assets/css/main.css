@@ -899,6 +899,57 @@ main.container {
 .impact-split-list li span { color: var(--muted); }
 .impact-split-list li strong { font-size: 0.95rem; }
 
+.active-projects-strip {
+  gap: 0.6rem;
+}
+
+.active-projects-strip-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.active-projects-strip-head h3 {
+  margin-bottom: 0;
+}
+
+.active-projects-strip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.active-projects-strip-item {
+  border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+  border-radius: 10px;
+  padding: 0.5rem 0.58rem;
+  background: color-mix(in oklab, var(--bg-elev) 95%, var(--border) 5%);
+}
+
+.active-projects-strip-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+}
+
+.active-projects-strip-link {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.active-projects-strip-link:hover {
+  text-decoration: underline;
+}
+
+.active-projects-strip-item .meta {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+}
+
 #last-visit-module .meta {
   margin-bottom: 0.45rem;
 }

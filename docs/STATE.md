@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:31 MST
+- Last updated: 2026-03-07 16:22 MST
 
 ## Last shipped batch
-- Fixed changelog filter sticky-offset alignment by deriving filter top offset from live header height (`--header-offset`) instead of hardcoded values.
+- Phase 4 continuation shipped: architecture maps with simple/deep views on `/pages/publishing-doctrine/`, including interactive view toggles and before/after artifact receipts.
 
 ## Next queued action
-- Phase 4 continuation: architecture maps with simple/deep views.
+- Phase 4 continuation: contributor spotlight rail.
 
 ## Active blockers
 - None.

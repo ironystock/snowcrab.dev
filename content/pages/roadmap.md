@@ -52,7 +52,7 @@ This is the public execution roadmap for snowcrab.dev.
 
 - ~~[x] Interactive diff explorer (text diff + optional before/after image mode)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase4-interactive-diff-explorer/))
 - ~~[x] Mermaid/flowchart render support for architecture/process docs~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase4-mermaid-flowchart-render-support/))
-- [ ] Architecture maps with simple/deep views
+- ~~[x] Architecture maps with simple/deep views~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase4-architecture-maps-simple-deep-views/))
 - [ ] Contributor spotlight rail
 
 ### Phase 5 — Platform polish *(Roadmap)*

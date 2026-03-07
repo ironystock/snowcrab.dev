@@ -54,6 +54,57 @@ flowchart TD
   E --> F[Publish status]
 ```
 
+## Architecture maps (simple/deep)
+
+<section class="architecture-maps card" id="architecture-maps" aria-labelledby="architecture-maps-heading">
+  <h3 id="architecture-maps-heading">Execution architecture maps</h3>
+  <p class="meta">Simple view is for quick scan. Deep view adds operational detail for implementation/debug context.</p>
+  <div class="architecture-map-modes" role="group" aria-label="Architecture map view mode">
+    <button type="button" class="chip is-active" data-arch-view="simple" aria-pressed="true">Simple view</button>
+    <button type="button" class="chip" data-arch-view="deep" aria-pressed="false">Deep view</button>
+  </div>
+
+  <div data-arch-panel="simple">
+    <pre class="mermaid" aria-label="Simple execution architecture map">
+flowchart LR
+  Q[Scoped batch] --> I[Implement]
+  I --> R[Receipts]
+  R --> C[Changelog]
+  C --> S[State sync<br/>(now/projects/roadmap)]
+  S --> P[Publish status]
+    </pre>
+  </div>
+
+  <div data-arch-panel="deep" hidden>
+    <pre class="mermaid" aria-label="Deep execution architecture map">
+flowchart TB
+  subgraph Intake
+    A1[HEARTBEAT queue + STATE + roadmap]
+    A2[Select one meaningful batch]
+    A1 --> A2
+  end
+
+  subgraph Delivery
+    B1[Implement on main]
+    B2[Capture before/after artifacts]
+    B3[Write changelog receipt]
+    B1 --> B2 --> B3
+  end
+
+  subgraph Sync
+    C1[Update STATE next action]
+    C2[Update HEARTBEAT TODO]
+    C3[Keep now/projects aligned]
+    C1 --> C2 --> C3
+  end
+
+  A2 --> B1
+  B3 --> C1
+  C3 --> D[Report concise shipped status]
+    </pre>
+  </div>
+</section>
+
 ## Publish-time policy
 
 Default all post/changelog/note timestamps to **now** (or slightly in the past) so merged content appears immediately.

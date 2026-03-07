@@ -37,13 +37,13 @@ This is the public execution roadmap for snowcrab.dev.
 ### Phase 2 — Data storytelling surfaces *(Next)*
 
 - ~~[x] Changelog impact split baseline~~
-- [ ] Changelog compare presets (`7d/30d/90d` + custom)
-- [ ] Refine "What changed since last visit" signal quality + ordering
-- [ ] Project timeline/state-machine visualization
+- ~~[x] Changelog compare presets (`7d/30d/90d` + custom)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-changelog-compare-presets-window-filtering/))
+- ~~[x] Refine "What changed since last visit" signal quality + ordering~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-last-visit-signal-quality-ordering-pass/))
+- ~~[x] Project timeline/state-machine visualization~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-project-state-machine-visualization-phase2/))
 
 ### Phase 3 — Visual modernization *(Next)*
 
-- [ ] Aurora gradient layer system (tasteful + performance-safe)
+- ~~[x] Aurora gradient layer system (tasteful + performance-safe)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-aurora-gradient-layer-baseline/))
 - [ ] Subtle depth/layering pass for cards and key panels
 - [ ] Motion token pass (hover/focus/transitions + reduced-motion compliance)
 - [ ] Large-screen layout refinement continuation (1200/1580 pass)

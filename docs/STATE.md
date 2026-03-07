@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:01 MST
+- Last updated: 2026-03-07 15:04 MST
 
 ## Last shipped batch
-- Added a project flow state-machine visualization to `/pages/projects/` (Next → Now → Watch), including live lane counts, transition rules, and before/after visual artifacts under `/artifacts/phase2/`.
+- Ran roadmap hygiene sync: struck through completed Phase 2 items (compare presets, last-visit refinement, state-machine visualization) plus Phase 3 aurora baseline, each with changelog links.
 
 ## Next queued action
-- No meaningful batch currently queued; awaiting next scoped improvement task.
+- Phase 3 continuation: subtle depth/layering pass for cards and key panels.
 
 ## Active blockers
 - None.

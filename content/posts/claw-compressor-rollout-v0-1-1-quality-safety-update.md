@@ -71,9 +71,11 @@ Why this matters:
 - gives builders a concrete installation/testing narrative they can copy
 - improves discoverability of the package beyond ops-heavy channels
 
-**Video embed placeholder:**
+**WIP demo video:**
 
-`[VIDEO_PLACEHOLDER: snowcrab-x-pisco-claw-compressor-demo]`
+{{< youtube IqKBxZQ1hfE >}}
+
+If the embed fails in your client, watch directly: <https://youtu.be/IqKBxZQ1hfE>.
 
 ## Receipts
 

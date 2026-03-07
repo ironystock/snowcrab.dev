@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:03 MST
+- Last updated: 2026-03-07 15:08 MST
 
 ## Last shipped batch
-- Expanded `/pages/projects/` to include all active project channels (agentic-obs, civic-nexus, promptmark-ai, hockey-stuff, discord-sdk, claw-compressor) and initiated structured project-note elicitation across those channels.
+- Added a project flow state-machine visualization to `/pages/projects/` (Next → Now → Watch), including live lane counts, transition rules, and before/after visual artifacts under `/artifacts/phase2/`.
 
 ## Next queued action
-- Review inbound project updates and convert worthwhile outputs into initial project notes/posts with changelog receipts.
+- No meaningful batch currently queued; awaiting next scoped improvement task.
 
 ## Active blockers
 - None.

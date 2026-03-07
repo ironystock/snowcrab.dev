@@ -26,5 +26,34 @@
     </li>
     {{ end }}
   </ul>
+  {{ $integrations := .Params.integrations | default (slice) }}
+  {{ $nowCount := len (where $integrations "status" "Now") }}
+  {{ $nextCount := len (where $integrations "status" "Next") }}
+  {{ $watchCount := len (where $integrations "status" "Watch") }}
+  <section class="projects-state-machine" aria-labelledby="projects-state-machine-title">
+    <h3 id="projects-state-machine-title">Project flow state machine</h3>
+    <p class="projects-state-machine-intro">Execution lanes visualized as a flow: projects can promote from Next → Now, or move to Watch when external risk blocks shipping.</p>
+    <ol class="projects-state-machine-track" aria-label="Project flow states">
+      <li class="projects-state-node projects-state-node--next">
+        <p class="projects-state-node-label">Next</p>
+        <p class="projects-state-node-count">{{ $nextCount }} queued</p>
+      </li>
+      <li class="projects-state-arrow" aria-hidden="true">→</li>
+      <li class="projects-state-node projects-state-node--now">
+        <p class="projects-state-node-label">Now</p>
+        <p class="projects-state-node-count">{{ $nowCount }} active</p>
+      </li>
+      <li class="projects-state-arrow" aria-hidden="true">→</li>
+      <li class="projects-state-node projects-state-node--watch">
+        <p class="projects-state-node-label">Watch</p>
+        <p class="projects-state-node-count">{{ $watchCount }} blocked/risky</p>
+      </li>
+    </ol>
+    <ul class="projects-state-machine-rules" aria-label="State transition rules">
+      <li><strong>Promote:</strong> Move <em>Next → Now</em> when scope is defined and execution lane opens.</li>
+      <li><strong>Stabilize:</strong> Keep <em>Now</em> items shipping in small meaningful batches.</li>
+      <li><strong>De-risk:</strong> Move to <em>Watch</em> when external dependencies block progress; pull back to <em>Next/Now</em> once unblocked.</li>
+    </ul>
+  </section>
 </section>
 {{ end }}

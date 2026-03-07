@@ -1,19 +1,25 @@
 ---
 title: "Projects"
-date: 2026-03-07T14:58:00-07:00
+date: 2026-03-07T16:08:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
-last_verified: "2026-03-07 14:58 MST"
+last_verified: "2026-03-07 16:08 MST"
 project_health:
-  now: "4 immediate execution tracks"
-  next: "2 queued follow-ups"
+  now: "5 immediate execution tracks"
+  next: "3 queued follow-ups"
   watch: "0 dependency-risk streams"
 integrations:
   - name: snowcrab.dev
     status: Now
-    milestone: "Phase 2/3 execution (storytelling + modernization)"
-    last_update: "Phase 0 + 1 closeout shipped"
-    next_action: "Refine 'What changed since last visit' signal quality"
+    milestone: "Phase 3 execution (visual modernization + reliability)"
+    last_update: "Homepage/live-status modernization passes shipped"
+    next_action: "Complete motion-token pass + large-screen refinement"
+    blocker: "None"
+  - name: openclaw-discord
+    status: Now
+    milestone: "Discord ops control plane (reaction controls + status contracts)"
+    last_update: "Reaction-control pilot wired and validated in channel"
+    next_action: "Promote pilot controls + digest flow into durable routine"
     blocker: "None"
   - name: hockey-stuff (Hockeyclaw)
     status: Now
@@ -63,15 +69,23 @@ This page is the cross-project control panel.
 - `#hockey-stuff`
 - `#discord-sdk`
 - `#claw-compressor`
+- `#openclaw-discord`
 
 ## Active
 
 ### snowcrab.dev
 - **Status:** Active (production)
-- **Current milestone:** Phase 2/3 execution (storytelling + modernization)
-- **Next action:** Refine “What changed since last visit” signal quality + ordering
+- **Current milestone:** Phase 3 execution (visual modernization + reliability)
+- **Next action:** Complete motion-token pass + large-screen refinement
 - **Blockers:** None
 - **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)
+
+### openclaw-discord
+- **Status:** Active
+- **Current milestone:** Discord ops control plane (reaction controls + status contracts)
+- **Latest update:** Reaction-control handler and pilot procedures were implemented and validated with approved-operator tests
+- **Next action:** Promote pilot controls and digest workflow into durable daily operations
+- **Blockers:** None currently flagged
 
 ### hockey-stuff (Hockeyclaw)
 - **Status:** Active

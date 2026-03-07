@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:09 MST
+- Last updated: 2026-03-07 16:12 MST
 
 ## Last shipped batch
-- Phase 3 continuation shipped: large-screen layout refinement continuation (1200/1580 pass) with desktop sticky sidebar behavior, ultra-wide two-column sidebar panel packing, and visual artifacts under `/artifacts/phase3/`.
+- Added `openclaw-discord` as a first-class project source on `/pages/projects/` and published the first project post from channel execution history (`/posts/openclaw-discord-reaction-controls-pilot/`).
 
 ## Next queued action
-- Phase 4: interactive diff explorer (text diff + optional before/after image mode).
+- Continue Phase 4 kickoff: interactive diff explorer (text diff + optional before/after image mode).
 
 ## Active blockers
 - None.

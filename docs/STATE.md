@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:13 MST
+- Last updated: 2026-03-07 15:15 MST
 
 ## Last shipped batch
-- Published a new Field Note summarizing today’s collaboration sprint (roadmap/heartbeat/state drift cleanup, freshness guardrails, proactive project intake setup, and homepage status-widget refresh outcomes).
+- Fixed project dashboard count integrity by deriving lane summaries directly from `integrations[].status`, removing manual summary drift between cards and state-machine counts.
 
 ## Next queued action
 - Phase 3 continuation: subtle depth/layering pass for cards and key panels.

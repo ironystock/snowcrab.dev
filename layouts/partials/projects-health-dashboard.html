@@ -1,35 +1,28 @@
-{{ $health := .Params.project_health }}
-{{ if $health }}
+{{ $integrations := .Params.integrations | default (slice) }}
+{{ if gt (len $integrations) 0 }}
+{{ $nowCount := len (where $integrations "status" "Now") }}
+{{ $nextCount := len (where $integrations "status" "Next") }}
+{{ $watchCount := len (where $integrations "status" "Watch") }}
 <section class="projects-health card" aria-labelledby="projects-health-title">
   <h2 id="projects-health-title">Project health dashboard</h2>
   <p class="projects-health-intro">Current priority lanes and immediate execution focus.</p>
   <ul class="projects-health-grid" aria-label="Project priority lanes">
-    {{ with $health.now }}
     <li class="projects-health-item projects-health-item--now">
       <p class="projects-health-kicker">Primary lane</p>
       <h3 class="projects-health-item-title">Now <span class="status-pill status-pill--now">Now</span></h3>
-      <p class="projects-health-copy">{{ . }}</p>
+      <p class="projects-health-copy">{{ $nowCount }} active execution track{{ if ne $nowCount 1 }}s{{ end }}.</p>
     </li>
-    {{ end }}
-    {{ with $health.next }}
     <li class="projects-health-item projects-health-item--next">
       <p class="projects-health-kicker">Queued lane</p>
       <h3 class="projects-health-item-title">Next <span class="status-pill status-pill--next">Next</span></h3>
-      <p class="projects-health-copy">{{ . }}</p>
+      <p class="projects-health-copy">{{ $nextCount }} queued follow-up{{ if ne $nextCount 1 }}s{{ end }}.</p>
     </li>
-    {{ end }}
-    {{ with $health.watch }}
     <li class="projects-health-item projects-health-item--watch">
       <p class="projects-health-kicker">Risk lane</p>
       <h3 class="projects-health-item-title">Watch <span class="status-pill status-pill--watch">Watch</span></h3>
-      <p class="projects-health-copy">{{ . }}</p>
+      <p class="projects-health-copy">{{ $watchCount }} dependency-risk stream{{ if ne $watchCount 1 }}s{{ end }}.</p>
     </li>
-    {{ end }}
   </ul>
-  {{ $integrations := .Params.integrations | default (slice) }}
-  {{ $nowCount := len (where $integrations "status" "Now") }}
-  {{ $nextCount := len (where $integrations "status" "Next") }}
-  {{ $watchCount := len (where $integrations "status" "Watch") }}
   <section class="projects-state-machine" aria-labelledby="projects-state-machine-title">
     <h3 id="projects-state-machine-title">Project flow state machine</h3>
     <p class="projects-state-machine-intro">Execution lanes visualized as a flow: projects can promote from Next → Now, or move to Watch when external risk blocks shipping.</p>

@@ -43,6 +43,17 @@ If someone asks *"why did you do it this way?"*, field notes should answer that.
 - Weekly hard refresh of `/pages/now` (rewrite focus, not just typo edits)
 - Monthly → recap post synthesizing both
 
+## Execution flow (rendered)
+
+```mermaid
+flowchart TD
+  A[Queue meaningful batch] --> B[Ship implementation]
+  B --> C[Capture receipts and artifacts]
+  C --> D[Write changelog entry]
+  D --> E[Update now, projects, roadmap state]
+  E --> F[Publish status]
+```
+
 ## Publish-time policy
 
 Default all post/changelog/note timestamps to **now** (or slightly in the past) so merged content appears immediately.

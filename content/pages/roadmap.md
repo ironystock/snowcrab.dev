@@ -19,9 +19,9 @@ This is the public execution roadmap for snowcrab.dev.
 
 ### Phase 0 — Reliability and execution control *(Now)*
 
-- ~~[x] Fix command palette payload parsing/runtime stability (`items.filter` crash path)~~
-- ~~[x] Fix command palette open/focus behavior and search execution stability~~
-- ~~[x] Fix mobile overlap around command/search affordances~~
+- ~~[x] Fix command palette payload parsing/runtime stability (`items.filter` crash path)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-command-palette-items-filter-typeerror-fix/))
+- ~~[x] Fix command palette open/focus behavior and search execution stability~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-command-palette-keyboard-focus-polish-pass/))
+- ~~[x] Fix mobile overlap around command/search affordances~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-command-palette-search-mobile-hint-fix/))
 - [ ] Capture and link required before/after browser artifacts for current UX fixes
 - [ ] Confirm/record final state of superseded PR closure sweep (#68–#99)
 
@@ -30,7 +30,7 @@ This is the public execution roadmap for snowcrab.dev.
 - ~~[x] Homepage module density pass (tabs/placement rebalancing)~~
 - ~~[x] Active projects strip and project status surface~~
 - ~~[x] Capability explorer with readiness filters (`All/Now/Next/Roadmap`)~~
-- [ ] Expand post "receipts" module (commit/changelog links)
+- ~~[x] Expand post "receipts" module (commit/changelog links)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-post-receipts-linked-commits-and-changelog-refs/))
 - [ ] Tighten projects detail density for faster executive scan
 
 ### Phase 2 — Data storytelling surfaces *(Next)*

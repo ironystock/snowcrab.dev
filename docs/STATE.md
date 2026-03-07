@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 13:18 MST
+- Last updated: 2026-03-07 13:29 MST
 
 ## Last shipped batch
-- Roadmap source-of-truth pass: rebuilt `/pages/roadmap/` into a phase-based public execution board with strikethrough completion tracking, and synced `/pages/now/` to link roadmap as the live queue.
+- Roadmap hygiene pass: added direct changelog links for completed Phase 0 command palette/mobile fixes and marked the post receipts module item as shipped on `/pages/roadmap/`.
 
 ## Next queued action
 - Capture and attach before/after browser artifacts for recent command palette + mobile Phase 0 fixes.

@@ -151,10 +151,10 @@
     <form method="dialog" class="command-palette-sheet">
       <div class="command-palette-head">
         <h2 id="command-palette-title">Search posts, pages, changelog</h2>
-        <button value="cancel" class="command-palette-close" aria-label="Close search">×</button>
+        <button value="cancel" type="submit" class="command-palette-close" aria-label="Close search">×</button>
       </div>
       <label for="command-palette-input" class="sr-only">Search content</label>
-      <input id="command-palette-input" class="command-palette-input" type="search" placeholder="Type to search..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="command-palette-results" aria-autocomplete="list" aria-activedescendant="" aria-describedby="command-palette-hint" />
+      <input id="command-palette-input" class="command-palette-input" type="search" placeholder="Type to search..." autocomplete="off" autofocus role="combobox" aria-expanded="false" aria-controls="command-palette-results" aria-autocomplete="list" aria-activedescendant="" aria-describedby="command-palette-hint" />
       <p id="command-palette-hint" class="meta command-palette-hint">Use ↑/↓ (or PageUp/PageDown) to navigate, Enter to open, Esc to close. Shortcut: ⌘K (or /).</p>
       <ul id="command-palette-results" class="command-palette-results" role="listbox" aria-label="Search results" aria-live="polite"></ul>
     </form>

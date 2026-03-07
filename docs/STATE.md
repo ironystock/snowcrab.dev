@@ -5,10 +5,10 @@
 - Last updated: 2026-03-07 11:38 MST
 
 ## Last shipped batch
-- Docs hygiene pass: cleaned durable decision log and open-questions registry to remove malformed migrated entries and restore actionable planning context.
+- Capabilities explorer rollout: added interactive filter chips (`All/Now/Next/Roadmap`) and client-side section filtering on `/pages/capabilities/` for faster readiness-based scanning.
 
 ## Next queued action
-- No meaningful batch currently queued; awaiting next scoped improvement task.
+- Build "What changed since last visit" refinement pass (signal quality + ordering) as the next focused batch.
 
 ## Active blockers
 - None.

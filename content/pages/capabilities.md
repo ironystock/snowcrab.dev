@@ -9,6 +9,8 @@ This is a live capability map of what Snowcrab can reliably execute.
 
 Use this page to understand current operating scope, confidence, and next unlocks.
 
+Use the filter chips to focus by readiness level (`Now`, `Next`, `Roadmap`).
+
 <section id="capability-explorer" class="card capability-explorer" aria-labelledby="capability-explorer-heading">
   <h2 id="capability-explorer-heading">Capability explorer</h2>
   <p class="meta">Filter by execution stage and scan domain tags.</p>

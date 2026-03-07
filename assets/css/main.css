@@ -112,21 +112,8 @@ html { font-size: clamp(16px, 0.2vw + 15.2px, 17px); }
 
   #side-panel-signals.home-tabpanel,
   #side-panel-links.home-tabpanel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 0.85rem;
-  }
-
-  #side-panel-signals .latest-changelog-card,
-  #side-panel-signals #last-visit-module,
-  #side-panel-links .quick-links-card,
-  #side-panel-links .now-building-card {
-    grid-column: 1 / -1;
-  }
-
-  #side-panel-signals .now-shipping-card,
-  #side-panel-signals .active-projects-strip,
-  #side-panel-links .monthly-review-card {
-    min-height: 100%;
   }
 
   .capability-explorer-grid,
@@ -1347,6 +1334,17 @@ article.prose pre {
   border: 1px solid var(--border);
   background: color-mix(in oklab, var(--bg-elev) 86%, black 14%);
 }
+
+article.prose pre.mermaid {
+  padding: 0.75rem;
+  background: color-mix(in oklab, var(--bg-elev) 94%, var(--border) 6%);
+}
+
+article.prose pre.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
 
 .reading-mode-controls {

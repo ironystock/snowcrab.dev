@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:20 MST
+- Last updated: 2026-03-07 16:22 MST
 
 ## Last shipped batch
-- Corrected typography target: applied Geist Medium to heading elements (`h1`–`h6`) with ~25% size increase and reverted unintended header/nav/search Geist overrides.
+- Reverted sidebar side-by-side card layout back to single-column stacking for Signals/Links at ultra-wide breakpoints to remove squished readability issues.
 
 ## Next queued action
 - Phase 4 continuation: Mermaid/flowchart render support for architecture/process docs.

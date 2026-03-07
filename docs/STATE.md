@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:18 MST
+- Last updated: 2026-03-07 16:20 MST
 
 ## Last shipped batch
-- Phase 4 kickoff shipped: interactive diff explorer on `/pages/automation-demos/` with text diff mode, optional before/after image mode, and linked changelog receipts.
+- Corrected typography target: applied Geist Medium to heading elements (`h1`–`h6`) with ~25% size increase and reverted unintended header/nav/search Geist overrides.
 
 ## Next queued action
 - Phase 4 continuation: Mermaid/flowchart render support for architecture/process docs.

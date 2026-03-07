@@ -356,7 +356,8 @@ a:hover .external-link-glyph { opacity: 1; }
 }
 
 .command-toggle,
-.theme-toggle {
+.theme-toggle,
+.pwa-install {
   border: 1px solid var(--border);
   color: var(--text);
   background: var(--bg-elev);
@@ -378,6 +379,15 @@ a:hover .external-link-glyph { opacity: 1; }
   margin-right: 3.9rem;
 }
 
+.pwa-install {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
+  margin-right: 7.4rem;
+  font-size: 0.76rem;
+  padding-inline: 0.62rem;
+}
+
 .theme-toggle {
   grid-row: 1;
   grid-column: 2;
@@ -385,13 +395,15 @@ a:hover .external-link-glyph { opacity: 1; }
 }
 
 .command-toggle:hover,
-.theme-toggle:hover {
+.theme-toggle:hover,
+.pwa-install:hover {
   border-color: var(--primary);
   transform: translateY(-1px);
 }
 
 .command-toggle:focus-visible,
-.theme-toggle:focus-visible {
+.theme-toggle:focus-visible,
+.pwa-install:focus-visible {
   outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
   outline-offset: 2px;
 }
@@ -2260,6 +2272,7 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   .nav-list a:hover,
   .command-toggle:hover,
   .theme-toggle:hover,
+  .pwa-install:hover,
   .chip:hover,
   .card:hover {
     transform: none !important;
@@ -2335,6 +2348,10 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     grid-column: 1 / -1;
     justify-self: start;
     min-width: 0;
+  }
+
+  .pwa-install {
+    margin-right: 3.6rem;
   }
 
   #command-toggle-shortcut,

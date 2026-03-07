@@ -57,7 +57,7 @@ This is the public execution roadmap for snowcrab.dev.
 
 ### Phase 5 — Platform polish *(Roadmap)*
 
-- [ ] PWA baseline (manifest/offline fallback/install behavior)
+- ~~[x] PWA baseline (manifest/offline fallback/install behavior)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase5-pwa-baseline/))
 - [ ] Performance budget enforcement and regression guardrails
 - [ ] Accessibility hardening pass (keyboard, focus order, contrast audits)
 

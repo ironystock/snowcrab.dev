@@ -86,6 +86,7 @@
   <script defer src="/js/reading-mode.js?v={{ $assetRev }}"></script>
   <script defer src="/js/diff-explorer.js?v={{ $assetRev }}"></script>
   <script defer src="/js/architecture-maps.js?v={{ $assetRev }}"></script>
+  <script defer src="/js/pwa.js?v={{ $assetRev }}"></script>
   <script type="module" src="/js/mermaid-init.js?v={{ $assetRev }}"></script>
 </head>
 <body>
@@ -116,6 +117,7 @@
       <button class="command-toggle" id="command-toggle" type="button" aria-haspopup="dialog" aria-controls="command-palette" aria-label="Open search and command bar" aria-keyshortcuts="Control+K Meta+K /">
         Search <span id="command-toggle-shortcut" aria-hidden="true">⌘K</span>
       </button>
+      <button class="pwa-install" id="pwa-install" type="button" hidden aria-label="Install Snowcrab app">Install app</button>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" aria-describedby="theme-status-live">
         <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
         <span id="theme-toggle-label" class="sr-only">Switch to light theme</span>

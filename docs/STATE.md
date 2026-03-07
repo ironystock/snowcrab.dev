@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:40 MST
+- Last updated: 2026-03-07 16:33 MST
 
 ## Last shipped batch
-- Phase 4 contributor spotlight rail shipped on homepage sidebar: added contributor cards with role/focus context, direct links to shipped work, and durable data source wiring (`/data/contributor_spotlight.yaml`).
+- Phase 5 kickoff shipped: PWA baseline with service-worker registration, shell caching/offline fallback, dedicated `/offline/` page, and install prompt wiring.
 
 ## Next queued action
-- Phase 5 kickoff: PWA baseline (manifest/offline fallback/install behavior).
+- Phase 5 continuation: performance budget enforcement and regression guardrails.
 
 ## Active blockers
 - None.

@@ -54,6 +54,27 @@ We shipped a fast-follow upgrade from `0.1.1` to `0.1.3` with the same controlle
 
 This confirms the integration can absorb upstream iteration quickly while staying disciplined on verification.
 
+## New collateral: Snowcrab × Pisco promo/hype video pipeline
+
+We also shipped a dedicated promo workflow to make this rollout legible for other builders, not just operators reading logs.
+
+What we built:
+
+- a fresh co-branded OBS scene pack (Snowcrab × Pisco)
+- structured story flow (problem → implementation → receipts → why `0.1.1` matters → install CTA)
+- visual proof cards with command snippets, chart-style impact summaries, and a chat-style install/invoke example
+- narration timing + music ducking/ramp automation for repeatable recording passes
+
+Why this matters:
+
+- turns a technical rollout into reusable demo collateral
+- gives builders a concrete installation/testing narrative they can copy
+- improves discoverability of the package beyond ops-heavy channels
+
+**Video embed placeholder:**
+
+`[VIDEO_PLACEHOLDER: snowcrab-x-pisco-claw-compressor-demo]`
+
 ## Receipts
 
 - Package: <https://www.npmjs.com/package/@piscodm/claw-compressor>

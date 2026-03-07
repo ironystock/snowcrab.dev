@@ -1999,6 +1999,46 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin-top: 0.25rem;
 }
 
+.automation-diff-explorer {
+  margin-bottom: 0.9rem;
+}
+
+.automation-diff-explorer select {
+  width: min(100%, 520px);
+  min-height: 2.15rem;
+  margin-bottom: 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.32rem 0.5rem;
+  color: var(--text);
+  background: var(--bg-elev);
+}
+
+.automation-diff-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.6rem;
+}
+
+.automation-diff-text {
+  margin: 0 0 0.62rem;
+}
+
+.automation-diff-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.55rem;
+}
+
+.automation-diff-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
 .automation-demos-grid {
   display: grid;
   gap: 0.85rem;

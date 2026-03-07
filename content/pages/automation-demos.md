@@ -9,6 +9,57 @@ This is a practical gallery of shipped automation work.
 
 Each demo follows one compact structure: **before → after → receipt**.
 
+<section class="automation-diff-explorer card" id="automation-diff-explorer" aria-labelledby="automation-diff-explorer-heading">
+  <h2 id="automation-diff-explorer-heading">Interactive diff explorer</h2>
+  <p class="meta">Switch between text diffs and optional before/after image mode for fast artifact inspection.</p>
+  <label for="diff-explorer-select" class="meta">Demo</label>
+  <select id="diff-explorer-select"></select>
+  <div class="automation-diff-modes" role="group" aria-label="Diff mode">
+    <button type="button" class="chip is-active" data-diff-mode="text" aria-pressed="true">Text diff</button>
+    <button type="button" class="chip" data-diff-mode="image" aria-pressed="false">Image mode</button>
+  </div>
+
+  <pre id="diff-explorer-text" class="automation-diff-text"><code></code></pre>
+  <figure id="diff-explorer-image" class="automation-diff-image" hidden>
+    <div class="automation-diff-image-grid">
+      <a id="diff-explorer-before-link" href="#"><img id="diff-explorer-before" alt="Before state screenshot" loading="lazy" /></a>
+      <a id="diff-explorer-after-link" href="#"><img id="diff-explorer-after" alt="After state screenshot" loading="lazy" /></a>
+    </div>
+    <figcaption class="meta">Left: before · Right: after</figcaption>
+  </figure>
+  <p id="diff-explorer-receipts"><strong>Receipts:</strong> <span></span></p>
+</section>
+
+<script type="application/json" id="diff-explorer-data">[
+  {
+    "title": "Command palette + mobile header fix",
+    "diff": "- command palette/mobile header regressions hard to verify visually\n+ paired before/after artifact receipts published and linked",
+    "before": "/artifacts/phase0/before-command-palette-mobile-fix.jpg",
+    "after": "/artifacts/phase0/after-command-palette-mobile-fix.jpg",
+    "receipts": [
+      { "label": "Changelog", "url": "/changelog/2026-03-07-phase0-command-palette-mobile-artifact-receipts/" }
+    ]
+  },
+  {
+    "title": "Last-visit signal ordering",
+    "diff": "- recency-only ordering in last-visit module\n+ category-aware ranking prioritizing reliability/ops signals",
+    "before": "/artifacts/phase2/before-last-visit-signal-ordering.jpg",
+    "after": "/artifacts/phase2/after-last-visit-signal-ordering.jpg",
+    "receipts": [
+      { "label": "Changelog", "url": "/changelog/2026-03-07-last-visit-signal-quality-ordering-pass/" }
+    ]
+  },
+  {
+    "title": "Phase 3 motion token pass",
+    "diff": "- transition timing drifted across interactive surfaces\n+ shared motion/easing tokens with reduced-motion-safe behavior",
+    "before": "/artifacts/phase3/before-motion-token-pass.jpg",
+    "after": "/artifacts/phase3/after-motion-token-pass.jpg",
+    "receipts": [
+      { "label": "Changelog", "url": "/changelog/2026-03-07-phase3-motion-token-pass/" }
+    ]
+  }
+]</script>
+
 <section class="automation-demos-grid" aria-label="Automation before and after demos">
   <article class="automation-demo-card">
     <h2>Mobile nav ergonomics pass</h2>

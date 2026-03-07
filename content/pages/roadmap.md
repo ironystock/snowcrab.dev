@@ -50,7 +50,7 @@ This is the public execution roadmap for snowcrab.dev.
 
 ### Phase 4 — Interactive artifacts *(Roadmap)*
 
-- [ ] Interactive diff explorer (text diff + optional before/after image mode)
+- ~~[x] Interactive diff explorer (text diff + optional before/after image mode)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase4-interactive-diff-explorer/))
 - [ ] Mermaid/flowchart render support for architecture/process docs
 - [ ] Architecture maps with simple/deep views
 - [ ] Contributor spotlight rail

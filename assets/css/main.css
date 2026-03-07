@@ -15,6 +15,9 @@
   --chip-active-bg: color-mix(in oklab, #db4652 20%, var(--bg-elev));
   --chip-active-border: color-mix(in oklab, #db4652 70%, var(--border));
   --meta-high-contrast: #2f3f56;
+  --aurora-ink-1: rgba(241, 82, 92, 0.17);
+  --aurora-ink-2: rgba(32, 199, 222, 0.14);
+  --aurora-ink-3: rgba(236, 181, 81, 0.1);
 }
 
 :root[data-theme="dark"] {
@@ -34,6 +37,9 @@
   --chip-active-bg: color-mix(in oklab, #ff6470 30%, var(--bg-elev));
   --chip-active-border: color-mix(in oklab, #ff6470 76%, var(--border));
   --meta-high-contrast: #b4c3d9;
+  --aurora-ink-1: rgba(255, 100, 112, 0.2);
+  --aurora-ink-2: rgba(103, 232, 249, 0.18);
+  --aurora-ink-3: rgba(196, 181, 253, 0.13);
 }
 
 :root {
@@ -102,15 +108,62 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(80vw 40vw at 10% -10%, rgba(241, 82, 92, 0.104), transparent 58%),
-    radial-gradient(80vw 40vw at 100% -20%, rgba(32, 199, 222, 0.084), transparent 63%),
+    radial-gradient(70vw 34vw at 12% -12%, var(--aurora-ink-1), transparent 64%),
+    radial-gradient(62vw 34vw at 88% -18%, var(--aurora-ink-2), transparent 66%),
+    radial-gradient(60vw 42vw at 52% -30%, var(--aurora-ink-3), transparent 70%),
     var(--bg);
   background-repeat: no-repeat;
-  background-size: cover, cover, auto;
+  background-size: cover, cover, cover, auto;
   line-height: 1.62;
   letter-spacing: 0.001em;
   text-rendering: optimizeLegibility;
   min-height: 100dvh;
+  position: relative;
+  isolation: isolate;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: -26vh -16vw auto;
+  height: 60vh;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+}
+
+body::before {
+  background:
+    radial-gradient(42vw 30vh at 14% 38%, color-mix(in oklab, var(--aurora-ink-1) 85%, transparent), transparent 72%),
+    radial-gradient(46vw 30vh at 84% 24%, color-mix(in oklab, var(--aurora-ink-2) 80%, transparent), transparent 70%);
+}
+
+body::after {
+  background:
+    radial-gradient(48vw 34vh at 52% 16%, color-mix(in oklab, var(--aurora-ink-3) 78%, transparent), transparent 72%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    animation: aurora-drift-a 26s ease-in-out infinite alternate;
+  }
+
+  body::after {
+    animation: aurora-drift-b 32s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes aurora-drift-a {
+  from { transform: translate3d(-1.4vw, -0.8vh, 0) scale(1); }
+  to { transform: translate3d(1.1vw, 1.2vh, 0) scale(1.04); }
+}
+
+@keyframes aurora-drift-b {
+  from { transform: translate3d(1.2vw, -1.1vh, 0) scale(0.98); }
+  to { transform: translate3d(-1.3vw, 1vh, 0) scale(1.03); }
 }
 
 h1, h2, h3, h4 {
@@ -924,6 +977,20 @@ main.container {
 
 .capability-filter-block {
   margin-bottom: 1rem;
+}
+
+.field-notes-stale {
+  border-color: color-mix(in oklab, var(--primary) 58%, var(--border) 42%);
+  background: color-mix(in oklab, var(--bg-elev) 84%, var(--primary) 16%);
+}
+
+.field-notes-archive summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.field-notes-archive[open] summary {
+  margin-bottom: 0.65rem;
 }
 
 .impact-split-list {

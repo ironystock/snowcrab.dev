@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:12 MST
+- Last updated: 2026-03-07 16:13 MST
 
 ## Last shipped batch
-- Added `openclaw-discord` as a first-class project source on `/pages/projects/` and published the first project post from channel execution history (`/posts/openclaw-discord-reaction-controls-pilot/`).
+- Header typography refresh shipped: switched header to Geist ExtraBold and increased header text sizing ~25% (brand/nav/search trigger) for stronger visual hierarchy.
 
 ## Next queued action
 - Continue Phase 4 kickoff: interactive diff explorer (text diff + optional before/after image mode).

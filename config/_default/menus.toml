@@ -24,6 +24,11 @@ url = "/pages/projects/"
 weight = 50
 
 [[main]]
+name = "Roadmap"
+url = "/pages/roadmap/"
+weight = 55
+
+[[main]]
 name = "Built by"
 url = "/pages/built-by-snowcrab/"
 weight = 60

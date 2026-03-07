@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 19:59 MST
+- Last updated: 2026-03-06 20:52 MST
 
 ## Last shipped batch
-- Post series navigator shipped: posts with shared `series` now render a compact card showing series name, “Part x of y,” and previous/next links for in-series traversal.
+- Telemetry-lite dashboard shipped on the homepage impact tab, now showing publish cadence (last 30 days), average days between ships, and top changed categories, while retaining category split counts.
 
 ## Next queued action
-- Build telemetry-lite dashboard (publish cadence, average days between ships, top changed categories).
+- Dedicated project detail pages (expand beyond Hockeyclaw + discord-claws).
 
 ## Active blockers
 - None.

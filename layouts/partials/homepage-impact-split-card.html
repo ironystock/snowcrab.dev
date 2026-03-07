@@ -1,11 +1,16 @@
 <section class="card impact-split-card" aria-labelledby="impact-split-heading">
-  <h3 id="impact-split-heading">Changelog impact split</h3>
+  <h3 id="impact-split-heading">Telemetry-lite dashboard</h3>
   {{ $changes := where site.RegularPages "Section" "changelog" }}
-  {{ $cats := newScratch }}
-  {{ $cats.Set "design" 0 }}
-  {{ $cats.Set "ops" 0 }}
-  {{ $cats.Set "content" 0 }}
-  {{ $cats.Set "reliability" 0 }}
+  {{ $total := len $changes }}
+
+  {{ $design := 0 }}
+  {{ $ops := 0 }}
+  {{ $content := 0 }}
+  {{ $reliability := 0 }}
+
+  {{ $recent30 := 0 }}
+  {{ $window30Unix := sub now.Unix 2592000 }}
+
   {{ range $changes }}
     {{ $raw := .Params.category | default "" | lower }}
     {{ $title := .Title | lower }}
@@ -17,19 +22,56 @@
       {{ if and (eq $cat "") (or (in $title "theme") (in $title "design") (in $title "ui") (in $title "typography")) }}{{ $cat = "design" }}{{ end }}
     {{ end }}
     {{ if eq $cat "" }}{{ $cat = "ops" }}{{ end }}
-    {{ $cats.Set $cat (add ($cats.Get $cat) 1) }}
+
+    {{ if eq $cat "design" }}{{ $design = add $design 1 }}{{ end }}
+    {{ if eq $cat "ops" }}{{ $ops = add $ops 1 }}{{ end }}
+    {{ if eq $cat "content" }}{{ $content = add $content 1 }}{{ end }}
+    {{ if eq $cat "reliability" }}{{ $reliability = add $reliability 1 }}{{ end }}
+
+    {{ if ge .Date.Unix $window30Unix }}
+      {{ $recent30 = add $recent30 1 }}
+    {{ end }}
   {{ end }}
-  {{ $total := len $changes }}
+
   {{ if gt $total 0 }}
-  <ul class="impact-split-list">
-    <li><span>Design</span><strong>{{ $cats.Get "design" }}</strong></li>
-    <li><span>Ops</span><strong>{{ $cats.Get "ops" }}</strong></li>
-    <li><span>Content</span><strong>{{ $cats.Get "content" }}</strong></li>
-    <li><span>Reliability</span><strong>{{ $cats.Get "reliability" }}</strong></li>
-  </ul>
-  <p class="meta">Based on {{ $total }} changelog entries.</p>
-  <p><a href="/changelog/">Explore timeline + filters →</a></p>
+    {{ $latest := index (first 1 ($changes.ByDate.Reverse)) 0 }}
+    {{ $oldest := index (first 1 ($changes.ByDate)) 0 }}
+
+    {{ $avgDays := 0 }}
+    {{ if gt $total 1 }}
+      {{ $spanDays := div (sub $latest.Date.Unix $oldest.Date.Unix) 86400 }}
+      {{ $avgDays = div $spanDays (sub $total 1) }}
+    {{ end }}
+
+    {{ $categoryCounts := slice
+      (dict "name" "Design" "count" $design)
+      (dict "name" "Ops" "count" $ops)
+      (dict "name" "Content" "count" $content)
+      (dict "name" "Reliability" "count" $reliability)
+    }}
+    {{ $sortedCategories := sort $categoryCounts "count" "desc" }}
+
+    <ul class="mini-list">
+      <li><strong>Publish cadence:</strong> {{ $recent30 }} ships in the last 30 days</li>
+      {{ if gt $total 1 }}
+        <li><strong>Avg days between ships:</strong> ~{{ $avgDays }} days</li>
+      {{ else }}
+        <li><strong>Avg days between ships:</strong> n/a (need at least 2 entries)</li>
+      {{ end }}
+      {{ with first 2 $sortedCategories }}
+        <li><strong>Top changed categories:</strong> {{ range $i, $entry := . }}{{ if gt $i 0 }}, {{ end }}{{ $entry.name }} ({{ $entry.count }}){{ end }}</li>
+      {{ end }}
+    </ul>
+
+    <p class="meta">Coverage: {{ $total }} total entries since <time datetime="{{ $oldest.Date.Format "2006-01-02" }}">{{ $oldest.Date.Format "Jan 2, 2006" }}</time>.</p>
+    <ul class="impact-split-list">
+      <li><span>Design</span><strong>{{ $design }}</strong></li>
+      <li><span>Ops</span><strong>{{ $ops }}</strong></li>
+      <li><span>Content</span><strong>{{ $content }}</strong></li>
+      <li><span>Reliability</span><strong>{{ $reliability }}</strong></li>
+    </ul>
+    <p><a href="/changelog/">Explore timeline + filters →</a></p>
   {{ else }}
-  <p class="muted">No changelog entries yet.</p>
+    <p class="muted">No changelog entries yet.</p>
   {{ end }}
 </section>

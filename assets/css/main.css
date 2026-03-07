@@ -439,13 +439,11 @@ main.container {
   backdrop-filter: saturate(108%);
   transition:
     border-color var(--motion-base) var(--ease-standard),
-    box-shadow var(--motion-slow) var(--ease-standard),
-    transform var(--motion-fast) var(--ease-expressive);
+    box-shadow var(--motion-slow) var(--ease-standard);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    transform: translateY(-2px);
     box-shadow: var(--panel-highlight), var(--shadow-lifted);
   }
 }
@@ -1138,6 +1136,31 @@ main.container {
 
 .projects-dashboard-tabs .home-tabpanel > .card {
   margin: 0.7rem 0 0;
+}
+
+.projects-reading-surface {
+  background: transparent;
+  border-color: color-mix(in oklab, var(--panel-border-strong) 58%, transparent);
+}
+
+.projects-reading-surface .projects-dashboard-tabs {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.projects-reading-surface .projects-health,
+.projects-reading-surface .integration-status {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.projects-reading-surface .projects-health-grid,
+.projects-reading-surface .integration-grid {
+  gap: 0.55rem;
 }
 
 .impact-split-list {

@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="prose card {{ if eq .Section "posts" }}post-reading-surface{{ end }}" aria-labelledby="page-title" aria-describedby="page-meta" {{ if eq .Section "posts" }}id="post-reading-surface"{{ end }}>
+<article class="prose card {{ if eq .Section "posts" }}post-reading-surface{{ end }} {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "projects") }}projects-reading-surface{{ end }}" aria-labelledby="page-title" aria-describedby="page-meta" {{ if eq .Section "posts" }}id="post-reading-surface"{{ end }}>
   <header>
     <h1 id="page-title">{{ .Title }}</h1>
     <p class="meta" id="page-meta">

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:22 MST
+- Last updated: 2026-03-07 16:33 MST
 
 ## Last shipped batch
-- Phase 4 continuation shipped: architecture maps with simple/deep views on `/pages/publishing-doctrine/`, including interactive view toggles and before/after artifact receipts.
+- Projects visual hierarchy reset shipped: reduced box-on-box stacking on `/pages/projects/` and removed distracting card upshift hover motion (shadow-only hover response).
 
 ## Next queued action
 - Phase 4 continuation: contributor spotlight rail.

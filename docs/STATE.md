@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 14:48 MST
+- Last updated: 2026-03-07 14:55 MST
 
 ## Last shipped batch
-- Phase 0+1 closeout pass: verified PR sweep closure state (#68–#99 all closed, open PRs now 0), and tightened `/pages/projects/` integration density for faster executive scan; roadmap strike-through tracking updated with changelog links.
+- Refined homepage "What changed since last visit" module signal quality + ordering by adding category-aware ranking (reliability/ops priority), clearer summary copy, and category labels in surfaced top changes; captured before/after artifacts under `/artifacts/phase2/`.
 
 ## Next queued action
-- Refine "What changed since last visit" module signal quality + ordering as the next focused meaningful batch (Phase 2 kickoff).
+- Phase 3 visual modernization kickoff: aurora gradient layer system (performance-safe baseline).
 
 ## Active blockers
 - None.

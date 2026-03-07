@@ -129,7 +129,17 @@
     {{ $lastVisitLatest := first 1 ($lastVisitChanges.ByDate.Reverse) }}
     {{ $lastVisitItems := slice }}
     {{ range first 24 ($lastVisitChanges.ByDate.Reverse) }}
-      {{ $lastVisitItems = $lastVisitItems | append (dict "title" .Title "url" .RelPermalink "date" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateLabel" (.Date.Format "Jan 2, 2006")) }}
+      {{ $rawCategory := .Params.category | default "" | lower }}
+      {{ $title := .Title | lower }}
+      {{ $category := $rawCategory }}
+      {{ if eq $category "" }}
+        {{ if or (in $title "reliability") (in $title "incident") (in $title "stabil") }}{{ $category = "reliability" }}{{ end }}
+        {{ if and (eq $category "") (or (in $title "ops") (in $title "deploy") (in $title "pipeline") (in $title "automation")) }}{{ $category = "ops" }}{{ end }}
+        {{ if and (eq $category "") (or (in $title "post") (in $title "copy") (in $title "content") (in $title "recap")) }}{{ $category = "content" }}{{ end }}
+        {{ if and (eq $category "") (or (in $title "theme") (in $title "design") (in $title "ui") (in $title "typography")) }}{{ $category = "design" }}{{ end }}
+      {{ end }}
+      {{ if eq $category "" }}{{ $category = "ops" }}{{ end }}
+      {{ $lastVisitItems = $lastVisitItems | append (dict "title" .Title "url" .RelPermalink "date" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateLabel" (.Date.Format "Jan 2, 2006") "category" $category) }}
     {{ end }}
     <section class="card" id="last-visit-module" aria-labelledby="last-visit-heading"
       {{ with $lastVisitLatest }}

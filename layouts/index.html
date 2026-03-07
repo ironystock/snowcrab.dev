@@ -75,7 +75,7 @@
       {{ $posts := where site.RegularPages "Section" "posts" }}
       {{ if gt (len $posts) 0 }}
         <ul class="posts-feed" id="latest-posts-list" aria-labelledby="latest-posts-heading">
-          {{ range first 5 ($posts.ByDate.Reverse) }}
+          {{ range first 10 ($posts.ByDate.Reverse) }}
             {{ $postTitleId := printf "home-post-title-%s" (.File.TranslationBaseName | default .Slug) }}
             <li>
               <article aria-labelledby="{{ $postTitleId }}">

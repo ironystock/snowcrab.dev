@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:30 MST
+- Last updated: 2026-03-07 16:31 MST
 
 ## Last shipped batch
-- Phase 4 shipped: Mermaid/flowchart render support for architecture/process docs via a Hugo Mermaid render hook + global client initializer, with first rendered execution flow added to `/pages/publishing-doctrine/` and before/after artifact receipts.
+- Fixed changelog filter sticky-offset alignment by deriving filter top offset from live header height (`--header-offset`) instead of hardcoded values.
 
 ## Next queued action
 - Phase 4 continuation: architecture maps with simple/deep views.

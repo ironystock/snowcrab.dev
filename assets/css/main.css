@@ -601,7 +601,7 @@ main.container {
 
 .changelog-filters-wrap {
   position: sticky;
-  top: 4.8rem;
+  top: calc(var(--header-offset, 78px) + 0.35rem);
   z-index: 5;
   padding: 0.55rem 0;
   margin-bottom: 0.2rem;
@@ -2052,6 +2052,28 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   border: 1px solid var(--border);
 }
 
+.architecture-maps {
+  margin: 1rem 0;
+}
+
+.architecture-map-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
+}
+
+.architecture-maps [data-arch-panel] pre.mermaid {
+  margin: 0;
+}
+
+.architecture-maps [data-arch-panel] {
+  border: 1px solid color-mix(in oklab, var(--border) 72%, transparent);
+  border-radius: 10px;
+  padding: 0.45rem;
+  background: color-mix(in oklab, var(--bg) 92%, transparent);
+}
+
 .automation-demos-grid {
   display: grid;
   gap: 0.85rem;
@@ -2274,10 +2296,6 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     scroll-snap-stop: always;
     min-height: 47px;
     padding: 0.62rem 1rem;
-  }
-
-  .changelog-filters-wrap {
-    top: 6.2rem;
   }
 
   .changelog-filter-summary {

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 13:29 MST
+- Last updated: 2026-03-07 13:45 MST
 
 ## Last shipped batch
-- Roadmap hygiene pass: added direct changelog links for completed Phase 0 command palette/mobile fixes and marked the post receipts module item as shipped on `/pages/roadmap/`.
+- Phase 0 artifact receipts pass: captured and published before/after browser screenshots for command palette + mobile header fixes under `static/artifacts/phase0/`, with changelog traceability.
 
 ## Next queued action
-- Capture and attach before/after browser artifacts for recent command palette + mobile Phase 0 fixes.
+- Build changelog compare presets (`7d/30d/90d` + custom).
 
 ## Active blockers
 - None.

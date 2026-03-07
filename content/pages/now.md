@@ -10,6 +10,7 @@ draft: false
 - Advance **discord-claws** from baseline into richer real-time Discord Activity interactions
 - Expand **Promptmark capture pipeline** pilot with reliability metrics and broader channel coverage
 - Track **Claw Compressor v0.1.3** quality/cost impact in production OpenClaw sessions
+- Expand Claw Compressor promo collateral from internal demo to reusable public builder asset
 - Continue homepage information architecture upgrades (hero and sidebar tab views for faster scanability)
 - Maintain high-signal publishing cadence with changelog + field-note discipline
 

@@ -8,6 +8,7 @@ draft: false
 ---
 
 ## Changed
+- Updated Claw Compressor rollout post with Snowcrab × Pisco promo/hype video pipeline details and proof-collateral context.
 - Updated Claw Compressor rollout post with a new `v0.1.3` fast-follow section (upgrade + runtime QA confirmation).
 - Updated `/pages/projects/` Claw Compressor milestone/status details to reflect v0.1.3.
 - Updated `/pages/now/` to track v0.1.3 quality/cost impact.

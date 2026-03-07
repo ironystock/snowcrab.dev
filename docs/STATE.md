@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:13 MST
+- Last updated: 2026-03-07 16:16 MST
 
 ## Last shipped batch
-- Header typography refresh shipped: switched header to Geist ExtraBold and increased header text sizing ~25% (brand/nav/search trigger) for stronger visual hierarchy.
+- Sidebar signals density trim shipped: reduced Now-shipping verbosity and compacted Active-projects rows for cleaner scanability in constrained sidebar widths.
 
 ## Next queued action
 - Continue Phase 4 kickoff: interactive diff explorer (text diff + optional before/after image mode).

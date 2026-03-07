@@ -1185,7 +1185,7 @@ main.container {
 .active-projects-strip-item {
   border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
   border-radius: 10px;
-  padding: 0.5rem 0.58rem;
+  padding: 0.42rem 0.56rem;
   background: color-mix(in oklab, var(--bg-elev) 95%, var(--border) 5%);
 }
 
@@ -1205,9 +1205,11 @@ main.container {
   text-decoration: underline;
 }
 
-.active-projects-strip-item .meta {
-  margin: 0.3rem 0 0;
-  font-size: 0.82rem;
+.now-shipping-list li {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 #last-visit-module .meta {

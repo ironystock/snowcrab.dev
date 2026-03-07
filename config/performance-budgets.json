@@ -1,0 +1,6 @@
+{
+  "maxRegressionPct": 12,
+  "maxMainCssBytes": 52000,
+  "maxTotalJsBytes": 110000,
+  "maxHomeHtmlBytes": 90000
+}

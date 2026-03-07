@@ -24,5 +24,8 @@ jobs:
       - name: Build
         run: hugo --gc --minify
 
+      - name: Performance budget guardrails
+        run: node scripts/check-performance-budgets.mjs
+
       # Link checking intentionally disabled for now.
-      # CI gate is Hugo build only to keep publishing cadence unblocked.
+      # CI gate is Hugo build + performance budget guardrails.

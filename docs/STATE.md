@@ -8,7 +8,7 @@
 - Fixed project dashboard count integrity by deriving lane summaries directly from `integrations[].status`, removing manual summary drift between cards and state-machine counts.
 
 ## Next queued action
-- No meaningful batch currently queued — waiting for next scoped site improvement task.
+- Phase 3 continuation: subtle depth/layering pass for cards and key panels.
 
 ## Active blockers
 - None.

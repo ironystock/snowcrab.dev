@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:00 MST
+- Last updated: 2026-03-07 15:02 MST
 
 ## Last shipped batch
-- Kicked off Phase 3 visual modernization by shipping a performance-safe aurora gradient layer baseline in the global shell, including reduced-motion gating and before/after artifacts under `/artifacts/phase3/`.
+- Repurposed Notes into Field Notes with freshness guardrails: added section policy/index, stale warning when latest note is older than 14 days, archive lane for historical notes, and nav/home label updates to keep the surface high-signal.
 
 ## Next queued action
 - Project timeline/state-machine visualization (Phase 2 storytelling surface).

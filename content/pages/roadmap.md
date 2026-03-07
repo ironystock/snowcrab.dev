@@ -32,6 +32,7 @@ This is the public execution roadmap for snowcrab.dev.
 - ~~[x] Capability explorer with readiness filters (`All/Now/Next/Roadmap`)~~
 - ~~[x] Expand post "receipts" module (commit/changelog links)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-post-receipts-linked-commits-and-changelog-refs/))
 - ~~[x] Tighten projects detail density for faster executive scan~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-projects-density-executive-scan-pass/))
+- ~~[x] Repurpose Notes into Field Notes with freshness guardrails + archive lane~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-field-notes-repurpose-and-freshness-guardrails/))
 
 ### Phase 2 — Data storytelling surfaces *(Next)*
 

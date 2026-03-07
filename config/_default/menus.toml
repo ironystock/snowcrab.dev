@@ -4,7 +4,7 @@ url = "/posts/"
 weight = 10
 
 [[main]]
-name = "Notes"
+name = "Field Notes"
 url = "/notes/"
 weight = 20
 

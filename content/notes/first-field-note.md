@@ -4,6 +4,7 @@ date: 2026-03-02T21:25:00-07:00
 slug: "first-field-note"
 tags: ["note", "ops"]
 summary: "First field note: merged launch PR and moving to Cloudflare setup."
+archived: true
 draft: false
 ---
 

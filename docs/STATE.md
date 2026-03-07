@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:33 MST
+- Last updated: 2026-03-07 16:48 MST
 
 ## Last shipped batch
-- Phase 5 continuation shipped: performance budget enforcement + regression guardrails via `scripts/perf_budget_guardrails.py`, committed baseline/budget data, and CI enforcement step.
+- Phase 5 continuation shipped: performance budget enforcement + regression guardrails via `scripts/check-performance-budgets.mjs`, committed baseline/budget data, and CI enforcement step.
 
 ## Next queued action
 - Phase 5 continuation: accessibility hardening pass (keyboard/focus order/contrast audits).

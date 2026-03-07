@@ -105,7 +105,21 @@
 
     <section class="card" aria-labelledby="now-shipping-heading">
       <h3 id="now-shipping-heading">Now shipping</h3>
-      <p class="muted">Working cadence: one deep post weekly + short field notes during active builds.</p>
+      {{ with $heroNow }}
+        <p class="meta">Synced from <a href="/pages/now/">Now</a> · <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></p>
+        {{ $nowBullets := findRE `(?m)^-\s+.+$` .RawContent }}
+        {{ with first 3 $nowBullets }}
+          <ul class="mini-list">
+            {{ range . }}
+              <li>{{ replaceRE `(?m)^-\s+` "" . }}</li>
+            {{ end }}
+          </ul>
+        {{ else }}
+          <p class="muted">No active bullets found in the Now page yet.</p>
+        {{ end }}
+      {{ else }}
+        <p class="muted">Now page unavailable.</p>
+      {{ end }}
       <a href="/pages/now/">See now page →</a>
     </section>
 

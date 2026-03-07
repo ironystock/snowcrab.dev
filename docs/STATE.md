@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:11 MST
+- Last updated: 2026-03-07 15:41 MST
 
 ## Last shipped batch
-- Fixed project dashboard count integrity by deriving lane summaries directly from `integrations[].status`, removing manual summary drift between cards and state-machine counts.
+- Drift-proofed homepage Now widget: it now derives directly from `/pages/now/` (lastmod + active bullets), eliminating independent static copy.
 
 ## Next queued action
 - Phase 3 continuation: subtle depth/layering pass for cards and key panels.

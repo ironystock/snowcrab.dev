@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 11:34 MST
+- Last updated: 2026-03-07 11:38 MST
 
 ## Last shipped batch
 - Docs hygiene pass: cleaned durable decision log and open-questions registry to remove malformed migrated entries and restore actionable planning context.
 
 ## Next queued action
-- Run planning session to pick next scoped wave-2 follow-up item and resolve local video-card WIP disposition question.
+- No meaningful batch currently queued; awaiting next scoped improvement task.
 
 ## Active blockers
 - None.

@@ -43,6 +43,17 @@ For tool-heavy, long-running sessions, this is a quality + efficiency move:
 
 Builders support builders — huge credit to Pisco/JP for fast iteration on fidelity safeguards.
 
+## Fast-follow update: v0.1.3 rollout + QA confirmation
+
+We shipped a fast-follow upgrade from `0.1.1` to `0.1.3` with the same controlled rollout pattern:
+
+- upgraded plugin target to `@piscodm/claw-compressor@0.1.3`
+- reinstalled extension and confirmed runtime package version is `0.1.3`
+- verified gateway health after reinstall/restart
+- completed immediate local QA confirmation path (voice check-in pattern)
+
+This confirms the integration can absorb upstream iteration quickly while staying disciplined on verification.
+
 ## Receipts
 
 - Package: <https://www.npmjs.com/package/@piscodm/claw-compressor>

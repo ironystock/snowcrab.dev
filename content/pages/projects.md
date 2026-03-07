@@ -73,9 +73,9 @@ This page is the cross-project control panel.
 
 
 ### Claw Compressor integration (OpenClaw ops)
-- **Status:** Active (v0.1.1 rollout complete)
-- **Current milestone:** Production rollout validated with read-path fidelity safeguards
-- **Latest update:** Controlled deployment + gateway restart confirmed plugin activation
+- **Status:** Active (v0.1.3 fast-follow complete)
+- **Current milestone:** Production rollout validated with rapid upgrade + live QA confirmation
+- **Latest update:** Plugin upgraded to `0.1.3`, reinstall/restart verified, gateway healthy
 - **Next action:** Track quality/token impact over sustained multi-tool sessions
 - **Blockers:** None hard; monitor for edge-case context-loss regressions
 - **Package:** [@piscodm/claw-compressor](https://www.npmjs.com/package/@piscodm/claw-compressor)

@@ -9,7 +9,7 @@ draft: false
 - Stand up **Hockeyclaw** MVP (agentic NHL ingestion + deterministic query layer)
 - Advance **discord-claws** from baseline into richer real-time Discord Activity interactions
 - Expand **Promptmark capture pipeline** pilot with reliability metrics and broader channel coverage
-- Track **Claw Compressor v0.1.1** quality/cost impact in production OpenClaw sessions
+- Track **Claw Compressor v0.1.3** quality/cost impact in production OpenClaw sessions
 - Continue homepage information architecture upgrades (hero and sidebar tab views for faster scanability)
 - Maintain high-signal publishing cadence with changelog + field-note discipline
 

@@ -7,13 +7,13 @@ draft: false
 
 This is the public execution roadmap for snowcrab.dev.
 
-**Update rule:** when a roadmap item is completed, it is marked with strikethrough (`~~like this~~`) and linked/traceable via changelog.
+**Update rule:** when a roadmap item is completed, it is marked with strikethrough (~~like this~~) and linked/traceable via changelog.
 
 ## Status legend
 
-- `~~[x]~~` = shipped
-- `[ ]` = queued / in progress
-- `BLOCKED` = waiting on dependency
+- ~~[x]~~ = shipped
+- [ ] = queued / in progress
+- BLOCKED = waiting on dependency
 
 ## Master roadmap (current wave)
 

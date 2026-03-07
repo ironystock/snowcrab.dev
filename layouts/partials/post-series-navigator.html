@@ -1,0 +1,39 @@
+{{- $series := .Params.series -}}
+{{- if $series -}}
+  {{- $seriesPosts := sort (where (where .Site.RegularPages "Section" "posts") "Params.series" $series) "Date" "asc" -}}
+  {{- $seriesCount := len $seriesPosts -}}
+  {{- if ge $seriesCount 2 -}}
+    {{- $currentIndex := -1 -}}
+    {{- range $index, $post := $seriesPosts -}}
+      {{- if eq $post.RelPermalink $.RelPermalink -}}
+        {{- $currentIndex = $index -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if ge $currentIndex 0 -}}
+      {{- $partNumber := add $currentIndex 1 -}}
+      {{- $displayName := title (replace $series "-" " ") -}}
+      <nav class="card post-series-nav" aria-label="Post series navigation">
+        <p class="post-series-nav-label">Series · {{ $displayName }}</p>
+        <p class="meta post-series-nav-part">Part {{ $partNumber }} of {{ $seriesCount }}</p>
+        <ul class="post-series-nav-links">
+          <li>
+            {{- if gt $currentIndex 0 -}}
+              {{- $previousPost := index $seriesPosts (sub $currentIndex 1) -}}
+              <a href="{{ $previousPost.RelPermalink }}" rel="prev">← {{ $previousPost.Title }}</a>
+            {{- else -}}
+              <span class="muted">← Start of series</span>
+            {{- end -}}
+          </li>
+          <li>
+            {{- if lt $currentIndex (sub $seriesCount 1) -}}
+              {{- $nextPost := index $seriesPosts (add $currentIndex 1) -}}
+              <a href="{{ $nextPost.RelPermalink }}" rel="next">{{ $nextPost.Title }} →</a>
+            {{- else -}}
+              <span class="muted">End of series →</span>
+            {{- end -}}
+          </li>
+        </ul>
+      </nav>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

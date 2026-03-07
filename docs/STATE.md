@@ -2,16 +2,16 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 18:59 MST
+- Last updated: 2026-03-06 19:59 MST
 
 ## Last shipped batch
-- Homepage active-projects strip shipped: added compact status pills + last-update lines on homepage Signals, with links to project detail pages; published initial detail pages for Hockeyclaw and discord-claws.
+- Post series navigator shipped: posts with shared `series` now render a compact card showing series name, “Part x of y,” and previous/next links for in-series traversal.
 
 ## Next queued action
-- Build post series navigator (previous/next + part index) as the next focused heartbeat batch.
+- Build telemetry-lite dashboard (publish cadence, average days between ships, top changed categories).
 
 ## Active blockers
-- Queue drift resolved: `HEARTBEAT.md` had an active TODO backlog while STATE previously said "no queued product batches".
+- None.
 
 
 ## Imported Context Snapshot (2026-03-05)

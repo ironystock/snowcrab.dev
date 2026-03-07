@@ -1121,6 +1121,40 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   border-color: color-mix(in oklab, #ffffff 42%, var(--border));
 }
 
+.post-series-nav {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-series-nav-label {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--meta-high-contrast);
+  font-weight: 700;
+}
+
+.post-series-nav-part {
+  margin: 0 0 0.5rem;
+}
+
+.post-series-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.post-series-nav-links li {
+  margin: 0;
+}
+
+.post-series-nav-links a {
+  font-weight: 600;
+}
+
 .post-receipts {
   margin-top: 1rem;
 }

@@ -35,6 +35,7 @@
 </article>
 
 {{ if eq .Section "posts" }}
+  {{ partial "post-series-navigator.html" . }}
   {{ partial "post-receipts-module.html" . }}
   {{ partial "author-bio.html" . }}
 {{ end }}

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 22:52 MST
+- Last updated: 2026-03-07 11:34 MST
 
 ## Last shipped batch
-- Added dedicated project detail pages for `snowcrab.dev` and `Claw Compressor integration`, then linked both from `/pages/projects/` for consistent active-track routing.
+- Docs hygiene pass: cleaned durable decision log and open-questions registry to remove malformed migrated entries and restore actionable planning context.
 
 ## Next queued action
-- No meaningful batch currently queued; awaiting next scoped improvement task.
+- Run planning session to pick next scoped wave-2 follow-up item and resolve local video-card WIP disposition question.
 
 ## Active blockers
 - None.

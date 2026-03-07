@@ -8,7 +8,7 @@
 - Added changelog compare window controls on `/changelog/` with `7d/30d/90d` presets + custom date range, including URL state for shareable filtered views.
 
 ## Next queued action
-- No meaningful batch currently queued; awaiting next scoped improvement task.
+- Refine "What changed since last visit" module signal quality + ordering as the next focused meaningful batch.
 
 ## Active blockers
 - None.

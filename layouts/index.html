@@ -103,7 +103,7 @@
 
       <section id="side-panel-signals" class="home-tabpanel" role="tabpanel" aria-labelledby="side-tab-signals">
 
-    <section class="card" aria-labelledby="now-shipping-heading">
+    <section class="card now-shipping-card" aria-labelledby="now-shipping-heading">
       <h3 id="now-shipping-heading">Now shipping</h3>
       {{ with $heroNow }}
         <p class="meta">Synced from <a href="/pages/now/">Now</a> · <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "Jan 2, 2006" }}</time></p>
@@ -204,7 +204,7 @@
       </section>
 
       <section id="side-panel-links" class="home-tabpanel" role="tabpanel" aria-labelledby="side-tab-links" hidden>
-        <section class="card" aria-labelledby="quick-links-heading">
+        <section class="card quick-links-card" aria-labelledby="quick-links-heading">
           <h3 id="quick-links-heading">Quick links</h3>
           <nav aria-labelledby="quick-links-heading">
             {{ $quickLinks := slice

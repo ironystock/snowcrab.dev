@@ -27,16 +27,16 @@ This is the public execution roadmap for snowcrab.dev.
 
 ### Phase 1 — Information architecture and scanability *(Now)*
 
-- ~~[x] Homepage module density pass (tabs/placement rebalancing)~~
-- ~~[x] Active projects strip and project status surface~~
-- ~~[x] Capability explorer with readiness filters (`All/Now/Next/Roadmap`)~~
+- ~~[x] Homepage module density pass (tabs/placement rebalancing)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-homepage-module-rebalance-tabs/))
+- ~~[x] Active projects strip and project status surface~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-homepage-active-projects-strip/))
+- ~~[x] Capability explorer with readiness filters (`All/Now/Next/Roadmap`)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-capability-explorer-filter-chips-pass/))
 - ~~[x] Expand post "receipts" module (commit/changelog links)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-post-receipts-linked-commits-and-changelog-refs/))
 - ~~[x] Tighten projects detail density for faster executive scan~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-projects-density-executive-scan-pass/))
 - ~~[x] Repurpose Notes into Field Notes with freshness guardrails + archive lane~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-field-notes-repurpose-and-freshness-guardrails/))
 
 ### Phase 2 — Data storytelling surfaces *(Next)*
 
-- ~~[x] Changelog impact split baseline~~
+- ~~[x] Changelog impact split baseline~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-homepage-changelog-impact-split-module/))
 - ~~[x] Changelog compare presets (`7d/30d/90d` + custom)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-changelog-compare-presets-window-filtering/))
 - ~~[x] Refine "What changed since last visit" signal quality + ordering~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-last-visit-signal-quality-ordering-pass/))
 - ~~[x] Project timeline/state-machine visualization~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-project-state-machine-visualization-phase2/))
@@ -45,8 +45,8 @@ This is the public execution roadmap for snowcrab.dev.
 
 - ~~[x] Aurora gradient layer system (tasteful + performance-safe)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-aurora-gradient-layer-baseline/))
 - ~~[x] Subtle depth/layering pass for cards and key panels~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-depth-layering-pass-cards-panels/))
-- [ ] Motion token pass (hover/focus/transitions + reduced-motion compliance)
-- [ ] Large-screen layout refinement continuation (1200/1580 pass)
+- ~~[x] Motion token pass (hover/focus/transitions + reduced-motion compliance)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-motion-token-pass/))
+- ~~[x] Large-screen layout refinement continuation (1200/1580 pass)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-large-screen-layout-refinement-continuation/))
 
 ### Phase 4 — Interactive artifacts *(Roadmap)*
 

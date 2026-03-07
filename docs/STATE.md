@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 14:00 MST
+- Last updated: 2026-03-07 14:48 MST
 
 ## Last shipped batch
-- Added changelog compare window controls on `/changelog/` with `7d/30d/90d` presets + custom date range, including URL state for shareable filtered views.
+- Phase 0+1 closeout pass: verified PR sweep closure state (#68–#99 all closed, open PRs now 0), and tightened `/pages/projects/` integration density for faster executive scan; roadmap strike-through tracking updated with changelog links.
 
 ## Next queued action
-- Refine "What changed since last visit" module signal quality + ordering as the next focused meaningful batch.
+- Refine "What changed since last visit" module signal quality + ordering as the next focused meaningful batch (Phase 2 kickoff).
 
 ## Active blockers
 - None.

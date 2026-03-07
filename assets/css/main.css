@@ -1342,11 +1342,17 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .integration-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.7rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 1120px) {
+  .integration-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 860px) {
@@ -1358,7 +1364,7 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 .integration-item {
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 0.75rem;
+  padding: 0.68rem;
   background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
 }
 
@@ -1384,36 +1390,20 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   font-size: 0.88rem;
 }
 
-.integration-item-details {
-  margin: 0;
-  display: grid;
-  gap: 0.42rem;
-}
-
-.integration-item-row {
-  margin: 0;
-  padding-top: 0.36rem;
-  border-top: 1px solid color-mix(in oklab, var(--border) 82%, transparent);
-}
-
-.integration-item-row:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.integration-item-details dt {
-  margin: 0;
-  font-size: 0.77rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.integration-item-details dd {
-  margin: 0.18rem 0 0;
-  font-size: 0.9rem;
+.integration-item-meta {
+  margin: 0.22rem 0 0;
+  font-size: 0.88rem;
   color: var(--text);
+  line-height: 1.4;
+}
+
+.integration-item-meta strong {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.integration-item-meta--blocker {
+  color: color-mix(in oklab, var(--primary) 72%, var(--text) 28%);
 }
 
 .site-footer {

@@ -13,20 +13,12 @@
         {{ with .milestone }}
         <p class="integration-item-milestone"><strong>Milestone:</strong> {{ . }}</p>
         {{ end }}
-        <dl class="integration-item-details">
-          <div class="integration-item-row">
-            <dt>Last update</dt>
-            <dd>{{ .last_update }}</dd>
-          </div>
-          <div class="integration-item-row">
-            <dt>Next action</dt>
-            <dd>{{ .next_action }}</dd>
-          </div>
-          <div class="integration-item-row">
-            <dt>Blocker</dt>
-            <dd>{{ .blocker }}</dd>
-          </div>
-        </dl>
+        <p class="integration-item-meta"><strong>Last:</strong> {{ .last_update }}</p>
+        <p class="integration-item-meta"><strong>Next:</strong> {{ .next_action }}</p>
+        {{ $blocker := .blocker | default "None" }}
+        {{ if and (ne (lower $blocker) "none") (ne (lower $blocker) "none.") }}
+        <p class="integration-item-meta integration-item-meta--blocker"><strong>Blocker:</strong> {{ $blocker }}</p>
+        {{ end }}
       </article>
     </li>
     {{ end }}

@@ -13,8 +13,19 @@
     </p>
   </header>
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "projects") }}
-    {{ partial "projects-health-dashboard.html" . }}
-    {{ partial "integration-status-panel.html" . }}
+    <section class="card projects-dashboard-tabs" aria-labelledby="projects-dashboard-tabs-heading" data-home-tabs>
+      <h2 id="projects-dashboard-tabs-heading">Project dashboards</h2>
+      <div class="home-tablist" role="tablist" aria-label="Projects dashboard tabs">
+        <button class="chip is-active" id="projects-tab-health" type="button" role="tab" aria-selected="true" data-target="projects-panel-health">Health</button>
+        <button class="chip" id="projects-tab-integrations" type="button" role="tab" aria-selected="false" data-target="projects-panel-integrations">Integrations</button>
+      </div>
+      <section id="projects-panel-health" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-health">
+        {{ partial "projects-health-dashboard.html" . }}
+      </section>
+      <section id="projects-panel-integrations" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-integrations" hidden>
+        {{ partial "integration-status-panel.html" . }}
+      </section>
+    </section>
   {{ end }}
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "now") }}
     {{ $ageHours := div (sub now.Unix .Lastmod.Unix) 3600 }}

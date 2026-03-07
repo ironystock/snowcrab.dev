@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:22 MST
+- Last updated: 2026-03-07 16:30 MST
 
 ## Last shipped batch
-- Reverted sidebar side-by-side card layout back to single-column stacking for Signals/Links at ultra-wide breakpoints to remove squished readability issues.
+- Phase 4 shipped: Mermaid/flowchart render support for architecture/process docs via a Hugo Mermaid render hook + global client initializer, with first rendered execution flow added to `/pages/publishing-doctrine/` and before/after artifact receipts.
 
 ## Next queued action
-- Phase 4 continuation: Mermaid/flowchart render support for architecture/process docs.
+- Phase 4 continuation: architecture maps with simple/deep views.
 
 ## Active blockers
 - None.

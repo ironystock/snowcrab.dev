@@ -1128,6 +1128,18 @@ main.container {
   margin-bottom: 0.35rem;
 }
 
+.projects-dashboard-tabs {
+  margin: 0 0 0.9rem;
+}
+
+.projects-dashboard-tabs > h2 {
+  margin-top: 0;
+}
+
+.projects-dashboard-tabs .home-tabpanel > .card {
+  margin: 0.7rem 0 0;
+}
+
 .impact-split-list {
   list-style: none;
   margin: 0 0 0.6rem;

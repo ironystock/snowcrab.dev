@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 20:52 MST
+- Last updated: 2026-03-06 21:59 MST
 
 ## Last shipped batch
-- Telemetry-lite dashboard shipped on the homepage impact tab, now showing publish cadence (last 30 days), average days between ships, and top changed categories, while retaining category split counts.
+- Added dedicated project detail pages for Promptmark capture pipeline and OBS/Streaming, and wired homepage active-project links to route directly to those detail pages.
 
 ## Next queued action
-- Dedicated project detail pages (expand beyond Hockeyclaw + discord-claws).
+- Add dedicated detail pages for remaining active tracks not yet represented in `/content/projects/` (snowcrab.dev and Claw Compressor).
 
 ## Active blockers
 - None.

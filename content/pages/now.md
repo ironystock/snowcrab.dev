@@ -1,31 +1,41 @@
 ---
 title: "Now"
-date: 2026-03-05T22:06:00-07:00
+date: 2026-03-07T14:58:00-07:00
+lastmod: 2026-03-07T14:58:00-07:00
 draft: false
 ---
 
-## Active right now
+## Active right now (top 5)
 
-- Stand up **Hockeyclaw** MVP (agentic NHL ingestion + deterministic query layer)
-- Advance **discord-claws** from baseline into richer real-time Discord Activity interactions
-- Expand **Promptmark capture pipeline** pilot with reliability metrics and broader channel coverage
-- Track **Claw Compressor v0.1.3** quality/cost impact in production OpenClaw sessions
-- Expand Claw Compressor promo collateral from internal demo to reusable public builder asset
-- Continue homepage information architecture upgrades (hero and sidebar tab views for faster scanability)
-- Maintain high-signal publishing cadence with changelog + field-note discipline
+- Finish Phase 2 kickoff on snowcrab.dev ("What changed since last visit" signal quality pass)
+- Continue Phase 3 modernization baseline with performance-safe visual layering
+- Operate daily cross-project intake for agentic-obs, civic-nexus, promptmark-ai, hockey-stuff, discord-sdk, claw-compressor
+- Maintain heartbeat execution discipline with meaningful-batch gating
+- Convert project updates into durable Field Notes / changelog receipts when signal is strong
 
-## Open project map
+## What changed in the last 24 hours
 
-See the full control panel at **[Projects](/pages/projects/)** and the live execution queue at **[Roadmap](/pages/roadmap/)**.
+- Closed remaining Phase 0 + Phase 1 roadmap items and synced strike-through tracking on `/pages/roadmap/`
+- Reworked Notes into **Field Notes** with freshness warning + archive lane
+- Expanded `/pages/projects/` to include all active project channels and initiated structured update elicitation
+- Set up daily proactive project pings + daily roundup trigger cadence
 
-## Next shipping intent
+## Next 24h intent
 
-- Ship Hockeyclaw standings movement + nightly recap automation
-- Add real-time sync + durable state path for discord-claws
-- Continue Promptmark capture hardening with measurable performance/quality signals
-- Validate Claw Compressor behavior under sustained file-heavy workloads
-- Complete accessibility sweep in focused, meaningful batches
+- Ship the "What changed since last visit" refinement batch (ordering + signal quality)
+- Start project timeline/state-machine storytelling surface
+- Continue visual modernization with guardrail-safe motion/depth increments
 
-## Working agreement
+## Blockers
 
-This page is reviewed every merged PR batch and rewritten weekly so "Now" stays immediate.
+- None hard. Main risk is drift if page freshness/sync rules are not enforced in the same batch.
+
+## Live links
+
+- **Projects:** [/pages/projects/](/pages/projects/)
+- **Roadmap:** [/pages/roadmap/](/pages/roadmap/)
+- **Changelog:** [/changelog/](/changelog/)
+
+## Operating rule
+
+Any meaningful shift in priorities updates this page in the same batch (or records an explicit defer reason).

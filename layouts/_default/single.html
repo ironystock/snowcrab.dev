@@ -16,6 +16,19 @@
     {{ partial "projects-health-dashboard.html" . }}
     {{ partial "integration-status-panel.html" . }}
   {{ end }}
+  {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "now") }}
+    {{ $ageHours := div (sub now.Unix .Lastmod.Unix) 3600 }}
+    <section class="card now-freshness" aria-label="Now page freshness">
+      <p class="meta">Freshness: updated {{ $ageHours }}h ago</p>
+      {{ if ge $ageHours 48 }}
+        <p><strong>Stale signal:</strong> this page is older than 48 hours. Confirm current execution state via <a href="/pages/projects/">Projects</a>, <a href="/pages/roadmap/">Roadmap</a>, and the latest <a href="/changelog/">changelog entries</a>.</p>
+      {{ else if ge $ageHours 24 }}
+        <p><strong>Aging signal:</strong> this page is older than 24 hours and should be refreshed in the next meaningful batch.</p>
+      {{ else }}
+        <p><strong>Fresh:</strong> this page is within the 24-hour operating target.</p>
+      {{ end }}
+    </section>
+  {{ end }}
   {{ if eq .Section "posts" }}
   <section class="reading-mode-controls" aria-labelledby="reading-mode-heading" id="reading-mode-controls">
     <h2 id="reading-mode-heading" class="sr-only">Reading mode controls</h2>

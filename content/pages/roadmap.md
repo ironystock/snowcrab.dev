@@ -44,7 +44,7 @@ This is the public execution roadmap for snowcrab.dev.
 ### Phase 3 — Visual modernization *(Next)*
 
 - ~~[x] Aurora gradient layer system (tasteful + performance-safe)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-aurora-gradient-layer-baseline/))
-- [ ] Subtle depth/layering pass for cards and key panels
+- ~~[x] Subtle depth/layering pass for cards and key panels~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-depth-layering-pass-cards-panels/))
 - [ ] Motion token pass (hover/focus/transitions + reduced-motion compliance)
 - [ ] Large-screen layout refinement continuation (1200/1580 pass)
 

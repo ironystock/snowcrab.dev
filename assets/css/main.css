@@ -40,6 +40,11 @@
   --aurora-ink-1: rgba(255, 100, 112, 0.2);
   --aurora-ink-2: rgba(103, 232, 249, 0.18);
   --aurora-ink-3: rgba(196, 181, 253, 0.13);
+  --shadow-soft: 0 10px 24px rgba(1, 6, 15, 0.38), 0 2px 6px rgba(1, 6, 15, 0.28);
+  --shadow-lifted: 0 18px 36px rgba(1, 6, 15, 0.46), 0 6px 12px rgba(1, 6, 15, 0.34);
+  --panel-bg: linear-gradient(165deg, color-mix(in oklab, var(--bg-elev) 94%, #1f2937 6%), color-mix(in oklab, var(--bg-elev) 84%, #0f172a 16%));
+  --panel-border-strong: color-mix(in oklab, var(--border) 70%, #cbd5e1 30%);
+  --panel-highlight: inset 0 1px 0 color-mix(in oklab, #cbd5e1 14%, transparent);
 }
 
 :root {
@@ -48,6 +53,11 @@
   --radius-lg: 22px;
   --container: 920px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+  --shadow-soft: 0 8px 22px rgba(8, 15, 30, 0.09), 0 1px 2px rgba(8, 15, 30, 0.08);
+  --shadow-lifted: 0 16px 34px rgba(8, 15, 30, 0.14), 0 4px 10px rgba(8, 15, 30, 0.1);
+  --panel-bg: linear-gradient(165deg, color-mix(in oklab, var(--bg-elev) 96%, white 4%), color-mix(in oklab, var(--bg-elev) 90%, var(--border) 10%));
+  --panel-border-strong: color-mix(in oklab, var(--border) 72%, var(--text) 28%);
+  --panel-highlight: inset 0 1px 0 color-mix(in oklab, white 34%, transparent);
 }
 
 * { box-sizing: border-box; }
@@ -358,11 +368,13 @@ main.container {
 }
 
 .hero {
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in oklab, var(--panel-border-strong) 88%, var(--primary) 12%);
   border-radius: var(--radius-lg);
   padding: 1.6rem;
-  background: linear-gradient(160deg, color-mix(in oklab, var(--bg-elev) 90%, var(--primary) 10%), var(--bg-elev));
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(180deg, color-mix(in oklab, white 8%, transparent), transparent 28%),
+    linear-gradient(160deg, color-mix(in oklab, var(--bg-elev) 88%, var(--primary) 12%), var(--bg-elev));
+  box-shadow: var(--panel-highlight), var(--shadow-lifted);
   margin-bottom: 1.25rem;
 }
 
@@ -375,11 +387,12 @@ main.container {
 }
 
 .card {
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border-strong);
   border-radius: var(--radius-md);
   padding: 1rem 1.1rem;
-  box-shadow: var(--shadow);
+  box-shadow: var(--panel-highlight), var(--shadow-soft);
+  backdrop-filter: saturate(108%);
 }
 
 .card:focus-within,
@@ -394,6 +407,24 @@ main.container {
 .card h2, .card h3, .card h4 { margin: 0.15rem 0 0.55rem; line-height: 1.22; }
 .card p { margin: 0 0 0.82rem; }
 .card p:last-child { margin-bottom: 0; }
+
+.projects-health-item,
+.integration-item,
+.project-health-card,
+.capability-explorer-card,
+.automation-demo-card,
+.active-projects-strip-item,
+.hero-snapshot-card,
+.impact-split-list li,
+.reliability-row,
+.projects-state-node,
+.project-health-strip,
+.integration-item-milestone,
+.automation-demo-columns section {
+  box-shadow: var(--panel-highlight), var(--shadow-soft);
+  border-color: var(--panel-border-strong);
+}
+
 .muted { color: var(--muted); }
 .meta { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.68rem; letter-spacing: 0.007em; }
 .stack { display: grid; gap: 0.92rem; }

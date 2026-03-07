@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:41 MST
+- Last updated: 2026-03-07 15:53 MST
 
 ## Last shipped batch
-- Drift-proofed homepage Now widget: it now derives directly from `/pages/now/` (lastmod + active bullets), eliminating independent static copy.
+- Phase 3 continuation shipped: subtle depth/layering pass for cards and key panels using reusable panel depth tokens and harmonized card/panel hierarchy.
 
 ## Next queued action
-- Phase 3 continuation: subtle depth/layering pass for cards and key panels.
+- Phase 3 continuation: motion token pass (hover/focus/transitions + reduced-motion compliance).
 
 ## Active blockers
 - None.

@@ -483,6 +483,43 @@ main.container {
   letter-spacing: 0.01em;
 }
 
+.changelog-compare {
+  margin: 0.3rem 0 0.4rem;
+}
+
+.changelog-compare-label {
+  margin: 0 0 0.26rem;
+  font-size: 0.8rem;
+}
+
+.changelog-compare-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.changelog-compare-custom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: end;
+  margin-top: 0.35rem;
+}
+
+.changelog-compare-custom label {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.changelog-compare-custom input[type="date"] {
+  min-height: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.2rem 0.45rem;
+  background: var(--bg-elev);
+  color: var(--text);
+}
+
 .changelog-filter-summary {
   margin: 0;
   font-size: 0.84rem;

@@ -7,11 +7,17 @@
   if (!filterWrap || !list) return;
 
   const buttons = Array.from(filterWrap.querySelectorAll('[data-filter]'));
+  const rangeButtons = Array.from(document.querySelectorAll('[data-range]'));
+  const customWrap = document.querySelector('[data-custom-range]');
+  const customStart = document.querySelector('[data-range-start]');
+  const customEnd = document.querySelector('[data-range-end]');
+  const customApply = document.querySelector('[data-range-apply]');
   const items = Array.from(list.querySelectorAll('li[data-category]'));
   const summary = document.getElementById('changelog-filter-summary');
   const empty = document.getElementById('changelog-empty-state');
   const panel = document.getElementById('changelog-results-panel');
   const allowedFilters = new Set(buttons.map((btn) => btn.getAttribute('data-filter')).filter(Boolean));
+  const allowedRanges = new Set(['7d', '30d', '90d', 'custom']);
 
   const normalizeFilter = (value) => {
     const fallback = 'all';
@@ -19,31 +25,91 @@
     return allowedFilters.has(value) ? value : fallback;
   };
 
-  const readFilterFromUrl = () => {
+  const normalizeRange = (value) => {
+    const fallback = '7d';
+    if (!value) return fallback;
+    return allowedRanges.has(value) ? value : fallback;
+  };
+
+  const toIsoDate = (value) => {
+    if (!value) return '';
+    const date = new Date(`${value}T00:00:00`);
+    if (Number.isNaN(date.getTime())) return '';
+    return date.toISOString().slice(0, 10);
+  };
+
+  const readStateFromUrl = () => {
     const url = new URL(window.location.href);
     const queryFilter = url.searchParams.get('category');
+    const queryRange = url.searchParams.get('range');
+    const querySince = toIsoDate(url.searchParams.get('since'));
+    const queryUntil = toIsoDate(url.searchParams.get('until'));
+
     return {
-      normalized: normalizeFilter(queryFilter),
-      raw: queryFilter,
+      filter: normalizeFilter(queryFilter),
+      range: normalizeRange(queryRange),
+      since: querySince,
+      until: queryUntil,
     };
   };
 
-  const writeFilterToUrl = (filter) => {
-    const normalized = normalizeFilter(filter);
+  const writeStateToUrl = (state) => {
+    const normalizedFilter = normalizeFilter(state.filter);
+    const normalizedRange = normalizeRange(state.range);
     const url = new URL(window.location.href);
 
-    if (normalized === 'all') {
+    if (normalizedFilter === 'all') {
       url.searchParams.delete('category');
     } else {
-      url.searchParams.set('category', normalized);
+      url.searchParams.set('category', normalizedFilter);
+    }
+
+    if (normalizedRange === '7d') {
+      url.searchParams.delete('range');
+    } else {
+      url.searchParams.set('range', normalizedRange);
+    }
+
+    if (normalizedRange === 'custom' && state.since && state.until) {
+      url.searchParams.set('since', state.since);
+      url.searchParams.set('until', state.until);
+    } else {
+      url.searchParams.delete('since');
+      url.searchParams.delete('until');
     }
 
     window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
   };
 
-  const apply = (filter, { syncUrl = true } = {}) => {
-    const selectedFilter = normalizeFilter(filter);
+  const computeWindow = (range, since, until) => {
+    const now = new Date();
+    const end = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    if (range === 'custom' && since && until) {
+      const startDate = new Date(`${since}T00:00:00`);
+      const endDate = new Date(`${until}T00:00:00`);
+      if (!Number.isNaN(startDate.getTime()) && !Number.isNaN(endDate.getTime()) && startDate <= endDate) {
+        return { start: startDate, end: endDate };
+      }
+    }
+
+    const days = range === '30d' ? 30 : range === '90d' ? 90 : 7;
+    const start = new Date(end);
+    start.setDate(start.getDate() - (days - 1));
+    return { start, end };
+  };
+
+  const isWithinWindow = (itemDate, window) => {
+    const parsed = new Date(`${itemDate}T00:00:00`);
+    if (Number.isNaN(parsed.getTime())) return false;
+    return parsed >= window.start && parsed <= window.end;
+  };
+
+  const apply = (state, { syncUrl = true } = {}) => {
+    const selectedFilter = normalizeFilter(state.filter);
+    const selectedRange = normalizeRange(state.range);
     const focusedBeforeUpdate = document.activeElement;
+    const window = computeWindow(selectedRange, state.since, state.until);
     let visibleCount = 0;
 
     if (panel) panel.setAttribute('aria-busy', 'true');
@@ -52,7 +118,10 @@
 
     items.forEach((item) => {
       const category = item.getAttribute('data-category') || 'ops';
-      const visible = selectedFilter === 'all' || category === selectedFilter;
+      const itemDate = item.getAttribute('data-date') || '';
+      const matchesCategory = selectedFilter === 'all' || category === selectedFilter;
+      const matchesRange = isWithinWindow(itemDate, window);
+      const visible = matchesCategory && matchesRange;
       item.hidden = !visible;
       item.classList.remove('is-latest-visible');
       item.classList.remove('is-timeline-group-start');
@@ -67,7 +136,8 @@
     });
 
     list.dataset.activeFilter = selectedFilter;
-    list.classList.toggle('is-filtered-view', selectedFilter !== 'all');
+    list.dataset.activeRange = selectedRange;
+    list.classList.toggle('is-filtered-view', selectedFilter !== 'all' || selectedRange !== '7d');
 
     if (visibleItems.length > 0) {
       visibleItems[0].classList.add('is-latest-visible');
@@ -103,21 +173,35 @@
       if (active) activeId = btn.id || '';
     });
 
+    rangeButtons.forEach((btn) => {
+      const active = btn.getAttribute('data-range') === selectedRange;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+
+    const isCustom = selectedRange === 'custom';
+    if (customWrap) {
+      customWrap.hidden = !isCustom;
+    }
+
+    if (customStart) customStart.value = state.since || '';
+    if (customEnd) customEnd.value = state.until || '';
+
     if (panel && activeId) {
       panel.setAttribute('aria-labelledby', activeId);
     }
 
     if (summary) {
-      const label = selectedFilter === 'all' ? 'all categories' : `${selectedFilter} only`;
-      summary.textContent = `Showing ${visibleCount} entr${visibleCount === 1 ? 'y' : 'ies'} · ${label}`;
+      const categoryLabel = selectedFilter === 'all' ? 'all categories' : `${selectedFilter} only`;
+      const rangeLabel = selectedRange === 'custom' && state.since && state.until
+        ? `${state.since} → ${state.until}`
+        : selectedRange;
+      summary.textContent = `Showing ${visibleCount} entr${visibleCount === 1 ? 'y' : 'ies'} · ${categoryLabel} · ${rangeLabel}`;
     }
 
     if (empty) {
       if (visibleCount === 0) {
-        const emptyLabel = selectedFilter === 'all'
-          ? 'No changelog entries available yet.'
-          : `No entries match the ${selectedFilter} category yet.`;
-        empty.textContent = emptyLabel;
+        empty.textContent = 'No entries match this category + timeframe yet.';
         empty.hidden = false;
       } else {
         empty.hidden = true;
@@ -145,7 +229,7 @@
     }
 
     if (syncUrl) {
-      writeFilterToUrl(selectedFilter);
+      writeStateToUrl(state);
     }
 
     if (panel) panel.setAttribute('aria-busy', 'false');
@@ -153,9 +237,13 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const activateButton = (btn, options) => {
+  const activateButton = (btn, options = {}) => {
     const filter = btn?.getAttribute('data-filter') || 'all';
-    apply(filter, options);
+    const state = {
+      ...readStateFromUrl(),
+      filter,
+    };
+    apply(state, options);
 
     if (btn instanceof HTMLElement) {
       btn.scrollIntoView({
@@ -164,6 +252,21 @@
         behavior: prefersReducedMotion ? 'auto' : 'smooth',
       });
     }
+  };
+
+  const activateRange = (range, options = {}) => {
+    const state = readStateFromUrl();
+    state.range = normalizeRange(range);
+
+    if (state.range !== 'custom') {
+      state.since = '';
+      state.until = '';
+    } else {
+      state.since = customStart?.value || state.since;
+      state.until = customEnd?.value || state.until;
+    }
+
+    apply(state, options);
   };
 
   const focusByOffset = (currentIndex, delta) => {
@@ -216,24 +319,35 @@
     });
   });
 
-  const { normalized: urlFilter, raw: rawUrlFilter } = readFilterFromUrl();
-  if (rawUrlFilter && rawUrlFilter !== urlFilter) {
-    writeFilterToUrl(urlFilter);
-  }
+  rangeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const range = btn.getAttribute('data-range') || '7d';
+      activateRange(range);
+    });
+  });
 
-  const initiallyActive = buttons.find((btn) => btn.getAttribute('data-filter') === urlFilter)
+  customApply?.addEventListener('click', () => {
+    activateRange('custom');
+  });
+
+  const initialState = readStateFromUrl();
+  const initiallyActive = buttons.find((btn) => btn.getAttribute('data-filter') === initialState.filter)
     || buttons.find((btn) => btn.getAttribute('aria-selected') === 'true')
     || buttons[0];
 
   if (initiallyActive) {
-    activateButton(initiallyActive, { syncUrl: false });
+    const seededState = {
+      ...initialState,
+      filter: initiallyActive.getAttribute('data-filter') || initialState.filter,
+    };
+    apply(seededState, { syncUrl: false });
   }
 
   window.addEventListener('popstate', () => {
-    const { normalized: nextFilter } = readFilterFromUrl();
-    apply(nextFilter, { syncUrl: false });
+    const nextState = readStateFromUrl();
+    apply(nextState, { syncUrl: false });
 
-    const nextButton = buttons.find((btn) => btn.getAttribute('data-filter') === nextFilter);
+    const nextButton = buttons.find((btn) => btn.getAttribute('data-filter') === nextState.filter);
     if (nextButton) {
       nextButton.setAttribute('tabindex', '0');
     }

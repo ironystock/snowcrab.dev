@@ -17,7 +17,27 @@
         <button class="chip" id="changelog-filter-content" type="button" role="tab" data-filter="content" aria-selected="false" tabindex="-1" aria-controls="changelog-results-panel" aria-posinset="4" aria-setsize="5">Content</button>
         <button class="chip" id="changelog-filter-reliability" type="button" role="tab" data-filter="reliability" aria-selected="false" tabindex="-1" aria-controls="changelog-results-panel" aria-posinset="5" aria-setsize="5">Reliability</button>
       </div>
-      <p class="meta changelog-filter-summary" id="changelog-filter-summary" role="status" aria-live="polite" aria-atomic="true">Showing all entries</p>
+      <div class="changelog-compare" aria-label="Filter changelog by timeframe">
+        <p class="meta changelog-compare-label">Compare window</p>
+        <div class="changelog-compare-presets" role="group" aria-label="Compare presets">
+          <button class="chip is-active" type="button" data-range="7d" aria-pressed="true">7d</button>
+          <button class="chip" type="button" data-range="30d" aria-pressed="false">30d</button>
+          <button class="chip" type="button" data-range="90d" aria-pressed="false">90d</button>
+          <button class="chip" type="button" data-range="custom" aria-pressed="false">Custom</button>
+        </div>
+        <div class="changelog-compare-custom" data-custom-range hidden>
+          <label>
+            <span class="meta">From</span>
+            <input type="date" id="changelog-range-start" data-range-start>
+          </label>
+          <label>
+            <span class="meta">To</span>
+            <input type="date" id="changelog-range-end" data-range-end>
+          </label>
+          <button class="chip" type="button" data-range-apply>Apply</button>
+        </div>
+      </div>
+      <p class="meta changelog-filter-summary" id="changelog-filter-summary" role="status" aria-live="polite" aria-atomic="true">Showing latest 7 days</p>
     </div>
     <noscript><p class="meta">Category filters require JavaScript. Showing all changelog entries.</p></noscript>
   {{ end }}
@@ -37,7 +57,7 @@
           {{ if and (eq $category "") (or (in $title "theme") (in $title "design") (in $title "ui") (in $title "typography")) }}{{ $category = "design" }}{{ end }}
         {{ end }}
         {{ if eq $category "" }}{{ $category = "ops" }}{{ end }}
-        <li data-category="{{ $category }}" data-timeline-group="{{ .Date.Format "2006-01" }}" data-timeline-label="{{ .Date.Format "Jan 2006" }}">
+        <li data-category="{{ $category }}" data-date="{{ .Date.Format "2006-01-02" }}" data-timeline-group="{{ .Date.Format "2006-01" }}" data-timeline-label="{{ .Date.Format "Jan 2006" }}">
           <article class="card" aria-labelledby="{{ $itemId }}">
             <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ $category | title }}</div>
             <h2 id="{{ $itemId }}"><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 13:45 MST
+- Last updated: 2026-03-07 14:00 MST
 
 ## Last shipped batch
-- Phase 0 artifact receipts pass: captured and published before/after browser screenshots for command palette + mobile header fixes under `static/artifacts/phase0/`, with changelog traceability.
+- Added changelog compare window controls on `/changelog/` with `7d/30d/90d` presets + custom date range, including URL state for shareable filtered views.
 
 ## Next queued action
-- Build changelog compare presets (`7d/30d/90d` + custom).
+- No meaningful batch currently queued; awaiting next scoped improvement task.
 
 ## Active blockers
 - None.

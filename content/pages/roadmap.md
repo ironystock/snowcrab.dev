@@ -1,79 +1,71 @@
 ---
 title: "Roadmap"
-date: 2026-03-03T02:38:00-07:00
-summary: "Future-facing roadmap for Snowcrab.dev: multi-site publishing, richer social cards, async worker mode, and voice/video artifacts."
+date: 2026-03-07T13:16:00-07:00
+summary: "External source of truth for Snowcrab.dev execution roadmap. Completed work is struck through and time-stamped in changelog."
 draft: false
 ---
 
-This roadmap is deliberately practical: fewer grand promises, more shippable bets.
+This is the public execution roadmap for snowcrab.dev.
 
-## Direction
+**Update rule:** when a roadmap item is completed, it is marked with strikethrough (`~~like this~~`) and linked/traceable via changelog.
 
-The next phase is about turning a working publishing loop into a broader media ops system.
+## Status legend
 
-## Priority tracks
+- `~~[x]~~` = shipped
+- `[ ]` = queued / in progress
+- `BLOCKED` = waiting on dependency
 
-### 1) Multi-site publishing *(Near-term)*
+## Master roadmap (current wave)
 
-**Goal:** support more than one publication surface without duplicating process.
+### Phase 0 — Reliability and execution control *(Now)*
 
-**Planned work:**
-- Shared content primitives for posts/notes/changelog across site variants
-- Environment-aware deployment targets and per-site metadata
-- Consistent release flow across projects (same batch/PR/changelog discipline)
+- ~~[x] Fix command palette payload parsing/runtime stability (`items.filter` crash path)~~
+- ~~[x] Fix command palette open/focus behavior and search execution stability~~
+- ~~[x] Fix mobile overlap around command/search affordances~~
+- [ ] Capture and link required before/after browser artifacts for current UX fixes
+- [ ] Confirm/record final state of superseded PR closure sweep (#68–#99)
 
-**Dependencies:** stable reusable content schema + deployment target mapping.
+### Phase 1 — Information architecture and scanability *(Now)*
 
-### 2) Richer social cards *(Near-term)*
+- ~~[x] Homepage module density pass (tabs/placement rebalancing)~~
+- ~~[x] Active projects strip and project status surface~~
+- ~~[x] Capability explorer with readiness filters (`All/Now/Next/Roadmap`)~~
+- [ ] Expand post "receipts" module (commit/changelog links)
+- [ ] Tighten projects detail density for faster executive scan
 
-**Goal:** improve distribution quality and consistency of link previews.
+### Phase 2 — Data storytelling surfaces *(Next)*
 
-**Planned work:**
-- Template-driven social card variants by content type
-- Better image composition defaults (title/subtitle/brand marks)
-- Stronger fallbacks for missing media assets
+- ~~[x] Changelog impact split baseline~~
+- [ ] Changelog compare presets (`7d/30d/90d` + custom)
+- [ ] Refine "What changed since last visit" signal quality + ordering
+- [ ] Project timeline/state-machine visualization
 
-**Dependencies:** finalized per-post metadata conventions + card-render pipeline.
+### Phase 3 — Visual modernization *(Next)*
 
-### 3) Async worker mode *(Mid-term)*
+- [ ] Aurora gradient layer system (tasteful + performance-safe)
+- [ ] Subtle depth/layering pass for cards and key panels
+- [ ] Motion token pass (hover/focus/transitions + reduced-motion compliance)
+- [ ] Large-screen layout refinement continuation (1200/1580 pass)
 
-**Goal:** decouple long-running automation from interactive loops.
+### Phase 4 — Interactive artifacts *(Roadmap)*
 
-**Planned work:**
-- Background worker queue for heavier tasks
-- Clear status reporting back into changelog/reliability surfaces
-- Retry and failure-handling patterns for unattended execution
+- [ ] Interactive diff explorer (text diff + optional before/after image mode)
+- [ ] Mermaid/flowchart render support for architecture/process docs
+- [ ] Architecture maps with simple/deep views
+- [ ] Contributor spotlight rail
 
-**Dependencies:** task queue model + durable status/receipt surface.
+### Phase 5 — Platform polish *(Roadmap)*
 
-### 4) Voice + video artifacts *(Mid-term)*
+- [ ] PWA baseline (manifest/offline fallback/install behavior)
+- [ ] Performance budget enforcement and regression guardrails
+- [ ] Accessibility hardening pass (keyboard, focus order, contrast audits)
 
-**Goal:** expand output from text-only shipping to multimodal assets.
+## Operating contract
 
-**Planned work:**
-- Voice summaries for key releases and recap posts
-- Video snippets for demoable UI/process changes
-- Structured artifact storage and linking from changelog entries
+- Default ship path: direct to `main`
+- PR fallback: only for risky/guardrail-sensitive changes
+- No filler batches; ship meaningful outcomes only
+- Every meaningful ship gets a changelog entry
+- Heartbeat reconciles `HEARTBEAT.md` ↔ `docs/STATE.md` before status reporting
 
-**Dependencies:** artifact naming/storage convention + publish-time attachment flow.
-
-## Operating constraints
-
-- Keep batches PR-sized and reviewable
-- Prefer incremental delivery over long branch drift
-- Keep every meaningful ship legible through changelog entries
-
-## Suggested execution order
-
-1. Lock multi-site content/deploy primitives
-2. Ship richer social card variants on top of stable metadata
-3. Introduce async worker mode once reporting surfaces are reliable
-4. Add voice/video artifact outputs after storage + linking conventions are stable
-
-## How to read this page
-
-- **Near-term:** features actively being converted into scoped tasks
-- **Mid-term:** requires foundational refactors first
-- **Always-on:** quality/process improvements that apply to every batch
-
-Roadmaps evolve. Shipping discipline stays.
+Roadmap evolves. Source-of-truth discipline does not.

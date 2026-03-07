@@ -16,7 +16,7 @@ draft: false
 
 ## Open project map
 
-See the full control panel at **[Projects](/pages/projects/)**.
+See the full control panel at **[Projects](/pages/projects/)** and the live execution queue at **[Roadmap](/pages/roadmap/)**.
 
 ## Next shipping intent
 

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 13:10 MST
+- Last updated: 2026-03-07 13:18 MST
 
 ## Last shipped batch
-- Capabilities explorer rollout: added interactive filter chips (`All/Now/Next/Roadmap`) and client-side section filtering on `/pages/capabilities/` for faster readiness-based scanning.
+- Roadmap source-of-truth pass: rebuilt `/pages/roadmap/` into a phase-based public execution board with strikethrough completion tracking, and synced `/pages/now/` to link roadmap as the live queue.
 
 ## Next queued action
-- No meaningful batch currently queued — waiting for next scoped site improvement task (per HEARTBEAT.md TODO queue).
+- Capture and attach before/after browser artifacts for recent command palette + mobile Phase 0 fixes.
 
 ## Active blockers
 - None.

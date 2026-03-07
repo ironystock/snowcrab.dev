@@ -15,10 +15,13 @@
 
   let entries = [];
   try {
-    entries = JSON.parse(dataEl?.textContent || '[]');
+    const parsed = JSON.parse(dataEl?.textContent || '[]');
+    entries = typeof parsed === 'string' ? JSON.parse(parsed) : parsed;
   } catch (_) {
     entries = [];
   }
+
+  if (!Array.isArray(entries)) entries = [];
 
   const safeDate = (iso) => {
     if (!iso) return null;

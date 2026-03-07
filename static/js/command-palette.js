@@ -20,10 +20,13 @@
   if (hintEl) hintEl.textContent = `Use ↑/↓ (or PageUp/PageDown) to navigate, Enter to open, Esc to close. Shortcut: ${shortcutLabel} (or /).`;
 
   try {
-    items = JSON.parse(dataEl.textContent || '[]');
+    const parsed = JSON.parse(dataEl.textContent || '[]');
+    items = typeof parsed === 'string' ? JSON.parse(parsed) : parsed;
   } catch (_) {
     items = [];
   }
+
+  if (!Array.isArray(items)) items = [];
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -43,7 +46,8 @@
 
   const render = (query = '') => {
     const q = query.trim().toLowerCase();
-    const filtered = items
+    const source = Array.isArray(items) ? items : [];
+    const filtered = source
       .filter((item) => {
         if (!q) return true;
         return `${item.title} ${item.section} ${item.category || ''}`.toLowerCase().includes(q);

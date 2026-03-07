@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:04 MST
+- Last updated: 2026-03-07 15:10 MST
 
 ## Last shipped batch
-- Ran roadmap hygiene sync: struck through completed Phase 2 items (compare presets, last-visit refinement, state-machine visualization) plus Phase 3 aurora baseline, each with changelog links.
+- Rebuilt stale homepage What/Status tabs into live snapshot widgets driven by current site data (posts/field-notes/changelog counts + latest links) and execution telemetry (latest ship, now freshness, roadmap open-item count).
 
 ## Next queued action
 - Phase 3 continuation: subtle depth/layering pass for cards and key panels.

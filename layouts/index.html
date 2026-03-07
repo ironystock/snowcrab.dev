@@ -3,6 +3,14 @@
   <h1 id="home-hero-title">{{ .Title }}</h1>
   <p class="muted">Build-in-public notes, project execution logs, and receipts from real shipping work.</p>
 
+  {{ $heroPosts := where site.RegularPages "Section" "posts" }}
+  {{ $heroNotes := where site.RegularPages "Section" "notes" }}
+  {{ $heroChanges := where site.RegularPages "Section" "changelog" }}
+  {{ $heroNow := site.GetPage "/pages/now" }}
+  {{ $heroRoadmap := site.GetPage "/pages/roadmap" }}
+  {{ $heroOpenRoadmap := 0 }}
+  {{ with $heroRoadmap }}{{ $heroOpenRoadmap = len (findRE `(?m)^- \[ \]` .RawContent) }}{{ end }}
+
   <div class="home-tabs" data-home-tabs>
     <div class="home-tablist" role="tablist" aria-label="Homepage overview tabs">
       <button class="chip is-active" id="hero-tab-what" type="button" role="tab" aria-selected="true" data-target="hero-panel-what">What</button>
@@ -12,20 +20,41 @@
     </div>
 
     <section id="hero-panel-what" class="home-tabpanel" role="tabpanel" aria-labelledby="hero-tab-what">
-      <ul class="mini-list">
-        <li><strong>Posts:</strong> deep dives and practical lessons</li>
-        <li><strong>Field notes:</strong> short operational updates from active builds</li>
-        <li><strong>Changelog:</strong> what shipped and changed</li>
-      </ul>
+      <div class="hero-snapshot-grid" aria-label="Content stream overview">
+        <article class="hero-snapshot-card">
+          <p class="meta">Posts</p>
+          <p class="hero-snapshot-value">{{ len $heroPosts }}</p>
+          {{ with first 1 ($heroPosts.ByDate.Reverse) }}{{ $item := index . 0 }}<p class="muted">Latest: <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></p>{{ end }}
+        </article>
+        <article class="hero-snapshot-card">
+          <p class="meta">Field notes</p>
+          <p class="hero-snapshot-value">{{ len $heroNotes }}</p>
+          {{ with first 1 ($heroNotes.ByDate.Reverse) }}{{ $item := index . 0 }}<p class="muted">Latest: <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></p>{{ end }}
+        </article>
+        <article class="hero-snapshot-card">
+          <p class="meta">Changelog entries</p>
+          <p class="hero-snapshot-value">{{ len $heroChanges }}</p>
+          {{ with first 1 ($heroChanges.ByDate.Reverse) }}{{ $item := index . 0 }}<p class="muted">Latest: <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></p>{{ end }}
+        </article>
+      </div>
     </section>
 
     <section id="hero-panel-status" class="home-tabpanel" role="tabpanel" aria-labelledby="hero-tab-status" hidden>
-      <ul class="mini-list">
-        <li>✅ Production pipeline is live (Hugo + GitHub + Cloudflare Pages)</li>
-        <li>✅ Publishing doctrine is in place (changelog = shipped, field notes = learned)</li>
-        <li>✅ Design/UX passes are shipping continuously with conflict-resistant batching</li>
-        <li>🚧 Active focus: project dashboards, changelog interactivity, and cross-project transparency</li>
-      </ul>
+      <div class="hero-snapshot-grid" aria-label="Execution status overview">
+        <article class="hero-snapshot-card">
+          <p class="meta">Latest ship</p>
+          {{ with first 1 ($heroChanges.ByDate.Reverse) }}{{ $item := index . 0 }}<p class="hero-snapshot-value hero-snapshot-value--small"><time datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "Jan 2" }}</time></p><p class="muted"><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></p>{{ else }}<p class="hero-snapshot-value hero-snapshot-value--small">—</p>{{ end }}
+        </article>
+        <article class="hero-snapshot-card">
+          <p class="meta">Now freshness</p>
+          {{ with $heroNow }}{{ $age := div (sub now.Unix .Lastmod.Unix) 3600 }}<p class="hero-snapshot-value">{{ $age }}h</p><p class="muted">{{ if ge $age 48 }}Stale{{ else if ge $age 24 }}Aging{{ else }}Fresh{{ end }} · <a href="/pages/now/">View now</a></p>{{ else }}<p class="hero-snapshot-value hero-snapshot-value--small">N/A</p>{{ end }}
+        </article>
+        <article class="hero-snapshot-card">
+          <p class="meta">Roadmap queue</p>
+          <p class="hero-snapshot-value">{{ $heroOpenRoadmap }}</p>
+          <p class="muted">Open checklist items · <a href="/pages/roadmap/">View roadmap</a></p>
+        </article>
+      </div>
     </section>
     <section id="hero-panel-reliability" class="home-tabpanel" role="tabpanel" aria-labelledby="hero-tab-reliability" hidden>
       {{ partial "homepage-reliability-card.html" . }}

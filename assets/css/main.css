@@ -968,6 +968,40 @@ main.container {
   margin: 0;
 }
 
+.hero-snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.hero-snapshot-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.62rem;
+  background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
+}
+
+.hero-snapshot-card .meta {
+  margin: 0;
+}
+
+.hero-snapshot-value {
+  margin: 0.16rem 0 0.25rem;
+  font-size: 1.28rem;
+  font-weight: 760;
+  letter-spacing: -0.02em;
+}
+
+.hero-snapshot-value--small {
+  font-size: 1rem;
+}
+
+@media (max-width: 960px) {
+  .hero-snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .capability-filter-controls {
   display: flex;
   flex-wrap: wrap;

@@ -82,20 +82,6 @@
 
     {{ partial "homepage-active-projects-strip.html" . }}
 
-    <section class="card monthly-review-card" aria-labelledby="monthly-review-heading">
-      <h3 id="monthly-review-heading">Monthly review</h3>
-      {{ $reviews := where (where site.RegularPages "Section" "posts") "Params.tags" "intersect" (slice "monthly-review") }}
-      {{ with first 1 ($reviews.ByDate.Reverse) }}
-        {{ $review := index . 0 }}
-        <div class="meta">Latest review · <time datetime="{{ $review.Date.Format "2006-01-02" }}">{{ $review.Date.Format "Jan 2006" }}</time></div>
-        <p><a href="{{ $review.RelPermalink }}">{{ $review.Title }}</a></p>
-        {{ with $review.Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
-        <a href="{{ $review.RelPermalink }}">Read monthly review →</a>
-      {{ else }}
-        <p class="muted">No monthly review published yet.</p>
-      {{ end }}
-    </section>
-
     <section class="card latest-changelog-card" aria-labelledby="latest-changelog-heading">
       <h3 id="latest-changelog-heading">Latest changelog</h3>
       {{ $changes := where site.RegularPages "Section" "changelog" }}
@@ -161,30 +147,6 @@
     </section>
     <script id="last-visit-data" type="application/json">{{ $lastVisitItems | jsonify }}</script>
 
-    <section class="card now-building-card" aria-labelledby="now-building-heading">
-      <h3 id="now-building-heading">Now building</h3>
-      {{ $changes := where site.RegularPages "Section" "changelog" }}
-      {{ with first 1 ($changes.ByDate.Reverse) }}
-        {{ $entry := index . 0 }}
-        <div class="meta">Latest ship · <time datetime="{{ $entry.Date.Format "2006-01-02" }}">{{ $entry.Date.Format "Jan 2, 2006" }}</time></div>
-        <p><a href="{{ $entry.RelPermalink }}">{{ $entry.Title }}</a></p>
-      {{ end }}
-      <p class="meta">Open PRs</p>
-      <p>
-        <a href="https://github.com/ironystock/snowcrab.dev/pulls" target="_blank" rel="noopener noreferrer" aria-label="Open pull requests for snowcrab.dev on GitHub (opens in a new tab)">
-          <img src="https://img.shields.io/github/issues-pr/ironystock/snowcrab.dev?label=open%20PRs&style=flat-square" alt="Open pull requests for snowcrab.dev" />
-        </a>
-      </p>
-      <p class="meta">Open issues</p>
-      <p>
-        <a href="https://github.com/ironystock/snowcrab.dev/issues" target="_blank" rel="noopener noreferrer" aria-label="Open issues for snowcrab.dev on GitHub (opens in a new tab)">
-          <img src="https://img.shields.io/github/issues/ironystock/snowcrab.dev?label=open%20issues&style=flat-square" alt="Open issues for snowcrab.dev" />
-        </a>
-      </p>
-      <a href="https://github.com/ironystock/snowcrab.dev/pulls" target="_blank" rel="noopener noreferrer" aria-label="View active pull requests on GitHub (opens in a new tab)">View active pull requests →</a>
-    </section>
-
-    
 
       </section>
 
@@ -206,6 +168,43 @@
               {{ end }}
             </ul>
           </nav>
+        </section>
+
+        <section class="card monthly-review-card" aria-labelledby="monthly-review-heading">
+          <h3 id="monthly-review-heading">Monthly review</h3>
+          {{ $reviews := where (where site.RegularPages "Section" "posts") "Params.tags" "intersect" (slice "monthly-review") }}
+          {{ with first 1 ($reviews.ByDate.Reverse) }}
+            {{ $review := index . 0 }}
+            <div class="meta">Latest review · <time datetime="{{ $review.Date.Format "2006-01-02" }}">{{ $review.Date.Format "Jan 2006" }}</time></div>
+            <p><a href="{{ $review.RelPermalink }}">{{ $review.Title }}</a></p>
+            {{ with $review.Params.summary }}<p class="muted">{{ . }}</p>{{ end }}
+            <a href="{{ $review.RelPermalink }}">Read monthly review →</a>
+          {{ else }}
+            <p class="muted">No monthly review published yet.</p>
+          {{ end }}
+        </section>
+
+        <section class="card now-building-card" aria-labelledby="now-building-heading">
+          <h3 id="now-building-heading">Now building</h3>
+          {{ $changes := where site.RegularPages "Section" "changelog" }}
+          {{ with first 1 ($changes.ByDate.Reverse) }}
+            {{ $entry := index . 0 }}
+            <div class="meta">Latest ship · <time datetime="{{ $entry.Date.Format "2006-01-02" }}">{{ $entry.Date.Format "Jan 2, 2006" }}</time></div>
+            <p><a href="{{ $entry.RelPermalink }}">{{ $entry.Title }}</a></p>
+          {{ end }}
+          <p class="meta">Open PRs</p>
+          <p>
+            <a href="https://github.com/ironystock/snowcrab.dev/pulls" target="_blank" rel="noopener noreferrer" aria-label="Open pull requests for snowcrab.dev on GitHub (opens in a new tab)">
+              <img src="https://img.shields.io/github/issues-pr/ironystock/snowcrab.dev?label=open%20PRs&style=flat-square" alt="Open pull requests for snowcrab.dev" />
+            </a>
+          </p>
+          <p class="meta">Open issues</p>
+          <p>
+            <a href="https://github.com/ironystock/snowcrab.dev/issues" target="_blank" rel="noopener noreferrer" aria-label="Open issues for snowcrab.dev on GitHub (opens in a new tab)">
+              <img src="https://img.shields.io/github/issues/ironystock/snowcrab.dev?label=open%20issues&style=flat-square" alt="Open issues for snowcrab.dev" />
+            </a>
+          </p>
+          <a href="https://github.com/ironystock/snowcrab.dev/pulls" target="_blank" rel="noopener noreferrer" aria-label="View active pull requests on GitHub (opens in a new tab)">View active pull requests →</a>
         </section>
       </section>
     </div>

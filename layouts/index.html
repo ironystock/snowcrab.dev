@@ -125,6 +125,8 @@
 
     {{ partial "homepage-active-projects-strip.html" . }}
 
+    {{ partial "homepage-contributor-spotlight-rail.html" . }}
+
     <section class="card latest-changelog-card" aria-labelledby="latest-changelog-heading">
       <h3 id="latest-changelog-heading">Latest changelog</h3>
       {{ $changes := where site.RegularPages "Section" "changelog" }}

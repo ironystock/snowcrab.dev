@@ -1,0 +1,15 @@
+contributors:
+  - name: "Brad Webb"
+    handle: "@ironystock"
+    role: "Lead builder"
+    focus: "Roadmap execution, UX quality passes, and release discipline"
+    highlight:
+      label: "Phase 4 architecture maps"
+      url: "/changelog/2026-03-07-phase4-architecture-maps-simple-deep-views/"
+  - name: "Snowcrab"
+    handle: "@snowcrab"
+    role: "Execution copilot"
+    focus: "Heartbeat batching, changelog receipts, and cross-project status sync"
+    highlight:
+      label: "openclaw-discord pilot ship"
+      url: "/changelog/2026-03-07-openclaw-discord-project-added-and-first-post/"

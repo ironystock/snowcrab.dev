@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:33 MST
+- Last updated: 2026-03-07 16:40 MST
 
 ## Last shipped batch
-- Projects visual hierarchy reset shipped: reduced box-on-box stacking on `/pages/projects/` and removed distracting card upshift hover motion (shadow-only hover response).
+- Phase 4 contributor spotlight rail shipped on homepage sidebar: added contributor cards with role/focus context, direct links to shipped work, and durable data source wiring (`/data/contributor_spotlight.yaml`).
 
 ## Next queued action
-- Phase 4 continuation: contributor spotlight rail.
+- Phase 5 kickoff: PWA baseline (manifest/offline fallback/install behavior).
 
 ## Active blockers
 - None.

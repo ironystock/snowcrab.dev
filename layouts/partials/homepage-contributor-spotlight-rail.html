@@ -1,0 +1,27 @@
+{{ $spotlight := site.Data.contributor_spotlight.contributors }}
+<section class="card contributor-spotlight-rail" aria-labelledby="contributor-spotlight-heading">
+  <div class="contributor-spotlight-head">
+    <h3 id="contributor-spotlight-heading">Contributor spotlight</h3>
+    <a href="/pages/roadmap/">Roadmap →</a>
+  </div>
+
+  {{ if gt (len $spotlight) 0 }}
+    <ul class="contributor-spotlight-list">
+      {{ range first 3 $spotlight }}
+        <li class="contributor-spotlight-item">
+          <div class="contributor-spotlight-top">
+            <p class="contributor-name">{{ .name }}</p>
+            {{ with .handle }}<span class="contributor-handle">{{ . }}</span>{{ end }}
+          </div>
+          <p class="meta contributor-role">{{ .role }}</p>
+          {{ with .focus }}<p class="muted contributor-focus">{{ . }}</p>{{ end }}
+          {{ with .highlight }}
+            <a class="contributor-highlight-link" href="{{ .url }}">{{ .label }} →</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p class="muted">Contributor spotlights will appear after the next shipped batch.</p>
+  {{ end }}
+</section>

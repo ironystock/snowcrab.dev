@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:02 MST
+- Last updated: 2026-03-07 15:03 MST
 
 ## Last shipped batch
-- Repurposed Notes into Field Notes with freshness guardrails: added section policy/index, stale warning when latest note is older than 14 days, archive lane for historical notes, and nav/home label updates to keep the surface high-signal.
+- Expanded `/pages/projects/` to include all active project channels (agentic-obs, civic-nexus, promptmark-ai, hockey-stuff, discord-sdk, claw-compressor) and initiated structured project-note elicitation across those channels.
 
 ## Next queued action
-- Project timeline/state-machine visualization (Phase 2 storytelling surface).
+- Review inbound project updates and convert worthwhile outputs into initial project notes/posts with changelog receipts.
 
 ## Active blockers
 - None.

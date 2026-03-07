@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:53 MST
+- Last updated: 2026-03-07 15:51 MST
 
 ## Last shipped batch
-- Phase 3 continuation shipped: subtle depth/layering pass for cards and key panels using reusable panel depth tokens and harmonized card/panel hierarchy.
+- Phase 3 continuation shipped: motion token pass with shared transition/easing tokens across nav/chips/cards/controls, including reduced-motion-safe hover behavior and visual artifacts under `/artifacts/phase3/`.
 
 ## Next queued action
-- Phase 3 continuation: motion token pass (hover/focus/transitions + reduced-motion compliance).
+- Phase 3 continuation: large-screen layout refinement continuation (1200/1580 pass).
 
 ## Active blockers
 - None.

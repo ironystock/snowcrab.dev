@@ -58,6 +58,11 @@
   --panel-bg: linear-gradient(165deg, color-mix(in oklab, var(--bg-elev) 96%, white 4%), color-mix(in oklab, var(--bg-elev) 90%, var(--border) 10%));
   --panel-border-strong: color-mix(in oklab, var(--border) 72%, var(--text) 28%);
   --panel-highlight: inset 0 1px 0 color-mix(in oklab, white 34%, transparent);
+  --motion-fast: 130ms;
+  --motion-base: 190ms;
+  --motion-slow: 260ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-expressive: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * { box-sizing: border-box; }
@@ -299,8 +304,16 @@ a:hover .external-link-glyph { opacity: 1; }
   line-height: 1.1;
   white-space: nowrap;
   text-decoration: none;
+  transition:
+    border-color var(--motion-base) var(--ease-standard),
+    background-color var(--motion-base) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-expressive);
 }
-.nav-list a:hover { border-color: var(--primary); text-decoration: none; }
+.nav-list a:hover {
+  border-color: var(--primary);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
 .nav-list a.active {
   border-color: color-mix(in oklab, var(--primary) 65%, var(--border));
   background: color-mix(in oklab, var(--primary) 10%, var(--bg-elev));
@@ -327,6 +340,11 @@ a:hover .external-link-glyph { opacity: 1; }
   border-radius: 999px;
   padding: 0.42rem 0.7rem;
   cursor: pointer;
+  transition:
+    border-color var(--motion-base) var(--ease-standard),
+    background-color var(--motion-base) var(--ease-standard),
+    box-shadow var(--motion-base) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-expressive);
 }
 
 .command-toggle {
@@ -344,7 +362,10 @@ a:hover .external-link-glyph { opacity: 1; }
 }
 
 .command-toggle:hover,
-.theme-toggle:hover { border-color: var(--primary); }
+.theme-toggle:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
 
 .command-toggle:focus-visible,
 .theme-toggle:focus-visible {
@@ -393,6 +414,17 @@ main.container {
   padding: 1rem 1.1rem;
   box-shadow: var(--panel-highlight), var(--shadow-soft);
   backdrop-filter: saturate(108%);
+  transition:
+    border-color var(--motion-base) var(--ease-standard),
+    box-shadow var(--motion-slow) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-expressive);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--panel-highlight), var(--shadow-lifted);
+  }
 }
 
 .card:focus-within,
@@ -626,10 +658,16 @@ main.container {
   color: var(--text);
   background: var(--bg-elev);
   cursor: pointer;
+  transition:
+    border-color var(--motion-base) var(--ease-standard),
+    background-color var(--motion-base) var(--ease-standard),
+    color var(--motion-base) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-expressive);
 }
 
 .chip:hover {
   border-color: color-mix(in oklab, var(--primary) 42%, var(--border));
+  transform: translateY(-1px);
 }
 
 .chip.is-active {
@@ -2022,6 +2060,14 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .nav-list a:hover,
+  .command-toggle:hover,
+  .theme-toggle:hover,
+  .chip:hover,
+  .card:hover {
+    transform: none !important;
   }
 }
 

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-06 21:59 MST
+- Last updated: 2026-03-06 22:52 MST
 
 ## Last shipped batch
-- Added dedicated project detail pages for Promptmark capture pipeline and OBS/Streaming, and wired homepage active-project links to route directly to those detail pages.
+- Added dedicated project detail pages for `snowcrab.dev` and `Claw Compressor integration`, then linked both from `/pages/projects/` for consistent active-track routing.
 
 ## Next queued action
-- Add dedicated detail pages for remaining active tracks not yet represented in `/content/projects/` (snowcrab.dev and Claw Compressor).
+- No meaningful batch currently queued; awaiting next scoped improvement task.
 
 ## Active blockers
 - None.

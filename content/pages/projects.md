@@ -44,6 +44,7 @@ This page is the cross-project control panel.
 - **Current milestone:** Reliability + accessibility hardening with cleaner operational visibility
 - **Next action:** Run full accessibility sweep and continue high-signal shipping cadence
 - **Blockers:** None hard; maintain scope discipline and avoid micro-pass churn
+- **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)
 
 ### Hockeyclaw (NHL data MVP)
 - **Status:** Active
@@ -78,6 +79,7 @@ This page is the cross-project control panel.
 - **Latest update:** Plugin upgraded to `0.1.3`, reinstall/restart verified, gateway healthy, promo collateral pipeline shipped
 - **Next action:** Track quality/token impact over sustained multi-tool sessions
 - **Blockers:** None hard; monitor for edge-case context-loss regressions
+- **Detail page:** [/projects/claw-compressor-integration/](/projects/claw-compressor-integration/)
 - **Package:** [@piscodm/claw-compressor](https://www.npmjs.com/package/@piscodm/claw-compressor)
 
 ### OBS / Streaming Infrastructure

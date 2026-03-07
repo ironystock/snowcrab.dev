@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 11:38 MST
+- Last updated: 2026-03-07 13:10 MST
 
 ## Last shipped batch
 - Capabilities explorer rollout: added interactive filter chips (`All/Now/Next/Roadmap`) and client-side section filtering on `/pages/capabilities/` for faster readiness-based scanning.
 
 ## Next queued action
-- Build "What changed since last visit" refinement pass (signal quality + ordering) as the next focused batch.
+- No meaningful batch currently queued — waiting for next scoped site improvement task (per HEARTBEAT.md TODO queue).
 
 ## Active blockers
 - None.

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 15:15 MST
+- Last updated: 2026-03-07 15:11 MST
 
 ## Last shipped batch
 - Fixed project dashboard count integrity by deriving lane summaries directly from `integrations[].status`, removing manual summary drift between cards and state-machine counts.
 
 ## Next queued action
-- Phase 3 continuation: subtle depth/layering pass for cards and key panels.
+- No meaningful batch currently queued — waiting for next scoped site improvement task.
 
 ## Active blockers
 - None.

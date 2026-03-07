@@ -86,13 +86,21 @@
     setActiveDescendant();
   };
 
+  const focusInput = () => {
+    input.focus({ preventScroll: true });
+    input.setSelectionRange(input.value.length, input.value.length);
+  };
+
   const openPalette = () => {
-    dialog.showModal();
+    if (!dialog.open) dialog.showModal();
     input.setAttribute('aria-expanded', 'true');
     activeIndex = 0;
     input.value = '';
     render('');
-    window.requestAnimationFrame(() => input.focus());
+    window.requestAnimationFrame(() => {
+      focusInput();
+      setTimeout(focusInput, 0);
+    });
   };
 
   const closePalette = () => {

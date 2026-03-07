@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:16 MST
+- Last updated: 2026-03-07 16:18 MST
 
 ## Last shipped batch
-- Sidebar signals density trim shipped: reduced Now-shipping verbosity and compacted Active-projects rows for cleaner scanability in constrained sidebar widths.
+- Phase 4 kickoff shipped: interactive diff explorer on `/pages/automation-demos/` with text diff mode, optional before/after image mode, and linked changelog receipts.
 
 ## Next queued action
-- Continue Phase 4 kickoff: interactive diff explorer (text diff + optional before/after image mode).
+- Phase 4 continuation: Mermaid/flowchart render support for architecture/process docs.
 
 ## Active blockers
 - None.

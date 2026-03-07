@@ -17,10 +17,10 @@ integrations:
     blocker: "None"
   - name: openclaw-discord
     status: Now
-    milestone: "Discord ops control plane (reaction controls + status contracts)"
-    last_update: "Reaction-control pilot wired and validated in channel"
-    next_action: "Promote pilot controls + digest flow into durable routine"
-    blocker: "None"
+    milestone: "Discord ops control plane (reaction controls + status contract + restart payload standardization)"
+    last_update: "Pilot framework and live hook wiring shipped (`f7f6410`, `8e23ec3`, `fdc444f`, `67e9729`)"
+    next_action: "Run 2-channel pilot matrix and finalize rollout/no-rollout decision"
+    blocker: "Need real-world approved-user reaction cycle on armed pilot messages"
   - name: hockey-stuff (Hockeyclaw)
     status: Now
     milestone: "Deterministic NHL data + recap automation"
@@ -82,10 +82,10 @@ This page is the cross-project control panel.
 
 ### openclaw-discord
 - **Status:** Active
-- **Current milestone:** Discord ops control plane (reaction controls + status contracts)
-- **Latest update:** Reaction-control handler and pilot procedures were implemented and validated with approved-operator tests
-- **Next action:** Promote pilot controls and digest workflow into durable daily operations
-- **Blockers:** None currently flagged
+- **Current milestone:** Discord ops control plane (reaction controls + status contract + restart payload standardization)
+- **Latest update:** Docs batch + pilot control framework + operator authorization + live hook wiring shipped (`f7f6410`, `8e23ec3`, `fdc444f`, `67e9729`)
+- **Next action:** Run and record 2-channel pilot matrix (approved + unauthorized + unsupported emoji), then log rollout/no-rollout decision
+- **Blockers:** Need clean real-world operator reaction cycle on armed pilot messages (Brad + RECTANGL)
 
 ### hockey-stuff (Hockeyclaw)
 - **Status:** Active

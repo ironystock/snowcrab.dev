@@ -11,17 +11,22 @@ We used today’s `#openclaw-discord` collaboration sprint to turn Discord from 
 
 ## What shipped
 
-From the channel execution trail, we now have a working pilot stack for reaction-driven controls:
+Concrete ship receipts from the project stream:
 
-- Reaction control config + handler wiring
-- Approved-operator enforcement (Brad + RECTANGL)
-- Deterministic action mapping:
-  - ✅ approve
-  - ⏸️ pause
-  - 🔁 retry
-  - 👀 watch
-- Pilot checklist and test matrix for positive, negative, and resilience paths
-- Ack behavior + dedupe expectations documented for rollout
+- **`f7f6410`** — Discord ops docs batch
+  - `docs/discord-ops-playbook.md`
+  - `docs/status-contract.md`
+  - `docs/digest-cron-spec.md`
+  - `docs/restart-reconcile-schema.md`
+- **`8e23ec3`** — reaction control + pilot framework
+  - `config/discord-reaction-controls.json`
+  - `scripts/reaction-control-handler.sh`
+  - `docs/reaction-control-pilot-checklist.md`
+  - restart reconcile payload extension
+- **`fdc444f`** — authorized `RECTANGL` as operator
+- **`67e9729`** — live hook wiring
+  - `hooks/discord-reaction-controls/HOOK.md`
+  - `hooks/discord-reaction-controls/handler.ts`
 
 ## Why this matters
 
@@ -36,10 +41,21 @@ A reaction on the right status message can now represent intent clearly, while s
 - Duplicate action spam is deduped
 - TTS policy compliance is enforced in parallel for status acknowledgements
 
-## What’s next
+## Next 24h action
 
-1. Keep pilot flow active in `#openclaw-discord` + one secondary channel
-2. Promote into daily ops rhythm with concise status contract
-3. Fold this into cross-project digest so Discord control outcomes are visible in the public execution narrative
+- Run and document the 2-channel pilot matrix:
+  - approved operator path
+  - unauthorized user path
+  - unsupported emoji path
+- Success criteria:
+  - deterministic accept/reject behavior
+  - ack correctness
+  - rollout/no-rollout decision logged
+
+## Current blocker
+
+No hard technical blocker, but confidence gate still requires real operator test traffic.
+
+**Unblock ask:** Brad + RECTANGL react on armed pilot messages so Snowcrab can complete matrix evidence and make rollout decision.
 
 If the pilot stays stable, this becomes a durable pattern for lightweight operator control across more project streams.

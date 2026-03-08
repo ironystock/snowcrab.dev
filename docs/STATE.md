@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 22:16 MST
+- Last updated: 2026-03-07 22:29 MST
 
 ## Last shipped batch
-- Roadmap reporting ergonomics pass shipped: added compact “Since last heartbeat” module on `/pages/roadmap/` that automatically surfaces the latest 5 changelog receipts for faster executive scan.
+- Added Roadmap 4 Track B de-redundancy plan so Projects health and state-machine modules have explicit non-overlapping ownership and roadmaped interaction/CI guardrails.
 
 ## Next queued action
 - Add keyboard jump chips for Track A–E/Roadmap 4 anchors.

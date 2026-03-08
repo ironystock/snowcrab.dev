@@ -155,6 +155,10 @@ flowchart TB
 ### Track B — Reporting ergonomics *(Next)*
 - ~~[x] Add compact “since last heartbeat” log module on roadmap page using latest 5 changelog entries.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-trackb-since-last-heartbeat-log-module/))
 - [ ] Add keyboard jump chips for Track A–E/Roadmap 4 anchors.
+- [ ] De-redundancy pass: split **Project health dashboard** into lane KPI ownership (capacity, blocker ratio, freshness SLA, confidence) while **Project flow state machine** owns transition intelligence (promotion latency, churn/reopen count, stuck-state alerts).
+- [ ] Add explicit “Why this matters” micro-copy under each module clarifying non-overlap: **Health answers “How healthy are lanes now?”** vs **State machine answers “How work is moving between states?”**.
+- [ ] Add interaction contract for state machine (click state node to filter project cards + show transition receipts) so it becomes an operational control, not a decorative duplicate.
+- [ ] Add weekly regression check: fail CI when health + state machine expose overlapping metric labels without distinct ownership metadata.
 
 ### Track C — Quality guardrails *(Continuous)*
 - [ ] Add roadmap lint check to fail CI when a wave has no open `[ ]` item while `docs/STATE.md` declares active execution.

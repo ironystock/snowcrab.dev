@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:24 MST
+- Last updated: 2026-03-07 20:40 MST
 
 ## Last shipped batch
-- Roadmap 3 visual-language continuation shipped: card chrome simplification pass (flattened nested card shadows, hairline border treatment, calmer secondary surface fills) to reduce box-on-box fatigue.
+- Roadmap 3 charts/graph placement pass shipped: added Projects analytics snapshot (lane + blocker distribution bars) and Changelog 30d analytics card (velocity + category mix).
 
 ## Next queued action
-- Charts/graph placement pass (projects + changelog analytics).
+- Mockup direction set (A/B/C) for upcoming visual batches.
 
 ## Active blockers
 - None.

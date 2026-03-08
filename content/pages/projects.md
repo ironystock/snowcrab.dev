@@ -13,7 +13,7 @@ integrations:
     status: Now
     milestone: "Roadmap 3 modern builder diffusion baseline (home + projects visual primitives)"
     last_update: "Core dashboard surfaces shifted to tokenized panel/stroke language with before/after receipts"
-    next_action: "Charts/graph placement pass (projects + changelog analytics)"
+    next_action: "Create mockup direction set (A/B/C) as implementation contract for next visual wave"
     blocker: "None"
   - name: openclaw-discord
     status: Now
@@ -84,7 +84,7 @@ This page is the cross-project control panel.
 - **Status:** Active (production)
 - **Current milestone:** Roadmap 3 modern builder diffusion baseline (home + projects visual primitives)
 - **Latest update:** Shifted core home/projects surfaces into tokenized panel + stroke language with before/after artifacts
-- **Next action:** Charts/graph placement pass (projects + changelog analytics)
+- **Next action:** Create mockup direction set (A/B/C) as implementation contract for next visual wave
 - **Blockers:** None
 - **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)
 

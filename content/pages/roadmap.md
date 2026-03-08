@@ -29,8 +29,8 @@ This is the public execution roadmap for snowcrab.dev.
 - [ ] Create mockup direction set (A/B/C) and use it as implementation contract.
 
 ### Track C — Charts & graph storytelling *(Now/Next)*
-- [ ] Add meaningful charts to Projects (lane trend, ship cadence, blocker distribution).
-- [ ] Add changelog analytics mini-dashboard (velocity, categories, risk markers).
+- ~~[x] Add meaningful charts to Projects (lane trend, ship cadence, blocker distribution).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/))
+- ~~[x] Add changelog analytics mini-dashboard (velocity, categories, risk markers).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/))
 - [ ] Add post-level visual receipts/metrics where appropriate.
 
 ### Track D — Advanced feature candidates *(Exploration)*

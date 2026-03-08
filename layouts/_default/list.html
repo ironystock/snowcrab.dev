@@ -9,6 +9,50 @@
 <section class="stack" aria-labelledby="published-entries-heading">
   <h2 id="published-entries-heading" class="sr-only">Published entries</h2>
   {{ if and (eq .Section "changelog") (gt (len .Pages) 0) }}
+    {{ $recentWindow := sub now.Unix (mul 30 86400) }}
+    {{ $recent := where .Pages "Date.Unix" "ge" $recentWindow }}
+    {{ $totalRecent := len $recent }}
+    {{ $design := 0 }}{{ $ops := 0 }}{{ $content := 0 }}{{ $reliability := 0 }}
+    {{ range $recent }}
+      {{ $title := lower .Title }}
+      {{ $category := lower (.Params.category | default "") }}
+      {{ if eq $category "" }}
+        {{ if or (in $title "reliability") (in $title "incident") (in $title "stabil") }}{{ $category = "reliability" }}{{ end }}
+        {{ if and (eq $category "") (or (in $title "ops") (in $title "deploy") (in $title "pipeline") (in $title "automation")) }}{{ $category = "ops" }}{{ end }}
+        {{ if and (eq $category "") (or (in $title "post") (in $title "copy") (in $title "content") (in $title "recap")) }}{{ $category = "content" }}{{ end }}
+        {{ if and (eq $category "") (or (in $title "theme") (in $title "design") (in $title "ui") (in $title "typography")) }}{{ $category = "design" }}{{ end }}
+      {{ end }}
+      {{ if eq $category "" }}{{ $category = "ops" }}{{ end }}
+      {{ if eq $category "design" }}{{ $design = add $design 1 }}{{ end }}
+      {{ if eq $category "ops" }}{{ $ops = add $ops 1 }}{{ end }}
+      {{ if eq $category "content" }}{{ $content = add $content 1 }}{{ end }}
+      {{ if eq $category "reliability" }}{{ $reliability = add $reliability 1 }}{{ end }}
+    {{ end }}
+    {{ $denom := cond (gt $totalRecent 0) $totalRecent 1 }}
+    <section class="card analytics-panel" aria-labelledby="changelog-analytics-heading">
+      <h3 id="changelog-analytics-heading">Changelog analytics (30d)</h3>
+      <p class="meta">Velocity and category distribution from the latest 30-day window.</p>
+      <p><strong>{{ $totalRecent }}</strong> shipped entries in the last 30 days.</p>
+      <div class="analytics-bars" role="list" aria-label="30-day changelog category distribution">
+        <div class="analytics-bar" role="listitem">
+          <div class="analytics-bar-label"><span>Ops</span><strong>{{ $ops }}</strong></div>
+          <div class="analytics-track"><span style="width: {{ div (mul $ops 100) $denom }}%;"></span></div>
+        </div>
+        <div class="analytics-bar" role="listitem">
+          <div class="analytics-bar-label"><span>Design</span><strong>{{ $design }}</strong></div>
+          <div class="analytics-track"><span style="width: {{ div (mul $design 100) $denom }}%;"></span></div>
+        </div>
+        <div class="analytics-bar" role="listitem">
+          <div class="analytics-bar-label"><span>Content</span><strong>{{ $content }}</strong></div>
+          <div class="analytics-track"><span style="width: {{ div (mul $content 100) $denom }}%;"></span></div>
+        </div>
+        <div class="analytics-bar" role="listitem">
+          <div class="analytics-bar-label"><span>Reliability</span><strong>{{ $reliability }}</strong></div>
+          <div class="analytics-track analytics-track--risk"><span style="width: {{ div (mul $reliability 100) $denom }}%;"></span></div>
+        </div>
+      </div>
+    </section>
+
     <div class="changelog-filters-wrap" hidden data-js-only="true">
       <h3 id="changelog-filters-heading" class="sr-only">Filter changelog by category</h3>
       <p id="changelog-filters-help" class="meta changelog-filters-help">Keyboard: ←/→ move filters · Home/End jump · Esc resets to All</p>

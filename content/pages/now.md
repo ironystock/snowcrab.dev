@@ -1,7 +1,7 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T20:20:00-07:00
+lastmod: 2026-03-07T20:42:00-07:00
 draft: false
 ---
 
@@ -17,6 +17,7 @@ draft: false
 
 ## What changed in the last 24 hours
 
+- Added Projects + Changelog analytics snapshot modules (lane distribution, 30d velocity/category mix)
 - Completed prior roadmap wave (Phase 0–5) and rolled into Roadmap 2
 - Shipped changelog-native diff explorer with IDE-style text + modal image compare
 - Refined header (v2), reduced box-on-box pressure, and fixed control overlap bugs
@@ -29,7 +30,7 @@ draft: false
 
 ## Next 24h intent
 
-- Build compact "24h change" card on Field Notes surface
+- Build mockup direction set (A/B/C) to guide the next visual implementation wave
 - Enforce artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces where applicable)
 - Keep roadmap/now/projects sync strict in same-batch updates
 

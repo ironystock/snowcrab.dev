@@ -32,6 +32,40 @@
         {{ partial "homepage-contributor-spotlight-rail.html" . }}
       </section>
     </section>
+
+    {{ $integrations := .Params.integrations | default (slice) }}
+    {{ $total := len $integrations }}
+    {{ $nowCount := len (where $integrations "status" "Now") }}
+    {{ $nextCount := len (where $integrations "status" "Next") }}
+    {{ $watchCount := len (where $integrations "status" "Watch") }}
+    {{ $blocked := 0 }}
+    {{ range $integrations }}
+      {{ $blocker := lower (trim (.blocker | default "") " ") }}
+      {{ if and (ne $blocker "") (ne $blocker "none") (ne $blocker "none hard") (not (hasPrefix $blocker "none ")) }}{{ $blocked = add $blocked 1 }}{{ end }}
+    {{ end }}
+    {{ $statusDenom := cond (gt $total 0) $total 1 }}
+    <section class="card analytics-panel" aria-labelledby="projects-analytics-heading">
+      <h2 id="projects-analytics-heading">Projects analytics snapshot</h2>
+      <p class="meta">Live portfolio distribution + blocker pressure for current execution lanes.</p>
+      <div class="analytics-bars" role="list" aria-label="Project lane distribution">
+        <div class="analytics-bar" role="listitem">
+          <div class="analytics-bar-label"><span>Now lanes</span><strong>{{ $nowCount }}</strong></div>
+          <div class="analytics-track"><span style="width: {{ div (mul $nowCount 100) $statusDenom }}%;"></span></div>
+        </div>
+        <div class="analytics-bar" role="listitem">
+          <div class="analytics-bar-label"><span>Next lanes</span><strong>{{ $nextCount }}</strong></div>
+          <div class="analytics-track"><span style="width: {{ div (mul $nextCount 100) $statusDenom }}%;"></span></div>
+        </div>
+        <div class="analytics-bar" role="listitem">
+          <div class="analytics-bar-label"><span>Watch lanes</span><strong>{{ $watchCount }}</strong></div>
+          <div class="analytics-track"><span style="width: {{ div (mul $watchCount 100) $statusDenom }}%;"></span></div>
+        </div>
+        <div class="analytics-bar" role="listitem">
+          <div class="analytics-bar-label"><span>Blocked lanes</span><strong>{{ $blocked }}</strong></div>
+          <div class="analytics-track analytics-track--risk"><span style="width: {{ div (mul $blocked 100) $statusDenom }}%;"></span></div>
+        </div>
+      </div>
+    </section>
   {{ end }}
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "now") }}
     {{ $ageHours := div (sub now.Unix .Lastmod.Unix) 3600 }}

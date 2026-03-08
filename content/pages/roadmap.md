@@ -207,7 +207,7 @@ flowchart TB
 - ~~[x] Add weekly regression check: fail CI when health + state machine expose overlapping metric labels without distinct ownership metadata.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-weekly-metric-ownership-regression-guardrail/))
 
 ### Track C — Quality guardrails *(Continuous)*
-- [ ] Add roadmap lint check to fail CI when a wave has no open `[ ]` item while `docs/STATE.md` declares active execution.
+- ~~[x] Add roadmap lint check to fail CI when a wave has no open `[ ]` item while `docs/STATE.md` declares active execution.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-tracke-roadmap-active-wave-lint-check/))
 
 ## Roadmap 2 archive (complete)
 

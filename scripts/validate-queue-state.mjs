@@ -17,12 +17,20 @@ if (!nextActionMatch) {
 }
 
 const nextAction = normalize(nextActionMatch[1]);
+const stateStatusMatch = state.match(/## Status[\s\S]*?-\s*State:\s*(.+)/);
+const stateStatus = normalize(stateStatusMatch?.[1] || '');
+const stateIsActive = /^active$/i.test(stateStatus);
+
 const openItems = [...roadmap.matchAll(/^- \[ \] (.+)$/gm)]
   .map((m) => normalize(m[1]))
   .filter((line) => !/^=/.test(line));
 
 if (openItems.length === 0) {
-  console.log('Queue-state guardrail: roadmap has no open items.');
+  if (stateIsActive) {
+    console.error('Queue-state guardrail failed: roadmap has no open items while STATE is Active.');
+    process.exit(1);
+  }
+  console.log('Queue-state guardrail: roadmap has no open items and STATE is not Active.');
   process.exit(0);
 }
 

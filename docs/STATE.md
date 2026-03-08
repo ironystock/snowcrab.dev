@@ -1,14 +1,14 @@
 # STATE
 
 ## Status
-- State: Active
-- Last updated: 2026-03-07 23:23 MST
+- State: Idle
+- Last updated: 2026-03-07 23:16 MST
 
 ## Last shipped batch
-- Shipped Track D Projects health mini-viz pulse module on `/pages/roadmap/`: added four lane pulse sparkline cards (capacity, freshness SLA, blocker ratio, confidence), linked JS renderer, and changelog/artifact receipts.
+- Added roadmap active-wave lint guardrail: CI now fails if `docs/STATE.md` is Active while `/pages/roadmap/` has zero open `[ ]` items.
 
 ## Next queued action
-- Add roadmap lint check to fail CI when a wave has no open `[ ]` item while `docs/STATE.md` declares active execution (Roadmap 4, Track C).
+- No meaningful batch currently queued; awaiting next roadmap wave/item.
 
 ## Active blockers
 - None.

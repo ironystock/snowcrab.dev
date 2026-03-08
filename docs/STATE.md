@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:53 MST
+- Last updated: 2026-03-07 21:04 MST
 
 ## Last shipped batch
-- Cross-channel harvest shipped for Promptmark: converted project-channel stabilization updates into a synced project detail refresh, control-panel update, and new recap post + changelog receipt.
+- Roadmap Track D temporal playback prototype shipped on `/pages/roadmap/`: added play/pause/restart + speed controls, weekly replay rail, and receipt-linked stage card with before/after artifacts + changelog receipt.
 
 ## Next queued action
-- Roadmap Track D follow-up: prototype temporal playback mode ("what changed this week" timeline) on `/pages/roadmap/` with artifact receipts.
+- Roadmap Track D follow-up: prototype optional WebGPU-enhanced background/data visuals on `/pages/roadmap/` with progressive enhancement fallback and artifact receipts.
 
 ## Active blockers
 - None.

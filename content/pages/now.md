@@ -1,7 +1,7 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T20:42:00-07:00
+lastmod: 2026-03-07T21:05:00-07:00
 draft: false
 ---
 
@@ -28,6 +28,7 @@ draft: false
 - Mapped Capabilities domain cards to concrete visual receipts, including before/after artifacts and changelog/project proof links
 - Added CI sync guardrail to block partial now/projects/roadmap updates in meaningful status-change batches
 - Added queue-state guardrail to fail when `docs/STATE.md` next action drifts from the top open roadmap item or uses placeholder text while roadmap work remains
+- Shipped Roadmap Track D temporal playback prototype on `/pages/roadmap/` with play/pause/restart + speed controls, weekly replay rail, and artifact-linked changelog receipt
 - Diffused modern builder-inspired visual primitives across home/projects (panelized controls + calmer rectangular chrome)
 
 ## Next 24h intent

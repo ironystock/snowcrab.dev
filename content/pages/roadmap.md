@@ -58,7 +58,7 @@ This is the public execution roadmap for snowcrab.dev.
 ### Track D — Advanced feature candidates *(Exploration)*
 - [ ] WebGPU-enhanced background/data visuals (optional progressive enhancement).
 - ~~[x] Interactive execution graph (state transitions over time).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/))
-- [ ] Temporal playback mode (“what changed this week” cinematic timeline).
+- ~~[x] Temporal playback mode (“what changed this week” cinematic timeline).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/))
 - [ ] AI-assisted diff narration mode for executive summaries.
 
 <section class="execution-graph-prototype card" id="execution-graph-prototype" aria-labelledby="execution-graph-prototype-heading">
@@ -90,6 +90,39 @@ flowchart TB
   W4 --> W5[Next wave input]
     </pre>
   </div>
+</section>
+
+<section class="temporal-playback-prototype card" id="temporal-playback-prototype" aria-labelledby="temporal-playback-heading">
+  <h4 id="temporal-playback-heading">Temporal playback mode prototype</h4>
+  <p class="meta">Cinematic replay of this week’s shipped changes. Use Play to step through the execution story.</p>
+
+  <div class="temporal-playback-controls" role="group" aria-label="Temporal playback controls">
+    <button type="button" class="chip is-active" data-playback-action="play" aria-pressed="true">Play</button>
+    <button type="button" class="chip" data-playback-action="pause" aria-pressed="false">Pause</button>
+    <button type="button" class="chip" data-playback-action="restart" aria-pressed="false">Restart</button>
+    <label class="meta" for="temporal-playback-speed">Speed</label>
+    <select id="temporal-playback-speed" class="temporal-playback-speed" aria-label="Playback speed">
+      <option value="1">1×</option>
+      <option value="1.5" selected>1.5×</option>
+      <option value="2">2×</option>
+    </select>
+  </div>
+
+  <div class="temporal-playback-stage" aria-live="polite">
+    <p class="temporal-playback-kicker">Now showing</p>
+    <h5 data-playback-headline>Loading weekly replay…</h5>
+    <p data-playback-summary class="meta"></p>
+    <p data-playback-meta class="meta"></p>
+    <div class="temporal-playback-progress" role="presentation"><span data-playback-progress></span></div>
+  </div>
+
+  <ol class="temporal-playback-rail" data-playback-rail>
+    <li data-playback-date="2026-03-07" data-playback-title="Track D interactive execution graph shipped" data-playback-summary="Introduced a switchable flow/timeline execution graph on the roadmap page to visualize queue state transitions." data-playback-receipt="/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Roadmap 3 chart storytelling pass" data-playback-summary="Added project trend and changelog analytics visuals to strengthen weekly execution visibility." data-playback-receipt="/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Promptmark pilot stabilization sync" data-playback-summary="Merged cross-channel pilot updates into project detail, changelog, and recap artifacts." data-playback-receipt="/changelog/2026-03-07-promptmark-pilot-stabilization-harvest-sync/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Queue-state drift guardrail hardening" data-playback-summary="Enforced CI checks for queue-state alignment between now/projects/roadmap and docs state." data-playback-receipt="/changelog/2026-03-07-surface-sync-guardrail-now-projects-roadmap/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Temporal playback mode prototype" data-playback-summary="Added cinematic weekly replay controls (play, pause, restart, speed) directly on roadmap Track D." data-playback-receipt="/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/"></li>
+  </ol>
 </section>
 
 ### Track E — Governance & quality guardrails *(Continuous)*

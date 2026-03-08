@@ -1577,21 +1577,6 @@ main.container {
   outline-offset: 2px;
 }
 
-.template-artifact {
-  margin: 0.75rem 0 1rem;
-  padding: 0.75rem 0.85rem;
-  border: 1px solid color-mix(in oklab, var(--border) 76%, transparent);
-  border-radius: var(--radius-sm);
-  background: color-mix(in oklab, var(--bg-elev) 92%, transparent);
-  overflow-x: auto;
-}
-
-.template-artifact code {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.8rem;
-  line-height: 1.45;
-}
-
 .command-palette-empty {
   color: var(--muted);
   padding: 0.42rem 0.2rem;
@@ -1676,56 +1661,6 @@ article.prose pre.mermaid svg {
 
 article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
 
-.case-magazine-hero {
-  border: 1px solid color-mix(in oklab, var(--border) 68%, var(--primary) 32%);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.1rem;
-  margin: 0.4rem 0 1rem;
-  background: linear-gradient(180deg, color-mix(in oklab, var(--bg-elev) 86%, var(--primary) 14%), color-mix(in oklab, var(--bg) 94%, transparent));
-}
-
-.case-kicker {
-  margin: 0 0 0.35rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.74rem;
-  color: var(--muted);
-}
-
-.case-magazine-hero h2 {
-  margin: 0 0 0.38rem;
-}
-
-.case-dek {
-  margin: 0;
-  color: var(--muted);
-}
-
-.case-pullquote blockquote {
-  margin: 0.7rem 0 1rem;
-  border-left: 3px solid color-mix(in oklab, var(--primary) 70%, transparent);
-  padding: 0.35rem 0 0.35rem 0.85rem;
-  font-size: 1.08rem;
-  line-height: 1.5;
-}
-
-.case-stat-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.55rem;
-  margin: 0.6rem 0 0.9rem;
-}
-
-.case-stat-strip > div {
-  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
-  border-radius: var(--radius-sm);
-  padding: 0.55rem 0.62rem;
-  background: color-mix(in oklab, var(--bg-elev) 90%, transparent);
-}
-
-.case-stat-strip p {
-  margin: 0;
-}
 
 .reading-mode-controls {
   margin: 0.35rem 0 0.9rem;
@@ -1955,6 +1890,94 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .execution-graph-prototype pre.mermaid {
   margin: 0;
+}
+
+.temporal-playback-prototype {
+  margin: 0.75rem 0 0.95rem;
+}
+
+.temporal-playback-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
+}
+
+.temporal-playback-speed {
+  border: 1px solid var(--stroke-soft);
+  border-radius: 8px;
+  background: var(--bg-elev);
+  color: var(--text);
+  padding: 0.2rem 0.42rem;
+}
+
+.temporal-playback-stage {
+  border: 1px solid var(--stroke-soft);
+  border-radius: 10px;
+  padding: 0.56rem;
+  background: linear-gradient(160deg, color-mix(in oklab, var(--bg-elev) 95%, var(--border) 5%), color-mix(in oklab, var(--bg-elev) 88%, var(--primary) 12%));
+  margin-bottom: 0.6rem;
+}
+
+.temporal-playback-kicker {
+  margin: 0 0 0.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--meta-high-contrast);
+}
+
+.temporal-playback-stage h5 {
+  margin: 0 0 0.34rem;
+  font-size: 1rem;
+}
+
+.temporal-playback-stage p {
+  margin: 0 0 0.32rem;
+}
+
+.temporal-playback-progress {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--border) 78%, transparent);
+  overflow: hidden;
+}
+
+.temporal-playback-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  transition: width 300ms ease;
+}
+
+.temporal-playback-rail {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.5rem;
+}
+
+.temporal-playback-rail li {
+  border: 1px solid var(--stroke-soft);
+  border-radius: 10px;
+  padding: 0.5rem;
+  background: color-mix(in oklab, var(--bg-elev) 95%, var(--border) 5%);
+}
+
+.temporal-playback-rail li.is-active {
+  border-color: color-mix(in oklab, #7c3aed 48%, var(--border));
+  box-shadow: var(--outline-subtle);
+}
+
+.temporal-playback-point-meta {
+  margin: 0 0 0.24rem;
+  font-size: 0.72rem;
+  color: var(--meta-high-contrast);
 }
 
 .projects-health h2 {
@@ -2994,13 +3017,6 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
   .changelog-timeline.is-filtered-view > li[data-visible-index]::after {
     left: -1.8rem;
-  }
-
-  .command-toggle {
-    margin-right: 0;
-    grid-column: 1 / -1;
-    justify-self: start;
-    padding: 0.36rem 0.58rem;
   }
 
   .hero { padding: 1.05rem; border-radius: 14px; }

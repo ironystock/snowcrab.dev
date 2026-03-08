@@ -5,7 +5,7 @@
 - Last updated: 2026-03-07 20:44 MST
 
 ## Last shipped batch
-- Added banana-claws as an active project stream with a new detail page and launch/milestone post (queue workflow, branding finalization, CI/issue-template foundation), then synced Projects + Now surfaces.
+- Cross-channel harvest batch shipped: converted claw-compressor channel recap into a new ops post plus synced project/detail surfaces and explicit telemetry next-action updates.
 
 ## Next queued action
 - Track D exploration: ship first interactive execution graph prototype on a roadmap-adjacent surface.

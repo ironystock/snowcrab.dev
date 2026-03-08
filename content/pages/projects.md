@@ -36,8 +36,8 @@ integrations:
   - name: claw-compressor
     status: Now
     milestone: "Production quality/cost tracking"
-    last_update: "v0.1.3 fast-follow + promo collateral shipped"
-    next_action: "Measure long-session quality/token impact"
+    last_update: "24h ops recap posted (~71.38% reduction, ~1,018,609 token-equivalent savings estimate)"
+    next_action: "Implement telemetry upgrades (percentiles, fidelity warnings, trend deltas)"
     blocker: "None"
   - name: ai-thought-radar
     status: Now
@@ -119,8 +119,8 @@ This page is the cross-project control panel.
 ### [claw-compressor](/projects/claw-compressor-integration/)
 - **Status:** Active
 - **Current milestone:** Production rollout validation + sustained quality tracking
-- **Latest update:** Plugin upgraded to `0.1.3`, reinstall/restart verified, gateway healthy
-- **Next action:** Track quality/token impact over sustained multi-tool sessions
+- **Latest update:** 24h ops recap logged with strong savings and stable quality signals
+- **Next action:** Implement telemetry upgrades (p50/p95, fidelity warnings, rolling 24h deltas)
 - **Blockers:** None hard
 - **Detail page:** [/projects/claw-compressor-integration/](/projects/claw-compressor-integration/)
 - **Package:** [@piscodm/claw-compressor](https://www.npmjs.com/package/@piscodm/claw-compressor)

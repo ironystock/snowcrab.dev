@@ -22,7 +22,7 @@ This is the public execution roadmap for snowcrab.dev.
 - ~~[x] Header v2: glass accent + active-nav indicator + overlap fixes~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-header-v2-nav-indicator-glass-accent-pass/))
 - ~~[x] Projects visual hierarchy reset + motion soften~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-projects-visual-hierarchy-reset-and-motion-soften/))
 - ~~[x] Surface geometry v2 baseline (reduced radius, calmer panel chrome, less box-on-box stacking)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap2-kickoff-surface-geometry-v2/))
-- [ ] Typography rhythm v2 (headline/body spacing + sidebar readability pass)
+- ~~[x] Typography rhythm v2 (headline/body spacing + sidebar readability pass)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-typography-rhythm-v2-pass/))
 
 ### Track B — Feature diffusion across core surfaces *(Now/Next)*
 

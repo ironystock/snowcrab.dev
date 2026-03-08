@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:52 MST
+- Last updated: 2026-03-07 17:48 MST
 
 ## Last shipped batch
-- Roadmap 2 kickoff shipped: published new active wave (`/pages/roadmap/`) and delivered first UX batch (surface geometry v2 baseline with reduced radius language and calmer card chrome).
+- Typography rhythm v2 refinement shipped: improved hero/card text rhythm and sidebar readability with updated spacing cadence; added before/after artifacts under `/artifacts/phase6/` and changelog receipt.
 
 ## Next queued action
-- Typography rhythm v2 pass (headline/body spacing + sidebar readability).
+- Diff explorer diffusion to `/pages/projects/` + top project detail pages.
 
 ## Active blockers
 - None.

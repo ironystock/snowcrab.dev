@@ -77,6 +77,9 @@
       direction: 1,
       startMs: 0,
       durationMs: 7200,
+      yRatio: 0.35,
+      startScale: 0.9,
+      endScale: 1.1,
       nextStartMs: (typeof performance !== 'undefined' ? performance.now() : Date.now()) + 2800,
     };
 
@@ -86,20 +89,23 @@
       if (!crabWalk.active && nowMs >= crabWalk.nextStartMs) {
         crabWalk.active = true;
         crabWalk.startMs = nowMs;
-        crabWalk.durationMs = 6200 + Math.random() * 2200;
+        crabWalk.durationMs = 5200 + Math.random() * 2600;
         crabWalk.direction = Math.random() > 0.5 ? 1 : -1;
+        crabWalk.yRatio = 0.10 + Math.random() * 0.65; // 10%..75%
+        crabWalk.startScale = 0.5;
+        crabWalk.endScale = 1.5;
       }
 
       if (!crabWalk.active) return;
 
       const progress = Math.min(1, (nowMs - crabWalk.startMs) / crabWalk.durationMs);
-      const baseY = height * 0.35;
-      const startX = crabWalk.direction === 1 ? -width * 0.08 : width * 1.08;
-      const endX = crabWalk.direction === 1 ? width * 1.08 : -width * 0.08;
+      const baseY = height * crabWalk.yRatio;
+      const startX = crabWalk.direction === 1 ? -width * 0.1 : width * 1.1;
+      const endX = crabWalk.direction === 1 ? width * 1.1 : -width * 0.1;
       const x = startX + (endX - startX) * progress;
-      const zScale = 0.9 + (0.2 * progress); // -10% z to +10% z feel
-      const bob = Math.sin(progress * Math.PI * 10) * 2.8;
-      const crabW = width * 0.048 * zScale;
+      const zScale = crabWalk.startScale + ((crabWalk.endScale - crabWalk.startScale) * progress);
+      const bob = Math.sin(progress * Math.PI * 12) * 4.2;
+      const crabW = width * 0.05 * zScale;
       const crabH = crabW;
 
       ctx.save();

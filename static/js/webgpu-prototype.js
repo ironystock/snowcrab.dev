@@ -27,14 +27,47 @@
       }
     };
 
+    const css = getComputedStyle(document.documentElement);
+    const raw = {
+      bg: css.getPropertyValue('--bg').trim() || '#0b1220',
+      bgElev: css.getPropertyValue('--bg-elev').trim() || '#111827',
+      primary: css.getPropertyValue('--primary').trim() || '#ff6470',
+      accent: css.getPropertyValue('--accent').trim() || '#67e8f9',
+      muted: css.getPropertyValue('--muted').trim() || '#94a3b8',
+      text: css.getPropertyValue('--text').trim() || '#e2e8f0',
+      aurora1: css.getPropertyValue('--aurora-ink-1').trim(),
+      aurora2: css.getPropertyValue('--aurora-ink-2').trim(),
+      aurora3: css.getPropertyValue('--aurora-ink-3').trim(),
+    };
+
+    const toRgba = (color, alpha = 1) => {
+      if (!color) return `rgba(255,255,255,${alpha})`;
+      if (color.startsWith('rgba(')) {
+        return color.replace(/rgba\(([^)]+),[^,\s)]+\)$/, `rgba($1, ${alpha})`);
+      }
+      if (color.startsWith('rgb(')) {
+        return color.replace('rgb(', 'rgba(').replace(')', `, ${alpha})`);
+      }
+      if (color.startsWith('#')) {
+        const hex = color.slice(1);
+        const full = hex.length === 3 ? hex.split('').map((c) => c + c).join('') : hex;
+        const n = parseInt(full.slice(0, 6), 16);
+        const r = (n >> 16) & 255;
+        const g = (n >> 8) & 255;
+        const b = n & 255;
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+      }
+      return color;
+    };
+
     const palette = {
-      deep: 'rgba(15, 23, 42, 0.88)',
-      cyan: 'rgba(34, 211, 238, 0.24)',
-      violet: 'rgba(139, 92, 246, 0.22)',
-      rose: 'rgba(244, 63, 94, 0.18)',
-      ice: 'rgba(191, 219, 254, 0.16)',
-      line: 'rgba(148, 163, 184, 0.16)',
-      glow: 'rgba(125, 211, 252, 0.22)',
+      deep: toRgba(raw.bg, 0.9),
+      cyan: raw.aurora2 || toRgba(raw.accent, 0.24),
+      violet: raw.aurora3 || toRgba(raw.primary, 0.2),
+      rose: raw.aurora1 || toRgba(raw.primary, 0.18),
+      ice: toRgba(raw.text, 0.16),
+      line: toRgba(raw.muted, 0.16),
+      glow: toRgba(raw.accent, 0.24),
     };
 
     const crabImage = new Image();

@@ -59,7 +59,7 @@ This is the public execution roadmap for snowcrab.dev.
 
 - ~~[x] PWA baseline (manifest/offline fallback/install behavior)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase5-pwa-baseline/))
 - ~~[x] Performance budget enforcement and regression guardrails~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase5-performance-budget-guardrails/))
-- [ ] Accessibility hardening pass (keyboard, focus order, contrast audits)
+- ~~[x] Accessibility hardening pass (keyboard, focus order, contrast audits)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase5-accessibility-hardening-keyboard-focus-contrast/))
 
 ## Operating contract
 

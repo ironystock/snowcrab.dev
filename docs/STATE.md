@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 16:48 MST
+- Last updated: 2026-03-07 17:22 MST
 
 ## Last shipped batch
-- Phase 5 continuation shipped: performance budget enforcement + regression guardrails via `scripts/check-performance-budgets.mjs`, committed baseline/budget data, and CI enforcement step.
+- Phase 5 continuation shipped: accessibility hardening pass (keyboard/focus order/contrast audits), including improved ARIA tab behavior (`home-tabs.js`), roving tabindex + panel visibility sync, normalized focus-ring token usage, and before/after visual artifacts.
 
 ## Next queued action
-- Phase 5 continuation: accessibility hardening pass (keyboard/focus order/contrast audits).
+- No meaningful batch currently queued (roadmap wave complete; awaiting next prioritized roadmap item).
 
 ## Active blockers
 - None.

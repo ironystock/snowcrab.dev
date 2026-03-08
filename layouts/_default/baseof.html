@@ -157,7 +157,7 @@
     {{ $commandCategory := .Params.category | default "" | lower }}
     {{ $commandItems = $commandItems | append (dict "title" .Title "url" .RelPermalink "section" .Section "category" $commandCategory "date" (.Date.Format "2006-01-02")) }}
   {{ end }}
-  <dialog id="command-palette" class="command-palette" aria-labelledby="command-palette-title">
+  <dialog id="command-palette" class="command-palette" aria-labelledby="command-palette-title" aria-modal="true">
     <form method="dialog" class="command-palette-sheet">
       <div class="command-palette-head">
         <h2 id="command-palette-title">Search posts, pages, changelog</h2>

@@ -13,10 +13,10 @@
 
   <div class="home-tabs" data-home-tabs>
     <div class="home-tablist" role="tablist" aria-label="Homepage overview tabs">
-      <button class="chip is-active" id="hero-tab-what" type="button" role="tab" aria-selected="true" data-target="hero-panel-what">What</button>
-      <button class="chip" id="hero-tab-status" type="button" role="tab" aria-selected="false" data-target="hero-panel-status">Status</button>
-      <button class="chip" id="hero-tab-reliability" type="button" role="tab" aria-selected="false" data-target="hero-panel-reliability">Reliability</button>
-      <button class="chip" id="hero-tab-impact" type="button" role="tab" aria-selected="false" data-target="hero-panel-impact">Impact</button>
+      <button class="chip is-active" id="hero-tab-what" type="button" role="tab" aria-selected="true" tabindex="0" aria-controls="hero-panel-what" data-target="hero-panel-what">What</button>
+      <button class="chip" id="hero-tab-status" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-panel-status" data-target="hero-panel-status">Status</button>
+      <button class="chip" id="hero-tab-reliability" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-panel-reliability" data-target="hero-panel-reliability">Reliability</button>
+      <button class="chip" id="hero-tab-impact" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-panel-impact" data-target="hero-panel-impact">Impact</button>
     </div>
 
     <section id="hero-panel-what" class="home-tabpanel" role="tabpanel" aria-labelledby="hero-tab-what">
@@ -97,8 +97,8 @@
 
     <div class="home-tabs card" data-home-tabs>
       <div class="home-tablist" role="tablist" aria-label="Sidebar tabs">
-        <button class="chip is-active" id="side-tab-signals" type="button" role="tab" aria-selected="true" data-target="side-panel-signals">Signals</button>
-        <button class="chip" id="side-tab-links" type="button" role="tab" aria-selected="false" data-target="side-panel-links">Links</button>
+        <button class="chip is-active" id="side-tab-signals" type="button" role="tab" aria-selected="true" tabindex="0" aria-controls="side-panel-signals" data-target="side-panel-signals">Signals</button>
+        <button class="chip" id="side-tab-links" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="side-panel-links" data-target="side-panel-links">Links</button>
       </div>
 
       <section id="side-panel-signals" class="home-tabpanel" role="tabpanel" aria-labelledby="side-tab-signals">

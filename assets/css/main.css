@@ -15,6 +15,7 @@
   --chip-active-bg: color-mix(in oklab, #db4652 20%, var(--bg-elev));
   --chip-active-border: color-mix(in oklab, #db4652 70%, var(--border));
   --meta-high-contrast: #2f3f56;
+  --focus-ring: color-mix(in oklab, var(--primary) 72%, white 28%);
   --aurora-ink-1: rgba(241, 82, 92, 0.17);
   --aurora-ink-2: rgba(32, 199, 222, 0.14);
   --aurora-ink-3: rgba(236, 181, 81, 0.1);
@@ -37,6 +38,7 @@
   --chip-active-bg: color-mix(in oklab, #ff6470 30%, var(--bg-elev));
   --chip-active-border: color-mix(in oklab, #ff6470 76%, var(--border));
   --meta-high-contrast: #b4c3d9;
+  --focus-ring: color-mix(in oklab, var(--primary) 80%, white 20%);
   --aurora-ink-1: rgba(255, 100, 112, 0.2);
   --aurora-ink-2: rgba(103, 232, 249, 0.18);
   --aurora-ink-3: rgba(196, 181, 253, 0.13);
@@ -219,7 +221,7 @@ a {
 }
 a:hover { text-decoration-color: var(--primary); }
 a:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -233,6 +235,11 @@ a:focus-visible {
 }
 
 a:hover .external-link-glyph { opacity: 1; }
+
+:where(button, input, select, textarea, summary, [role="button"]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
 
 .container { max-width: var(--container); margin: 0 auto; padding: 1.2rem; }
 
@@ -259,7 +266,7 @@ a:hover .external-link-glyph { opacity: 1; }
 
 .skip-link:focus-visible {
   top: calc(0.75rem + (var(--skip-index, 0) * 2.6rem));
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -342,7 +349,7 @@ a:hover .external-link-glyph { opacity: 1; }
   background: color-mix(in oklab, var(--primary) 10%, var(--bg-elev));
 }
 .nav-list a:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -404,7 +411,7 @@ a:hover .external-link-glyph { opacity: 1; }
 .command-toggle:focus-visible,
 .theme-toggle:focus-visible,
 .pwa-install:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -418,7 +425,7 @@ main.container {
 }
 
 #main-content:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 4px;
   border-radius: 8px;
 }
@@ -676,7 +683,7 @@ main.container {
 }
 
 .changelog-filter-summary:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 6px;
 }
@@ -710,7 +717,7 @@ main.container {
 }
 
 .chip:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -798,7 +805,7 @@ main.container {
 }
 
 .reliability-strip-link:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 999px;
   text-decoration: underline;
@@ -882,7 +889,7 @@ main.container {
 }
 
 .reliability-refresh:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -988,7 +995,7 @@ main.container {
 }
 
 .reliability-link:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -1367,6 +1374,15 @@ main.container {
   cursor: pointer;
 }
 
+.command-palette-close:hover {
+  border-color: var(--primary);
+}
+
+.command-palette-close:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
 .command-palette-input {
   width: 100%;
   border: 1px solid var(--border);
@@ -1375,6 +1391,13 @@ main.container {
   font: inherit;
   color: var(--text);
   background: var(--bg);
+}
+
+.command-palette-input:focus-visible,
+.automation-diff-explorer select:focus-visible,
+.changelog-compare-custom input[type="date"]:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
 .command-palette-hint {
@@ -1415,7 +1438,7 @@ main.container {
 }
 
 .command-result:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -1862,7 +1885,7 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 .footer-links a:focus-visible,
 .brand:focus-visible,
 .author-bio-link:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -1900,7 +1923,7 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 .capability-board summary::-webkit-details-marker { display: none; }
 
 .capability-board summary:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
   border-radius: 8px;
 }
@@ -1978,7 +2001,7 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 }
 
 .status-pill:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--primary) 70%, white 30%);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -2294,6 +2317,8 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   .nav-list a,
   .command-toggle,
   .theme-toggle,
+  .pwa-install,
+  .command-palette-close,
   .chip,
   .card,
   .status-pill,

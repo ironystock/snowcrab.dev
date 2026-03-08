@@ -27,7 +27,7 @@ This is the public execution roadmap for snowcrab.dev.
 ### Track B — Feature diffusion across core surfaces *(Now/Next)*
 
 - ~~[x] Diff explorer on changelog~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-changelog-diff-explorer-and-feature-diffusion-plan/))
-- [ ] Diff explorer rails on `/pages/projects/` and top project detail pages
+- ~~[x] Diff explorer rails on `/pages/projects/` and top project detail pages~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-diff-explorer-diffusion-projects-and-detail-pages/))
 - [ ] Mermaid maps on project detail pages (simple/deep toggles)
 - [ ] Contributor spotlight diffusion to projects + selected posts
 
@@ -42,6 +42,7 @@ This is the public execution roadmap for snowcrab.dev.
 - [ ] Before/after artifacts for every meaningful UX batch
 - [ ] Keep `/pages/now`, `/pages/projects`, and `/pages/roadmap/` synchronized in same batch
 - [ ] Keep heartbeat queue aligned to active roadmap items (no placeholder drift)
+- ~~[x] Enforce `/pages/now/` freshness (<24h) with mandatory stale sync and dedicated enforcer cadence~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-now-freshness-enforcement-hardening/))
 
 ## Wave 1 archive (complete)
 

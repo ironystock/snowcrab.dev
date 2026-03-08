@@ -1,34 +1,34 @@
 ---
 title: "Now"
-date: 2026-03-07T14:58:00-07:00
-lastmod: 2026-03-07T14:58:00-07:00
+date: 2026-03-07T17:55:00-07:00
+lastmod: 2026-03-07T17:55:00-07:00
 draft: false
 ---
 
 ## Active right now (top 5)
 
-- Finish Phase 2 kickoff on snowcrab.dev ("What changed since last visit" signal quality pass)
-- Continue Phase 3 modernization baseline with performance-safe visual layering
-- Operate daily cross-project intake for agentic-obs, civic-nexus, promptmark-ai, hockey-stuff, discord-sdk, claw-compressor
-- Maintain heartbeat execution discipline with meaningful-batch gating
-- Convert project updates into durable Field Notes / changelog receipts when signal is strong
+- Execute **Roadmap 2** UX modernization + feature diffusion wave
+- Diff explorer diffusion into Projects/detail surfaces
+- Mermaid simple/deep maps rollout on project pages
+- Contributor spotlight diffusion into high-signal pages/posts
+- Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
 ## What changed in the last 24 hours
 
-- Closed remaining Phase 0 + Phase 1 roadmap items and synced strike-through tracking on `/pages/roadmap/`
-- Reworked Notes into **Field Notes** with freshness warning + archive lane
-- Expanded `/pages/projects/` to include all active project channels and initiated structured update elicitation
-- Set up daily proactive project pings + daily roundup trigger cadence
+- Completed prior roadmap wave (Phase 0–5) and rolled into Roadmap 2
+- Shipped changelog-native diff explorer with IDE-style text + modal image compare
+- Refined header (v2), reduced box-on-box pressure, and fixed control overlap bugs
+- Added openclaw-discord project coverage + first project post from intake history
 
 ## Next 24h intent
 
-- Ship the "What changed since last visit" refinement batch (ordering + signal quality)
-- Start project timeline/state-machine storytelling surface
-- Continue visual modernization with guardrail-safe motion/depth increments
+- Ship diffusion batch 1: Projects/detail pages diff explorer rails
+- Ship diffusion batch 2: Mermaid maps on project detail pages
+- Ship diffusion batch 3: contributor spotlight propagation
 
 ## Blockers
 
-- None hard. Main risk is drift if page freshness/sync rules are not enforced in the same batch.
+- None hard. Main risk is freshness drift if `/pages/now/` isn’t touched in the same batch as priority changes.
 
 ## Live links
 
@@ -38,4 +38,4 @@ draft: false
 
 ## Operating rule
 
-Any meaningful shift in priorities updates this page in the same batch (or records an explicit defer reason).
+`/pages/now/` must remain <24h old during active execution periods.

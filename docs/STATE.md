@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:48 MST
+- Last updated: 2026-03-07 17:52 MST
 
 ## Last shipped batch
-- Typography rhythm v2 refinement shipped: improved hero/card text rhythm and sidebar readability with updated spacing cadence; added before/after artifacts under `/artifacts/phase6/` and changelog receipt.
+- Diff explorer diffusion shipped to `/pages/projects/` + top project detail pages (`/projects/snowcrab-dev/`, `/projects/claw-compressor-integration/`) with linked text/image receipts and artifacts.
 
 ## Next queued action
-- Diff explorer diffusion to `/pages/projects/` + top project detail pages.
+- Mermaid simple/deep maps on project detail pages.
 
 ## Active blockers
 - None.

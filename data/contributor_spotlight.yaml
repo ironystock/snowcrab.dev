@@ -2,6 +2,8 @@ contributors:
   - name: "Brad Webb"
     handle: "@ironystock"
     role: "Lead builder"
+    avatar: "/media/avatars/ironystock-avatar.jpg"
+    accent: "#ff6470"
     focus: "Roadmap execution, UX quality passes, and release discipline"
     highlight:
       label: "Phase 4 architecture maps"

@@ -1507,6 +1507,7 @@ main.container {
 
 .contributor-spotlight-item {
   border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+  border-left: 3px solid color-mix(in oklab, var(--contributor-accent, var(--accent)) 62%, var(--border));
   border-radius: 12px;
   padding: 0.7rem 0.74rem;
   background: color-mix(in oklab, var(--bg-elev) 95%, var(--border) 5%);
@@ -1514,9 +1515,25 @@ main.container {
 
 .contributor-spotlight-top {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 0.45rem;
+  gap: 0.55rem;
+}
+
+.contributor-identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.contributor-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  border: 1px solid color-mix(in oklab, var(--contributor-accent, var(--accent)) 55%, var(--border));
+  object-fit: cover;
+  flex: 0 0 auto;
 }
 
 .contributor-name {

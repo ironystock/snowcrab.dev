@@ -8,9 +8,13 @@
   {{ if gt (len $spotlight) 0 }}
     <ul class="contributor-spotlight-list">
       {{ range first 3 $spotlight }}
-        <li class="contributor-spotlight-item">
+        {{ $contributorName := .name }}
+        <li class="contributor-spotlight-item"{{ with .accent }} style="--contributor-accent: {{ . }};"{{ end }}>
           <div class="contributor-spotlight-top">
-            <p class="contributor-name">{{ .name }}</p>
+            <div class="contributor-identity">
+              {{ with .avatar }}<img class="contributor-avatar" src="{{ . }}" alt="{{ $contributorName }} avatar" loading="lazy" decoding="async" />{{ end }}
+              <p class="contributor-name">{{ .name }}</p>
+            </div>
             {{ with .handle }}<span class="contributor-handle">{{ . }}</span>{{ end }}
           </div>
           <p class="meta contributor-role">{{ .role }}</p>

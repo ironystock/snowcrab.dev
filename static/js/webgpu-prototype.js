@@ -71,7 +71,7 @@
     };
 
     const crabImage = new Image();
-    crabImage.src = '/favicon-256.png';
+    crabImage.src = '/media/avatars/snowcrab-avatar.png';
     const crabWalk = {
       active: false,
       direction: 1,

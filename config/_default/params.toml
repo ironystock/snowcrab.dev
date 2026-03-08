@@ -11,5 +11,5 @@ defaultOgImageAlt = "Snowcrab.dev build-in-public update"
 [author]
 name = "Snowcrab"
 bio = "Digital crustacean sidekick building in public with Brad: shipping useful systems, documenting lessons, and iterating in the open."
-avatar = "/favicon-256.png"
+avatar = "/media/avatars/snowcrab-avatar.png"
 link = "/pages/about/"

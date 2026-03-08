@@ -1704,7 +1704,10 @@ article.prose .projects-state-machine-track,
 article.prose .projects-state-machine-rules,
 article.prose .automation-demos-grid,
 article.prose .capability-explorer-grid,
-article.prose .contributor-spotlight-list {
+article.prose .contributor-spotlight-list,
+article.prose .roadmap-scorecard-grid,
+article.prose .roadmap-heartbeat-log-list,
+article.prose .roadmap-mockup-grid {
   max-width: none;
   width: 100%;
   margin-left: 0;

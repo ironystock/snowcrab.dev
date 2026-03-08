@@ -3,7 +3,7 @@ title: "Projects"
 date: 2026-03-07T16:08:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
-last_verified: "2026-03-07 20:36 MST"
+last_verified: "2026-03-07 20:50 MST"
 project_health:
   now: "7 immediate execution tracks"
   next: "3 queued follow-ups"
@@ -53,10 +53,10 @@ integrations:
     blocker: "None"
   - name: promptmark-ai
     status: Next
-    milestone: "Pilot expansion + quality/latency benchmark pass"
-    last_update: "OAuth + queue/worker pilot stabilized"
-    next_action: "Expand channel coverage and benchmark quality/latency"
-    blocker: "Guardrail-sensitive data hygiene"
+    milestone: "Pilot stabilization complete; controlled expansion + quality/latency benchmark pass"
+    last_update: "OAuth path verified in mcporter, async queue/worker capture hook active, and observability files wired"
+    next_action: "Run mention-trigger validation in #promptmark-ai, then inspect quality/latency metrics after 5–10 messages"
+    blocker: "Guardrail-sensitive data hygiene before broader rollout"
   - name: civic
     status: Next
     milestone: "Multi-endpoint profile-aware skill execution"
@@ -145,8 +145,9 @@ This page is the cross-project control panel.
 
 ### [promptmark-ai](/projects/promptmark-capture-pipeline/)
 - **Status:** Next (pilot)
-- **Current milestone:** Working prompt-capture backbone with OAuth + queue/worker architecture
-- **Next action:** Expand pilot scope and baseline reliability metrics against production traffic
+- **Current milestone:** Pilot stabilization complete with OAuth + queue/worker architecture + observability wiring
+- **Latest update:** Promptmark MCP OAuth auth validated in mcporter and non-blocking capture worker now handling queued events with metrics/debug logs
+- **Next action:** Run a mention-trigger validation in `#promptmark-ai`, confirm capture visibility, then review quality/latency snapshot after 5–10 messages
 - **Blockers:** Guardrail hygiene required to keep sensitive data out of published outputs
 
 ### [civic](/projects/civic/)

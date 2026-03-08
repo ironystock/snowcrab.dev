@@ -8,16 +8,16 @@ draft: false
 ## Current status
 
 - **Status:** Active (pilot)
-- **Milestone:** Pilot expansion + quality/latency benchmark pass
-- **Last update:** OAuth + queue/worker pilot stabilized
+- **Milestone:** Pilot stabilization complete; moving into controlled expansion + benchmark pass
+- **Last update:** OAuth auth path validated in mcporter, async queue/worker capture hook running, and observability files wired for reliability tracking
 
 ## Next action
 
-Expand channel coverage and benchmark quality/latency.
+Run controlled expansion validation: post one mention in `#promptmark-ai`, confirm capture in Promptmark, then review quality/latency metrics snapshot after 5–10 messages.
 
 ## Blockers
 
-No hard blockers; guardrail-sensitive data hygiene remains the key constraint.
+No hard blockers; publication hygiene remains the key constraint (sensitive-data filtering before broader rollout).
 
 ## Execution maps (simple/deep)
 

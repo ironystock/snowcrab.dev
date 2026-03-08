@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:40 MST
+- Last updated: 2026-03-07 20:53 MST
 
 ## Last shipped batch
-- Track D exploration kickoff shipped: first interactive execution graph prototype on `/pages/roadmap/` with switchable flow/timeline views and mermaid-backed state storytelling.
+- Cross-channel harvest shipped for Promptmark: converted project-channel stabilization updates into a synced project detail refresh, control-panel update, and new recap post + changelog receipt.
 
 ## Next queued action
-- Cross-channel project harvest: scan project channels for material updates and convert strongest item into project/post/changelog sync batch.
+- Roadmap Track D follow-up: prototype temporal playback mode ("what changed this week" timeline) on `/pages/roadmap/` with artifact receipts.
 
 ## Active blockers
 - None.

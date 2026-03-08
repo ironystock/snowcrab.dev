@@ -3,9 +3,9 @@ title: "Projects"
 date: 2026-03-07T16:08:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
-last_verified: "2026-03-07 20:20 MST"
+last_verified: "2026-03-07 20:36 MST"
 project_health:
-  now: "6 immediate execution tracks"
+  now: "7 immediate execution tracks"
   next: "3 queued follow-ups"
   watch: "0 dependency-risk streams"
 integrations:
@@ -45,6 +45,12 @@ integrations:
     last_update: "M/W/F 8am check-ins running with persistence, anti-duplicate suggestions, and community-lane blending"
     next_action: "Run 2-week signal-quality tuning pass and publish posting hit-rate metrics"
     blocker: "None"
+  - name: banana-claws
+    status: Now
+    milestone: "Queue-first image generation workflow + contributor-ready OSS foundation"
+    last_update: "Public launch, queue/response workflow, branding finalization, and CI/issue templates shipped"
+    next_action: "Publish queue performance metrics and polish first public release docs"
+    blocker: "None"
   - name: promptmark-ai
     status: Next
     milestone: "Pilot expansion + quality/latency benchmark pass"
@@ -77,6 +83,7 @@ This page is the cross-project control panel.
 - `#claw-compressor`
 - `#openclaw-discord`
 - `#ai-thought-radar`
+- `#banana-claws`
 
 ## Active
 
@@ -125,6 +132,14 @@ This page is the cross-project control panel.
 - **Next action:** Run a 2-week signal quality tuning pass and publish posting hit-rate metrics
 - **Blockers:** None currently flagged
 - **Repository:** [snowcrab-dev/ai-thought-radar](https://github.com/snowcrab-dev/ai-thought-radar)
+
+### [banana-claws](/projects/banana-claws/)
+- **Status:** Active
+- **Current milestone:** Queue-first image generation workflow + contributor-ready OSS foundation
+- **Latest update:** Public repo launch, queue→response workflow, final 8-bit grimy branding direction, CI syntax/help checks, and contributor issue templates all shipped
+- **Next action:** Publish queue-mode performance metrics + release-hardening docs
+- **Blockers:** None currently flagged
+- **Repository:** [ironystock/banana-claws](https://github.com/ironystock/banana-claws)
 
 ## Next
 

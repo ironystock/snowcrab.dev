@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:32 MST
+- Last updated: 2026-03-07 20:44 MST
 
 ## Last shipped batch
-- Roadmap 3 Track C post-level metrics receipts shipped: expanded the post receipts module with structured `post_metrics`, applied to flagship posts, and linked before/after artifacts.
+- Added banana-claws as an active project stream with a new detail page and launch/milestone post (queue workflow, branding finalization, CI/issue-template foundation), then synced Projects + Now surfaces.
 
 ## Next queued action
 - Track D exploration: ship first interactive execution graph prototype on a roadmap-adjacent surface.

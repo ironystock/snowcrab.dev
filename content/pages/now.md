@@ -13,6 +13,7 @@ draft: false
 - Mermaid simple/deep maps are now live on all project detail pages
 - Contributor spotlight diffusion shipped on Projects + selected posts
 - AI Thought Radar live ingestion pipeline + ranking rebalance now active (product/news/community lanes)
+- banana-claws launched with queue-first image workflow + contributor-ready OSS baseline
 - Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
 ## What changed in the last 24 hours
@@ -23,6 +24,7 @@ draft: false
 - Refined header (v2), reduced box-on-box pressure, and fixed control overlap bugs
 - Added openclaw-discord project coverage + first project post from intake history
 - Added AI Thought Radar project stream, detail page, and first milestone post with linked commit receipts
+- Added banana-claws as active project stream with detail page + launch/milestone post receipts
 - Mapped Capabilities domain cards to concrete visual receipts, including before/after artifacts and changelog/project proof links
 - Added CI sync guardrail to block partial now/projects/roadmap updates in meaningful status-change batches
 - Added queue-state guardrail to fail when `docs/STATE.md` next action drifts from the top open roadmap item or uses placeholder text while roadmap work remains

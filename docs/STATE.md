@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:34 MST
+- Last updated: 2026-03-07 21:36 MST
 
 ## Last shipped batch
-- Shipped Track E queue-alignment follow-up: queue-state parser hardening + CI enforcement + changelog validation receipt.
+- Social card alignment fix shipped: pages/posts with `hero_image` now automatically use it for OG/Twitter metadata (with `hero_image_alt` support).
 
 ## Next queued action
 - Define Roadmap 4 candidate wave and queue first open item.

@@ -17,6 +17,9 @@
     {{ with .Params.social_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
   {{ end }}
   {{ if eq $ogImage $defaultOgImage }}
+    {{ with .Params.hero_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
+  {{ end }}
+  {{ if eq $ogImage $defaultOgImage }}
     {{ with .Params.featured_image }}{{ if ne . "" }}{{ $ogImage = . | absURL }}{{ end }}{{ end }}
   {{ end }}
   {{ if eq $ogImage $defaultOgImage }}
@@ -36,7 +39,7 @@
   {{ end }}
 
   {{ $defaultOgAlt := site.Params.defaultOgImageAlt | default site.Title }}
-  {{ $socialAlt := .Params.social_image_alt | default .Params.image_alt | default (cond (eq $ogImage $defaultOgImage) $defaultOgAlt .Title) | default site.Title }}
+  {{ $socialAlt := .Params.social_image_alt | default .Params.hero_image_alt | default .Params.image_alt | default (cond (eq $ogImage $defaultOgImage) $defaultOgAlt .Title) | default site.Title }}
 
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $description }}" />

@@ -33,7 +33,7 @@ This is the public execution roadmap for snowcrab.dev.
 
 ### Track C — Content surface upgrades *(Next)*
 
-- [ ] Top 8–12 posts: add implementation diff callouts where receipts exist
+- ~~[x] Top 8–12 posts: add implementation diff callouts where receipts exist~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-post-implementation-diff-callouts-pass-1/))
 - [ ] Field Notes: add compact visual "24h change" card
 - [ ] Capabilities: map each domain to concrete visual receipts
 

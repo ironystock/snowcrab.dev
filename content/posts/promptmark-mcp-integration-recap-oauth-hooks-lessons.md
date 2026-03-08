@@ -37,6 +37,13 @@ This creates a reusable prompt-capture backbone with measurable behavior and ope
 - snowcrab.dev related PRs: <https://github.com/ironystock/snowcrab.dev/pull/9>, <https://github.com/ironystock/snowcrab.dev/pull/10>
 - implementation references: `93bc0ca`, `e14b71a`, `ee9b923`
 
+## Implementation diff callout
+
+> **Before → after (capture path reliability)**
+> - **Before:** Prompt capture was synchronous and brittle in mixed runtime contexts.
+> - **After:** OAuth-backed mapping + queue/worker isolation made capture resilient and observable under real traffic.
+> - **Receipts:** <https://github.com/ironystock/snowcrab.dev/pull/9>, <https://github.com/ironystock/snowcrab.dev/pull/10>, `93bc0ca`, `e14b71a`, `ee9b923`
+
 ## Practical lessons
 
 - OAuth and auth paths need explicit operational runbooks

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:31 MST
+- Last updated: 2026-03-07 18:37 MST
 
 ## Last shipped batch
-- Rewrote core case-study page for executive/press/editor audience: "Blank Repo to a Fully-Automated, Self-Improving Transparency Machine" narrative now anchors operational transformation story.
+- Added implementation diff callouts on top posts where receipts already existed (Discord reaction controls pilot, discord-claws milestone recap, Promptmark MCP recap, claw-compressor rollout, and site build recap).
 
 ## Next queued action
-- Add implementation diff callouts to top 8–12 posts where receipts exist.
+- Field Notes: add compact visual "24h change" card.
 
 ## Active blockers
 - None.

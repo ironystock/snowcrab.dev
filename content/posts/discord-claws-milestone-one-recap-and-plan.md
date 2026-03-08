@@ -47,6 +47,13 @@ This takes the project from concept to a runnable baseline with real multi-user 
 - <https://github.com/snowcrab-dev/discord-claws/commit/93af6fa>
 - <https://github.com/snowcrab-dev/discord-claws/commit/36609bd>
 
+## Implementation diff callout
+
+> **Before → after (Milestone 1 baseline)**
+> - **Before:** No runnable Discord Activity baseline with shared authenticated state.
+> - **After:** A live SDK + OAuth + identity + instance-scoped state loop is in place and testable end-to-end.
+> - **Receipts:** <https://github.com/snowcrab-dev/discord-claws/commit/2007a47>, <https://github.com/snowcrab-dev/discord-claws/commit/3856904>, <https://github.com/snowcrab-dev/discord-claws/commit/93af6fa>, <https://github.com/snowcrab-dev/discord-claws/commit/36609bd>
+
 ## Next implementation plan
 
 1. Real-time sync upgrade (SSE or WebSocket)

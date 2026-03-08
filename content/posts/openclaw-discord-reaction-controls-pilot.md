@@ -29,6 +29,15 @@ Concrete ship receipts from the project stream:
   - `hooks/discord-reaction-controls/HOOK.md`
   - `hooks/discord-reaction-controls/handler.ts`
 
+## Implementation diff callout
+
+> **Before → after (ops control surface)**
+> - **Before:** Discord operations depended on manual command messages and ad-hoc interpretation.
+> - **After:** Approved operators can trigger bounded actions via reaction controls with explicit dedupe + auth guardrails.
+> - **Receipts:** `f7f6410`, `8e23ec3`, `fdc444f`, `67e9729`
+>
+> This batch moved the project from discussion-only control to auditable reaction-driven execution.
+
 ## Why this matters
 
 This makes Discord operationally useful without turning it into command spam.

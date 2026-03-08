@@ -1,7 +1,7 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T18:24:00-07:00
+lastmod: 2026-03-07T18:37:00-07:00
 draft: false
 ---
 
@@ -22,8 +22,8 @@ draft: false
 
 ## Next 24h intent
 
-- Start diffusion follow-up: implementation diff callouts on top 8–12 posts where receipts exist
-- Add compact "24h change" card to Field Notes surface
+- Build compact "24h change" card on Field Notes surface
+- Map Capabilities domains to concrete visual receipts
 - Keep roadmap/now/projects sync strict in same-batch updates
 
 ## Blockers

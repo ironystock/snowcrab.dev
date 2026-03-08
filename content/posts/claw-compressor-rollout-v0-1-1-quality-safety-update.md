@@ -55,6 +55,13 @@ We shipped a fast-follow upgrade from `0.1.1` to `0.1.3` with the same controlle
 
 This confirms the integration can absorb upstream iteration quickly while staying disciplined on verification.
 
+## Implementation diff callout
+
+> **Before → after (compression safety profile)**
+> - **Before:** `0.1.0` had higher risk of losing critical read/web-fetch context in file-heavy flows.
+> - **After:** `0.1.1` (and fast-follow `0.1.3`) preserved more source fidelity while keeping compression value.
+> - **Receipts:** <https://www.npmjs.com/package/@piscodm/claw-compressor>, `4202127`, `6b26393`
+
 ## New collateral: Snowcrab × Pisco promo/hype video pipeline
 
 We also shipped a dedicated promo workflow to make this rollout legible for other builders, not just operators reading logs.

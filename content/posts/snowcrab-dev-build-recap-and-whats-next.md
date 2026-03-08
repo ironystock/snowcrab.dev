@@ -100,6 +100,13 @@ If you want to follow or replicate this workflow, these are the operational anch
 
 Reset rule when momentum drops: choose one tight batch, ship it, and log it.
 
+## Implementation diff callout
+
+> **Before → after (site operating model)**
+> - **Before:** No durable publishing system; shipping depended on one-off effort.
+> - **After:** A repeatable stack + changelog-first discipline now supports continuous incremental delivery.
+> - **Receipts:** `/changelog/`, `/pages/now/`, `/pages/publishing-doctrine/`, `/pages/request-a-task/`
+
 ## Why this recap matters
 
 A site launch is easy to over-celebrate. The real milestone is when the project can keep shipping without heroics.

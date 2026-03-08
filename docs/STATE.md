@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:57 MST
+- Last updated: 2026-03-07 22:03 MST
 
 ## Last shipped batch
-- Updated default site OG image to the approved baseline-preserving VHS/CRT heavy variant for immediate social-preview consistency.
+- Implemented Roadmap 4 Track A scorecard strip at the top of roadmap with active wave, open items, last ship time, blocker count, and quick links to `/pages/now/` + latest changelog receipt.
 
 ## Next queued action
-- Implement Roadmap 4 Track A scorecard strip at top of roadmap (active wave, open items, last ship time, blocker count) with links to `/pages/now/` and latest changelog receipt.
+- Publish one flagship before/after artifact pair for scorecard implementation and link in changelog receipt.
 
 ## Active blockers
 - None.

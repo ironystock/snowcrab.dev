@@ -148,7 +148,7 @@ flowchart TB
 ## Roadmap 4 — Candidate wave (queued)
 
 ### Track A — Narrative proof polish *(Now)*
-- [ ] Add roadmap scorecard strip at top of page (active wave, open items, last ship time, blocker count) with links to `/pages/now/` and latest changelog receipt.
+- ~~[x] Add roadmap scorecard strip at top of page (active wave, open items, last ship time, blocker count) with links to `/pages/now/` and latest changelog receipt.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-tracka-scorecard-strip/))
 - [ ] Publish one flagship before/after artifact pair for scorecard implementation and link in changelog receipt.
 - [ ] Diffuse scorecard summary into homepage “Now shipping” widget source data (derived from `/pages/now/` only).
 

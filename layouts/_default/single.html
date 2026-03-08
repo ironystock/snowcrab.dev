@@ -61,6 +61,50 @@
       {{ end }}
     </section>
   {{ end }}
+  {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "roadmap") }}
+    {{ $raw := .RawContent }}
+    {{ $activeWaveMatches := findRE `(?m)^##\s+(.+active wave.+)$` $raw 1 }}
+    {{ $activeWave := "Roadmap wave (active)" }}
+    {{ if gt (len $activeWaveMatches) 0 }}
+      {{ $activeWave = index $activeWaveMatches 0 | replaceRE `^##\s+` "" | replaceRE `\*` "" }}
+    {{ end }}
+    {{ $openItems := len (findRE `(?m)^- \[ \] ` $raw) }}
+    {{ $blockerItems := len (findRE `(?im)^- .*BLOCKED` $raw) }}
+    {{ $latestChangelog := index (first 1 (sort (where site.RegularPages "Section" "changelog") "Date" "desc")) 0 }}
+    <section class="card roadmap-scorecard" aria-labelledby="roadmap-scorecard-heading">
+      <h2 id="roadmap-scorecard-heading">Roadmap scorecard</h2>
+      <ul class="roadmap-scorecard-grid" role="list">
+        <li>
+          <p class="meta">Active wave</p>
+          <p><strong>{{ $activeWave }}</strong></p>
+        </li>
+        <li>
+          <p class="meta">Open items</p>
+          <p><strong>{{ $openItems }}</strong></p>
+        </li>
+        <li>
+          <p class="meta">Last ship time</p>
+          <p>
+            {{ if $latestChangelog }}
+              <strong><time datetime="{{ $latestChangelog.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $latestChangelog.Date.Format "Jan 2, 2006 · 3:04 PM MST" }}</time></strong>
+            {{ else }}
+              <strong>n/a</strong>
+            {{ end }}
+          </p>
+        </li>
+        <li>
+          <p class="meta">Blockers</p>
+          <p><strong>{{ $blockerItems }}</strong></p>
+        </li>
+      </ul>
+      <p class="meta roadmap-scorecard-links">
+        <a href="/pages/now/">Now page ↗</a>
+        {{ if $latestChangelog }}
+          · <a href="{{ $latestChangelog.RelPermalink }}">Latest changelog receipt ↗</a>
+        {{ end }}
+      </p>
+    </section>
+  {{ end }}
   {{ if eq .Section "posts" }}
   <section class="reading-mode-controls" aria-labelledby="reading-mode-heading" id="reading-mode-controls">
     <h2 id="reading-mode-heading" class="sr-only">Reading mode controls</h2>

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:04 MST
+- Last updated: 2026-03-07 21:11 MST
 
 ## Last shipped batch
-- Roadmap Track D temporal playback prototype shipped on `/pages/roadmap/`: added play/pause/restart + speed controls, weekly replay rail, and receipt-linked stage card with before/after artifacts + changelog receipt.
+- Roadmap hygiene reconciliation batch: marked the now/projects/roadmap sync rule as shipped on `/pages/roadmap/` and attached the missing changelog receipt for the CI surface-sync guardrail.
 
 ## Next queued action
 - Roadmap Track D follow-up: prototype optional WebGPU-enhanced background/data visuals on `/pages/roadmap/` with progressive enhancement fallback and artifact receipts.

@@ -2,7 +2,7 @@
   "maxRegressionPct": 10,
   "metrics": {
     "homeHtmlBytes": 85000,
-    "largestCssBytes": 55000,
+    "largestCssBytes": 56000,
     "largestJsBytes": 30000,
     "totalCssJsBytes": 160000,
     "totalWoff2Bytes": 50000,

@@ -4,9 +4,6 @@
     <canvas id="home-hero-webgpu-canvas" data-webgpu-prototype data-status-target="home-hero-webgpu-status" width="1600" height="420"></canvas>
   </div>
   <div class="hero-webgpu-content">
-  <h1 id="home-hero-title">{{ .Title }}</h1>
-  <p class="muted">Build-in-public notes, project execution logs, and receipts from real shipping work.</p>
-  <p class="meta" id="home-hero-webgpu-status">Detecting graphics capability…</p>
 
   {{ $heroPosts := where site.RegularPages "Section" "posts" }}
   {{ $heroNotes := where site.RegularPages "Section" "notes" }}
@@ -17,11 +14,16 @@
   {{ with $heroRoadmap }}{{ $heroOpenRoadmap = len (findRE `(?m)^- \[ \]` .RawContent) }}{{ end }}
 
   <div class="home-tabs" data-home-tabs>
+    <div class="hero-webgpu-header">
+      <h1 id="home-hero-title">{{ .Title }}</h1>
+      <p class="muted">Build-in-public notes, project execution logs, and receipts from real shipping work.</p>
+      <p class="meta" id="home-hero-webgpu-status">Detecting graphics capability…</p>
     <div class="home-tablist" role="tablist" aria-label="Homepage overview tabs">
       <button class="chip is-active" id="hero-tab-what" type="button" role="tab" aria-selected="true" tabindex="0" aria-controls="hero-panel-what" data-target="hero-panel-what">What</button>
       <button class="chip" id="hero-tab-status" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-panel-status" data-target="hero-panel-status">Status</button>
       <button class="chip" id="hero-tab-reliability" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-panel-reliability" data-target="hero-panel-reliability">Reliability</button>
       <button class="chip" id="hero-tab-impact" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-panel-impact" data-target="hero-panel-impact">Impact</button>
+    </div>
     </div>
 
     <section id="hero-panel-what" class="home-tabpanel" role="tabpanel" aria-labelledby="hero-tab-what">

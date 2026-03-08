@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:24 MST
+- Last updated: 2026-03-07 17:28 MST
 
 ## Last shipped batch
-- Fixed header functional overlap by introducing a responsive controls container (`.header-actions`) and removing margin-hack positioning between Search/Install/Theme controls.
+- Header v2 pass shipped: subtle active-nav underline indicator, upgraded glass accent surface, and calmer non-upshift control interactions.
 
 ## Next queued action
 - No meaningful batch currently queued (roadmap wave complete; awaiting next prioritized roadmap item).

@@ -274,9 +274,17 @@ a:hover .external-link-glyph { opacity: 1; }
   position: sticky;
   top: 0;
   z-index: 30;
-  backdrop-filter: blur(8px);
-  background: color-mix(in oklab, var(--bg) 84%, transparent);
-  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px) saturate(115%);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--bg) 90%, transparent), color-mix(in oklab, var(--bg) 82%, transparent));
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 76%, var(--primary) 24%);
+}
+
+.site-header::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--primary) 42%, transparent), transparent);
+  opacity: 0.7;
 }
 
 .header-row {
@@ -323,30 +331,49 @@ a:hover .external-link-glyph { opacity: 1; }
 }
 
 .nav-list a {
-  padding: 0.5rem 0.82rem;
-  min-height: 42px;
+  position: relative;
+  padding: 0.46rem 0.7rem;
+  min-height: 38px;
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text);
-  font-size: 0.92rem;
+  border: 0;
+  border-radius: 8px;
+  color: color-mix(in oklab, var(--text) 88%, var(--muted) 12%);
+  font-size: 0.9rem;
   line-height: 1.1;
   white-space: nowrap;
   text-decoration: none;
   transition:
-    border-color var(--motion-base) var(--ease-standard),
-    background-color var(--motion-base) var(--ease-standard),
-    transform var(--motion-fast) var(--ease-expressive);
+    color var(--motion-base) var(--ease-standard),
+    background-color var(--motion-base) var(--ease-standard);
+}
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  right: 0.55rem;
+  bottom: 0.24rem;
+  height: 2px;
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: center;
+  background: color-mix(in oklab, var(--primary) 84%, white 16%);
+  transition: transform var(--motion-base) var(--ease-standard);
 }
 .nav-list a:hover {
-  border-color: var(--primary);
+  color: var(--text);
   text-decoration: none;
-  transform: translateY(-1px);
+  background: color-mix(in oklab, var(--bg-elev) 84%, var(--primary) 16%);
+}
+.nav-list a:hover::after {
+  transform: scaleX(0.45);
 }
 .nav-list a.active {
-  border-color: color-mix(in oklab, var(--primary) 65%, var(--border));
-  background: color-mix(in oklab, var(--primary) 10%, var(--bg-elev));
+  color: var(--text);
+  background: color-mix(in oklab, var(--bg-elev) 75%, var(--primary) 25%);
+}
+.nav-list a.active::after {
+  transform: scaleX(1);
 }
 .nav-list a:focus-visible {
   outline: 2px solid var(--focus-ring);
@@ -401,7 +428,7 @@ a:hover .external-link-glyph { opacity: 1; }
 .theme-toggle:hover,
 .pwa-install:hover {
   border-color: var(--primary);
-  transform: translateY(-1px);
+  background: color-mix(in oklab, var(--bg-elev) 80%, var(--primary) 20%);
 }
 
 .command-toggle:focus-visible,

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:48 MST
+- Last updated: 2026-03-07 18:42 MST
 
 ## Last shipped batch
-- Mapped every Capabilities domain card to concrete visual receipts (before/after artifacts and/or changelog/project proof links), fixing previously unrendered cards caused by markdown-in-HTML escaping.
+- Rewrote the flagship case-study page into a full editorial long-form narrative with expanded detail, executive/press framing depth, and stronger rhetorical cadence.
 
 ## Next queued action
 - Project detail pages: add Mermaid simple/deep maps.

@@ -59,7 +59,7 @@ This is the public execution roadmap for snowcrab.dev.
 - ~~[x] WebGPU-enhanced background/data visuals (optional progressive enhancement).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-webgpu-enhanced-visuals-prototype/))
 - ~~[x] Interactive execution graph (state transitions over time).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/))
 - ~~[x] Temporal playback mode (“what changed this week” cinematic timeline).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/))
-- [ ] AI-assisted diff narration mode for executive summaries.
+- ~~[x] AI-assisted diff narration mode for executive summaries.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-ai-assisted-diff-narration-mode/))
 
 <section class="execution-graph-prototype card" id="execution-graph-prototype" aria-labelledby="execution-graph-prototype-heading">
   <h4 id="execution-graph-prototype-heading">Interactive execution graph prototype</h4>
@@ -108,20 +108,26 @@ flowchart TB
     </select>
   </div>
 
+  <div class="temporal-playback-narration-controls" role="group" aria-label="Executive narration mode">
+    <button type="button" class="chip is-active" data-narration-mode="executive" aria-pressed="true">Executive narration</button>
+    <button type="button" class="chip" data-narration-mode="source" aria-pressed="false">Source summary</button>
+  </div>
+
   <div class="temporal-playback-stage" aria-live="polite">
     <p class="temporal-playback-kicker">Now showing</p>
     <h5 data-playback-headline>Loading weekly replay…</h5>
     <p data-playback-summary class="meta"></p>
+    <p data-playback-narration class="meta temporal-playback-narration"></p>
     <p data-playback-meta class="meta"></p>
     <div class="temporal-playback-progress" role="presentation"><span data-playback-progress></span></div>
   </div>
 
   <ol class="temporal-playback-rail" data-playback-rail>
-    <li data-playback-date="2026-03-07" data-playback-title="Track D interactive execution graph shipped" data-playback-summary="Introduced a switchable flow/timeline execution graph on the roadmap page to visualize queue state transitions." data-playback-receipt="/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/"></li>
-    <li data-playback-date="2026-03-07" data-playback-title="Roadmap 3 chart storytelling pass" data-playback-summary="Added project trend and changelog analytics visuals to strengthen weekly execution visibility." data-playback-receipt="/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/"></li>
-    <li data-playback-date="2026-03-07" data-playback-title="Promptmark pilot stabilization sync" data-playback-summary="Merged cross-channel pilot updates into project detail, changelog, and recap artifacts." data-playback-receipt="/changelog/2026-03-07-promptmark-pilot-stabilization-harvest-sync/"></li>
-    <li data-playback-date="2026-03-07" data-playback-title="Queue-state drift guardrail hardening" data-playback-summary="Enforced CI checks for queue-state alignment between now/projects/roadmap and docs state." data-playback-receipt="/changelog/2026-03-07-surface-sync-guardrail-now-projects-roadmap/"></li>
-    <li data-playback-date="2026-03-07" data-playback-title="Temporal playback mode prototype" data-playback-summary="Added cinematic weekly replay controls (play, pause, restart, speed) directly on roadmap Track D." data-playback-receipt="/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Track D interactive execution graph shipped" data-playback-summary="Introduced a switchable flow/timeline execution graph on the roadmap page to visualize queue state transitions." data-playback-impact="Faster exec-state orientation for stakeholder readouts." data-playback-receipt="/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Roadmap 3 chart storytelling pass" data-playback-summary="Added project trend and changelog analytics visuals to strengthen weekly execution visibility." data-playback-impact="Executive snapshots now show pace + risk mix at a glance." data-playback-receipt="/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Promptmark pilot stabilization sync" data-playback-summary="Merged cross-channel pilot updates into project detail, changelog, and recap artifacts." data-playback-impact="Reduced reporting drift by unifying pilot status across surfaces." data-playback-receipt="/changelog/2026-03-07-promptmark-pilot-stabilization-harvest-sync/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Queue-state drift guardrail hardening" data-playback-summary="Enforced CI checks for queue-state alignment between now/projects/roadmap and docs state." data-playback-impact="Improved trust in public status by blocking queue drift regressions." data-playback-receipt="/changelog/2026-03-07-surface-sync-guardrail-now-projects-roadmap/"></li>
+    <li data-playback-date="2026-03-07" data-playback-title="Temporal playback mode prototype" data-playback-summary="Added cinematic weekly replay controls (play, pause, restart, speed) directly on roadmap Track D." data-playback-impact="Weekly progress can be replayed in briefing-friendly sequence." data-playback-receipt="/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/"></li>
   </ol>
 </section>
 

@@ -5,15 +5,18 @@
   const rail = root.querySelector('[data-playback-rail]');
   const headline = root.querySelector('[data-playback-headline]');
   const summary = root.querySelector('[data-playback-summary]');
+  const narration = root.querySelector('[data-playback-narration]');
   const meta = root.querySelector('[data-playback-meta]');
   const progress = root.querySelector('[data-playback-progress]');
   const speed = root.querySelector('#temporal-playback-speed');
   const buttons = Array.from(root.querySelectorAll('[data-playback-action]'));
+  const narrationButtons = Array.from(root.querySelectorAll('[data-narration-mode]'));
   const items = Array.from(rail?.querySelectorAll('li') || []).map((item) => ({
     node: item,
     date: item.getAttribute('data-playback-date') || '',
     title: item.getAttribute('data-playback-title') || 'Untitled event',
     summary: item.getAttribute('data-playback-summary') || '',
+    impact: item.getAttribute('data-playback-impact') || 'Execution quality improved through this batch.',
     receipt: item.getAttribute('data-playback-receipt') || '/changelog/'
   }));
 
@@ -22,6 +25,11 @@
   let currentIndex = 0;
   let isPlaying = true;
   let timer = null;
+  let narrationMode = 'executive';
+
+  const buildExecutiveNarration = (event) => {
+    return `Executive narration: ${event.title}. Change shipped: ${event.summary} Impact: ${event.impact}`;
+  };
 
   const renderRail = () => {
     items.forEach((entry, index) => {
@@ -30,13 +38,25 @@
     });
   };
 
+  const setNarrationActionState = () => {
+    narrationButtons.forEach((button) => {
+      const isActive = button.getAttribute('data-narration-mode') === narrationMode;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+  };
+
   const renderStage = () => {
     const event = items[currentIndex];
     headline.textContent = event.title;
     summary.textContent = event.summary;
+    if (narration) {
+      narration.textContent = narrationMode === 'executive' ? buildExecutiveNarration(event) : `Source summary: ${event.summary}`;
+    }
     meta.innerHTML = `${event.date} · <a href="${event.receipt}">Open receipt ↗</a>`;
     progress.style.width = `${((currentIndex + 1) / items.length) * 100}%`;
     renderRail();
+    setNarrationActionState();
   };
 
   const getDelay = () => {
@@ -89,6 +109,13 @@
         setActionState('play');
         schedule();
       }
+    });
+  });
+
+  narrationButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      narrationMode = button.getAttribute('data-narration-mode') || 'executive';
+      renderStage();
     });
   });
 

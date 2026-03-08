@@ -1929,6 +1929,19 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin-bottom: 0.55rem;
 }
 
+.temporal-playback-narration-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: -0.15rem 0 0.55rem;
+}
+
+.temporal-playback-narration {
+  border-left: 2px solid color-mix(in oklab, #7c3aed 52%, var(--border));
+  padding-left: 0.48rem;
+  color: color-mix(in oklab, var(--text) 86%, var(--meta));
+}
+
 .temporal-playback-speed {
   border: 1px solid var(--stroke-soft);
   border-radius: 8px;

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:07 MST
+- Last updated: 2026-03-07 21:22 MST
 
 ## Last shipped batch
-- Track D WebGPU follow-up shipped: optional WebGPU-enhanced background/data visual prototype added to `/pages/roadmap/` with progressive enhancement detection and safe fallback rendering.
+- Track D AI-assisted diff narration mode shipped on `/pages/roadmap/`: temporal playback now supports executive narration vs source summary modes, with impact-aware narration strings for briefing-friendly scanability.
 
 ## Next queued action
-- Roadmap Track D follow-up: prototype AI-assisted diff narration mode on `/pages/roadmap/` executive summaries surface.
+- Roadmap Track E follow-up: enforce before/after artifact receipts for every major visual batch and backfill any missing receipt pairs on `/pages/roadmap/` linked changelog entries.
 
 ## Active blockers
 - None.

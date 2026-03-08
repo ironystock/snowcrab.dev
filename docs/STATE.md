@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:03 MST
+- Last updated: 2026-03-07 18:10 MST
 
 ## Last shipped batch
-- CI stabilization: fixed performance-guardrail failures by enforcing clean production builds in workflow and refreshing performance baseline to current intentional footprint.
+- Fixed changelog diff UX on live: enabled Hugo GitInfo so per-entry commit diffs render, and removed the legacy top diff demo to keep changelog diffing task-level and expandable per entry.
 
 ## Next queued action
 - Mermaid simple/deep maps on project detail pages.

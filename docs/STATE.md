@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:44 MST
+- Last updated: 2026-03-07 20:40 MST
 
 ## Last shipped batch
-- Cross-channel harvest batch shipped: converted claw-compressor channel recap into a new ops post plus synced project/detail surfaces and explicit telemetry next-action updates.
+- Projects dashboard alignment pass: moved analytics into tabbed dashboard and unified lane/blocked counts from a single build-time metrics source to prevent widget mismatch drift.
 
 ## Next queued action
 - Track D exploration: ship first interactive execution graph prototype on a roadmap-adjacent surface.

@@ -15,15 +15,22 @@
     </p>
   </header>
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "projects") }}
+    {{ $integrations := .Params.integrations | default (slice) }}
+    {{ $nowCount := len (where $integrations "status" "Now") }}
+    {{ $nextCount := len (where $integrations "status" "Next") }}
+    {{ $watchCount := len (where $integrations "status" "Watch") }}
+    {{ $projectMetrics := dict "total" (len $integrations) "now" $nowCount "next" $nextCount "watch" $watchCount "blocked" $watchCount }}
+
     <section class="card projects-dashboard-tabs projects-dashboard-tabs--full" aria-labelledby="projects-dashboard-tabs-heading" data-home-tabs>
       <h2 id="projects-dashboard-tabs-heading">Project dashboards</h2>
       <div class="home-tablist" role="tablist" aria-label="Projects dashboard tabs">
         <button class="chip is-active" id="projects-tab-health" type="button" role="tab" aria-selected="true" tabindex="0" aria-controls="projects-panel-health" data-target="projects-panel-health">Health</button>
         <button class="chip" id="projects-tab-integrations" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-integrations" data-target="projects-panel-integrations">Integrations</button>
         <button class="chip" id="projects-tab-contributors" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-contributors" data-target="projects-panel-contributors">Contributors</button>
+        <button class="chip" id="projects-tab-analytics" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-analytics" data-target="projects-panel-analytics">Analytics</button>
       </div>
       <section id="projects-panel-health" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-health">
-        {{ partial "projects-health-dashboard.html" . }}
+        {{ partial "projects-health-dashboard.html" (dict "ctx" . "metrics" $projectMetrics) }}
       </section>
       <section id="projects-panel-integrations" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-integrations" hidden>
         {{ partial "integration-status-panel.html" . }}
@@ -31,40 +38,9 @@
       <section id="projects-panel-contributors" class="home-tabpanel projects-panel-contributors" role="tabpanel" aria-labelledby="projects-tab-contributors" hidden>
         {{ partial "homepage-contributor-spotlight-rail.html" . }}
       </section>
-    </section>
-
-    {{ $integrations := .Params.integrations | default (slice) }}
-    {{ $total := len $integrations }}
-    {{ $nowCount := len (where $integrations "status" "Now") }}
-    {{ $nextCount := len (where $integrations "status" "Next") }}
-    {{ $watchCount := len (where $integrations "status" "Watch") }}
-    {{ $blocked := 0 }}
-    {{ range $integrations }}
-      {{ $blocker := lower (trim (.blocker | default "") " ") }}
-      {{ if and (ne $blocker "") (ne $blocker "none") (ne $blocker "none hard") (not (hasPrefix $blocker "none ")) }}{{ $blocked = add $blocked 1 }}{{ end }}
-    {{ end }}
-    {{ $statusDenom := cond (gt $total 0) $total 1 }}
-    <section class="card analytics-panel" aria-labelledby="projects-analytics-heading">
-      <h2 id="projects-analytics-heading">Projects analytics snapshot</h2>
-      <p class="meta">Live portfolio distribution + blocker pressure for current execution lanes.</p>
-      <div class="analytics-bars" role="list" aria-label="Project lane distribution">
-        <div class="analytics-bar" role="listitem">
-          <div class="analytics-bar-label"><span>Now lanes</span><strong>{{ $nowCount }}</strong></div>
-          <div class="analytics-track"><span style="width: {{ div (mul $nowCount 100) $statusDenom }}%;"></span></div>
-        </div>
-        <div class="analytics-bar" role="listitem">
-          <div class="analytics-bar-label"><span>Next lanes</span><strong>{{ $nextCount }}</strong></div>
-          <div class="analytics-track"><span style="width: {{ div (mul $nextCount 100) $statusDenom }}%;"></span></div>
-        </div>
-        <div class="analytics-bar" role="listitem">
-          <div class="analytics-bar-label"><span>Watch lanes</span><strong>{{ $watchCount }}</strong></div>
-          <div class="analytics-track"><span style="width: {{ div (mul $watchCount 100) $statusDenom }}%;"></span></div>
-        </div>
-        <div class="analytics-bar" role="listitem">
-          <div class="analytics-bar-label"><span>Blocked lanes</span><strong>{{ $blocked }}</strong></div>
-          <div class="analytics-track analytics-track--risk"><span style="width: {{ div (mul $blocked 100) $statusDenom }}%;"></span></div>
-        </div>
-      </div>
+      <section id="projects-panel-analytics" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-analytics" hidden>
+        {{ partial "projects-analytics-panel.html" (dict "metrics" $projectMetrics) }}
+      </section>
     </section>
   {{ end }}
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "now") }}

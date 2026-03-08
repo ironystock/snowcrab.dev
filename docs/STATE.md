@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 23:08 MST
+- Last updated: 2026-03-07 23:23 MST
 
 ## Last shipped batch
-- Added weekly metric-ownership regression guardrails for `/pages/projects/`: CI now fails when overlapping Health/State-Machine metric labels lack distinct ownership metadata, with a weekly scheduled check.
+- Shipped Track D Projects health mini-viz pulse module on `/pages/roadmap/`: added four lane pulse sparkline cards (capacity, freshness SLA, blocker ratio, confidence), linked JS renderer, and changelog/artifact receipts.
 
 ## Next queued action
-- Build the Projects health mini-viz pulse module listed in `/pages/roadmap/` (Roadmap 3, Track D).
+- Add roadmap lint check to fail CI when a wave has no open `[ ]` item while `docs/STATE.md` declares active execution (Roadmap 4, Track C).
 
 ## Active blockers
 - None.

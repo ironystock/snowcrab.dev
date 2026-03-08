@@ -74,9 +74,9 @@ This is the public execution roadmap for snowcrab.dev.
 - ~~[x] Temporal playback mode (“what changed this week” cinematic timeline).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/))
 - ~~[x] AI-assisted diff narration mode for executive summaries.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-ai-assisted-diff-narration-mode/))
 - WebGPU rollout sequence (locked):
-  - ~~[x] Homepage hero ambient GPU layer (progressive enhancement + fallback).~~
-  - [ ] Roadmap execution-flow canvas upgrade.
-  - [ ] Projects health mini-viz pulse module.
+  - ~~[x] Homepage hero ambient GPU layer (progressive enhancement + fallback).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-webgpu-homepage-hero-rollout-phase1/))
+  - ~~[x] Roadmap execution-flow canvas upgrade.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/))
+  - ~~[x] Projects health mini-viz pulse module.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-projects-health-mini-viz-pulse-module/))
 
 <section class="execution-graph-prototype card" id="execution-graph-prototype" aria-labelledby="execution-graph-prototype-heading">
   <h4 id="execution-graph-prototype-heading">Interactive execution graph prototype</h4>
@@ -155,6 +155,35 @@ flowchart TB
     <canvas id="webgpu-prototype-canvas" width="960" height="240" aria-label="WebGPU data-field prototype canvas"></canvas>
     <p class="meta" id="webgpu-prototype-status">Detecting WebGPU capability…</p>
   </div>
+</section>
+
+<section class="projects-health-pulse card" id="projects-health-pulse" aria-labelledby="projects-health-pulse-heading">
+  <h4 id="projects-health-pulse-heading">Projects health mini-viz pulse module</h4>
+  <p class="meta">Fast scan of lane health pulses (capacity, freshness SLA, blocker ratio, confidence) to complement the larger dashboard on <a href="/pages/projects/">Projects</a>.</p>
+
+  <div class="projects-health-pulse-grid" role="list" aria-label="Project health lane pulse cards" data-health-pulse-grid>
+    <article role="listitem" class="projects-health-pulse-card" data-pulse-lane="capacity">
+      <p class="meta">Capacity</p>
+      <p class="projects-health-pulse-value" data-pulse-value>--</p>
+      <canvas class="projects-health-pulse-canvas" width="220" height="70" aria-label="Capacity lane pulse trend" data-health-pulse="capacity"></canvas>
+    </article>
+    <article role="listitem" class="projects-health-pulse-card" data-pulse-lane="freshness">
+      <p class="meta">Freshness SLA</p>
+      <p class="projects-health-pulse-value" data-pulse-value>--</p>
+      <canvas class="projects-health-pulse-canvas" width="220" height="70" aria-label="Freshness lane pulse trend" data-health-pulse="freshness"></canvas>
+    </article>
+    <article role="listitem" class="projects-health-pulse-card" data-pulse-lane="blocker">
+      <p class="meta">Blocker ratio</p>
+      <p class="projects-health-pulse-value" data-pulse-value>--</p>
+      <canvas class="projects-health-pulse-canvas" width="220" height="70" aria-label="Blocker ratio lane pulse trend" data-health-pulse="blocker"></canvas>
+    </article>
+    <article role="listitem" class="projects-health-pulse-card" data-pulse-lane="confidence">
+      <p class="meta">Confidence</p>
+      <p class="projects-health-pulse-value" data-pulse-value>--</p>
+      <canvas class="projects-health-pulse-canvas" width="220" height="70" aria-label="Confidence lane pulse trend" data-health-pulse="confidence"></canvas>
+    </article>
+  </div>
+  <p class="meta" id="projects-health-pulse-status" data-health-pulse-status>Booting pulse module…</p>
 </section>
 
 ### Track E — Governance & quality guardrails *(Continuous)*

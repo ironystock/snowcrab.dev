@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:37 MST
+- Last updated: 2026-03-07 18:38 MST
 
 ## Last shipped batch
-- Added implementation diff callouts on top posts where receipts already existed (Discord reaction controls pilot, discord-claws milestone recap, Promptmark MCP recap, claw-compressor rollout, and site build recap).
+- Expanded the flagship transparency-machine case study with executive/editorial narrative depth and stylized long-form formatting (asides, pull quotes, structured sections).
 
 ## Next queued action
 - Field Notes: add compact visual "24h change" card.

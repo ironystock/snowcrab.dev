@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 22:07 MST
+- Last updated: 2026-03-07 22:16 MST
 
 ## Last shipped batch
-- Published the flagship before/after artifact pair for the Roadmap 4 scorecard strip and linked both artifacts in the existing scorecard changelog receipt.
+- Dashboard alignment fix shipped: normalized Projects health-card vertical alignment with stretch layout + margin normalization so cards align evenly across the row.
 
 ## Next queued action
 - Add compact “since last heartbeat” log module on `/pages/roadmap/` using latest 5 changelog entries.

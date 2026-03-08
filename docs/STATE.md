@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:10 MST
+- Last updated: 2026-03-07 18:14 MST
 
 ## Last shipped batch
-- Fixed changelog diff UX on live: enabled Hugo GitInfo so per-entry commit diffs render, and removed the legacy top diff demo to keep changelog diffing task-level and expandable per entry.
+- Mermaid simple/deep execution maps shipped across all project detail pages, with shared multi-instance toggle support and before/after artifacts.
 
 ## Next queued action
-- Mermaid simple/deep maps on project detail pages.
+- Contributor spotlight diffusion to projects + selected posts.
 
 ## Active blockers
 - None.

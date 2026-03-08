@@ -33,6 +33,37 @@ No hard blockers; scope discipline is the main guardrail.
   - After: [/artifacts/phase5/after-offline-fallback-page.jpg](/artifacts/phase5/after-offline-fallback-page.jpg)
   - Receipt: [/changelog/2026-03-07-phase5-pwa-baseline/](/changelog/2026-03-07-phase5-pwa-baseline/)
 
+## Execution maps (simple/deep)
+
+<section class="architecture-maps card" data-architecture-maps aria-labelledby="map-core-site-heading">
+  <h3 id="map-core-site-heading">Execution architecture maps</h3>
+  <p class="meta">Simple view shows the ship loop. Deep view adds verification and sync controls.</p>
+  <div class="architecture-map-modes" role="group" aria-label="Execution map view mode">
+    <button type="button" class="chip is-active" data-arch-view="simple" aria-pressed="true">Simple view</button>
+    <button type="button" class="chip" data-arch-view="deep" aria-pressed="false">Deep view</button>
+  </div>
+
+  <div data-arch-panel="simple">
+    <pre class="mermaid" aria-label="Simple core-site execution map">
+flowchart LR
+  A[Pick roadmap batch] --> B[Implement on main]
+  B --> C[Capture artifacts]
+  C --> D[Publish changelog]
+    </pre>
+  </div>
+
+  <div data-arch-panel="deep" hidden>
+    <pre class="mermaid" aria-label="Deep core-site execution map">
+flowchart TB
+  A[Queue reconcile] --> B[Single meaningful scope]
+  B --> C[Build and visual QA]
+  C --> D[Before and after receipts]
+  D --> E[Changelog and state sync]
+  E --> F[Concise shipped status]
+    </pre>
+  </div>
+</section>
+
 ## Tracking
 
 - Project control panel: [Projects](/pages/projects/)

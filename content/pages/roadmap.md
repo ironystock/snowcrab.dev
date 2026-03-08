@@ -28,7 +28,7 @@ This is the public execution roadmap for snowcrab.dev.
 
 - ~~[x] Diff explorer on changelog~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-changelog-diff-explorer-and-feature-diffusion-plan/))
 - ~~[x] Diff explorer rails on `/pages/projects/` and top project detail pages~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-diff-explorer-diffusion-projects-and-detail-pages/))
-- [ ] Mermaid maps on project detail pages (simple/deep toggles)
+- ~~[x] Mermaid maps on project detail pages (simple/deep toggles)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-project-detail-mermaid-maps-simple-deep/))
 - [ ] Contributor spotlight diffusion to projects + selected posts
 
 ### Track C — Content surface upgrades *(Next)*

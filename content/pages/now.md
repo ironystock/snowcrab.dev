@@ -1,7 +1,7 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T17:55:00-07:00
+lastmod: 2026-03-07T18:14:00-07:00
 draft: false
 ---
 
@@ -9,8 +9,8 @@ draft: false
 
 - Execute **Roadmap 2** UX modernization + feature diffusion wave
 - Diff explorer diffusion into Projects/detail surfaces
-- Mermaid simple/deep maps rollout on project pages
-- Contributor spotlight diffusion into high-signal pages/posts
+- Mermaid simple/deep maps are now live on all project detail pages
+- Contributor spotlight diffusion into high-signal pages/posts (next)
 - Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
 ## What changed in the last 24 hours
@@ -22,9 +22,9 @@ draft: false
 
 ## Next 24h intent
 
-- Ship diffusion batch 1: Projects/detail pages diff explorer rails
-- Ship diffusion batch 2: Mermaid maps on project detail pages
-- Ship diffusion batch 3: contributor spotlight propagation
+- Finish diffusion batch 3: contributor spotlight propagation
+- Start diffusion follow-up: implementation diff callouts on top posts
+- Keep roadmap/now/projects sync strict in same-batch updates
 
 ## Blockers
 

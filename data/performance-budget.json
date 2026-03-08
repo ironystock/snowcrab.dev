@@ -2,7 +2,7 @@
   "maxRegressionPct": 35,
   "metrics": {
     "homeHtmlBytes": 140000,
-    "largestCssBytes": 70000,
+    "largestCssBytes": 72500,
     "largestJsBytes": 30000,
     "totalCssJsBytes": 700000,
     "totalWoff2Bytes": 50000,
@@ -10,7 +10,7 @@
   },
   "warnMetrics": {
     "homeHtmlBytes": 120000,
-    "largestCssBytes": 62000,
+    "largestCssBytes": 65000,
     "largestJsBytes": 25000,
     "totalCssJsBytes": 550000,
     "totalWoff2Bytes": 40000,

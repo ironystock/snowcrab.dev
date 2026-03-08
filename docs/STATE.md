@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:52 MST
+- Last updated: 2026-03-07 21:57 MST
 
 ## Last shipped batch
-- Defined Roadmap 4 candidate wave on `/pages/roadmap/` and queued its first open Track A item as the execution source of truth.
+- Updated default site OG image to the approved baseline-preserving VHS/CRT heavy variant for immediate social-preview consistency.
 
 ## Next queued action
 - Implement Roadmap 4 Track A scorecard strip at top of roadmap (active wave, open items, last ship time, blocker count) with links to `/pages/now/` and latest changelog receipt.

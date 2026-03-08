@@ -1,7 +1,7 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T21:18:00-07:00
+lastmod: 2026-03-07T21:34:00-07:00
 draft: false
 ---
 
@@ -28,6 +28,7 @@ draft: false
 - Mapped Capabilities domain cards to concrete visual receipts, including before/after artifacts and changelog/project proof links
 - Added CI sync guardrail to block partial now/projects/roadmap updates in meaningful status-change batches
 - Added queue-state guardrail to fail when `docs/STATE.md` next action drifts from the top open roadmap item or uses placeholder text while roadmap work remains
+- Added validation receipt for Track E heartbeat queue alignment and hardened queue-state parsing to ignore roadmap legend rows
 - Shipped Roadmap Track D temporal playback prototype on `/pages/roadmap/` with play/pause/restart + speed controls, weekly replay rail, and artifact-linked changelog receipt
 - Shipped Track D AI-assisted diff narration mode on `/pages/roadmap/` executive playback summaries (executive narration vs source summary toggle)
 - Diffused modern builder-inspired visual primitives across home/projects (panelized controls + calmer rectangular chrome)
@@ -37,6 +38,7 @@ draft: false
 
 - Prototype Track D AI-assisted diff narration mode on roadmap executive-summary surfaces
 - Continue enforcing artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces where applicable)
+- Lock in guardrail hygiene: queue/roadmap alignment now receipted and CI-enforced; prepare next roadmap wave definition
 - Keep roadmap/now/projects sync strict in same-batch updates
 
 ## Blockers

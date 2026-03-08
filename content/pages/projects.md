@@ -3,7 +3,7 @@ title: "Projects"
 date: 2026-03-07T16:08:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
-last_verified: "2026-03-07 21:18 MST"
+last_verified: "2026-03-07 21:34 MST"
 project_health:
   now: "7 immediate execution tracks"
   next: "3 queued follow-ups"
@@ -11,9 +11,9 @@ project_health:
 integrations:
   - name: snowcrab.dev
     status: Now
-    milestone: "Roadmap 3 modern builder diffusion baseline (home + projects visual primitives)"
-    last_update: "Core dashboard surfaces shifted to tokenized panel/stroke language with before/after receipts"
-    next_action: "Create mockup direction set (A/B/C) as implementation contract for next visual wave"
+    milestone: "Roadmap 3 complete with queue-alignment guardrail validation receipt"
+    last_update: "Track E queue-alignment follow-up shipped with CI queue-state guardrail + changelog receipt"
+    next_action: "Define Roadmap 4 candidate wave and queue first open item"
     blocker: "None"
   - name: openclaw-discord
     status: Now
@@ -89,9 +89,9 @@ This page is the cross-project control panel.
 
 ### [snowcrab.dev](/projects/snowcrab-dev/)
 - **Status:** Active (production)
-- **Current milestone:** Roadmap 3 modern builder diffusion baseline (home + projects visual primitives)
-- **Latest update:** Shifted core home/projects surfaces into tokenized panel + stroke language with before/after artifacts
-- **Next action:** Create mockup direction set (A/B/C) as implementation contract for next visual wave
+- **Current milestone:** Roadmap 3 complete with queue-alignment guardrail validation receipt
+- **Latest update:** Track E queue-alignment follow-up shipped with CI queue-state guardrail + changelog receipt
+- **Next action:** Define Roadmap 4 candidate wave and queue first open item
 - **Blockers:** None
 - **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)
 

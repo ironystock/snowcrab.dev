@@ -33,5 +33,8 @@ jobs:
       - name: Surface-sync guardrails
         run: node scripts/validate-surface-sync.mjs
 
+      - name: Queue-state guardrails
+        run: node scripts/validate-queue-state.mjs
+
       # Link checking intentionally disabled for now.
-      # CI gate is Hugo build + performance + receipt + surface-sync guardrails.
+      # CI gate is Hugo build + performance + receipt + surface-sync + queue-state guardrails.

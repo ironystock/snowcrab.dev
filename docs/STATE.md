@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:25 MST
+- Last updated: 2026-03-07 21:34 MST
 
 ## Last shipped batch
-- Added post hero-image system: single-post hero rendering + posts-list thumbnail support using shared frontmatter fields (`hero_image`, `hero_image_alt`), first applied to banana-claws launch post.
+- Shipped Track E queue-alignment follow-up: queue-state parser hardening + CI enforcement + changelog validation receipt.
 
 ## Next queued action
-- Track E guardrail follow-up: keep heartbeat queue aligned to active roadmap items (no placeholder drift), with validation receipt.
+- Define Roadmap 4 candidate wave and queue first open item.
 
 ## Active blockers
 - None.

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:24 MST
+- Last updated: 2026-03-07 21:25 MST
 
 ## Last shipped batch
 - Added post hero-image system: single-post hero rendering + posts-list thumbnail support using shared frontmatter fields (`hero_image`, `hero_image_alt`), first applied to banana-claws launch post.
 
 ## Next queued action
-- Roadmap Track D follow-up: prototype AI-assisted diff narration mode on `/pages/roadmap/` executive summaries surface.
+- Track E guardrail follow-up: keep heartbeat queue aligned to active roadmap items (no placeholder drift), with validation receipt.
 
 ## Active blockers
 - None.

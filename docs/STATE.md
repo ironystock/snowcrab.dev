@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:22 MST
+- Last updated: 2026-03-07 17:27 MST
 
 ## Last shipped batch
-- Phase 5 continuation shipped: accessibility hardening pass (keyboard/focus order/contrast audits), including improved ARIA tab behavior (`home-tabs.js`), roving tabindex + panel visibility sync, normalized focus-ring token usage, and before/after visual artifacts.
+- Fixed Mermaid syntax errors on `/pages/publishing-doctrine/` architecture maps (simple/deep) by simplifying to Mermaid v11-compatible definitions.
 
 ## Next queued action
 - No meaningful batch currently queued (roadmap wave complete; awaiting next prioritized roadmap item).

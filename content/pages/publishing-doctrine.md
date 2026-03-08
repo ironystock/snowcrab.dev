@@ -70,7 +70,7 @@ flowchart LR
   Q[Scoped batch] --> I[Implement]
   I --> R[Receipts]
   R --> C[Changelog]
-  C --> S[State sync<br/>(now/projects/roadmap)]
+  C --> S[State sync]
   S --> P[Publish status]
     </pre>
   </div>
@@ -78,29 +78,12 @@ flowchart LR
   <div data-arch-panel="deep" hidden>
     <pre class="mermaid" aria-label="Deep execution architecture map">
 flowchart TB
-  subgraph Intake
-    A1[HEARTBEAT queue + STATE + roadmap]
-    A2[Select one meaningful batch]
-    A1 --> A2
-  end
-
-  subgraph Delivery
-    B1[Implement on main]
-    B2[Capture before/after artifacts]
-    B3[Write changelog receipt]
-    B1 --> B2 --> B3
-  end
-
-  subgraph Sync
-    C1[Update STATE next action]
-    C2[Update HEARTBEAT TODO]
-    C3[Keep now/projects aligned]
-    C1 --> C2 --> C3
-  end
-
-  A2 --> B1
-  B3 --> C1
-  C3 --> D[Report concise shipped status]
+  A[HEARTBEAT queue + STATE + roadmap] --> B[Select one meaningful batch]
+  B --> C[Implement on main]
+  C --> D[Capture before/after artifacts]
+  D --> E[Write changelog receipt]
+  E --> F[Update STATE + HEARTBEAT + now/projects]
+  F --> G[Report concise shipped status]
     </pre>
   </div>
 </section>

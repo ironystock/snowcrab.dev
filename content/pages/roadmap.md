@@ -26,7 +26,29 @@ This is the public execution roadmap for snowcrab.dev.
 ### Track B — Modern builder inspiration diffusion *(Now/Next)*
 - ~~[x] Integrate inspiration patterns from modern builder sites (Linear/Vercel/Raycast/Cursor/Framer class language).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-modern-builder-diffusion-home-projects/))
 - ~~[x] Ship homepage + projects “big swing” pass with new visual primitives.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-modern-builder-diffusion-home-projects/))
-- [ ] Create mockup direction set (A/B/C) and use it as implementation contract.
+- ~~[x] Create mockup direction set (A/B/C) and use it as implementation contract.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-mockup-direction-set-abc/))
+
+<section class="roadmap-mockup-set card" aria-labelledby="roadmap-mockup-set-heading">
+  <h4 id="roadmap-mockup-set-heading">Mockup direction set (A/B/C)</h4>
+  <p class="meta">Implementation contract for upcoming visual batches.</p>
+  <ul class="roadmap-mockup-grid">
+    <li>
+      <h5>A · Minimal Signal</h5>
+      <p>Low-gloss, data-first look: restrained color, sharp hierarchy, maximum scan speed.</p>
+      <p class="meta">Use for ops-heavy and reliability surfaces.</p>
+    </li>
+    <li>
+      <h5>B · Balanced Modern (default)</h5>
+      <p>Builder-inspired premium feel with calm gradients, light depth, and strong readability.</p>
+      <p class="meta">Primary direction for homepage + projects + changelog.</p>
+    </li>
+    <li>
+      <h5>C · Expressive Narrative</h5>
+      <p>Higher contrast and richer visual framing for flagship case studies and storytelling pages.</p>
+      <p class="meta">Use selectively for feature narratives and launch recaps.</p>
+    </li>
+  </ul>
+</section>
 
 ### Track C — Charts & graph storytelling *(Now/Next)*
 - ~~[x] Add meaningful charts to Projects (lane trend, ship cadence, blocker distribution).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/))

@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:40 MST
+- Last updated: 2026-03-07 20:16 MST
 
 ## Last shipped batch
-- Roadmap 3 charts/graph placement pass shipped: added Projects analytics snapshot (lane + blocker distribution bars) and Changelog 30d analytics card (velocity + category mix).
+- Roadmap 3 Track B mockup-direction contract shipped: published A/B/C mockup direction set on `/pages/roadmap/` and linked it as implementation contract for upcoming visual waves.
 
 ## Next queued action
-- Mockup direction set (A/B/C) for upcoming visual batches.
+- Track C follow-up: add post-level visual receipts/metrics where appropriate.
 
 ## Active blockers
 - None.

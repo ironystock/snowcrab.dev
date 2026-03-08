@@ -1874,6 +1874,39 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin-top: 0.2rem;
 }
 
+.roadmap-mockup-set {
+  margin: 0.7rem 0 0.95rem;
+}
+
+.roadmap-mockup-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.55rem;
+}
+
+.roadmap-mockup-grid li {
+  border: 1px solid var(--stroke-soft);
+  border-radius: 10px;
+  padding: 0.58rem;
+  background: color-mix(in oklab, var(--bg-elev) 94%, var(--border) 6%);
+}
+
+.roadmap-mockup-grid h5 {
+  margin: 0 0 0.28rem;
+  font-size: 0.92rem;
+}
+
+.roadmap-mockup-grid p {
+  margin: 0 0 0.45rem;
+}
+
+.roadmap-mockup-grid p:last-child {
+  margin-bottom: 0;
+}
+
 .projects-health h2 {
   margin: 0 0 0.4rem;
   font-size: 1.05rem;

@@ -3,6 +3,16 @@ title: "Promptmark MCP integration recap: OAuth, hook architecture, and lessons"
 date: 2026-03-05T00:29:00-07:00
 summary: "Prompt capture moved from experiment to system: OAuth setup, mapping spec, queue+worker architecture, and practical reliability lessons."
 tags: ["promptmark", "mcp", "oauth", "automation", "reliability", "build-in-public"]
+post_metrics:
+  - label: "Pilot scope"
+    value: "single-channel"
+    note: "guardrailed production pilot"
+  - label: "Linked implementation receipts"
+    value: "5"
+    note: "2 PRs + 3 commit refs"
+  - label: "Capture architecture"
+    value: "queue + worker"
+    note: "sync hook path retired"
 draft: false
 social_image: ""
 ---

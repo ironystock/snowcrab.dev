@@ -53,7 +53,7 @@ This is the public execution roadmap for snowcrab.dev.
 ### Track C — Charts & graph storytelling *(Now/Next)*
 - ~~[x] Add meaningful charts to Projects (lane trend, ship cadence, blocker distribution).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/))
 - ~~[x] Add changelog analytics mini-dashboard (velocity, categories, risk markers).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/))
-- [ ] Add post-level visual receipts/metrics where appropriate.
+- ~~[x] Add post-level visual receipts/metrics where appropriate.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-trackc-post-level-metrics-receipts/))
 
 ### Track D — Advanced feature candidates *(Exploration)*
 - [ ] WebGPU-enhanced background/data visuals (optional progressive enhancement).

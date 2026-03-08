@@ -4,6 +4,16 @@ date: 2026-03-07T16:10:00-07:00
 slug: "openclaw-discord-reaction-controls-pilot"
 summary: "We stood up a practical Discord ops control layer with reaction-based controls, approved-operator enforcement, and a repeatable pilot test matrix."
 tags: ["discord", "openclaw", "automation", "ops"]
+post_metrics:
+  - label: "Operator channels piloted"
+    value: "2"
+    note: "approved + unauthorized path coverage"
+  - label: "Core ship commits"
+    value: "4"
+    note: "f7f6410 · 8e23ec3 · fdc444f · 67e9729"
+  - label: "Guardrails enforced"
+    value: "4"
+    note: "auth, unsupported emoji, dedupe, TTS policy"
 show_contributor_spotlight: true
 draft: false
 ---

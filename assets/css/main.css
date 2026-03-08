@@ -1829,6 +1829,34 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin-top: 0.28rem;
 }
 
+.post-metrics-list {
+  margin: 0;
+  display: grid;
+  gap: 0.38rem;
+}
+
+.post-metrics-list div {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  gap: 0.5rem;
+}
+
+.post-metrics-list dt {
+  margin: 0;
+  font-weight: 600;
+}
+
+.post-metrics-list dd {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .post-metrics-list div {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
+
 .author-bio {
   margin-top: 1rem;
   display: grid;

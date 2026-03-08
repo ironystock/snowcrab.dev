@@ -4,6 +4,16 @@ date: 2026-03-07T20:10:00-07:00
 slug: "ai-thought-radar-live-ingestion-and-signal-rebalance"
 summary: "AI Thought Radar moved from private repo kickoff to live M/W/F ingestion, persistence, ranking, anti-duplicate recommendations, and community-lane blending."
 tags: ["ai-thought-radar", "automation", "tavily", "ranking", "content-ops"]
+post_metrics:
+  - label: "Live ingestion cadence"
+    value: "3 runs/week"
+    note: "Mon/Wed/Fri at 8:00 AM"
+  - label: "Shipped milestones"
+    value: "3"
+    note: "kickoff, pipeline, rebalance"
+  - label: "Evidence commits linked"
+    value: "6"
+    note: "receipt links in this post"
 draft: false
 ---
 

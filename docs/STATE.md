@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:16 MST
+- Last updated: 2026-03-07 20:32 MST
 
 ## Last shipped batch
-- Roadmap 3 Track B mockup-direction contract shipped: published A/B/C mockup direction set on `/pages/roadmap/` and linked it as implementation contract for upcoming visual waves.
+- Roadmap 3 Track C post-level metrics receipts shipped: expanded the post receipts module with structured `post_metrics`, applied to flagship posts, and linked before/after artifacts.
 
 ## Next queued action
-- Track C follow-up: add post-level visual receipts/metrics where appropriate.
+- Track D exploration: ship first interactive execution graph prototype on a roadmap-adjacent surface.
 
 ## Active blockers
 - None.

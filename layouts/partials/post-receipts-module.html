@@ -5,7 +5,9 @@
 {{ $nearby := where (where $changes "Date" ">=" $windowStart) "Date" "<=" $windowEnd }}
 {{ $nearby = first 3 ($nearby.ByDate.Reverse) }}
 {{ $customReceipts := .Params.receipts }}
+{{ $postMetrics := .Params.post_metrics }}
 {{ $hasCustom := and $customReceipts (gt (len $customReceipts) 0) }}
+{{ $hasPostMetrics := and $postMetrics (gt (len $postMetrics) 0) }}
 {{ $hasNearby := gt (len $nearby) 0 }}
 
 {{ $raw := .RawContent }}
@@ -26,7 +28,7 @@
 {{ $normalizedChangelogUrls = uniq $normalizedChangelogUrls }}
 {{ $hasInlineChangelogRefs := gt (len $normalizedChangelogUrls) 0 }}
 
-{{ if or $hasCustom $hasNearby $hasCommitLinks $hasInlineChangelogRefs }}
+{{ if or $hasCustom $hasNearby $hasCommitLinks $hasInlineChangelogRefs $hasPostMetrics }}
 <section class="post-receipts card" aria-labelledby="post-receipts-heading">
   <h2 id="post-receipts-heading">Receipts</h2>
   <p class="meta post-receipts-intro">Linked shipping artifacts connected to this post.</p>
@@ -66,6 +68,20 @@
       </li>
       {{ end }}
     </ul>
+  </div>
+  {{ end }}
+
+  {{ if $hasPostMetrics }}
+  <div class="post-receipts-group">
+    <h3>Post-level metrics</h3>
+    <dl class="post-metrics-list">
+      {{ range $postMetrics }}
+      <div>
+        <dt>{{ .label }}</dt>
+        <dd>{{ .value }}{{ with .note }} <span class="muted">· {{ . }}</span>{{ end }}</dd>
+      </div>
+      {{ end }}
+    </dl>
   </div>
   {{ end }}
 

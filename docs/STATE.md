@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:38 MST
+- Last updated: 2026-03-07 18:37 MST
 
 ## Last shipped batch
-- Expanded the flagship transparency-machine case study with executive/editorial narrative depth and stylized long-form formatting (asides, pull quotes, structured sections).
+- Added a compact visual "24h change" card to `/notes/`, including last-24h note count + latest note link/timestamp with before/after artifacts.
 
 ## Next queued action
-- Field Notes: add compact visual "24h change" card.
+- Capabilities: map each domain to concrete visual receipts.
 
 ## Active blockers
 - None.

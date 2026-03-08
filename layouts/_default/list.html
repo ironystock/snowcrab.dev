@@ -47,9 +47,15 @@
   {{ if eq .Section "notes" }}
     {{ $archivedNotes = where $listPages "Params.archived" true }}
     {{ $listPages = where $listPages "Params.archived" "ne" true }}
+    {{ $recent24h := where $listPages "Date.Unix" "ge" (sub now.Unix 86400) }}
     {{ with first 1 $listPages }}
       {{ $latest := index . 0 }}
       {{ $ageDays := div (sub now.Unix $latest.Date.Unix) 86400 }}
+      <section class="card field-notes-change-card" aria-label="Field notes changes in last 24 hours">
+        <p class="meta">24h change window</p>
+        <p><strong>{{ len $recent24h }}</strong> note{{ if ne (len $recent24h) 1 }}s{{ end }} published in the last 24 hours.</p>
+        <p class="muted">Latest: <a href="{{ $latest.RelPermalink }}">{{ $latest.Title }}</a> · <time datetime="{{ $latest.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $latest.Date.Format "Jan 2, 2006 3:04 PM" }}</time></p>
+      </section>
       {{ if gt $ageDays 14 }}
         <section class="card field-notes-stale" aria-label="Field notes freshness warning">
           <p><strong>Stale signal:</strong> latest field note is {{ $ageDays }} days old. This section is meant to stay active; refresh or archive when dormant.</p>

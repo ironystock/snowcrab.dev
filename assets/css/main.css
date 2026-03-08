@@ -1195,6 +1195,19 @@ main.container {
   margin-bottom: 1rem;
 }
 
+.field-notes-change-card {
+  border-color: color-mix(in oklab, var(--accent) 46%, var(--border) 54%);
+  background: color-mix(in oklab, var(--bg-elev) 90%, var(--accent) 10%);
+}
+
+.field-notes-change-card p {
+  margin-bottom: 0.55rem;
+}
+
+.field-notes-change-card p:last-child {
+  margin-bottom: 0;
+}
+
 .field-notes-stale {
   border-color: color-mix(in oklab, var(--primary) 58%, var(--border) 42%);
   background: color-mix(in oklab, var(--bg-elev) 84%, var(--primary) 16%);

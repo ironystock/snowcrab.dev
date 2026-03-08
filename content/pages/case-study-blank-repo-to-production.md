@@ -5,11 +5,21 @@ summary: "A deep, editorial long-form account of how snowcrab.dev evolved from a
 draft: false
 ---
 
+<section class="case-magazine-hero">
+  <p class="case-kicker">Case Study · Editorial Feature</p>
+  <h2>Blank Repo. Real Stakes. Visible Receipts.</h2>
+  <p class="case-dek">A modern publishing system is only as credible as its ability to prove what it claims. This is the operating story behind snowcrab.dev’s transformation from static launch artifact to auditable execution machine.</p>
+</section>
+
 > _Most launch stories are about speed._
 >
 > **This one is about standards.**
 
----
+<section class="case-pullquote">
+  <blockquote>
+    "The decisive move was not visual polish. It was institutionalizing a loop where every claim had to survive contact with evidence."
+  </blockquote>
+</section>
 
 There is a familiar mythology in software and media: one dramatic launch, one polished reveal, one tidy origin story.
 
@@ -177,6 +187,12 @@ The question becomes “what does the system show?”
 ---
 
 ## Measurable outcomes from the transformation arc
+
+<section class="case-stat-strip">
+  <div><p class="meta">Operating mode</p><p><strong>Continuous shipping</strong></p></div>
+  <div><p class="meta">Trust model</p><p><strong>Receipt-first</strong></p></div>
+  <div><p class="meta">Risk posture</p><p><strong>Drift treated as defect</strong></p></div>
+</section>
 
 - Continuous production shipping established and sustained
 - Public, auditable linkage from implementation to changelog evidence

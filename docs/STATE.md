@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 19:04 MST
+- Last updated: 2026-03-07 19:12 MST
 
 ## Last shipped batch
-- Added CI-enforced surface-sync guardrail so `/pages/now`, `/pages/projects/`, and `/pages/roadmap/` must update together when one changes in a meaningful status batch.
+- Applied full magazine treatment to the flagship case study (hero/dek framing, pull-quote cadence, and executive stat-strip components) for a richer editorial voice.
 
 ## Next queued action
 - Queue-state guardrail: keep heartbeat TODO queue continuously aligned to active roadmap items (no placeholder drift).

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:28 MST
+- Last updated: 2026-03-07 18:31 MST
 
 ## Last shipped batch
-- Fixed project-page Mermaid deep-view rendering: deferred Mermaid run to visible panels and wired architecture tab events so hidden diagrams render correctly when opened.
+- Rewrote core case-study page for executive/press/editor audience: "Blank Repo to a Fully-Automated, Self-Improving Transparency Machine" narrative now anchors operational transformation story.
 
 ## Next queued action
 - Add implementation diff callouts to top 8–12 posts where receipts exist.

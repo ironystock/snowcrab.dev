@@ -1,16 +1,17 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T19:04:00-07:00
+lastmod: 2026-03-07T20:10:00-07:00
 draft: false
 ---
 
 ## Active right now (top 5)
 
-- Execute **Roadmap 2** UX modernization + feature diffusion wave
+- Execute **Roadmap 3** visual language overhaul + modern builder diffusion wave
 - Diff explorer diffusion into Projects/detail surfaces
 - Mermaid simple/deep maps are now live on all project detail pages
 - Contributor spotlight diffusion shipped on Projects + selected posts
+- AI Thought Radar live ingestion pipeline + ranking rebalance now active (product/news/community lanes)
 - Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
 ## What changed in the last 24 hours
@@ -19,8 +20,10 @@ draft: false
 - Shipped changelog-native diff explorer with IDE-style text + modal image compare
 - Refined header (v2), reduced box-on-box pressure, and fixed control overlap bugs
 - Added openclaw-discord project coverage + first project post from intake history
+- Added AI Thought Radar project stream, detail page, and first milestone post with linked commit receipts
 - Mapped Capabilities domain cards to concrete visual receipts, including before/after artifacts and changelog/project proof links
 - Added CI sync guardrail to block partial now/projects/roadmap updates in meaningful status-change batches
+- Added queue-state guardrail to fail when `docs/STATE.md` next action drifts from the top open roadmap item or uses placeholder text while roadmap work remains
 
 ## Next 24h intent
 

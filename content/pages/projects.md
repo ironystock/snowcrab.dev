@@ -3,9 +3,9 @@ title: "Projects"
 date: 2026-03-07T16:08:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
-last_verified: "2026-03-07 19:04 MST"
+last_verified: "2026-03-07 20:08 MST"
 project_health:
-  now: "5 immediate execution tracks"
+  now: "6 immediate execution tracks"
   next: "3 queued follow-ups"
   watch: "0 dependency-risk streams"
 integrations:
@@ -39,6 +39,12 @@ integrations:
     last_update: "v0.1.3 fast-follow + promo collateral shipped"
     next_action: "Measure long-session quality/token impact"
     blocker: "None"
+  - name: ai-thought-radar
+    status: Now
+    milestone: "Live Tavily ingestion + ranked recommendation pipeline"
+    last_update: "M/W/F 8am check-ins running with persistence, anti-duplicate suggestions, and community-lane blending"
+    next_action: "Run 2-week signal-quality tuning pass and publish posting hit-rate metrics"
+    blocker: "None"
   - name: promptmark-ai
     status: Next
     milestone: "Pilot expansion + quality/latency benchmark pass"
@@ -70,6 +76,7 @@ This page is the cross-project control panel.
 - `#discord-sdk`
 - `#claw-compressor`
 - `#openclaw-discord`
+- `#ai-thought-radar`
 
 ## Active
 
@@ -109,6 +116,14 @@ This page is the cross-project control panel.
 - **Blockers:** None hard
 - **Detail page:** [/projects/claw-compressor-integration/](/projects/claw-compressor-integration/)
 - **Package:** [@piscodm/claw-compressor](https://www.npmjs.com/package/@piscodm/claw-compressor)
+
+### [ai-thought-radar](/projects/ai-thought-radar/)
+- **Status:** Active
+- **Current milestone:** Live Tavily ingestion + ranked recommendation pipeline for M/W/F 8am check-ins
+- **Latest update:** Added live fetch + persistence + anti-duplicate recommendation flow, plus ranking rebalance toward fresher product/news signals and a Reddit community lane
+- **Next action:** Run a 2-week signal quality tuning pass and publish posting hit-rate metrics
+- **Blockers:** None currently flagged
+- **Repository:** [snowcrab-dev/ai-thought-radar](https://github.com/snowcrab-dev/ai-thought-radar)
 
 ## Next
 

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 19:58 MST
+- Last updated: 2026-03-07 20:12 MST
 
 ## Last shipped batch
-- Roadmap 3 drafted and published as the new active wave: full visual language overhaul, modern builder-inspired UX diffusion, and chart/graph storytelling expansion.
+- Added AI Thought Radar as an active project stream, published its detail page, and shipped a milestone post with linked ingestion/ranking/community-lane receipts; synced Projects + Now surfaces.
 
 ## Next queued action
 - Roadmap 3 kickoff batch: border/aesthetic overhaul baseline (token system + core component adoption).

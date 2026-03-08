@@ -1889,6 +1889,25 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin-top: 0.58rem;
 }
 
+.roadmap-heartbeat-log {
+  margin: 0.72rem 0 0.95rem;
+}
+
+.roadmap-heartbeat-log-list {
+  margin: 0.55rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.roadmap-heartbeat-log-list li p {
+  margin: 0;
+}
+
+.roadmap-heartbeat-log-list li p + p {
+  margin-top: 0.14rem;
+}
+
 .roadmap-mockup-set {
   margin: 0.7rem 0 0.95rem;
 }

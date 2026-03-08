@@ -153,7 +153,7 @@ flowchart TB
 - ~~[x] Diffuse scorecard summary into homepage “Now shipping” widget source data (derived from `/pages/now/` only).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-now-widget-now-page-drift-proof-sync/))
 
 ### Track B — Reporting ergonomics *(Next)*
-- [ ] Add compact “since last heartbeat” log module on roadmap page using latest 5 changelog entries.
+- ~~[x] Add compact “since last heartbeat” log module on roadmap page using latest 5 changelog entries.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-trackb-since-last-heartbeat-log-module/))
 - [ ] Add keyboard jump chips for Track A–E/Roadmap 4 anchors.
 
 ### Track C — Quality guardrails *(Continuous)*

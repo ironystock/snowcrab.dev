@@ -5,10 +5,10 @@
 - Last updated: 2026-03-07 22:16 MST
 
 ## Last shipped batch
-- Dashboard alignment fix shipped: normalized Projects health-card vertical alignment with stretch layout + margin normalization so cards align evenly across the row.
+- Roadmap reporting ergonomics pass shipped: added compact “Since last heartbeat” module on `/pages/roadmap/` that automatically surfaces the latest 5 changelog receipts for faster executive scan.
 
 ## Next queued action
-- Add compact “since last heartbeat” log module on `/pages/roadmap/` using latest 5 changelog entries.
+- Add keyboard jump chips for Track A–E/Roadmap 4 anchors.
 
 ## Active blockers
 - None.

@@ -104,6 +104,20 @@
         {{ end }}
       </p>
     </section>
+
+    {{ $recentChangelog := first 5 (sort (where site.RegularPages "Section" "changelog") "Date" "desc") }}
+    <section class="card roadmap-heartbeat-log" aria-labelledby="roadmap-heartbeat-log-heading">
+      <h2 id="roadmap-heartbeat-log-heading">Since last heartbeat</h2>
+      <p class="meta">Latest 5 changelog receipts for quick execution context.</p>
+      <ol class="roadmap-heartbeat-log-list">
+        {{ range $recentChangelog }}
+          <li>
+            <p class="meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2 · 3:04 PM MST" }}</time></p>
+            <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+          </li>
+        {{ end }}
+      </ol>
+    </section>
   {{ end }}
   {{ if eq .Section "posts" }}
   <section class="reading-mode-controls" aria-labelledby="reading-mode-heading" id="reading-mode-controls">

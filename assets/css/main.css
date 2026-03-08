@@ -492,6 +492,40 @@ main.container {
 .hero h1 { margin: 0 0 0.82rem; font-size: clamp(1.52rem, 2.05vw + 1rem, 2.36rem); line-height: 1.18; }
 .hero p { margin: 0; color: var(--muted); max-width: 58ch; line-height: 1.66; }
 
+.hero--webgpu {
+  position: relative;
+  overflow: clip;
+}
+
+.hero-webgpu-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+.hero-webgpu-layer canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-webgpu-content {
+  position: relative;
+  z-index: 1;
+}
+
+#home-hero-webgpu-status {
+  margin: 0.35rem 0 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-webgpu-layer {
+    opacity: 0.4;
+  }
+}
+
 .grid { display: grid; gap: 1rem; }
 
 .layout-with-sidebar {

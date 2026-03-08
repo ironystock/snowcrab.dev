@@ -73,6 +73,10 @@ This is the public execution roadmap for snowcrab.dev.
 - ~~[x] Interactive execution graph (state transitions over time).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/))
 - ~~[x] Temporal playback mode (“what changed this week” cinematic timeline).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/))
 - ~~[x] AI-assisted diff narration mode for executive summaries.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-ai-assisted-diff-narration-mode/))
+- WebGPU rollout sequence (locked):
+  - ~~[x] Homepage hero ambient GPU layer (progressive enhancement + fallback).~~
+  - [ ] Roadmap execution-flow canvas upgrade.
+  - [ ] Projects health mini-viz pulse module.
 
 <section class="execution-graph-prototype card" id="execution-graph-prototype" aria-labelledby="execution-graph-prototype-heading">
   <h4 id="execution-graph-prototype-heading">Interactive execution graph prototype</h4>

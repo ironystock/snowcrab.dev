@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 19:08 MST
+- Last updated: 2026-03-07 19:22 MST
 
 ## Last shipped batch
-- Updated cross-channel project update template with a copy/paste markdown artifact block and explicit agent can/can't boundaries; aligned template guidance to current Roadmap 2 workflow.
+- Added validation guardrails so changed changelog entries now require linked before/after artifacts plus page-level receipt context (CI + changelog archetype scaffold).
 
 ## Next queued action
-- Validation guardrail: ensure every meaningful UX batch includes linked before/after artifacts in changelog + page-level receipts where applicable.
+- Synchronization guardrail: keep `/pages/now`, `/pages/projects`, and `/pages/roadmap/` aligned in the same meaningful batch when priorities/status move.
 
 ## Active blockers
 - None.

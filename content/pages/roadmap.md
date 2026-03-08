@@ -39,7 +39,7 @@ This is the public execution roadmap for snowcrab.dev.
 
 ### Track D — Validation + guardrails *(Continuous)*
 
-- [ ] Before/after artifacts for every meaningful UX batch
+- ~~[x] Before/after artifacts for every meaningful UX batch~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-validation-guardrail-changelog-receipt-enforcement/))
 - [ ] Keep `/pages/now`, `/pages/projects`, and `/pages/roadmap/` synchronized in same batch
 - [ ] Keep heartbeat queue aligned to active roadmap items (no placeholder drift)
 - ~~[x] Enforce `/pages/now/` freshness (<24h) with mandatory stale sync and dedicated enforcer cadence~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-now-freshness-enforcement-hardening/))

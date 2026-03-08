@@ -15,9 +15,3 @@ draft: true
 
 ## Fixed
 - 
-
-## Receipts
-- Affected pages:
-- Before: `/artifacts/<batch>/before-<surface>.jpg`
-- After: `/artifacts/<batch>/after-<surface>.jpg`
-- Optional refs: commit / issue / PR links

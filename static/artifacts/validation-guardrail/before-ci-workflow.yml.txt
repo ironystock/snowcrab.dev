@@ -27,8 +27,5 @@ jobs:
       - name: Performance budget guardrails
         run: node scripts/check-performance-budgets.mjs
 
-      - name: Changelog receipt guardrails
-        run: node scripts/validate-changelog-receipts.mjs
-
       # Link checking intentionally disabled for now.
-      # CI gate is Hugo build + performance + changelog receipt guardrails.
+      # CI gate is Hugo build + performance budget guardrails.

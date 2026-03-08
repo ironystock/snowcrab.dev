@@ -1368,12 +1368,30 @@ main.container {
   margin: 0 0 0.9rem;
 }
 
-.projects-dashboard-tabs > h2 {
+.projects-dashboard-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+.projects-dashboard-tabs > h2,
+.projects-dashboard-heading-row > h2 {
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+.projects-collapse-toggle {
+  white-space: nowrap;
 }
 
 .projects-dashboard-tabs .home-tabpanel > .card {
   margin: 0.7rem 0 0;
+}
+
+#projects-dashboard-body[hidden] {
+  display: none !important;
 }
 
 .projects-dashboard-tabs--full .home-tabpanel {

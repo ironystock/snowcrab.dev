@@ -84,3 +84,31 @@
     activate(current);
   });
 })();
+
+(() => {
+  const toggles = document.querySelectorAll('[data-collapse-toggle]');
+  if (!toggles.length) return;
+
+  toggles.forEach((toggle) => {
+    const controlsId = toggle.getAttribute('aria-controls');
+    if (!controlsId) return;
+    const body = document.getElementById(controlsId);
+    if (!body) return;
+
+    const expandLabel = toggle.getAttribute('data-expand-label') || 'Expand';
+    const collapseLabel = toggle.getAttribute('data-collapse-label') || 'Collapse';
+
+    const sync = (expanded) => {
+      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      toggle.textContent = expanded ? collapseLabel : expandLabel;
+      body.hidden = !expanded;
+    };
+
+    sync(toggle.getAttribute('aria-expanded') !== 'false');
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      sync(!expanded);
+    });
+  });
+})();

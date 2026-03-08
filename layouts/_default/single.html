@@ -27,25 +27,30 @@
     {{ $projectMetrics := dict "total" (len $integrations) "now" $nowCount "next" $nextCount "watch" $watchCount "blocked" $watchCount }}
 
     <section class="card projects-dashboard-tabs projects-dashboard-tabs--full" aria-labelledby="projects-dashboard-tabs-heading" data-home-tabs>
-      <h2 id="projects-dashboard-tabs-heading">Project dashboards</h2>
-      <div class="home-tablist" role="tablist" aria-label="Projects dashboard tabs">
-        <button class="chip is-active" id="projects-tab-health" type="button" role="tab" aria-selected="true" tabindex="0" aria-controls="projects-panel-health" data-target="projects-panel-health">Health</button>
-        <button class="chip" id="projects-tab-integrations" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-integrations" data-target="projects-panel-integrations">Integrations</button>
-        <button class="chip" id="projects-tab-contributors" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-contributors" data-target="projects-panel-contributors">Contributors</button>
-        <button class="chip" id="projects-tab-analytics" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-analytics" data-target="projects-panel-analytics">Analytics</button>
+      <div class="projects-dashboard-heading-row">
+        <h2 id="projects-dashboard-tabs-heading">Project dashboards</h2>
+        <button class="chip projects-collapse-toggle" type="button" aria-expanded="true" aria-controls="projects-dashboard-body" data-collapse-toggle data-expand-label="Expand dashboards" data-collapse-label="Collapse dashboards">Collapse dashboards</button>
       </div>
-      <section id="projects-panel-health" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-health">
-        {{ partial "projects-health-dashboard.html" (dict "ctx" . "metrics" $projectMetrics) }}
-      </section>
-      <section id="projects-panel-integrations" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-integrations" hidden>
-        {{ partial "integration-status-panel.html" . }}
-      </section>
-      <section id="projects-panel-contributors" class="home-tabpanel projects-panel-contributors" role="tabpanel" aria-labelledby="projects-tab-contributors" hidden>
-        {{ partial "homepage-contributor-spotlight-rail.html" . }}
-      </section>
-      <section id="projects-panel-analytics" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-analytics" hidden>
-        {{ partial "projects-analytics-panel.html" (dict "metrics" $projectMetrics) }}
-      </section>
+      <div id="projects-dashboard-body" data-collapsible-body>
+        <div class="home-tablist" role="tablist" aria-label="Projects dashboard tabs">
+          <button class="chip is-active" id="projects-tab-health" type="button" role="tab" aria-selected="true" tabindex="0" aria-controls="projects-panel-health" data-target="projects-panel-health">Health</button>
+          <button class="chip" id="projects-tab-integrations" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-integrations" data-target="projects-panel-integrations">Integrations</button>
+          <button class="chip" id="projects-tab-contributors" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-contributors" data-target="projects-panel-contributors">Contributors</button>
+          <button class="chip" id="projects-tab-analytics" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="projects-panel-analytics" data-target="projects-panel-analytics">Analytics</button>
+        </div>
+        <section id="projects-panel-health" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-health">
+          {{ partial "projects-health-dashboard.html" (dict "ctx" . "metrics" $projectMetrics) }}
+        </section>
+        <section id="projects-panel-integrations" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-integrations" hidden>
+          {{ partial "integration-status-panel.html" . }}
+        </section>
+        <section id="projects-panel-contributors" class="home-tabpanel projects-panel-contributors" role="tabpanel" aria-labelledby="projects-tab-contributors" hidden>
+          {{ partial "homepage-contributor-spotlight-rail.html" . }}
+        </section>
+        <section id="projects-panel-analytics" class="home-tabpanel" role="tabpanel" aria-labelledby="projects-tab-analytics" hidden>
+          {{ partial "projects-analytics-panel.html" (dict "metrics" $projectMetrics) }}
+        </section>
+      </div>
     </section>
   {{ end }}
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "now") }}

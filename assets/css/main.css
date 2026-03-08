@@ -1651,6 +1651,16 @@ article.prose li + li {
   margin-top: 0.46rem;
 }
 
+/* Keep dashboard/widget list rows aligned; prose list rhythm should not offset component grid items. */
+article.prose .projects-health-grid li + li,
+article.prose .projects-state-machine-track li + li,
+article.prose .integration-grid li + li,
+article.prose .automation-demos-grid li + li,
+article.prose .capability-explorer-grid li + li,
+article.prose .contributor-spotlight-list li + li {
+  margin-top: 0;
+}
+
 article.prose h2,
 article.prose h3 {
   margin-top: 1.72rem;

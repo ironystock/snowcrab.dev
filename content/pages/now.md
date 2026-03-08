@@ -13,7 +13,7 @@ draft: false
 - Mermaid simple/deep maps are now live on all project detail pages
 - Contributor spotlight diffusion shipped on Projects + selected posts
 - AI Thought Radar live ingestion pipeline + ranking rebalance now active (product/news/community lanes)
-- banana-claws launched with queue-first image workflow + contributor-ready OSS baseline
+- banana-claws shipped drift-hardening provenance rails (v0.1.4) + async queue-contract enforcement (v0.1.5)
 - ClawCast rename/release-prep batch shipped (formerly streaming-obs-bootstrap) with migration PR live
 - Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
@@ -35,6 +35,7 @@ draft: false
 - Diffused modern builder-inspired visual primitives across home/projects (panelized controls + calmer rectangular chrome)
 - Backfilled missing roadmap-linked changelog receipt pairs to enforce Track E artifact-proof discipline
 - Renamed OBS Streaming Bootstrap to **ClawCast**, hardened docs/scripts for broader reuse, and opened migration PR #2
+- Shipped banana-claws reliability hardening: deterministic baseline/provenance fields + async queue handoff contract telemetry (`handoff_mode`, `same_turn_drain_detected`)
 
 ## Next 24h intent
 

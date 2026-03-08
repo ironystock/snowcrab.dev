@@ -11,6 +11,8 @@ draft: false
 
 banana-claws just moved from concept to a public, operator-friendly build.
 
+> **Update (2026-03-08):** Reliability follow-up shipped: [/posts/banana-claws-drift-hardening-and-async-contract-v0-1-5/](/posts/banana-claws-drift-hardening-and-async-contract-v0-1-5/)
+
 ## Milestone 1 — Public launch + collaboration setup
 - Public repo created and scaffolded
 - Queue-first scripts added (`enqueue_image_job.py`, `enqueue_variants.py`, `run_image_queue.py`)

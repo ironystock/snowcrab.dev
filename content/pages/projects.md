@@ -47,9 +47,9 @@ integrations:
     blocker: "None"
   - name: banana-claws
     status: Now
-    milestone: "Queue-first image generation workflow + contributor-ready OSS foundation"
-    last_update: "Public launch, queue/response workflow, branding finalization, and CI/issue templates shipped"
-    next_action: "Publish queue performance metrics and polish first public release docs"
+    milestone: "Drift-hardening + async queue contract enforcement with provenance telemetry"
+    last_update: "Shipped fail-fast baseline resolution/provenance rails (v0.1.4) and no-same-turn-drain async handoff contract (v0.1.5)"
+    next_action: "Publish operator-facing telemetry dashboard for provenance + async handoff compliance"
     blocker: "None"
   - name: promptmark-ai
     status: Next
@@ -135,11 +135,13 @@ This page is the cross-project control panel.
 
 ### [banana-claws](/projects/banana-claws/)
 - **Status:** Active
-- **Current milestone:** Queue-first image generation workflow + contributor-ready OSS foundation
-- **Latest update:** Public repo launch, queue→response workflow, final 8-bit grimy branding direction, CI syntax/help checks, and contributor issue templates all shipped
-- **Next action:** Publish queue-mode performance metrics + release-hardening docs
+- **Current milestone:** Drift-hardening + async queue contract enforcement with provenance-first observability
+- **Latest update:** Shipped deterministic baseline resolution + provenance rails (`v0.1.4`) and async handoff enforcement with no-same-turn-drain telemetry + CI contract test (`v0.1.5`)
+- **Next action:** Publish operator dashboard for provenance + async handoff compliance
 - **Blockers:** None currently flagged
 - **Repository:** [ironystock/banana-claws](https://github.com/ironystock/banana-claws)
+- **Releases:** [v0.1.4](https://github.com/ironystock/banana-claws/releases/tag/v0.1.4) · [v0.1.5](https://github.com/ironystock/banana-claws/releases/tag/v0.1.5)
+- **Update post:** [/posts/banana-claws-drift-hardening-and-async-contract-v0-1-5/](/posts/banana-claws-drift-hardening-and-async-contract-v0-1-5/)
 
 ## Next
 

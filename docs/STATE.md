@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:26 MST
+- Last updated: 2026-03-07 18:28 MST
 
 ## Last shipped batch
-- Projects dashboard updated: contributor spotlight moved into a new third tab (`Contributors`) and full-width guardrails added so tabbed widget layouts remain responsive when surfaces are rearranged.
+- Fixed project-page Mermaid deep-view rendering: deferred Mermaid run to visible panels and wired architecture tab events so hidden diagrams render correctly when opened.
 
 ## Next queued action
 - Add implementation diff callouts to top 8–12 posts where receipts exist.

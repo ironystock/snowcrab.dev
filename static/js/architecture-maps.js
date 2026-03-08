@@ -18,9 +18,16 @@
         btn.setAttribute('aria-pressed', String(active));
       });
 
+      let activePanel = null;
       panels.forEach((panel) => {
-        panel.hidden = panel.getAttribute('data-arch-panel') !== selected;
+        const active = panel.getAttribute('data-arch-panel') === selected;
+        panel.hidden = !active;
+        if (active) activePanel = panel;
       });
+
+      if (activePanel) {
+        window.dispatchEvent(new CustomEvent('architecture:panel-shown', { detail: { panel: activePanel } }));
+      }
     };
 
     buttons.forEach((btn) => {

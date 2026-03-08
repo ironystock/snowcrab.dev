@@ -1544,6 +1544,18 @@ article.prose ol {
   max-width: var(--measure-body-wide);
 }
 
+/* Dashboard/feature widgets inside prose are layout components, not reading-measure lists. */
+article.prose .projects-health-grid,
+article.prose .integration-grid,
+article.prose .projects-state-machine-track,
+article.prose .projects-state-machine-rules,
+article.prose .automation-demos-grid,
+article.prose .capability-explorer-grid {
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+}
+
 article.prose li {
   line-height: 1.66;
 }

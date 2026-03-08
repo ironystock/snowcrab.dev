@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:52 MST
+- Last updated: 2026-03-07 18:02 MST
 
 ## Last shipped batch
-- Diff explorer diffusion shipped to `/pages/projects/` + top project detail pages (`/projects/snowcrab-dev/`, `/projects/claw-compressor-integration/`) with linked text/image receipts and artifacts.
+- Fixed projects dashboard responsiveness by removing prose reading-measure constraints from widget grids and adding guardrail full-width overrides for moved dashboard components.
 
 ## Next queued action
 - Mermaid simple/deep maps on project detail pages.

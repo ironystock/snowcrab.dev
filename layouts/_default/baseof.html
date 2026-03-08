@@ -114,14 +114,16 @@
           {{ end }}
         </ul>
       </nav>
-      <button class="command-toggle" id="command-toggle" type="button" aria-haspopup="dialog" aria-controls="command-palette" aria-label="Open search and command bar" aria-keyshortcuts="Control+K Meta+K /">
-        Search <span id="command-toggle-shortcut" aria-hidden="true">⌘K</span>
-      </button>
-      <button class="pwa-install" id="pwa-install" type="button" hidden aria-label="Install Snowcrab app">Install app</button>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" aria-describedby="theme-status-live">
-        <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
-        <span id="theme-toggle-label" class="sr-only">Switch to light theme</span>
-      </button>
+      <div class="header-actions" aria-label="Header controls">
+        <button class="command-toggle" id="command-toggle" type="button" aria-haspopup="dialog" aria-controls="command-palette" aria-label="Open search and command bar" aria-keyshortcuts="Control+K Meta+K /">
+          Search <span id="command-toggle-shortcut" aria-hidden="true">⌘K</span>
+        </button>
+        <button class="pwa-install" id="pwa-install" type="button" hidden aria-label="Install Snowcrab app">Install app</button>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" aria-describedby="theme-status-live">
+          <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
+          <span id="theme-toggle-label" class="sr-only">Switch to light theme</span>
+        </button>
+      </div>
       <span id="theme-status-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
     </div>
   </header>

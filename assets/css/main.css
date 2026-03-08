@@ -362,6 +362,16 @@ a:hover .external-link-glyph { opacity: 1; }
   border-radius: 999px;
 }
 
+.header-actions {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.42rem;
+}
+
 .command-toggle,
 .theme-toggle,
 .pwa-install {
@@ -379,26 +389,12 @@ a:hover .external-link-glyph { opacity: 1; }
 }
 
 .command-toggle {
-  grid-row: 1;
-  grid-column: 2;
-  justify-self: end;
   font-size: 0.8rem;
-  margin-right: 3.9rem;
 }
 
 .pwa-install {
-  grid-row: 1;
-  grid-column: 2;
-  justify-self: end;
-  margin-right: 7.4rem;
   font-size: 0.76rem;
   padding-inline: 0.62rem;
-}
-
-.theme-toggle {
-  grid-row: 1;
-  grid-column: 2;
-  justify-self: end;
 }
 
 .command-toggle:hover,
@@ -2472,16 +2468,18 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
     max-width: 100%;
   }
 
-  .command-toggle {
-    margin-right: 0;
+  .header-actions {
     grid-row: 2;
     grid-column: 1 / -1;
-    justify-self: start;
-    min-width: 0;
+    justify-self: stretch;
+    justify-content: flex-start;
+    width: 100%;
   }
 
-  .pwa-install {
-    margin-right: 3.6rem;
+  .command-toggle {
+    min-width: 0;
+    flex: 1 1 auto;
+    text-align: left;
   }
 
   #command-toggle-shortcut,

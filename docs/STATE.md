@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:16 MST
+- Last updated: 2026-03-07 17:24 MST
 
 ## Last shipped batch
-- Upgraded `/pages/automation-demos/` diff explorer with IDE-style code rendering, modal image compare/flip UX, and corrected duplicate image-pair dataset entries.
+- Fixed header functional overlap by introducing a responsive controls container (`.header-actions`) and removing margin-hack positioning between Search/Install/Theme controls.
 
 ## Next queued action
 - No meaningful batch currently queued (roadmap wave complete; awaiting next prioritized roadmap item).

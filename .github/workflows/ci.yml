@@ -22,7 +22,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --gc --minify
+        run: hugo --gc --minify --cleanDestinationDir --environment production
 
       - name: Performance budget guardrails
         run: node scripts/check-performance-budgets.mjs

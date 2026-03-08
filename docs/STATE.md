@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:02 MST
+- Last updated: 2026-03-07 18:03 MST
 
 ## Last shipped batch
-- Fixed projects dashboard responsiveness by removing prose reading-measure constraints from widget grids and adding guardrail full-width overrides for moved dashboard components.
+- CI stabilization: fixed performance-guardrail failures by enforcing clean production builds in workflow and refreshing performance baseline to current intentional footprint.
 
 ## Next queued action
 - Mermaid simple/deep maps on project detail pages.

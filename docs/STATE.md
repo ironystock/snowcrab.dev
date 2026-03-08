@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:42 MST
+- Last updated: 2026-03-07 19:08 MST
 
 ## Last shipped batch
-- Rewrote the flagship case-study page into a full editorial long-form narrative with expanded detail, executive/press framing depth, and stronger rhetorical cadence.
+- Updated cross-channel project update template with a copy/paste markdown artifact block and explicit agent can/can't boundaries; aligned template guidance to current Roadmap 2 workflow.
 
 ## Next queued action
-- Project detail pages: add Mermaid simple/deep maps.
+- Validation guardrail: ensure every meaningful UX batch includes linked before/after artifacts in changelog + page-level receipts where applicable.
 
 ## Active blockers
 - None.

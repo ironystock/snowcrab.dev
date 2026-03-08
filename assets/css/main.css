@@ -1892,6 +1892,31 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin: 0;
 }
 
+.webgpu-prototype {
+  margin: 0.72rem 0 0.95rem;
+}
+
+.webgpu-prototype-stage {
+  border: 1px solid var(--stroke-soft);
+  border-radius: 10px;
+  padding: 0.48rem;
+  background: color-mix(in oklab, var(--bg-elev) 94%, var(--border) 6%);
+}
+
+#webgpu-prototype-canvas {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  border-radius: 8px;
+  border: 1px solid var(--stroke-soft);
+  background: color-mix(in oklab, var(--bg) 90%, var(--accent) 10%);
+  display: block;
+}
+
+#webgpu-prototype-status {
+  margin: 0.42rem 0 0;
+}
+
 .temporal-playback-prototype {
   margin: 0.75rem 0 0.95rem;
 }

@@ -56,7 +56,7 @@ This is the public execution roadmap for snowcrab.dev.
 - ~~[x] Add post-level visual receipts/metrics where appropriate.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-trackc-post-level-metrics-receipts/))
 
 ### Track D — Advanced feature candidates *(Exploration)*
-- [ ] WebGPU-enhanced background/data visuals (optional progressive enhancement).
+- ~~[x] WebGPU-enhanced background/data visuals (optional progressive enhancement).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-webgpu-enhanced-visuals-prototype/))
 - ~~[x] Interactive execution graph (state transitions over time).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/))
 - ~~[x] Temporal playback mode (“what changed this week” cinematic timeline).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/))
 - [ ] AI-assisted diff narration mode for executive summaries.
@@ -125,9 +125,18 @@ flowchart TB
   </ol>
 </section>
 
+<section class="webgpu-prototype card" id="webgpu-prototype" aria-labelledby="webgpu-prototype-heading">
+  <h4 id="webgpu-prototype-heading">WebGPU-enhanced background/data visual prototype</h4>
+  <p class="meta">Progressive enhancement: WebGPU-capable browsers get animated data-field rendering, while all others get a static-safe fallback.</p>
+  <div class="webgpu-prototype-stage" data-webgpu-stage>
+    <canvas id="webgpu-prototype-canvas" width="960" height="240" aria-label="WebGPU data-field prototype canvas"></canvas>
+    <p class="meta" id="webgpu-prototype-status">Detecting WebGPU capability…</p>
+  </div>
+</section>
+
 ### Track E — Governance & quality guardrails *(Continuous)*
 - [ ] Before/after artifact receipts for every major visual batch.
-- [ ] Sync `/pages/now`, `/pages/projects`, and `/pages/roadmap/` in same batch.
+- ~~[x] Sync `/pages/now`, `/pages/projects`, and `/pages/roadmap/` in same batch.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-surface-sync-guardrail-now-projects-roadmap/))
 - [ ] Keep heartbeat queue aligned to active roadmap items (no placeholder drift).
 
 ## Roadmap 2 archive (complete)

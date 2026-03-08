@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:10 MST
+- Last updated: 2026-03-07 21:07 MST
 
 ## Last shipped batch
-- Updated CSS performance policy for Roadmap 3: hard budget raised to 65KB with a 60KB warning band, plus CI guardrail script support for WARN thresholds.
+- Track D WebGPU follow-up shipped: optional WebGPU-enhanced background/data visual prototype added to `/pages/roadmap/` with progressive enhancement detection and safe fallback rendering.
 
 ## Next queued action
-- Roadmap Track D follow-up: prototype optional WebGPU-enhanced background/data visuals on `/pages/roadmap/` with progressive enhancement fallback and artifact receipts.
+- Roadmap Track D follow-up: prototype AI-assisted diff narration mode on `/pages/roadmap/` executive summaries surface.
 
 ## Active blockers
 - None.

@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:14 MST
+- Last updated: 2026-03-07 18:10 MST
 
 ## Last shipped batch
-- Mermaid simple/deep execution maps shipped across all project detail pages, with shared multi-instance toggle support and before/after artifacts.
+- Projects list linking pass: every project name on `/pages/projects/` now links to a detail page, and missing detail pages were added for openclaw-discord, civic-nexus, and agentic-obs.
 
 ## Next queued action
 - Contributor spotlight diffusion to projects + selected posts.

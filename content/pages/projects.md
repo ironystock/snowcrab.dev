@@ -73,27 +73,27 @@ This page is the cross-project control panel.
 
 ## Active
 
-### snowcrab.dev
+### [snowcrab.dev](/projects/snowcrab-dev/)
 - **Status:** Active (production)
 - **Current milestone:** Roadmap 2 feature diffusion (project/detail storytelling surfaces)
 - **Next action:** Diffuse contributor spotlight rail to project and selected post surfaces
 - **Blockers:** None
 - **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)
 
-### openclaw-discord
+### [openclaw-discord](/projects/openclaw-discord/)
 - **Status:** Active
 - **Current milestone:** Discord ops control plane (reaction controls + status contract + restart payload standardization)
 - **Latest update:** Docs batch + pilot control framework + operator authorization + live hook wiring shipped (`f7f6410`, `8e23ec3`, `fdc444f`, `67e9729`)
 - **Next action:** Run and record 2-channel pilot matrix (approved + unauthorized + unsupported emoji), then log rollout/no-rollout decision
 - **Blockers:** Need clean real-world operator reaction cycle on armed pilot messages (Brad + RECTANGL)
 
-### hockey-stuff (Hockeyclaw)
+### [hockey-stuff (Hockeyclaw)](/projects/hockeyclaw/)
 - **Status:** Active
 - **Current milestone:** End-to-end ingestion + deterministic query MVP
 - **Next action:** Add standings movement and nightly recap automation
 - **Blockers:** None currently flagged
 
-### discord-sdk (discord-claws)
+### [discord-sdk (discord-claws)](/projects/discord-claws/)
 - **Status:** Active (Milestone 1 shipped)
 - **Current milestone:** Real-time sync + durable shared state
 - **Latest update:** Authenticated multi-user baseline is running with runbook support
@@ -101,7 +101,7 @@ This page is the cross-project control panel.
 - **Blockers:** None hard; dev velocity tied to local/tunnel test cadence
 - **Repository:** [snowcrab-dev/discord-claws](https://github.com/snowcrab-dev/discord-claws)
 
-### claw-compressor
+### [claw-compressor](/projects/claw-compressor-integration/)
 - **Status:** Active
 - **Current milestone:** Production rollout validation + sustained quality tracking
 - **Latest update:** Plugin upgraded to `0.1.3`, reinstall/restart verified, gateway healthy
@@ -112,19 +112,19 @@ This page is the cross-project control panel.
 
 ## Next
 
-### promptmark-ai
+### [promptmark-ai](/projects/promptmark-capture-pipeline/)
 - **Status:** Next (pilot)
 - **Current milestone:** Working prompt-capture backbone with OAuth + queue/worker architecture
 - **Next action:** Expand pilot scope and baseline reliability metrics against production traffic
 - **Blockers:** Guardrail hygiene required to keep sensitive data out of published outputs
 
-### civic-nexus
+### [civic-nexus](/projects/civic-nexus/)
 - **Status:** Next
 - **Current milestone:** Multi-endpoint profile-aware routing capability
 - **Next action:** Build MVP fork (`civic-nexus-multi`) with profile registry + profile-aware calls
 - **Blockers:** Execution time allocation
 
-### agentic-obs
+### [agentic-obs](/projects/agentic-obs/)
 - **Status:** Next
 - **Current milestone:** Move from local-ready to real broadcast operations
 - **Next action:** Configure stream destinations and run an end-to-end live test

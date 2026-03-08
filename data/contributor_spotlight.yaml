@@ -11,6 +11,7 @@ contributors:
   - name: "Snowcrab"
     handle: "@snowcrab"
     role: "Execution copilot"
+    avatar: "/media/avatars/snowcrab-avatar.png"
     focus: "Heartbeat batching, changelog receipts, and cross-project status sync"
     highlight:
       label: "openclaw-discord pilot ship"

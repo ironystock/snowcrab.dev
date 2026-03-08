@@ -2,32 +2,83 @@
 {{ $metrics := .metrics }}
 {{ $integrations := $ctx.Params.integrations | default (slice) }}
 {{ if gt (len $integrations) 0 }}
-{{ $nowCount := index $metrics "now" }}
-{{ $nextCount := index $metrics "next" }}
-{{ $watchCount := index $metrics "watch" }}
+{{ $totalCount := len $integrations }}
+{{ $nowItems := where $integrations "status" "Now" }}
+{{ $nextItems := where $integrations "status" "Next" }}
+{{ $watchItems := where $integrations "status" "Watch" }}
+{{ $nowCount := len $nowItems }}
+{{ $nextCount := len $nextItems }}
+{{ $watchCount := len $watchItems }}
+{{ $blockedCount := 0 }}
+{{ $nowBlockedCount := 0 }}
+{{ $nextBlockedCount := 0 }}
+{{ $watchBlockedCount := 0 }}
+{{ range $integrations }}
+  {{ $blocker := lower (trim (.blocker | default "") " ") }}
+  {{ $hasBlocker := and (ne $blocker "") (ne $blocker "none") (ne $blocker "none.") }}
+  {{ if $hasBlocker }}
+    {{ $blockedCount = add $blockedCount 1 }}
+    {{ if eq .status "Now" }}{{ $nowBlockedCount = add $nowBlockedCount 1 }}{{ end }}
+    {{ if eq .status "Next" }}{{ $nextBlockedCount = add $nextBlockedCount 1 }}{{ end }}
+    {{ if eq .status "Watch" }}{{ $watchBlockedCount = add $watchBlockedCount 1 }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ $laneFreshnessHours := div (sub now.Unix $ctx.Lastmod.Unix) 3600 }}
+{{ $capacityPct := cond (gt $totalCount 0) (mul (div (float $nowCount) (float $totalCount)) 100) 0 }}
+{{ $blockerPct := cond (gt $totalCount 0) (mul (div (float $blockedCount) (float $totalCount)) 100) 0 }}
+{{ $confidenceLabel := "Stable" }}
+{{ if ge $blockedCount 3 }}{{ $confidenceLabel = "Caution" }}{{ end }}
+{{ if ge $blockedCount 5 }}{{ $confidenceLabel = "At risk" }}{{ end }}
 <section class="projects-health card" aria-labelledby="projects-health-title">
   <h2 id="projects-health-title">Project health dashboard</h2>
-  <p class="projects-health-intro">Current priority lanes and immediate execution focus.</p>
+  <p class="projects-health-intro">Lane KPI ownership: capacity, blocker ratio, freshness SLA, and confidence.</p>
+  <p class="projects-health-why"><strong>Why this matters:</strong> answers <em>How healthy are lanes now?</em></p>
+
+  <ul class="projects-health-kpi-grid" aria-label="Lane KPI summary">
+    <li class="projects-health-kpi-card">
+      <p class="projects-health-kicker">Capacity</p>
+      <p class="projects-health-kpi-value">{{ printf "%.0f" $capacityPct }}%</p>
+      <p class="projects-health-kpi-copy">{{ $nowCount }} of {{ $totalCount }} tracks are in active execution.</p>
+    </li>
+    <li class="projects-health-kpi-card">
+      <p class="projects-health-kicker">Blocker ratio</p>
+      <p class="projects-health-kpi-value">{{ printf "%.0f" $blockerPct }}%</p>
+      <p class="projects-health-kpi-copy">{{ $blockedCount }} of {{ $totalCount }} tracks currently report blockers.</p>
+    </li>
+    <li class="projects-health-kpi-card">
+      <p class="projects-health-kicker">Freshness SLA</p>
+      <p class="projects-health-kpi-value">{{ if lt $laneFreshnessHours 24 }}On target{{ else }}Aging{{ end }}</p>
+      <p class="projects-health-kpi-copy">Projects surface updated {{ $laneFreshnessHours }}h ago (target: &lt;24h).</p>
+    </li>
+    <li class="projects-health-kpi-card">
+      <p class="projects-health-kicker">Confidence</p>
+      <p class="projects-health-kpi-value">{{ $confidenceLabel }}</p>
+      <p class="projects-health-kpi-copy">Derived from blocker pressure and lane balance.</p>
+    </li>
+  </ul>
+
   <ul class="projects-health-grid" aria-label="Project priority lanes">
     <li class="projects-health-item projects-health-item--now">
       <p class="projects-health-kicker">Primary lane</p>
       <h3 class="projects-health-item-title">Now <span class="status-pill status-pill--now">Now</span></h3>
-      <p class="projects-health-copy">{{ $nowCount }} active execution track{{ if ne $nowCount 1 }}s{{ end }}.</p>
+      <p class="projects-health-copy">{{ $nowCount }} active execution track{{ if ne $nowCount 1 }}s{{ end }} · {{ $nowBlockedCount }} blocked.</p>
     </li>
     <li class="projects-health-item projects-health-item--next">
       <p class="projects-health-kicker">Queued lane</p>
       <h3 class="projects-health-item-title">Next <span class="status-pill status-pill--next">Next</span></h3>
-      <p class="projects-health-copy">{{ $nextCount }} queued follow-up{{ if ne $nextCount 1 }}s{{ end }}.</p>
+      <p class="projects-health-copy">{{ $nextCount }} queued follow-up{{ if ne $nextCount 1 }}s{{ end }} · {{ $nextBlockedCount }} blocked.</p>
     </li>
     <li class="projects-health-item projects-health-item--watch">
       <p class="projects-health-kicker">Risk lane</p>
       <h3 class="projects-health-item-title">Watch <span class="status-pill status-pill--watch">Watch</span></h3>
-      <p class="projects-health-copy">{{ $watchCount }} dependency-risk stream{{ if ne $watchCount 1 }}s{{ end }}.</p>
+      <p class="projects-health-copy">{{ $watchCount }} dependency-risk stream{{ if ne $watchCount 1 }}s{{ end }} · {{ $watchBlockedCount }} blocked.</p>
     </li>
   </ul>
+
   <section class="projects-state-machine" aria-labelledby="projects-state-machine-title">
     <h3 id="projects-state-machine-title">Project flow state machine</h3>
-    <p class="projects-state-machine-intro">Execution lanes visualized as a flow: projects can promote from Next → Now, or move to Watch when external risk blocks shipping.</p>
+    <p class="projects-state-machine-intro">Transition intelligence: promotion latency, churn/reopen pressure, and stuck-state alerts.</p>
+    <p class="projects-state-machine-why"><strong>Why this matters:</strong> answers <em>How work is moving between states?</em></p>
     <ol class="projects-state-machine-track" aria-label="Project flow states">
       <li class="projects-state-node projects-state-node--next">
         <p class="projects-state-node-label">Next</p>
@@ -44,6 +95,11 @@
         <p class="projects-state-node-count">{{ $watchCount }} blocked/risky</p>
       </li>
     </ol>
+    <ul class="projects-transition-insights" aria-label="Transition intelligence">
+      <li><strong>Promotion latency proxy:</strong> {{ $nextCount }} queued candidates awaiting promotion into Now.</li>
+      <li><strong>Churn/reopen proxy:</strong> {{ $watchCount }} items in Watch indicate re-entry pressure.</li>
+      <li><strong>Stuck-state alert:</strong> {{ if gt $blockedCount 0 }}{{ $blockedCount }} blocked item{{ if ne $blockedCount 1 }}s{{ end }} need unblock plans.{{ else }}No active stuck-state alerts.{{ end }}</li>
+    </ul>
     <ul class="projects-state-machine-rules" aria-label="State transition rules">
       <li><strong>Promote:</strong> Move <em>Next → Now</em> when scope is defined and execution lane opens.</li>
       <li><strong>Stabilize:</strong> Keep <em>Now</em> items shipping in small meaningful batches.</li>

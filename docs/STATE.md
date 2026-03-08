@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 22:30 MST
+- Last updated: 2026-03-07 22:49 MST
 
 ## Last shipped batch
-- Added Roadmap 4 Track B keyboard jump chips on `/pages/roadmap/` for Track A–E + Roadmap 4 anchor navigation, with changelog receipt.
+- Completed Roadmap 4 Track B de-redundancy pass: Project health dashboard now owns lane KPIs (capacity/blocker ratio/freshness SLA/confidence) while Project flow state machine owns transition intelligence (promotion latency/churn proxy/stuck-state alerts), including non-overlap microcopy and changelog receipt.
 
 ## Next queued action
-- De-redundancy pass: split Project health dashboard KPI ownership vs flow state-machine transition intelligence.
+- Add interaction contract for state machine (click state node to filter project cards + show transition receipts) so it becomes an operational control.
 
 ## Active blockers
 - None.

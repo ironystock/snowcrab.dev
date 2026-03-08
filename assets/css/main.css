@@ -2230,9 +2230,45 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 }
 
 .projects-health-intro {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.45rem;
   color: var(--meta-high-contrast);
   font-size: 0.89rem;
+}
+
+.projects-health-why,
+.projects-state-machine-why {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.projects-health-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.58rem;
+  margin: 0 0 0.72rem;
+  padding: 0;
+  list-style: none;
+}
+
+.projects-health-kpi-card {
+  border: 1px solid var(--stroke-soft);
+  border-radius: 10px;
+  padding: 0.62rem;
+  background: color-mix(in oklab, var(--bg-elev) 95%, var(--border) 5%);
+}
+
+.projects-health-kpi-value {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.projects-health-kpi-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .projects-health-grid {
@@ -2359,8 +2395,20 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   font-size: 1rem;
 }
 
+.projects-transition-insights {
+  margin: 0.58rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.28rem;
+}
+
+.projects-transition-insights li {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
 .projects-state-machine-rules {
-  margin: 0.62rem 0 0;
+  margin: 0.56rem 0 0;
   padding-left: 1rem;
   display: grid;
   gap: 0.34rem;

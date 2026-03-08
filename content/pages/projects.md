@@ -23,9 +23,9 @@ integrations:
     blocker: "Need real-world approved-user reaction cycle on armed pilot messages"
   - name: hockey-stuff (Hockeyclaw)
     status: Now
-    milestone: "Deterministic NHL data + recap automation"
-    last_update: "MVP and execution cadence established"
-    next_action: "Ship standings movement + nightly recap automation"
+    milestone: "Visual ingress sprint S1–S5 complete + live bridge demo route"
+    last_update: "Shipped logo intake/resolver + score-clock/rink-shell modules + `/bridge/demo/live-card` visual QA route"
+    next_action: "Run visual QA loop and harden for playoff traffic"
     blocker: "None"
   - name: discord-sdk (discord-claws)
     status: Now
@@ -104,9 +104,11 @@ This page is the cross-project control panel.
 
 ### [hockey-stuff (Hockeyclaw)](/projects/hockeyclaw/)
 - **Status:** Active
-- **Current milestone:** End-to-end ingestion + deterministic query MVP
-- **Next action:** Add standings movement and nightly recap automation
+- **Current milestone:** Visual ingress sprint S1–S5 complete with `/bridge/demo/live-card` QA route
+- **Latest update:** Added fallback/remote logo intake, score-clock + rink-shell model wiring, and composited live bridge demo surface
+- **Next action:** Run pre-playoff visual QA loop and harden demo-to-production path
 - **Blockers:** None currently flagged
+- **Update post:** [/posts/hockeyclaw-visual-ingress-sprint-s1-s5-shipped/](/posts/hockeyclaw-visual-ingress-sprint-s1-s5-shipped/)
 
 ### [discord-sdk (discord-claws)](/projects/discord-claws/)
 - **Status:** Active (Milestone 1 shipped)

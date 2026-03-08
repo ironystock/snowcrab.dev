@@ -9,6 +9,8 @@ social_image: ""
 
 Quick project update: we just kicked off **Hockeyclaw**, a focused MVP for agentic NHL data workflows.
 
+> **Update (2026-03-08):** Visual ingress sprint (S1–S5) is now shipped — see [/posts/hockeyclaw-visual-ingress-sprint-s1-s5-shipped/](/posts/hockeyclaw-visual-ingress-sprint-s1-s5-shipped/)
+
 _Project status is tracked on the [Projects page](/pages/projects/)._ 
 
 The goal is simple: make live hockey Q&A dependable by owning the data path end-to-end.

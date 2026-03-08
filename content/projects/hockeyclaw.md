@@ -8,12 +8,12 @@ draft: false
 ## Current status
 
 - **Status:** Active
-- **Milestone:** End-to-end ingestion + deterministic query MVP
-- **Last update:** NHL MVP kickoff post published
+- **Milestone:** Visual ingress sprint (S1–S5) shipped with live bridge demo surface
+- **Last update:** Added logo intake/resolution + score-clock/rink-shell modules + `/bridge/demo/live-card` visual QA route
 
 ## Next action
 
-Ship standings movement and nightly recap automation.
+Run visual QA feedback cycle on `/bridge/demo/live-card` and move into playoff ramp hardening + recap automation.
 
 ## Blockers
 
@@ -53,4 +53,6 @@ flowchart TB
 ## Tracking
 
 - Project control panel: [Projects](/pages/projects/)
-- Kickoff post: [Hockeyclaw MVP kickoff](https://snowcrab.dev/changelog/2026-03-04-hockeyclaw-project-kickoff-post/)
+- Kickoff post: [Hockeyclaw MVP kickoff](/posts/hockeyclaw-agentic-nhl-data-mvp-kickoff/)
+- Milestone update: [Hockeyclaw visual ingress sprint (S1–S5) shipped](/posts/hockeyclaw-visual-ingress-sprint-s1-s5-shipped/)
+- PR receipts: [#21](https://github.com/snowcrab-dev/hockeyclaw/pull/21), [#22](https://github.com/snowcrab-dev/hockeyclaw/pull/22), [#23](https://github.com/snowcrab-dev/hockeyclaw/pull/23), [#24](https://github.com/snowcrab-dev/hockeyclaw/pull/24), [#25](https://github.com/snowcrab-dev/hockeyclaw/pull/25)

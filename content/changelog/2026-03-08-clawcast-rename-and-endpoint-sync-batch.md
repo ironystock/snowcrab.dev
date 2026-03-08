@@ -34,6 +34,7 @@ category: "ops"
 - `/pages/capabilities/`
 - `/posts/claw-compressor-rollout-v0-1-1-quality-safety-update/`
 - `/projects/claw-compressor-integration/`
+- `/projects/banana-claws/`
 - `/notes/field-note-collab-sprint-roadmap-sync-and-freshness-guardrails/`
 
 ## Receipts
@@ -41,5 +42,7 @@ category: "ops"
 - After: `/pages/projects/`
 - Before: `/posts/streaming-obs-bootstrap/`
 - After: `/posts/clawcast-release-prep-renamed-hardened-ready/`
+- Before: `/projects/banana-claws/`
+- After: `/projects/banana-claws/`
 - Before: `/notes/field-note-collab-sprint-roadmap-sync-and-freshness-guardrails/`
 - After: `/notes/field-note-collab-sprint-roadmap-sync-and-freshness-guardrails/`

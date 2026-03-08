@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:43 MST
+- Last updated: 2026-03-07 21:52 MST
 
 ## Last shipped batch
-- Applied selected high-taste Snowcrab-like hero image to the flagship case-study page and enabled hero rendering for any page with `hero_image` frontmatter.
+- Defined Roadmap 4 candidate wave on `/pages/roadmap/` and queued its first open Track A item as the execution source of truth.
 
 ## Next queued action
-- Define Roadmap 4 candidate wave and queue first open item.
+- Implement Roadmap 4 Track A scorecard strip at top of roadmap (active wave, open items, last ship time, blocker count) with links to `/pages/now/` and latest changelog receipt.
 
 ## Active blockers
 - None.

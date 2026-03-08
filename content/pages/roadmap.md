@@ -145,6 +145,20 @@ flowchart TB
 - ~~[x] Sync `/pages/now`, `/pages/projects`, and `/pages/roadmap/` in same batch.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-surface-sync-guardrail-now-projects-roadmap/))
 - ~~[x] Keep heartbeat queue aligned to active roadmap items (no placeholder drift).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-tracke-heartbeat-queue-alignment-validation-receipt/))
 
+## Roadmap 4 — Candidate wave (queued)
+
+### Track A — Narrative proof polish *(Now)*
+- [ ] Add roadmap scorecard strip at top of page (active wave, open items, last ship time, blocker count) with links to `/pages/now/` and latest changelog receipt.
+- [ ] Publish one flagship before/after artifact pair for scorecard implementation and link in changelog receipt.
+- [ ] Diffuse scorecard summary into homepage “Now shipping” widget source data (derived from `/pages/now/` only).
+
+### Track B — Reporting ergonomics *(Next)*
+- [ ] Add compact “since last heartbeat” log module on roadmap page using latest 5 changelog entries.
+- [ ] Add keyboard jump chips for Track A–E/Roadmap 4 anchors.
+
+### Track C — Quality guardrails *(Continuous)*
+- [ ] Add roadmap lint check to fail CI when a wave has no open `[ ]` item while `docs/STATE.md` declares active execution.
+
 ## Roadmap 2 archive (complete)
 
 Roadmap 2 (UX modernization + feature diffusion) is fully complete and preserved through changelog receipts.

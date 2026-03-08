@@ -7,7 +7,7 @@ draft: false
 
 ## Active right now (top 5)
 
-- Execute **Roadmap 3** visual language overhaul + modern builder diffusion wave
+- Execute **Roadmap 4 (candidate)** narrative proof + reporting ergonomics wave
 - Modern builder diffusion pass shipped on homepage + Projects surfaces (new panel/stroke language)
 - Diff explorer diffusion into Projects/detail surfaces
 - Mermaid simple/deep maps are now live on all project detail pages
@@ -36,7 +36,7 @@ draft: false
 
 ## Next 24h intent
 
-- Prototype Track D AI-assisted diff narration mode on roadmap executive-summary surfaces
+- Implement Roadmap 4 Track A roadmap scorecard strip (wave/open items/last ship/blocker count) with direct links to `/pages/now/` and latest changelog receipt
 - Continue enforcing artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces where applicable)
 - Lock in guardrail hygiene: queue/roadmap alignment now receipted and CI-enforced; prepare next roadmap wave definition
 - Keep roadmap/now/projects sync strict in same-batch updates

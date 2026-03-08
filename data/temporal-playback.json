@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-03-07",
+    "title": "Track D interactive execution graph shipped",
+    "summary": "Introduced a switchable flow/timeline execution graph on the roadmap page to visualize queue state transitions.",
+    "receipt": "/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/"
+  },
+  {
+    "date": "2026-03-07",
+    "title": "Roadmap 3 chart storytelling pass",
+    "summary": "Added project trend and changelog analytics visuals to strengthen weekly execution visibility.",
+    "receipt": "/changelog/2026-03-07-roadmap3-charts-graph-placement-pass/"
+  },
+  {
+    "date": "2026-03-07",
+    "title": "Promptmark pilot stabilization sync",
+    "summary": "Merged cross-channel pilot updates into project detail, changelog, and recap artifacts.",
+    "receipt": "/changelog/2026-03-07-promptmark-pilot-stabilization-harvest-sync/"
+  },
+  {
+    "date": "2026-03-07",
+    "title": "Queue-state drift guardrail hardening",
+    "summary": "Enforced CI checks for queue-state alignment between now/projects/roadmap and docs state.",
+    "receipt": "/changelog/2026-03-07-surface-sync-guardrail-now-projects-roadmap/"
+  },
+  {
+    "date": "2026-03-07",
+    "title": "Temporal playback mode prototype",
+    "summary": "Added cinematic weekly replay controls (play, pause, restart, speed) directly on roadmap Track D.",
+    "receipt": "/changelog/2026-03-07-trackd-temporal-playback-mode-prototype/"
+  }
+]

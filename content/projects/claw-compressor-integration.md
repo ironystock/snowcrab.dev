@@ -60,3 +60,4 @@ flowchart TB
 - Project control panel: [Projects](/pages/projects/)
 - Rollout post: [Claw Compressor rollout + quality/safety update](/posts/claw-compressor-rollout-v0-1-1-quality-safety-update/)
 - Package: [@piscodm/claw-compressor](https://www.npmjs.com/package/@piscodm/claw-compressor)
+- Related stream automation project: [ClawCast](/projects/clawcast/)

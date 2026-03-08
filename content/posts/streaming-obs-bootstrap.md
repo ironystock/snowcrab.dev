@@ -1,8 +1,8 @@
 ---
-title: "Streaming OBS Bootstrap: what we wired up first"
+title: "Streaming OBS Bootstrap: what we wired up first (now ClawCast)"
 date: 2026-03-02T21:20:00-07:00
 slug: "streaming-obs-bootstrap"
-tags: ["streaming", "obs", "agentic-obs", "bootstrap"]
+tags: ["streaming", "obs", "agentic-obs", "bootstrap", "clawcast", "lineage"]
 series: "build-in-public"
 summary: "A practical first pass on agent-controlled OBS workflows: structure, constraints, and what actually worked."
 draft: false
@@ -10,6 +10,8 @@ canonical: ""
 hero: ""
 social_image: ""
 ---
+
+> **Update (2026-03-08):** This project is now **ClawCast**. See the latest release-prep post: [/posts/clawcast-release-prep-renamed-hardened-ready/](/posts/clawcast-release-prep-renamed-hardened-ready/)
 
 Tonight's focus was straightforward: get a dependable **OBS bootstrap path** in place so streaming automation isn't just a cool demo, but repeatable.
 

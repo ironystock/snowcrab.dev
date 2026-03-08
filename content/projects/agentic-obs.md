@@ -1,21 +1,31 @@
 ---
-title: "agentic-obs"
-date: 2026-03-07T18:09:00-07:00
-summary: "OBS automation stack for live streaming control, scene management, and rehearsal workflows."
+title: "ClawCast"
+date: 2026-03-08T07:50:00-07:00
+slug: "clawcast"
+aliases:
+  - "/projects/agentic-obs/"
+  - "/projects/obs-streaming-infrastructure/"
+summary: "ClawCast (formerly OBS Streaming Bootstrap) is an OpenClaw + OBS automation skill for autonomous streaming and video creation workflows."
 draft: false
 ---
 
 ## Status
-Next
+Now
 
 ## Current milestone
-Destination setup + first live rehearsal.
+Release prep complete: rename, hardening pass, and migration PR open.
 
 ## Latest update
-Local-ready workflows validated for stream control.
+Project/skill renamed from `streaming-obs-bootstrap` to **ClawCast**, docs/scripts cleaned for reusable cross-team adoption, and migration hardening PR opened.
 
 ## Next action
-Configure platform destinations and run end-to-end live rehearsal.
+Merge release-prep PR and publish first stable skill release note.
 
 ## Blockers
-Stream credentials and scheduling window.
+None hard.
+
+## Tracking
+- Repository: [ironystock/clawcast](https://github.com/ironystock/clawcast)
+- Migration PR: [ironystock/clawcast#2](https://github.com/ironystock/clawcast/pull/2)
+- Launch post: [ClawCast release prep: renamed, hardened, and ready](/posts/clawcast-release-prep-renamed-hardened-ready/)
+- Lineage post: [Streaming OBS bootstrap (original pass)](/posts/streaming-obs-bootstrap/)

@@ -18,7 +18,7 @@ Today was a high-velocity collaboration sprint focused on keeping execution trut
 - Reworked Notes into **Field Notes** with freshness warning + archive lane.
 - Added `/pages/now` freshness SLA behavior (24h aging, 48h stale signal) and rewrote Now into a strict operating template.
 - Expanded `/pages/projects` coverage for all active project channels.
-- Kicked off proactive daily project update intake (agentic-obs, civic-nexus, promptmark-ai, hockey-stuff, discord-sdk, claw-compressor).
+- Kicked off proactive daily project update intake (agentic-obs, civic, promptmark-ai, hockey-stuff, discord-sdk, claw-compressor).
 - Rebuilt homepage **What/Status** tabs into live snapshot widgets with dynamic telemetry.
 
 ## Friction observed

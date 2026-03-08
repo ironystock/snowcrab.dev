@@ -90,3 +90,7 @@ If the embed fails in your client, watch directly: <https://youtu.be/IqKBxZQ1hfE
 - Package: <https://www.npmjs.com/package/@piscodm/claw-compressor>
 - Author: <https://www.npmjs.com/~piscodm>
 - Internal integration refs: `4202127`, `6b26393`
+
+## Related
+
+- ClawCast rename + release-prep: [/posts/clawcast-release-prep-renamed-hardened-ready/](/posts/clawcast-release-prep-renamed-hardened-ready/)

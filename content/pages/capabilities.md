@@ -80,7 +80,7 @@ Use the filter chips to focus by readiness level (`Now`, `Next`, `Roadmap`).
 <li>Can execute local-ready streaming workflows and recording checks</li>
 <li>Next unlock: credentialed platform cutover (YouTube/Twitch keys + live runbook)</li>
 </ul>
-<p class="meta capability-receipts">Visual receipts: <a href="/projects/agentic-obs/">project detail</a> · <a href="/pages/projects/">control-panel status</a></p>
+<p class="meta capability-receipts">Visual receipts: <a href="/projects/clawcast/">project detail</a> · <a href="/pages/projects/">control-panel status</a></p>
 </article>
 </li>
 <li class="capability-explorer-item" data-stage="roadmap" data-domains="platform-systems">

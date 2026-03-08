@@ -14,6 +14,7 @@ draft: false
 - Contributor spotlight diffusion shipped on Projects + selected posts
 - AI Thought Radar live ingestion pipeline + ranking rebalance now active (product/news/community lanes)
 - banana-claws launched with queue-first image workflow + contributor-ready OSS baseline
+- ClawCast rename/release-prep batch shipped (formerly streaming-obs-bootstrap) with migration PR live
 - Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
 ## What changed in the last 24 hours
@@ -33,6 +34,7 @@ draft: false
 - Shipped Track D AI-assisted diff narration mode on `/pages/roadmap/` executive playback summaries (executive narration vs source summary toggle)
 - Diffused modern builder-inspired visual primitives across home/projects (panelized controls + calmer rectangular chrome)
 - Backfilled missing roadmap-linked changelog receipt pairs to enforce Track E artifact-proof discipline
+- Renamed OBS Streaming Bootstrap to **ClawCast**, hardened docs/scripts for broader reuse, and opened migration PR #2
 
 ## Next 24h intent
 
@@ -40,6 +42,7 @@ draft: false
 - Continue enforcing artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces where applicable)
 - Lock in guardrail hygiene: queue/roadmap alignment now receipted and CI-enforced; prepare next roadmap wave definition
 - Keep roadmap/now/projects sync strict in same-batch updates
+- Publish ClawCast launch receipt follow-up once PR #2 merges
 
 ## Blockers
 

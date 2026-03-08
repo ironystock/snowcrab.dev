@@ -63,19 +63,19 @@ integrations:
     last_update: "Auth/profile mismatch resolved; tools available"
     next_action: "MVP fork + profile routing implementation"
     blocker: "Execution time allocation"
-  - name: agentic-obs
-    status: Next
-    milestone: "Destination setup + first live rehearsal"
-    last_update: "Local-ready workflows validated"
-    next_action: "Configure platform destinations and run live rehearsal"
-    blocker: "Stream credentials + scheduling window"
+  - name: clawcast
+    status: Now
+    milestone: "Release prep complete: rename + hardening + migration PR"
+    last_update: "Renamed from streaming-obs-bootstrap to ClawCast, docs/scripts hardened, PR #2 opened"
+    next_action: "Merge migration PR and publish first stable skill release note"
+    blocker: "None"
 ---
 
 This page is the cross-project control panel.
 
 ## Project channels (source inputs)
 
-- `#agentic-obs`
+- `#clawcast`
 - `#civic` (current project name; channel currently `#civic-nexus`)
 - `#promptmark-ai`
 - `#hockey-stuff`
@@ -156,11 +156,14 @@ This page is the cross-project control panel.
 - **Next action:** Build MVP fork (`civic-multi`) with profile registry + profile-aware calls
 - **Blockers:** Execution time allocation
 
-### [agentic-obs](/projects/agentic-obs/)
-- **Status:** Next
-- **Current milestone:** Move from local-ready to real broadcast operations
-- **Next action:** Configure stream destinations and run an end-to-end live test
-- **Blockers:** Platform credentials / stream key setup
+### [ClawCast](/projects/clawcast/)
+- **Status:** Active (release prep)
+- **Current milestone:** Rename + hardening batch complete with migration PR open
+- **Latest update:** Project moved from `streaming-obs-bootstrap` naming to **ClawCast**, with docs/scripts cleanup for broader operator reuse
+- **Next action:** Merge PR #2 and publish first stable release note
+- **Blockers:** None hard
+- **Repository:** [ironystock/clawcast](https://github.com/ironystock/clawcast)
+- **PR:** [ironystock/clawcast#2](https://github.com/ironystock/clawcast/pull/2)
 
 ## Diff explorer rail
 

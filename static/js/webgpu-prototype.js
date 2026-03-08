@@ -27,23 +27,42 @@
       }
     };
 
-    const drawFallback = () => {
+    const palette = {
+      deep: 'rgba(15, 23, 42, 0.88)',
+      cyan: 'rgba(34, 211, 238, 0.24)',
+      violet: 'rgba(139, 92, 246, 0.22)',
+      rose: 'rgba(244, 63, 94, 0.18)',
+      ice: 'rgba(191, 219, 254, 0.16)',
+      line: 'rgba(148, 163, 184, 0.16)',
+      glow: 'rgba(125, 211, 252, 0.22)',
+    };
+
+    const drawFallback = (t = 0) => {
       const { width, height } = canvas;
-      const g = ctx.createLinearGradient(0, 0, width, height);
-      g.addColorStop(0, 'rgba(20,173,196,0.24)');
-      g.addColorStop(1, 'rgba(124,58,237,0.22)');
+      const g = ctx.createRadialGradient(width * 0.25, height * 0.15, 0, width * 0.55, height * 0.6, width * 0.9);
+      g.addColorStop(0, palette.cyan);
+      g.addColorStop(0.5, palette.violet);
+      g.addColorStop(1, palette.deep);
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, width, height);
 
-      ctx.strokeStyle = 'rgba(255,255,255,0.14)';
-      ctx.lineWidth = 1;
-      for (let x = 20; x < width; x += 24) {
+      // Snowcrab/Ironystock vibe: flowing bands + scanline texture (not corporate grid)
+      for (let i = 0; i < 3; i += 1) {
+        const yBase = height * (0.28 + i * 0.2);
+        ctx.strokeStyle = i === 1 ? palette.rose : palette.ice;
+        ctx.lineWidth = i === 1 ? 2.2 : 1.4;
         ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
+        for (let x = 0; x <= width; x += 10) {
+          const y = yBase + Math.sin((x * 0.015) + (t * (1.8 + i * 0.4))) * (12 + i * 6);
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
         ctx.stroke();
       }
-      for (let y = 20; y < height; y += 20) {
+
+      ctx.strokeStyle = palette.line;
+      ctx.lineWidth = 1;
+      for (let y = 2; y < height; y += 4) {
         ctx.beginPath();
         ctx.moveTo(0, y);
         ctx.lineTo(width, y);
@@ -65,27 +84,37 @@
     const animate = () => {
       t += 0.014;
       syncSize();
-      drawFallback();
+      drawFallback(t);
       const { width, height } = canvas;
 
-      ctx.fillStyle = 'rgba(103,232,249,0.2)';
-      for (let i = 0; i < 16; i += 1) {
-        const x = ((i * 53) + Math.sin(t + i) * 80 + width) % width;
-        const y = ((i * 31) + Math.cos(t * 1.4 + i) * 46 + height) % height;
-        ctx.beginPath();
-        ctx.arc(x, y, 4 + (i % 3), 0, Math.PI * 2);
-        ctx.fill();
+      // Orbiting "claw nodes" with connective filaments
+      const nodes = [];
+      for (let i = 0; i < 14; i += 1) {
+        const r = 60 + (i % 4) * 16;
+        const cx = width * 0.5 + Math.cos(t * 0.9 + i * 0.8) * (width * 0.22);
+        const cy = height * 0.5 + Math.sin(t * 1.1 + i * 0.65) * (height * 0.26);
+        const x = cx + Math.cos(t * 2 + i) * r * 0.25;
+        const y = cy + Math.sin(t * 1.8 + i) * r * 0.18;
+        nodes.push({ x, y });
       }
 
-      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
-      ctx.lineWidth = 1.1;
-      ctx.beginPath();
-      for (let x = 0; x < width; x += 8) {
-        const y = height * 0.5 + Math.sin((x * 0.02) + t * 4) * 24;
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
+      ctx.strokeStyle = palette.glow;
+      ctx.lineWidth = 1;
+      for (let i = 0; i < nodes.length; i += 1) {
+        const a = nodes[i];
+        const b = nodes[(i + 3) % nodes.length];
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
       }
-      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(125, 211, 252, 0.32)';
+      for (const n of nodes) {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, 3.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
 
       requestAnimationFrame(animate);
     };

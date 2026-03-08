@@ -515,6 +515,12 @@ main.container {
     position: sticky;
     top: calc(var(--header-offset, 78px) + 0.6rem);
   }
+
+  .layout-with-sidebar--no-sticky .layout-sidebar,
+  .layout-sidebar--no-sticky {
+    position: static;
+    top: auto;
+  }
 }
 @media (min-width: 860px) {
   .grid.two { grid-template-columns: 2fr 1fr; }

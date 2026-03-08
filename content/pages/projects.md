@@ -3,7 +3,7 @@ title: "Projects"
 date: 2026-03-07T16:08:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
-last_verified: "2026-03-07 20:50 MST"
+last_verified: "2026-03-07 21:18 MST"
 project_health:
   now: "7 immediate execution tracks"
   next: "3 queued follow-ups"

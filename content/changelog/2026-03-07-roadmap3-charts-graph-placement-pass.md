@@ -13,8 +13,12 @@ Implemented the top queued Roadmap 3 item by adding lightweight, always-visible 
 
 This creates immediate visual signal density without waiting on heavier charting libraries, and gives a baseline for future chart upgrades.
 
-## Artifacts
+## Receipts
+- Before: `/artifacts/phase7/before-modern-builder-diffusion-projects.jpg`
+- After: `/artifacts/phase7/after-projects-analytics-snapshot.jpg`
+- Before: `/artifacts/phase7/before-modern-builder-diffusion-home.jpg`
+- After: `/artifacts/phase7/after-modern-builder-diffusion-home.jpg`
 
-- Before (Projects): [/artifacts/phase7/before-charts-graph-placement-projects.jpg](/artifacts/phase7/before-charts-graph-placement-projects.jpg)
-- Before (Changelog): [/artifacts/phase7/before-charts-graph-placement-changelog.jpg](/artifacts/phase7/before-charts-graph-placement-changelog.jpg)
-- After (Projects analytics): [/artifacts/phase7/after-projects-analytics-snapshot.jpg](/artifacts/phase7/after-projects-analytics-snapshot.jpg)
+## Affected pages
+- `/pages/projects/`
+- `/changelog/`

@@ -18,3 +18,12 @@ draft: false
 ## Process
 - Executed as one heartbeat cross-channel harvest batch from project-channel notes.
 - Kept scope to one meaningful project/post/changelog sync pass.
+
+## Receipts
+- Before: `/artifacts/phase7/before-post-metrics-receipts-ai-thought-radar.jpg`
+- After: `/artifacts/phase7/after-post-metrics-receipts-ai-thought-radar.jpg`
+
+## Affected pages
+- `/projects/promptmark-capture-pipeline/`
+- `/pages/projects/`
+- `/posts/promptmark-pilot-stabilization-and-controlled-expansion-plan/`

@@ -141,7 +141,7 @@ flowchart TB
 </section>
 
 ### Track E — Governance & quality guardrails *(Continuous)*
-- [ ] Before/after artifact receipts for every major visual batch.
+- ~~[x] Before/after artifact receipts for every major visual batch.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-tracke-roadmap-receipt-backfill/))
 - ~~[x] Sync `/pages/now`, `/pages/projects`, and `/pages/roadmap/` in same batch.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-surface-sync-guardrail-now-projects-roadmap/))
 - [ ] Keep heartbeat queue aligned to active roadmap items (no placeholder drift).
 

@@ -16,9 +16,13 @@ draft: false
   - cards/panels
 - Added subtle hover lift treatment for cards and controls on pointer-capable devices.
 - Hardened reduced-motion behavior by explicitly disabling hover transforms when `prefers-reduced-motion: reduce` is enabled.
-- Captured visual artifacts:
-  - `/artifacts/phase3/before-motion-token-pass.jpg`
-  - `/artifacts/phase3/after-motion-token-pass.jpg`
+## Receipts
+- Before: `/artifacts/phase3/before-motion-token-pass.jpg`
+- After: `/artifacts/phase3/after-motion-token-pass.jpg`
+
+## Affected pages
+- `/`
+- `/changelog/`
 
 ## Why
 - Creates a consistent interaction rhythm across the site.

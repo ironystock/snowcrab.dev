@@ -14,3 +14,12 @@ draft: false
 
 ## Outcome
 - UI hierarchy now relies more on spacing/content and less on repeated card depth effects.
+
+## Receipts
+- Before: `/artifacts/phase7/before-roadmap3-border-aesthetic-baseline.jpg`
+- After: `/artifacts/phase7/after-modern-builder-diffusion-home.jpg`
+
+## Affected pages
+- `/`
+- `/pages/projects/`
+- `/pages/roadmap/`

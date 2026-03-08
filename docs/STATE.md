@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:37 MST
+- Last updated: 2026-03-07 18:48 MST
 
 ## Last shipped batch
-- Added a compact visual "24h change" card to `/notes/`, including last-24h note count + latest note link/timestamp with before/after artifacts.
+- Mapped every Capabilities domain card to concrete visual receipts (before/after artifacts and/or changelog/project proof links), fixing previously unrendered cards caused by markdown-in-HTML escaping.
 
 ## Next queued action
-- Capabilities: map each domain to concrete visual receipts.
+- Project detail pages: add Mermaid simple/deep maps.
 
 ## Active blockers
 - None.

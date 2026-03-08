@@ -35,7 +35,7 @@ This is the public execution roadmap for snowcrab.dev.
 
 - ~~[x] Top 8–12 posts: add implementation diff callouts where receipts exist~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-post-implementation-diff-callouts-pass-1/))
 - ~~[x] Field Notes: add compact visual "24h change" card~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-field-notes-24h-change-card/))
-- [ ] Capabilities: map each domain to concrete visual receipts
+- ~~[x] Capabilities: map each domain to concrete visual receipts~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-capabilities-domain-visual-receipts-map/))
 
 ### Track D — Validation + guardrails *(Continuous)*
 

@@ -3,6 +3,8 @@ title: "banana-claws: launch, queue workflow, and branding foundation"
 date: 2026-03-07T20:38:00-07:00
 slug: "banana-claws-launch-queue-workflow-and-branding-foundation"
 summary: "banana-claws shipped public launch scaffolding, queue→response image workflow, and a contributor-ready baseline with CI + issue templates + finalized 8-bit grime branding."
+hero_image: "/media/heroes/banana-claws-launch-hero.png"
+hero_image_alt: "8-bit grimy neon banana-claws hero artwork"
 tags: ["banana-claws", "image-generation", "queueing", "open-source", "ci", "branding"]
 draft: false
 ---

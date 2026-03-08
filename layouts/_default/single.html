@@ -13,6 +13,11 @@
         · Last verified <time datetime="{{ . }}">{{ . }}</time>
       {{ end }}
     </p>
+    {{ if and (eq .Section "posts") .Params.hero_image }}
+      <figure class="post-hero-media">
+        <img src="{{ .Params.hero_image }}" alt="{{ .Params.hero_image_alt | default .Title }}" loading="eager" decoding="async" />
+      </figure>
+    {{ end }}
   </header>
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "projects") }}
     {{ $integrations := .Params.integrations | default (slice) }}

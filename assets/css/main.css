@@ -573,6 +573,30 @@ main.container {
 .meta { font-size: 0.93rem; color: var(--muted); margin-bottom: 0.72rem; letter-spacing: 0.008em; line-height: 1.46; }
 .stack { display: grid; gap: 0.92rem; }
 
+.post-hero-media {
+  margin: 0.7rem 0 0.2rem;
+}
+
+.post-hero-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--stroke-soft);
+}
+
+.post-list-thumb-link {
+  display: block;
+  margin: 0.35rem 0 0.55rem;
+}
+
+.post-list-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--stroke-soft);
+}
+
 .grid.two > aside.stack {
   gap: 0.82rem;
 }

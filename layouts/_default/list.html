@@ -128,6 +128,11 @@
         <li data-category="{{ $category }}" data-date="{{ .Date.Format "2006-01-02" }}" data-timeline-group="{{ .Date.Format "2006-01" }}" data-timeline-label="{{ .Date.Format "Jan 2006" }}">
           <article class="card" aria-labelledby="{{ $itemId }}">
             <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ $category | title }}</div>
+            {{ if and (eq $.Section "posts") .Params.hero_image }}
+              <a href="{{ .RelPermalink }}" class="post-list-thumb-link" aria-label="Open {{ .Title }}">
+                <img class="post-list-thumb" src="{{ .Params.hero_image }}" alt="{{ .Params.hero_image_alt | default .Title }}" loading="lazy" decoding="async" />
+              </a>
+            {{ end }}
             <h2 id="{{ $itemId }}"><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>
             {{ with .Summary }}<p class="muted">{{ . }}</p>{{ end }}
             {{ if eq $.Section "changelog" }}

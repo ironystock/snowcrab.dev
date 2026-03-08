@@ -57,9 +57,40 @@ This is the public execution roadmap for snowcrab.dev.
 
 ### Track D — Advanced feature candidates *(Exploration)*
 - [ ] WebGPU-enhanced background/data visuals (optional progressive enhancement).
-- [ ] Interactive execution graph (state transitions over time).
+- ~~[x] Interactive execution graph (state transitions over time).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-trackd-interactive-execution-graph-prototype/))
 - [ ] Temporal playback mode (“what changed this week” cinematic timeline).
 - [ ] AI-assisted diff narration mode for executive summaries.
+
+<section class="execution-graph-prototype card" id="execution-graph-prototype" aria-labelledby="execution-graph-prototype-heading">
+  <h4 id="execution-graph-prototype-heading">Interactive execution graph prototype</h4>
+  <p class="meta">Roadmap-adjacent state transitions with two views: lane flow and time progression.</p>
+  <div class="execution-graph-modes" role="group" aria-label="Execution graph view mode">
+    <button type="button" class="chip is-active" data-graph-view="flow" aria-pressed="true">Flow view</button>
+    <button type="button" class="chip" data-graph-view="timeline" aria-pressed="false">Timeline view</button>
+  </div>
+
+  <div data-graph-panel="flow">
+    <pre class="mermaid" aria-label="Execution state flow graph">
+flowchart LR
+  Q[Queued] --> N[Now]
+  N --> S[Shipped]
+  N --> B[Blocked]
+  B --> N
+  S --> R[Receipted]
+  R --> A[Archived]
+    </pre>
+  </div>
+
+  <div data-graph-panel="timeline" hidden>
+    <pre class="mermaid" aria-label="Execution timeline progression graph">
+flowchart TB
+  W1[Wave planning] --> W2[Focused batches]
+  W2 --> W3[Artifacts + changelog]
+  W3 --> W4[State/queue sync]
+  W4 --> W5[Next wave input]
+    </pre>
+  </div>
+</section>
 
 ### Track E — Governance & quality guardrails *(Continuous)*
 - [ ] Before/after artifact receipts for every major visual batch.

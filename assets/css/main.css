@@ -1935,6 +1935,28 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin-bottom: 0;
 }
 
+.execution-graph-prototype {
+  margin: 0.75rem 0 0.95rem;
+}
+
+.execution-graph-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
+}
+
+.execution-graph-prototype [data-graph-panel] {
+  border: 1px solid var(--stroke-soft);
+  border-radius: 10px;
+  padding: 0.5rem;
+  background: color-mix(in oklab, var(--bg-elev) 94%, var(--border) 6%);
+}
+
+.execution-graph-prototype pre.mermaid {
+  margin: 0;
+}
+
 .projects-health h2 {
   margin: 0 0 0.4rem;
   font-size: 1.05rem;

@@ -5,10 +5,10 @@
 - Last updated: 2026-03-07 20:40 MST
 
 ## Last shipped batch
-- Projects dashboard alignment pass: moved analytics into tabbed dashboard and unified lane/blocked counts from a single build-time metrics source to prevent widget mismatch drift.
+- Track D exploration kickoff shipped: first interactive execution graph prototype on `/pages/roadmap/` with switchable flow/timeline views and mermaid-backed state storytelling.
 
 ## Next queued action
-- Track D exploration: ship first interactive execution graph prototype on a roadmap-adjacent surface.
+- Cross-channel project harvest: scan project channels for material updates and convert strongest item into project/post/changelog sync batch.
 
 ## Active blockers
 - None.

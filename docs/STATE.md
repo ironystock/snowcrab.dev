@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 22:29 MST
+- Last updated: 2026-03-07 22:30 MST
 
 ## Last shipped batch
-- Added Roadmap 4 Track B de-redundancy plan so Projects health and state-machine modules have explicit non-overlapping ownership and roadmaped interaction/CI guardrails.
+- Added Roadmap 4 Track B keyboard jump chips on `/pages/roadmap/` for Track A–E + Roadmap 4 anchor navigation, with changelog receipt.
 
 ## Next queued action
-- Add keyboard jump chips for Track A–E/Roadmap 4 anchors.
+- De-redundancy pass: split Project health dashboard KPI ownership vs flow state-machine transition intelligence.
 
 ## Active blockers
 - None.

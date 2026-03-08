@@ -15,6 +15,19 @@ This is the public execution roadmap for snowcrab.dev.
 - [ ] = queued / in progress
 - BLOCKED = waiting on dependency
 
+<section class="roadmap-jump-chips" aria-labelledby="roadmap-jump-chips-heading">
+  <h2 id="roadmap-jump-chips-heading">Roadmap jumps</h2>
+  <p class="meta">Jump directly to active tracks and the queued candidate wave.</p>
+  <div class="roadmap-jump-chip-list" role="navigation" aria-label="Roadmap track jump links">
+    <a class="chip" href="#track-a--visual-language-reset-go-big-now">Track A</a>
+    <a class="chip" href="#track-b--modern-builder-inspiration-diffusion-nownext">Track B</a>
+    <a class="chip" href="#track-c--charts--graph-storytelling-nownext">Track C</a>
+    <a class="chip" href="#track-d--advanced-feature-candidates-exploration">Track D</a>
+    <a class="chip" href="#track-e--governance--quality-guardrails-continuous">Track E</a>
+    <a class="chip" href="#roadmap-4--candidate-wave-queued">Roadmap 4</a>
+  </div>
+</section>
+
 ## Roadmap 3 — Modern Builder UX Overhaul *(active wave)*
 
 ### Track A — Visual language reset (go big) *(Now)*
@@ -154,7 +167,7 @@ flowchart TB
 
 ### Track B — Reporting ergonomics *(Next)*
 - ~~[x] Add compact “since last heartbeat” log module on roadmap page using latest 5 changelog entries.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-trackb-since-last-heartbeat-log-module/))
-- [ ] Add keyboard jump chips for Track A–E/Roadmap 4 anchors.
+- ~~[x] Add keyboard jump chips for Track A–E/Roadmap 4 anchors.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-trackb-keyboard-jump-chips/))
 - [ ] De-redundancy pass: split **Project health dashboard** into lane KPI ownership (capacity, blocker ratio, freshness SLA, confidence) while **Project flow state machine** owns transition intelligence (promotion latency, churn/reopen count, stuck-state alerts).
 - [ ] Add explicit “Why this matters” micro-copy under each module clarifying non-overlap: **Health answers “How healthy are lanes now?”** vs **State machine answers “How work is moving between states?”**.
 - [ ] Add interaction contract for state machine (click state node to filter project cards + show transition receipts) so it becomes an operational control, not a decorative duplicate.

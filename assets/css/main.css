@@ -1942,6 +1942,20 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin-top: 0.14rem;
 }
 
+.roadmap-jump-chips {
+  margin: 0.72rem 0 0.95rem;
+}
+
+.roadmap-jump-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.roadmap-jump-chip-list .chip {
+  text-decoration: none;
+}
+
 .roadmap-mockup-set {
   margin: 0.7rem 0 0.95rem;
 }

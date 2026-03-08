@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 19:30 MST
+- Last updated: 2026-03-07 19:40 MST
 
 ## Last shipped batch
-- Applied full magazine treatment to the flagship case study (hero/dek framing, pull-quote cadence, and executive stat-strip components) for a richer editorial voice.
+- Sidebar diffusion shipped for posts list, post detail, and case study pages using a shared context-sidebar layout to reduce right-side dead space while keeping readable line length constraints.
 
 ## Next queued action
 - No meaningful batch currently queued (Roadmap 2 active wave items currently shipped; queue reopens when a new roadmap item is added).

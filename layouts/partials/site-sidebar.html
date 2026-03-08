@@ -1,0 +1,13 @@
+{{ $changes := where site.RegularPages "Section" "changelog" }}
+<section class="card" aria-labelledby="sidebar-changelog-heading">
+  <h3 id="sidebar-changelog-heading">Latest changelog</h3>
+  <ul class="mini-list">
+    {{ range first 4 ($changes.ByDate.Reverse) }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+  <a href="/changelog/">View full changelog →</a>
+</section>
+
+{{ partial "homepage-active-projects-strip.html" . }}
+{{ partial "homepage-contributor-spotlight-rail.html" . }}

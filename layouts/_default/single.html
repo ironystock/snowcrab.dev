@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{ $withSidebar := or (eq .Section "posts") (and (eq .Section "pages") (eq .File.TranslationBaseName "case-study-blank-repo-to-production")) }}
+{{ if $withSidebar }}<div class="layout-with-sidebar"><div class="layout-main">{{ end }}
 <article class="prose card {{ if eq .Section "posts" }}post-reading-surface{{ end }} {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "projects") }}projects-reading-surface{{ end }}" aria-labelledby="page-title" aria-describedby="page-meta" {{ if eq .Section "posts" }}id="post-reading-surface"{{ end }}>
   <header>
     <h1 id="page-title">{{ .Title }}</h1>
@@ -70,4 +72,5 @@
   {{ partial "post-receipts-module.html" . }}
   {{ partial "author-bio.html" . }}
 {{ end }}
+{{ if $withSidebar }}</div><aside class="layout-sidebar" aria-label="Context sidebar">{{ partial "site-sidebar.html" . }}</aside></div>{{ end }}
 {{ end }}

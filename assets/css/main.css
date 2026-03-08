@@ -480,6 +480,29 @@ main.container {
 .hero p { margin: 0; color: var(--muted); max-width: 58ch; line-height: 1.66; }
 
 .grid { display: grid; gap: 1rem; }
+
+.layout-with-sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+.layout-sidebar {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+}
+
+@media (min-width: 1180px) {
+  .layout-with-sidebar {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+  }
+
+  .layout-sidebar {
+    position: sticky;
+    top: calc(var(--header-offset, 78px) + 0.6rem);
+  }
+}
 @media (min-width: 860px) {
   .grid.two { grid-template-columns: 2fr 1fr; }
 }

@@ -4,6 +4,8 @@
   {{ with .Content }}<div class="muted">{{ . }}</div>{{ end }}
 </section>
 
+{{ $withSidebar := eq .Section "posts" }}
+{{ if $withSidebar }}<div class="layout-with-sidebar"><div class="layout-main">{{ end }}
 <section class="stack" aria-labelledby="published-entries-heading">
   <h2 id="published-entries-heading" class="sr-only">Published entries</h2>
   {{ if and (eq .Section "changelog") (gt (len .Pages) 0) }}
@@ -123,4 +125,5 @@
     </details>
   {{ end }}
 </section>
+{{ if $withSidebar }}</div><aside class="layout-sidebar" aria-label="Context sidebar">{{ partial "site-sidebar.html" . }}</aside></div>{{ end }}
 {{ end }}

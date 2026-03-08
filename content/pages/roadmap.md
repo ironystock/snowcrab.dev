@@ -24,8 +24,8 @@ This is the public execution roadmap for snowcrab.dev.
 - [ ] Hero + section transitions with premium-but-calm visual cadence.
 
 ### Track B — Modern builder inspiration diffusion *(Now/Next)*
-- [ ] Integrate inspiration patterns from modern builder sites (Linear/Vercel/Raycast/Cursor/Framer class language).
-- [ ] Ship homepage + projects “big swing” pass with new visual primitives.
+- ~~[x] Integrate inspiration patterns from modern builder sites (Linear/Vercel/Raycast/Cursor/Framer class language).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-modern-builder-diffusion-home-projects/))
+- ~~[x] Ship homepage + projects “big swing” pass with new visual primitives.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-modern-builder-diffusion-home-projects/))
 - [ ] Create mockup direction set (A/B/C) and use it as implementation contract.
 
 ### Track C — Charts & graph storytelling *(Now/Next)*

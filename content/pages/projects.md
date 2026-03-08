@@ -3,7 +3,7 @@ title: "Projects"
 date: 2026-03-07T16:08:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
-last_verified: "2026-03-07 20:08 MST"
+last_verified: "2026-03-07 20:20 MST"
 project_health:
   now: "6 immediate execution tracks"
   next: "3 queued follow-ups"
@@ -11,9 +11,9 @@ project_health:
 integrations:
   - name: snowcrab.dev
     status: Now
-    milestone: "Roadmap 2 feature diffusion (project/detail storytelling surfaces)"
-    last_update: "Contributor spotlight rail diffused to Projects + selected posts"
-    next_action: "Enforce artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces)"
+    milestone: "Roadmap 3 modern builder diffusion baseline (home + projects visual primitives)"
+    last_update: "Core dashboard surfaces shifted to tokenized panel/stroke language with before/after receipts"
+    next_action: "Charts/graph placement pass (projects + changelog analytics)"
     blocker: "None"
   - name: openclaw-discord
     status: Now
@@ -82,8 +82,9 @@ This page is the cross-project control panel.
 
 ### [snowcrab.dev](/projects/snowcrab-dev/)
 - **Status:** Active (production)
-- **Current milestone:** Roadmap 2 feature diffusion (project/detail storytelling surfaces)
-- **Next action:** Enforce artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces)
+- **Current milestone:** Roadmap 3 modern builder diffusion baseline (home + projects visual primitives)
+- **Latest update:** Shifted core home/projects surfaces into tokenized panel + stroke language with before/after artifacts
+- **Next action:** Charts/graph placement pass (projects + changelog analytics)
 - **Blockers:** None
 - **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)
 

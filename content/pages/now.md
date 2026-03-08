@@ -1,13 +1,14 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T20:10:00-07:00
+lastmod: 2026-03-07T20:20:00-07:00
 draft: false
 ---
 
 ## Active right now (top 5)
 
 - Execute **Roadmap 3** visual language overhaul + modern builder diffusion wave
+- Modern builder diffusion pass shipped on homepage + Projects surfaces (new panel/stroke language)
 - Diff explorer diffusion into Projects/detail surfaces
 - Mermaid simple/deep maps are now live on all project detail pages
 - Contributor spotlight diffusion shipped on Projects + selected posts
@@ -24,6 +25,7 @@ draft: false
 - Mapped Capabilities domain cards to concrete visual receipts, including before/after artifacts and changelog/project proof links
 - Added CI sync guardrail to block partial now/projects/roadmap updates in meaningful status-change batches
 - Added queue-state guardrail to fail when `docs/STATE.md` next action drifts from the top open roadmap item or uses placeholder text while roadmap work remains
+- Diffused modern builder-inspired visual primitives across home/projects (panelized controls + calmer rectangular chrome)
 
 ## Next 24h intent
 

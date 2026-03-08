@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 19:55 MST
+- Last updated: 2026-03-07 20:20 MST
 
 ## Last shipped batch
-- Roadmap 3 kickoff shipped: border/aesthetic overhaul baseline with new stroke token system and core component adoption (header/cards/chips/controls), with before/after artifacts.
+- Roadmap 3 Track B diffusion shipped: modern builder-inspired visual primitives adopted across homepage + Projects surfaces (tokenized panel/stroke language), with before/after artifacts.
 
 ## Next queued action
-- Modern builder inspiration diffusion pass (homepage + projects big swing).
+- Charts/graph placement pass (projects + changelog analytics).
 
 ## Active blockers
 - None.

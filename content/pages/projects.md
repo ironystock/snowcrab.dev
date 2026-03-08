@@ -13,7 +13,7 @@ integrations:
     status: Now
     milestone: "Roadmap 2 feature diffusion (project/detail storytelling surfaces)"
     last_update: "Contributor spotlight rail diffused to Projects + selected posts"
-    next_action: "Add implementation diff callouts to top 8–12 posts where receipts exist"
+    next_action: "Enforce artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces)"
     blocker: "None"
   - name: openclaw-discord
     status: Now
@@ -76,7 +76,7 @@ This page is the cross-project control panel.
 ### [snowcrab.dev](/projects/snowcrab-dev/)
 - **Status:** Active (production)
 - **Current milestone:** Roadmap 2 feature diffusion (project/detail storytelling surfaces)
-- **Next action:** Add implementation diff callouts to top 8–12 posts where receipts exist
+- **Next action:** Enforce artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces)
 - **Blockers:** None
 - **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)
 

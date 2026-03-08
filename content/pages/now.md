@@ -19,11 +19,12 @@ draft: false
 - Shipped changelog-native diff explorer with IDE-style text + modal image compare
 - Refined header (v2), reduced box-on-box pressure, and fixed control overlap bugs
 - Added openclaw-discord project coverage + first project post from intake history
+- Mapped Capabilities domain cards to concrete visual receipts, including before/after artifacts and changelog/project proof links
 
 ## Next 24h intent
 
 - Build compact "24h change" card on Field Notes surface
-- Map Capabilities domains to concrete visual receipts
+- Enforce artifact-linked receipts for every meaningful UX batch (changelog + page-level surfaces where applicable)
 - Keep roadmap/now/projects sync strict in same-batch updates
 
 ## Blockers

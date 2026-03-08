@@ -55,9 +55,9 @@
 }
 
 :root {
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --container: 920px;
   --measure-body: 64ch;
   --measure-body-wide: 68ch;
@@ -521,11 +521,11 @@ main.container {
 }
 
 .card {
-  background: var(--panel-bg);
-  border: 1px solid var(--stroke-soft);
+  background: color-mix(in oklab, var(--panel-bg) 88%, transparent);
+  border: 1px solid var(--stroke-hairline);
   border-radius: var(--radius-md);
   padding: 1rem 1.1rem;
-  box-shadow: var(--outline-subtle), var(--panel-highlight), 0 8px 18px color-mix(in oklab, #0f172a 16%, transparent);
+  box-shadow: var(--panel-highlight), 0 4px 12px color-mix(in oklab, #0f172a 10%, transparent);
   backdrop-filter: saturate(108%);
   transition:
     border-color var(--motion-base) var(--ease-standard),
@@ -564,8 +564,9 @@ main.container {
 .project-health-strip,
 .integration-item-milestone,
 .automation-demo-columns section {
-  box-shadow: var(--panel-highlight), var(--shadow-soft);
-  border-color: var(--panel-border-strong);
+  box-shadow: none;
+  border-color: var(--stroke-hairline);
+  background: color-mix(in oklab, var(--bg-elev) 94%, transparent);
 }
 
 .muted { color: var(--muted); }
@@ -797,25 +798,24 @@ main.container {
 }
 
 .chip {
-  border: 1px solid var(--stroke-soft);
-  border-radius: 10px;
+  border: 1px solid var(--stroke-hairline);
+  border-radius: var(--radius-sm);
   padding: 0.34rem 0.7rem;
   font: inherit;
   font-size: 0.86rem;
   font-weight: 600;
   color: var(--text);
-  background: var(--bg-elev);
+  background: color-mix(in oklab, var(--bg-elev) 90%, transparent);
   cursor: pointer;
   transition:
     border-color var(--motion-base) var(--ease-standard),
     background-color var(--motion-base) var(--ease-standard),
-    color var(--motion-base) var(--ease-standard),
-    transform var(--motion-fast) var(--ease-expressive);
+    color var(--motion-base) var(--ease-standard);
 }
 
 .chip:hover {
   border-color: var(--stroke-accent);
-  transform: translateY(-1px);
+  background: color-mix(in oklab, var(--bg-elev) 78%, var(--primary) 22%);
 }
 
 .chip.is-active {
@@ -2253,8 +2253,8 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .status-pill {
   display: inline-block;
-  border-radius: 999px;
-  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--stroke-soft);
   padding: 0.08rem 0.5rem;
   font-size: 0.78rem;
   font-weight: 600;

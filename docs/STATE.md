@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:20 MST
+- Last updated: 2026-03-07 20:24 MST
 
 ## Last shipped batch
-- Roadmap 3 Track B diffusion shipped: modern builder-inspired visual primitives adopted across homepage + Projects surfaces (tokenized panel/stroke language), with before/after artifacts.
+- Roadmap 3 visual-language continuation shipped: card chrome simplification pass (flattened nested card shadows, hairline border treatment, calmer secondary surface fills) to reduce box-on-box fatigue.
 
 ## Next queued action
 - Charts/graph placement pass (projects + changelog analytics).

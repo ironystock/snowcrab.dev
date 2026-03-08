@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:27 MST
+- Last updated: 2026-03-07 17:16 MST
 
 ## Last shipped batch
-- Fixed Mermaid syntax errors on `/pages/publishing-doctrine/` architecture maps (simple/deep) by simplifying to Mermaid v11-compatible definitions.
+- Upgraded `/pages/automation-demos/` diff explorer with IDE-style code rendering, modal image compare/flip UX, and corrected duplicate image-pair dataset entries.
 
 ## Next queued action
 - No meaningful batch currently queued (roadmap wave complete; awaiting next prioritized roadmap item).

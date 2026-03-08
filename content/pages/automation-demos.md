@@ -19,14 +19,33 @@ Each demo follows one compact structure: **before → after → receipt**.
     <button type="button" class="chip" data-diff-mode="image" aria-pressed="false">Image mode</button>
   </div>
 
-  <pre id="diff-explorer-text" class="automation-diff-text"><code></code></pre>
+  <div id="diff-explorer-text" class="automation-diff-text" role="region" aria-label="Code diff output">
+    <div class="automation-diff-ide-head">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="automation-diff-ide-title">diff-viewer.ts</span>
+    </div>
+    <pre><code></code></pre>
+  </div>
   <figure id="diff-explorer-image" class="automation-diff-image" hidden>
     <div class="automation-diff-image-grid">
-      <a id="diff-explorer-before-link" href="#"><img id="diff-explorer-before" alt="Before state screenshot" loading="lazy" /></a>
-      <a id="diff-explorer-after-link" href="#"><img id="diff-explorer-after" alt="After state screenshot" loading="lazy" /></a>
+      <button type="button" class="automation-diff-image-button" data-image-kind="before"><img id="diff-explorer-before" alt="Before state screenshot" loading="lazy" /><span class="meta">Before</span></button>
+      <button type="button" class="automation-diff-image-button" data-image-kind="after"><img id="diff-explorer-after" alt="After state screenshot" loading="lazy" /><span class="meta">After</span></button>
     </div>
-    <figcaption class="meta">Left: before · Right: after</figcaption>
+    <figcaption class="meta">Click an image to open focused compare modal and flip between before/after.</figcaption>
   </figure>
+  <dialog id="diff-explorer-image-modal" class="diff-image-modal" aria-label="Diff image viewer">
+    <form method="dialog" class="diff-image-modal-sheet">
+      <div class="diff-image-modal-head">
+        <p class="meta" id="diff-image-modal-label">Before</p>
+        <button value="cancel" class="command-palette-close" aria-label="Close image viewer">×</button>
+      </div>
+      <img id="diff-image-modal-img" alt="Diff image preview" loading="lazy" />
+      <div class="diff-image-modal-actions">
+        <button type="button" class="chip" data-image-flip="before">Before</button>
+        <button type="button" class="chip" data-image-flip="after">After</button>
+      </div>
+    </form>
+  </dialog>
   <p id="diff-explorer-receipts"><strong>Receipts:</strong> <span></span></p>
 </section>
 
@@ -41,21 +60,21 @@ Each demo follows one compact structure: **before → after → receipt**.
     ]
   },
   {
-    "title": "Last-visit signal ordering",
-    "diff": "- recency-only ordering in last-visit module\n+ category-aware ranking prioritizing reliability/ops signals",
-    "before": "/artifacts/phase2/before-last-visit-signal-ordering.jpg",
-    "after": "/artifacts/phase2/after-last-visit-signal-ordering.jpg",
+    "title": "Project state-machine visualization",
+    "diff": "- project flow lived only in prose blocks\n+ introduced explicit state machine lanes (Next/Now/Watch)\n+ added transition rules and lane counts for fast scanability",
+    "before": "/artifacts/phase2/before-project-state-machine-visualization.jpg",
+    "after": "/artifacts/phase2/after-project-state-machine-visualization.jpg",
     "receipts": [
-      { "label": "Changelog", "url": "/changelog/2026-03-07-last-visit-signal-quality-ordering-pass/" }
+      { "label": "Changelog", "url": "/changelog/2026-03-07-project-state-machine-visualization-phase2/" }
     ]
   },
   {
-    "title": "Phase 3 motion token pass",
-    "diff": "- transition timing drifted across interactive surfaces\n+ shared motion/easing tokens with reduced-motion-safe behavior",
-    "before": "/artifacts/phase3/before-motion-token-pass.jpg",
-    "after": "/artifacts/phase3/after-motion-token-pass.jpg",
+    "title": "Phase 3 depth/layering pass",
+    "diff": "- flat shell hierarchy reduced visual grouping\n+ depth tokens introduced for panels/cards\n+ elevated hierarchy for key project/home surfaces",
+    "before": "/artifacts/phase3/before-depth-layering-pass-home.jpg",
+    "after": "/artifacts/phase3/after-depth-layering-pass-home.jpg",
     "receipts": [
-      { "label": "Changelog", "url": "/changelog/2026-03-07-phase3-motion-token-pass/" }
+      { "label": "Changelog", "url": "/changelog/2026-03-07-phase3-depth-layering-pass-cards-panels/" }
     ]
   }
 ]</script>

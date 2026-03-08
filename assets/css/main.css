@@ -2156,7 +2156,65 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .automation-diff-text {
   margin: 0 0 0.62rem;
+  border: 1px solid color-mix(in oklab, var(--border) 74%, transparent);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b1020;
 }
+
+.automation-diff-ide-head {
+  display: flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.45rem 0.62rem;
+  border-bottom: 1px solid color-mix(in oklab, #334155 55%, transparent);
+  background: #111827;
+}
+
+.automation-diff-ide-head .dot {
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 999px;
+  background: #475569;
+}
+
+.automation-diff-ide-title {
+  margin-left: 0.22rem;
+  color: #cbd5e1;
+  font-size: 0.77rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.automation-diff-text pre {
+  margin: 0;
+  padding: 0.45rem 0.62rem 0.58rem;
+  max-height: 360px;
+  overflow: auto;
+}
+
+.automation-diff-text code {
+  display: block;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  color: #e2e8f0;
+}
+
+.diff-line {
+  display: grid;
+  grid-template-columns: 2.1rem 1fr;
+  gap: 0.55rem;
+  padding: 0.04rem 0.22rem;
+}
+
+.diff-ln {
+  color: #64748b;
+  user-select: none;
+  text-align: right;
+}
+
+.diff-line--add { background: color-mix(in oklab, #16a34a 18%, transparent); }
+.diff-line--del { background: color-mix(in oklab, #dc2626 18%, transparent); }
 
 .automation-diff-image-grid {
   display: grid;
@@ -2164,12 +2222,59 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   gap: 0.55rem;
 }
 
-.automation-diff-image img {
+.automation-diff-image-button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.automation-diff-image-button img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 10px;
   border: 1px solid var(--border);
+}
+
+.diff-image-modal {
+  width: min(92vw, 1100px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0;
+  background: var(--bg-elev);
+}
+
+.diff-image-modal::backdrop {
+  background: rgba(2, 6, 23, 0.72);
+}
+
+.diff-image-modal-sheet {
+  margin: 0;
+  padding: 0.7rem;
+}
+
+.diff-image-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+#diff-image-modal-img {
+  width: 100%;
+  max-height: 76vh;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.diff-image-modal-actions {
+  margin-top: 0.52rem;
+  display: flex;
+  gap: 0.45rem;
 }
 
 .architecture-maps {

@@ -47,6 +47,11 @@
   --panel-bg: linear-gradient(165deg, color-mix(in oklab, var(--bg-elev) 94%, #1f2937 6%), color-mix(in oklab, var(--bg-elev) 84%, #0f172a 16%));
   --panel-border-strong: color-mix(in oklab, var(--border) 70%, #cbd5e1 30%);
   --panel-highlight: inset 0 1px 0 color-mix(in oklab, #cbd5e1 14%, transparent);
+  --stroke-hairline: color-mix(in oklab, var(--border) 34%, transparent);
+  --stroke-soft: color-mix(in oklab, var(--border) 54%, transparent);
+  --stroke-strong: color-mix(in oklab, var(--border) 72%, #cbd5e1 28%);
+  --stroke-accent: color-mix(in oklab, var(--primary) 62%, var(--border) 38%);
+  --stroke-focus: color-mix(in oklab, var(--primary) 78%, white 22%);
 }
 
 :root {
@@ -63,6 +68,12 @@
   --panel-bg: linear-gradient(165deg, color-mix(in oklab, var(--bg-elev) 96%, white 4%), color-mix(in oklab, var(--bg-elev) 90%, var(--border) 10%));
   --panel-border-strong: color-mix(in oklab, var(--border) 72%, var(--text) 28%);
   --panel-highlight: inset 0 1px 0 color-mix(in oklab, white 34%, transparent);
+  --stroke-hairline: color-mix(in oklab, var(--border) 44%, transparent);
+  --stroke-soft: color-mix(in oklab, var(--border) 58%, transparent);
+  --stroke-strong: color-mix(in oklab, var(--border) 76%, var(--text) 24%);
+  --stroke-accent: color-mix(in oklab, var(--primary) 56%, var(--border) 44%);
+  --stroke-focus: color-mix(in oklab, var(--primary) 72%, white 28%);
+  --outline-subtle: inset 0 0 0 1px color-mix(in oklab, white 22%, transparent);
   --motion-fast: 130ms;
   --motion-base: 190ms;
   --motion-slow: 260ms;
@@ -288,7 +299,8 @@ a:hover .external-link-glyph { opacity: 1; }
   z-index: 30;
   backdrop-filter: blur(10px) saturate(115%);
   background: linear-gradient(180deg, color-mix(in oklab, var(--bg) 90%, transparent), color-mix(in oklab, var(--bg) 82%, transparent));
-  border-bottom: 1px solid color-mix(in oklab, var(--border) 76%, var(--primary) 24%);
+  border-bottom: 1px solid var(--stroke-strong);
+  box-shadow: var(--outline-subtle);
 }
 
 .site-header::after {
@@ -318,8 +330,8 @@ a:hover .external-link-glyph { opacity: 1; }
   width: 34px;
   height: 34px;
   border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg-elev);
+  border: 1px solid var(--stroke-strong);
+  background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
   box-shadow: var(--shadow);
   object-fit: cover;
 }
@@ -414,12 +426,13 @@ a:hover .external-link-glyph { opacity: 1; }
 .command-toggle,
 .theme-toggle,
 .pwa-install {
-  border: 1px solid var(--border);
+  border: 1px solid var(--stroke-soft);
   color: var(--text);
-  background: var(--bg-elev);
-  border-radius: 999px;
+  background: color-mix(in oklab, var(--bg-elev) 92%, var(--border) 8%);
+  border-radius: 10px;
   padding: 0.42rem 0.7rem;
   cursor: pointer;
+  box-shadow: var(--outline-subtle);
   transition:
     border-color var(--motion-base) var(--ease-standard),
     background-color var(--motion-base) var(--ease-standard),
@@ -439,8 +452,8 @@ a:hover .external-link-glyph { opacity: 1; }
 .command-toggle:hover,
 .theme-toggle:hover,
 .pwa-install:hover {
-  border-color: var(--primary);
-  background: color-mix(in oklab, var(--bg-elev) 80%, var(--primary) 20%);
+  border-color: var(--stroke-accent);
+  background: color-mix(in oklab, var(--bg-elev) 82%, var(--primary) 18%);
 }
 
 .command-toggle:focus-visible,
@@ -509,10 +522,10 @@ main.container {
 
 .card {
   background: var(--panel-bg);
-  border: 1px solid color-mix(in oklab, var(--panel-border-strong) 74%, transparent);
+  border: 1px solid var(--stroke-soft);
   border-radius: var(--radius-md);
   padding: 1rem 1.1rem;
-  box-shadow: var(--panel-highlight), 0 8px 18px color-mix(in oklab, #0f172a 16%, transparent);
+  box-shadow: var(--outline-subtle), var(--panel-highlight), 0 8px 18px color-mix(in oklab, #0f172a 16%, transparent);
   backdrop-filter: saturate(108%);
   transition:
     border-color var(--motion-base) var(--ease-standard),
@@ -784,8 +797,8 @@ main.container {
 }
 
 .chip {
-  border: 1px solid var(--border);
-  border-radius: 999px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: 10px;
   padding: 0.34rem 0.7rem;
   font: inherit;
   font-size: 0.86rem;
@@ -801,7 +814,7 @@ main.container {
 }
 
 .chip:hover {
-  border-color: color-mix(in oklab, var(--primary) 42%, var(--border));
+  border-color: var(--stroke-accent);
   transform: translateY(-1px);
 }
 

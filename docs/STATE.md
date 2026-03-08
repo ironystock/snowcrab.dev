@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 20:12 MST
+- Last updated: 2026-03-07 19:55 MST
 
 ## Last shipped batch
-- Added AI Thought Radar as an active project stream, published its detail page, and shipped a milestone post with linked ingestion/ranking/community-lane receipts; synced Projects + Now surfaces.
+- Roadmap 3 kickoff shipped: border/aesthetic overhaul baseline with new stroke token system and core component adoption (header/cards/chips/controls), with before/after artifacts.
 
 ## Next queued action
-- Roadmap 3 kickoff batch: border/aesthetic overhaul baseline (token system + core component adoption).
+- Modern builder inspiration diffusion pass (homepage + projects big swing).
 
 ## Active blockers
 - None.

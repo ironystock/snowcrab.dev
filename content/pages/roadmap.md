@@ -18,8 +18,8 @@ This is the public execution roadmap for snowcrab.dev.
 ## Roadmap 3 — Modern Builder UX Overhaul *(active wave)*
 
 ### Track A — Visual language reset (go big) *(Now)*
-- [ ] Border/aesthetic overhaul: move beyond rounded-box stack to layered modern surfaces.
-- [ ] Border token system v2 (hairline, soft, accent, focus) + component-level adoption.
+- ~~[x] Border/aesthetic overhaul: move beyond rounded-box stack to layered modern surfaces.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-border-aesthetic-baseline/))
+- ~~[x] Border token system v2 (hairline, soft, accent, focus) + component-level adoption.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap3-border-aesthetic-baseline/))
 - [ ] Card chrome simplification pass (fewer nested boxes, stronger hierarchy).
 - [ ] Hero + section transitions with premium-but-calm visual cadence.
 

@@ -1048,6 +1048,8 @@ main.container {
   justify-content: space-between;
   gap: 0.6rem;
   margin-bottom: 0.25rem;
+  -webkit-backdrop-filter: blur(4px) saturate(110%);
+  backdrop-filter: blur(4px) saturate(110%);
 }
 
 .reliability-heading-row h3 {
@@ -1403,6 +1405,11 @@ main.container {
 .projects-reading-surface .projects-health-grid,
 .projects-reading-surface .integration-grid {
   gap: 0.55rem;
+}
+
+.impact-split-card {
+  -webkit-backdrop-filter: blur(4px) saturate(110%);
+  backdrop-filter: blur(4px) saturate(110%);
 }
 
 .impact-split-list {
@@ -2360,6 +2367,12 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   border-radius: 12px;
   padding: 0.58rem;
   background: color-mix(in oklab, var(--panel-bg) 92%, var(--bg-elev) 8%);
+  cursor: pointer;
+}
+
+.projects-state-node.is-active {
+  border-color: var(--stroke-accent);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--primary) 22%, transparent);
 }
 
 .projects-state-node--next {
@@ -2420,6 +2433,11 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 .projects-state-machine-rules li {
   color: var(--muted);
   font-size: 0.89rem;
+}
+
+.projects-state-machine-hint,
+.projects-transition-receipt {
+  margin-top: 0.5rem;
 }
 
 .projects-chart-pack {

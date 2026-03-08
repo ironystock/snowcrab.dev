@@ -79,6 +79,16 @@
             <div class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ $category | title }}</div>
             <h2 id="{{ $itemId }}"><a href="{{ .RelPermalink }}">{{ .Title | default .Slug }}</a></h2>
             {{ with .Summary }}<p class="muted">{{ . }}</p>{{ end }}
+            {{ if eq $.Section "changelog" }}
+              {{ with .GitInfo }}
+              <details class="changelog-inline-diff" data-commit-sha="{{ .Hash }}" data-commit-subject="{{ .Subject | safeHTMLAttr }}">
+                <summary>View commit diff</summary>
+                <div class="changelog-inline-diff-body" aria-live="polite">
+                  <p class="meta">Loading commit diff…</p>
+                </div>
+              </details>
+              {{ end }}
+            {{ end }}
           </article>
         </li>
       {{ end }}

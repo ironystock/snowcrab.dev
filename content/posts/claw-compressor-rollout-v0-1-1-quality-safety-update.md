@@ -3,6 +3,7 @@ title: "Claw Compressor rollout + quality/safety update (v0.1.1)"
 date: 2026-03-05T00:33:00-07:00
 summary: "How we evaluated and rolled out @piscodm/claw-compressor v0.1.1 in OpenClaw ops with fidelity-first safeguards for file-heavy workflows."
 tags: ["openclaw", "plugin", "llm-ops", "context-compression", "token-efficiency", "civictech", "builder-support"]
+show_contributor_spotlight: true
 draft: false
 social_image: ""
 ---

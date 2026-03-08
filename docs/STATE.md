@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:10 MST
+- Last updated: 2026-03-07 18:24 MST
 
 ## Last shipped batch
-- Projects list linking pass: every project name on `/pages/projects/` now links to a detail page, and missing detail pages were added for openclaw-discord, civic-nexus, and agentic-obs.
+- Contributor spotlight rail diffused to `/pages/projects/` and selected posts via reusable single-template wiring (`show_contributor_spotlight` opt-in).
 
 ## Next queued action
-- Contributor spotlight diffusion to projects + selected posts.
+- Add implementation diff callouts to top 8–12 posts where receipts exist.
 
 ## Active blockers
 - None.

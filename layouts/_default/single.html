@@ -26,6 +26,7 @@
         {{ partial "integration-status-panel.html" . }}
       </section>
     </section>
+    {{ partial "homepage-contributor-spotlight-rail.html" . }}
   {{ end }}
   {{ if and (eq .Section "pages") (eq .File.TranslationBaseName "now") }}
     {{ $ageHours := div (sub now.Unix .Lastmod.Unix) 3600 }}
@@ -51,6 +52,9 @@
       <button class="chip" type="button" data-reading-preset="high-contrast" aria-pressed="false">High contrast</button>
     </div>
   </section>
+  {{ if .Params.show_contributor_spotlight }}
+    {{ partial "homepage-contributor-spotlight-rail.html" . }}
+  {{ end }}
   {{ end }}
   <section aria-labelledby="article-content-heading">
     <h2 id="article-content-heading" class="sr-only">Article content</h2>

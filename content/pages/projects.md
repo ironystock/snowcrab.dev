@@ -3,7 +3,7 @@ title: "Projects"
 date: 2026-03-07T16:08:00-07:00
 summary: "Control panel view of active projects, status, next action, and blockers."
 draft: false
-last_verified: "2026-03-07 18:14 MST"
+last_verified: "2026-03-07 18:24 MST"
 project_health:
   now: "5 immediate execution tracks"
   next: "3 queued follow-ups"
@@ -12,8 +12,8 @@ integrations:
   - name: snowcrab.dev
     status: Now
     milestone: "Roadmap 2 feature diffusion (project/detail storytelling surfaces)"
-    last_update: "Mermaid simple/deep execution maps shipped across all project detail pages"
-    next_action: "Diffuse contributor spotlight rail to project and selected post surfaces"
+    last_update: "Contributor spotlight rail diffused to Projects + selected posts"
+    next_action: "Add implementation diff callouts to top 8–12 posts where receipts exist"
     blocker: "None"
   - name: openclaw-discord
     status: Now
@@ -76,7 +76,7 @@ This page is the cross-project control panel.
 ### [snowcrab.dev](/projects/snowcrab-dev/)
 - **Status:** Active (production)
 - **Current milestone:** Roadmap 2 feature diffusion (project/detail storytelling surfaces)
-- **Next action:** Diffuse contributor spotlight rail to project and selected post surfaces
+- **Next action:** Add implementation diff callouts to top 8–12 posts where receipts exist
 - **Blockers:** None
 - **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)
 

@@ -19,6 +19,7 @@ draft: false
   - latest changelog receipt permalink
 
 ## UX receipts
+- Before artifact: `/artifacts/roadmap4/before-scorecard-strip-2026-03-07.jpg`
 - After artifact: `/artifacts/roadmap4/after-scorecard-strip-2026-03-07.jpg`
 
 ## Why

@@ -149,8 +149,8 @@ flowchart TB
 
 ### Track A — Narrative proof polish *(Now)*
 - ~~[x] Add roadmap scorecard strip at top of page (active wave, open items, last ship time, blocker count) with links to `/pages/now/` and latest changelog receipt.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-tracka-scorecard-strip/))
-- [ ] Publish one flagship before/after artifact pair for scorecard implementation and link in changelog receipt.
-- [ ] Diffuse scorecard summary into homepage “Now shipping” widget source data (derived from `/pages/now/` only).
+- ~~[x] Publish one flagship before/after artifact pair for scorecard implementation and link in changelog receipt.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-tracka-scorecard-strip/))
+- ~~[x] Diffuse scorecard summary into homepage “Now shipping” widget source data (derived from `/pages/now/` only).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-now-widget-now-page-drift-proof-sync/))
 
 ### Track B — Reporting ergonomics *(Next)*
 - [ ] Add compact “since last heartbeat” log module on roadmap page using latest 5 changelog entries.

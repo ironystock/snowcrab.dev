@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 22:03 MST
+- Last updated: 2026-03-07 22:07 MST
 
 ## Last shipped batch
-- Implemented Roadmap 4 Track A scorecard strip at the top of roadmap with active wave, open items, last ship time, blocker count, and quick links to `/pages/now/` + latest changelog receipt.
+- Published the flagship before/after artifact pair for the Roadmap 4 scorecard strip and linked both artifacts in the existing scorecard changelog receipt.
 
 ## Next queued action
-- Publish one flagship before/after artifact pair for scorecard implementation and link in changelog receipt.
+- Add compact “since last heartbeat” log module on `/pages/roadmap/` using latest 5 changelog entries.
 
 ## Active blockers
 - None.

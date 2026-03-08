@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:45 MST
+- Last updated: 2026-03-07 17:52 MST
 
 ## Last shipped batch
-- Added changelog-native diff explorer (IDE-style text diffs + modal image compare/flip) to `/changelog/` for faster visual change inspection.
+- Roadmap 2 kickoff shipped: published new active wave (`/pages/roadmap/`) and delivered first UX batch (surface geometry v2 baseline with reduced radius language and calmer card chrome).
 
 ## Next queued action
-- No meaningful batch currently queued (roadmap wave complete; awaiting next prioritized roadmap item).
+- Typography rhythm v2 pass (headline/body spacing + sidebar readability).
 
 ## Active blockers
 - None.

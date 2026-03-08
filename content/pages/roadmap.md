@@ -1,13 +1,13 @@
 ---
 title: "Roadmap"
-date: 2026-03-07T13:16:00-07:00
-summary: "External source of truth for Snowcrab.dev execution roadmap. Completed work is struck through and time-stamped in changelog."
+date: 2026-03-07T17:50:00-07:00
+summary: "Roadmap 2: UX modernization + feature diffusion rollout plan, with Wave 1 archived as complete."
 draft: false
 ---
 
 This is the public execution roadmap for snowcrab.dev.
 
-**Update rule:** when a roadmap item is completed, it is marked with strikethrough (~~like this~~) and linked/traceable via changelog.
+**Update rule:** shipped items get strike-through with changelog receipts.
 
 ## Status legend
 
@@ -15,51 +15,37 @@ This is the public execution roadmap for snowcrab.dev.
 - [ ] = queued / in progress
 - BLOCKED = waiting on dependency
 
-## Master roadmap (current wave)
+## Roadmap 2 — UX modernization + feature diffusion *(active wave)*
 
-### Phase 0 — Reliability and execution control *(Now)*
+### Track A — UX modernization foundation *(Now)*
 
-- ~~[x] Fix command palette payload parsing/runtime stability (`items.filter` crash path)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-command-palette-items-filter-typeerror-fix/))
-- ~~[x] Fix command palette open/focus behavior and search execution stability~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-command-palette-keyboard-focus-polish-pass/))
-- ~~[x] Fix mobile overlap around command/search affordances~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-command-palette-search-mobile-hint-fix/))
-- ~~[x] Capture and link required before/after browser artifacts for current UX fixes~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase0-command-palette-mobile-artifact-receipts/))
-- ~~[x] Confirm/record final state of superseded PR closure sweep (#68–#99)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-pr-sweep-68-99-closure-verification/))
+- ~~[x] Header v2: glass accent + active-nav indicator + overlap fixes~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-header-v2-nav-indicator-glass-accent-pass/))
+- ~~[x] Projects visual hierarchy reset + motion soften~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-projects-visual-hierarchy-reset-and-motion-soften/))
+- ~~[x] Surface geometry v2 baseline (reduced radius, calmer panel chrome, less box-on-box stacking)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap2-kickoff-surface-geometry-v2/))
+- [ ] Typography rhythm v2 (headline/body spacing + sidebar readability pass)
 
-### Phase 1 — Information architecture and scanability *(Now)*
+### Track B — Feature diffusion across core surfaces *(Now/Next)*
 
-- ~~[x] Homepage module density pass (tabs/placement rebalancing)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-homepage-module-rebalance-tabs/))
-- ~~[x] Active projects strip and project status surface~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-homepage-active-projects-strip/))
-- ~~[x] Capability explorer with readiness filters (`All/Now/Next/Roadmap`)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-capability-explorer-filter-chips-pass/))
-- ~~[x] Expand post "receipts" module (commit/changelog links)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-post-receipts-linked-commits-and-changelog-refs/))
-- ~~[x] Tighten projects detail density for faster executive scan~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-projects-density-executive-scan-pass/))
-- ~~[x] Repurpose Notes into Field Notes with freshness guardrails + archive lane~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-field-notes-repurpose-and-freshness-guardrails/))
+- ~~[x] Diff explorer on changelog~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-changelog-diff-explorer-and-feature-diffusion-plan/))
+- [ ] Diff explorer rails on `/pages/projects/` and top project detail pages
+- [ ] Mermaid maps on project detail pages (simple/deep toggles)
+- [ ] Contributor spotlight diffusion to projects + selected posts
 
-### Phase 2 — Data storytelling surfaces *(Next)*
+### Track C — Content surface upgrades *(Next)*
 
-- ~~[x] Changelog impact split baseline~~ ([changelog](https://snowcrab.dev/changelog/2026-03-06-homepage-changelog-impact-split-module/))
-- ~~[x] Changelog compare presets (`7d/30d/90d` + custom)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-changelog-compare-presets-window-filtering/))
-- ~~[x] Refine "What changed since last visit" signal quality + ordering~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-last-visit-signal-quality-ordering-pass/))
-- ~~[x] Project timeline/state-machine visualization~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-project-state-machine-visualization-phase2/))
+- [ ] Top 8–12 posts: add implementation diff callouts where receipts exist
+- [ ] Field Notes: add compact visual "24h change" card
+- [ ] Capabilities: map each domain to concrete visual receipts
 
-### Phase 3 — Visual modernization *(Next)*
+### Track D — Validation + guardrails *(Continuous)*
 
-- ~~[x] Aurora gradient layer system (tasteful + performance-safe)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-aurora-gradient-layer-baseline/))
-- ~~[x] Subtle depth/layering pass for cards and key panels~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-depth-layering-pass-cards-panels/))
-- ~~[x] Motion token pass (hover/focus/transitions + reduced-motion compliance)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-motion-token-pass/))
-- ~~[x] Large-screen layout refinement continuation (1200/1580 pass)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase3-large-screen-layout-refinement-continuation/))
+- [ ] Before/after artifacts for every meaningful UX batch
+- [ ] Keep `/pages/now`, `/pages/projects`, and `/pages/roadmap/` synchronized in same batch
+- [ ] Keep heartbeat queue aligned to active roadmap items (no placeholder drift)
 
-### Phase 4 — Interactive artifacts *(Roadmap)*
+## Wave 1 archive (complete)
 
-- ~~[x] Interactive diff explorer (text diff + optional before/after image mode)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase4-interactive-diff-explorer/))
-- ~~[x] Mermaid/flowchart render support for architecture/process docs~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase4-mermaid-flowchart-render-support/))
-- ~~[x] Architecture maps with simple/deep views~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase4-architecture-maps-simple-deep-views/))
-- ~~[x] Contributor spotlight rail~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase4-contributor-spotlight-rail/))
-
-### Phase 5 — Platform polish *(Roadmap)*
-
-- ~~[x] PWA baseline (manifest/offline fallback/install behavior)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase5-pwa-baseline/))
-- ~~[x] Performance budget enforcement and regression guardrails~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase5-performance-budget-guardrails/))
-- ~~[x] Accessibility hardening pass (keyboard, focus order, contrast audits)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-phase5-accessibility-hardening-keyboard-focus-contrast/))
+Previous wave (Phase 0–5: reliability → platform polish) is fully complete and preserved in changelog receipts.
 
 ## Operating contract
 
@@ -67,6 +53,4 @@ This is the public execution roadmap for snowcrab.dev.
 - PR fallback: only for risky/guardrail-sensitive changes
 - No filler batches; ship meaningful outcomes only
 - Every meaningful ship gets a changelog entry
-- Heartbeat reconciles `HEARTBEAT.md` ↔ `docs/STATE.md` before status reporting
-
-Roadmap evolves. Source-of-truth discipline does not.
+- Heartbeat reconciles `HEARTBEAT.md` ↔ `docs/STATE.md` ↔ open roadmap items before status reporting

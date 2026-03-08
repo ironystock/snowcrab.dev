@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 19:40 MST
+- Last updated: 2026-03-07 19:58 MST
 
 ## Last shipped batch
-- Sidebar diffusion shipped for posts list, post detail, and case study pages using a shared context-sidebar layout to reduce right-side dead space while keeping readable line length constraints.
+- Roadmap 3 drafted and published as the new active wave: full visual language overhaul, modern builder-inspired UX diffusion, and chart/graph storytelling expansion.
 
 ## Next queued action
-- No meaningful batch currently queued (Roadmap 2 active wave items currently shipped; queue reopens when a new roadmap item is added).
+- Roadmap 3 kickoff batch: border/aesthetic overhaul baseline (token system + core component adoption).
 
 ## Active blockers
 - None.

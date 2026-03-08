@@ -1,7 +1,7 @@
 ---
 title: "Roadmap"
-date: 2026-03-07T17:50:00-07:00
-summary: "Roadmap 2: UX modernization + feature diffusion rollout plan, with Wave 1 archived as complete."
+date: 2026-03-07T19:00:00-07:00
+summary: "Roadmap 3: visual language overhaul + modern builder-inspired UX + data storytelling expansion."
 draft: false
 ---
 
@@ -15,38 +15,38 @@ This is the public execution roadmap for snowcrab.dev.
 - [ ] = queued / in progress
 - BLOCKED = waiting on dependency
 
-## Roadmap 2 — UX modernization + feature diffusion *(active wave)*
+## Roadmap 3 — Modern Builder UX Overhaul *(active wave)*
 
-### Track A — UX modernization foundation *(Now)*
+### Track A — Visual language reset (go big) *(Now)*
+- [ ] Border/aesthetic overhaul: move beyond rounded-box stack to layered modern surfaces.
+- [ ] Border token system v2 (hairline, soft, accent, focus) + component-level adoption.
+- [ ] Card chrome simplification pass (fewer nested boxes, stronger hierarchy).
+- [ ] Hero + section transitions with premium-but-calm visual cadence.
 
-- ~~[x] Header v2: glass accent + active-nav indicator + overlap fixes~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-header-v2-nav-indicator-glass-accent-pass/))
-- ~~[x] Projects visual hierarchy reset + motion soften~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-projects-visual-hierarchy-reset-and-motion-soften/))
-- ~~[x] Surface geometry v2 baseline (reduced radius, calmer panel chrome, less box-on-box stacking)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap2-kickoff-surface-geometry-v2/))
-- ~~[x] Typography rhythm v2 (headline/body spacing + sidebar readability pass)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-typography-rhythm-v2-pass/))
+### Track B — Modern builder inspiration diffusion *(Now/Next)*
+- [ ] Integrate inspiration patterns from modern builder sites (Linear/Vercel/Raycast/Cursor/Framer class language).
+- [ ] Ship homepage + projects “big swing” pass with new visual primitives.
+- [ ] Create mockup direction set (A/B/C) and use it as implementation contract.
 
-### Track B — Feature diffusion across core surfaces *(Now/Next)*
+### Track C — Charts & graph storytelling *(Now/Next)*
+- [ ] Add meaningful charts to Projects (lane trend, ship cadence, blocker distribution).
+- [ ] Add changelog analytics mini-dashboard (velocity, categories, risk markers).
+- [ ] Add post-level visual receipts/metrics where appropriate.
 
-- ~~[x] Diff explorer on changelog~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-changelog-diff-explorer-and-feature-diffusion-plan/))
-- ~~[x] Diff explorer rails on `/pages/projects/` and top project detail pages~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-diff-explorer-diffusion-projects-and-detail-pages/))
-- ~~[x] Mermaid maps on project detail pages (simple/deep toggles)~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-project-detail-mermaid-maps-simple-deep/))
-- ~~[x] Contributor spotlight diffusion to projects + selected posts~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-contributor-spotlight-diffusion-projects-selected-posts/))
+### Track D — Advanced feature candidates *(Exploration)*
+- [ ] WebGPU-enhanced background/data visuals (optional progressive enhancement).
+- [ ] Interactive execution graph (state transitions over time).
+- [ ] Temporal playback mode (“what changed this week” cinematic timeline).
+- [ ] AI-assisted diff narration mode for executive summaries.
 
-### Track C — Content surface upgrades *(Next)*
+### Track E — Governance & quality guardrails *(Continuous)*
+- [ ] Before/after artifact receipts for every major visual batch.
+- [ ] Sync `/pages/now`, `/pages/projects`, and `/pages/roadmap/` in same batch.
+- [ ] Keep heartbeat queue aligned to active roadmap items (no placeholder drift).
 
-- ~~[x] Top 8–12 posts: add implementation diff callouts where receipts exist~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-post-implementation-diff-callouts-pass-1/))
-- ~~[x] Field Notes: add compact visual "24h change" card~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-field-notes-24h-change-card/))
-- ~~[x] Capabilities: map each domain to concrete visual receipts~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-capabilities-domain-visual-receipts-map/))
+## Roadmap 2 archive (complete)
 
-### Track D — Validation + guardrails *(Continuous)*
-
-- ~~[x] Before/after artifacts for every meaningful UX batch~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-validation-guardrail-changelog-receipt-enforcement/))
-- ~~[x] Keep `/pages/now`, `/pages/projects`, and `/pages/roadmap/` synchronized in same batch~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-surface-sync-guardrail-now-projects-roadmap/))
-- [ ] Keep heartbeat queue aligned to active roadmap items (no placeholder drift)
-- ~~[x] Enforce `/pages/now/` freshness (<24h) with mandatory stale sync and dedicated enforcer cadence~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-now-freshness-enforcement-hardening/))
-
-## Wave 1 archive (complete)
-
-Previous wave (Phase 0–5: reliability → platform polish) is fully complete and preserved in changelog receipts.
+Roadmap 2 (UX modernization + feature diffusion) is fully complete and preserved through changelog receipts.
 
 ## Operating contract
 

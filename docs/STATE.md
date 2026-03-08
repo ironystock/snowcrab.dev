@@ -5,7 +5,7 @@
 - Last updated: 2026-03-07 18:26 MST
 
 ## Last shipped batch
-- Renamed civic-nexus to civic across active site content: projects list/details, capability references, and related content; added `/projects/civic/` with legacy alias support.
+- Projects dashboard updated: contributor spotlight moved into a new third tab (`Contributors`) and full-width guardrails added so tabbed widget layouts remain responsive when surfaces are rearranged.
 
 ## Next queued action
 - Add implementation diff callouts to top 8–12 posts where receipts exist.

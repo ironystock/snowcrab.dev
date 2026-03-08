@@ -1230,6 +1230,15 @@ main.container {
   margin: 0.7rem 0 0;
 }
 
+.projects-dashboard-tabs--full .home-tabpanel {
+  width: 100%;
+}
+
+.projects-panel-contributors .contributor-spotlight-list {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.6rem;
+}
+
 .projects-reading-surface {
   background: transparent;
   border-color: color-mix(in oklab, var(--panel-border-strong) 58%, transparent);
@@ -1550,7 +1559,8 @@ article.prose .integration-grid,
 article.prose .projects-state-machine-track,
 article.prose .projects-state-machine-rules,
 article.prose .automation-demos-grid,
-article.prose .capability-explorer-grid {
+article.prose .capability-explorer-grid,
+article.prose .contributor-spotlight-list {
   max-width: none;
   width: 100%;
   margin-left: 0;

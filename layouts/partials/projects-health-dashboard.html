@@ -80,17 +80,17 @@
     <p class="projects-state-machine-intro">Transition intelligence: promotion latency, churn/reopen pressure, and stuck-state alerts.</p>
     <p class="projects-state-machine-why"><strong>Why this matters:</strong> answers <em>How work is moving between states?</em></p>
     <ol class="projects-state-machine-track" aria-label="Project flow states">
-      <li class="projects-state-node projects-state-node--next">
+      <li class="projects-state-node projects-state-node--next" data-state-node="next" tabindex="0" role="button" aria-pressed="false">
         <p class="projects-state-node-label">Next</p>
         <p class="projects-state-node-count">{{ $nextCount }} queued</p>
       </li>
       <li class="projects-state-arrow" aria-hidden="true">→</li>
-      <li class="projects-state-node projects-state-node--now">
+      <li class="projects-state-node projects-state-node--now" data-state-node="now" tabindex="0" role="button" aria-pressed="false">
         <p class="projects-state-node-label">Now</p>
         <p class="projects-state-node-count">{{ $nowCount }} active</p>
       </li>
       <li class="projects-state-arrow" aria-hidden="true">→</li>
-      <li class="projects-state-node projects-state-node--watch">
+      <li class="projects-state-node projects-state-node--watch" data-state-node="watch" tabindex="0" role="button" aria-pressed="false">
         <p class="projects-state-node-label">Watch</p>
         <p class="projects-state-node-count">{{ $watchCount }} blocked/risky</p>
       </li>
@@ -105,6 +105,8 @@
       <li><strong>Stabilize:</strong> Keep <em>Now</em> items shipping in small meaningful batches.</li>
       <li><strong>De-risk:</strong> Move to <em>Watch</em> when external dependencies block progress; pull back to <em>Next/Now</em> once unblocked.</li>
     </ul>
+    <p class="meta projects-state-machine-hint">Interaction contract: click a state node to filter integration cards and load transition receipts. Click again to reset.</p>
+    <p class="meta projects-transition-receipt" id="projects-transition-receipt" role="status" aria-live="polite">Transition receipts ready.</p>
   </section>
 </section>
 {{ end }}

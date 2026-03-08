@@ -1,11 +1,11 @@
 {{ $items := .Params.integrations }}
 {{ if $items }}
-<section class="integration-status card" aria-labelledby="integration-status-title">
+<section class="integration-status card" id="integration-status-panel" aria-labelledby="integration-status-title">
   <h2 id="integration-status-title">Integration status</h2>
   <ul class="integration-grid" aria-label="Integration project statuses">
     {{ range $items }}
     <li>
-      <article class="integration-item" aria-labelledby="integration-{{ .name | urlize }}-title">
+      <article class="integration-item" data-status="{{ lower .status }}" aria-labelledby="integration-{{ .name | urlize }}-title">
         <header class="integration-item-header">
           <h3 id="integration-{{ .name | urlize }}-title">{{ .name }}</h3>
           <span class="status-pill {{ if eq .status "Now" }}status-pill--now{{ else if eq .status "Next" }}status-pill--next{{ else }}status-pill--watch{{ end }}">{{ .status }}</span>

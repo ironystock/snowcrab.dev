@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 22:49 MST
+- Last updated: 2026-03-07 22:48 MST
 
 ## Last shipped batch
-- Completed Roadmap 4 Track B de-redundancy pass: Project health dashboard now owns lane KPIs (capacity/blocker ratio/freshness SLA/confidence) while Project flow state machine owns transition intelligence (promotion latency/churn proxy/stuck-state alerts), including non-overlap microcopy and changelog receipt.
+- Added state-machine interaction contract on `/pages/projects/`: lane nodes now filter integration cards and surface lane-specific transition receipts.
 
 ## Next queued action
-- Add interaction contract for state machine (click state node to filter project cards + show transition receipts) so it becomes an operational control.
+- Add weekly regression check: fail CI when health + state machine expose overlapping metric labels without distinct ownership metadata.
 
 ## Active blockers
 - None.

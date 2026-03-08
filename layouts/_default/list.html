@@ -40,6 +40,7 @@
       <p class="meta changelog-filter-summary" id="changelog-filter-summary" role="status" aria-live="polite" aria-atomic="true">Showing latest 7 days</p>
     </div>
     <noscript><p class="meta">Category filters require JavaScript. Showing all changelog entries.</p></noscript>
+  {{ partial "changelog-diff-explorer.html" . }}
   {{ end }}
 
   {{ $listPages := .Pages.ByDate.Reverse }}

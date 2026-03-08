@@ -1,0 +1,77 @@
+<section class="card automation-diff-explorer" id="changelog-diff-explorer" aria-labelledby="changelog-diff-explorer-heading">
+  <h3 id="changelog-diff-explorer-heading">Changelog diff explorer</h3>
+  <p class="meta">Inspect recent before/after deltas without leaving changelog.</p>
+
+  <div class="automation-diff-controls">
+    <label for="changelog-diff-select">Change set</label>
+    <select id="changelog-diff-select"></select>
+    <div class="automation-diff-mode" role="group" aria-label="Diff mode">
+      <button type="button" class="chip is-active" data-changelog-diff-mode="text" aria-pressed="true">Text</button>
+      <button type="button" class="chip" data-changelog-diff-mode="image" aria-pressed="false">Image</button>
+    </div>
+  </div>
+
+  <div id="changelog-diff-text" class="automation-diff-text" role="region" aria-label="Code diff output">
+    <div class="automation-diff-ide-head">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="automation-diff-ide-title">changelog-diff.ts</span>
+    </div>
+    <pre><code></code></pre>
+  </div>
+
+  <figure id="changelog-diff-image" class="automation-diff-image" hidden>
+    <div class="automation-diff-image-grid">
+      <button type="button" class="automation-diff-image-button" data-changelog-image-kind="before"><img id="changelog-diff-before" alt="Before screenshot" loading="lazy" /><span class="meta">Before</span></button>
+      <button type="button" class="automation-diff-image-button" data-changelog-image-kind="after"><img id="changelog-diff-after" alt="After screenshot" loading="lazy" /><span class="meta">After</span></button>
+    </div>
+    <figcaption class="meta">Click image for focused compare modal and flip between versions.</figcaption>
+  </figure>
+
+  <p class="meta" id="changelog-diff-receipts">Receipts: <span>No receipts linked.</span></p>
+
+  <dialog id="changelog-diff-image-modal" class="diff-image-modal" aria-label="Changelog diff image viewer">
+    <form method="dialog" class="diff-image-modal-sheet">
+      <div class="diff-image-modal-head">
+        <p class="meta" id="changelog-diff-modal-label">Before</p>
+        <button value="cancel" class="command-palette-close" aria-label="Close image viewer">×</button>
+      </div>
+      <img id="changelog-diff-modal-img" alt="Diff image preview" loading="lazy" />
+      <div class="diff-image-modal-actions">
+        <button type="button" class="chip" data-changelog-image-flip="before">Before</button>
+        <button type="button" class="chip" data-changelog-image-flip="after">After</button>
+      </div>
+    </form>
+  </dialog>
+</section>
+
+{{ $items := slice
+(dict
+  "title" "Command palette + mobile header fix"
+  "diff" "- header search affordance overlapped on mobile and command palette stability was fragile\n+ fixed command payload parsing and mobile header overlap behavior\n+ improved command palette open/focus reliability"
+  "before" "/artifacts/phase0/before-command-palette-mobile-fix.jpg"
+  "after" "/artifacts/phase0/after-command-palette-mobile-fix.jpg"
+  "receipts" (slice (dict "label" "Changelog" "url" "/changelog/2026-03-07-command-palette-search-mobile-hint-fix/"))
+)
+(dict
+  "title" "Project state machine visualization"
+  "diff" "- project flow context lived in prose and fragmented status bullets\n+ added explicit state-machine lanes (Next/Now/Watch) with transition rules\n+ introduced lane counts for faster executive scan"
+  "before" "/artifacts/phase2/before-project-state-machine-visualization.jpg"
+  "after" "/artifacts/phase2/after-project-state-machine-visualization.jpg"
+  "receipts" (slice (dict "label" "Changelog" "url" "/changelog/2026-03-07-project-state-machine-visualization-phase2/"))
+)
+(dict
+  "title" "Depth/layering pass"
+  "diff" "- flat hierarchy made panel priority harder to parse\n+ introduced depth tokens for cards/panels\n+ harmonized visual hierarchy on home/projects surfaces"
+  "before" "/artifacts/phase3/before-depth-layering-pass-projects.jpg"
+  "after" "/artifacts/phase3/after-depth-layering-pass-projects.jpg"
+  "receipts" (slice (dict "label" "Changelog" "url" "/changelog/2026-03-07-phase3-depth-layering-pass-cards-panels/"))
+)
+(dict
+  "title" "Mermaid flowchart support"
+  "diff" "- architecture/process flows were text-only\n+ added Mermaid render support with initialization pipeline\n+ published first simple/deep architecture flow maps"
+  "before" "/artifacts/phase4/before-mermaid-flowchart-support.jpg"
+  "after" "/artifacts/phase4/after-mermaid-flowchart-support.jpg"
+  "receipts" (slice (dict "label" "Changelog" "url" "/changelog/2026-03-07-phase4-mermaid-flowchart-render-support/"))
+)
+}}
+<script type="application/json" id="changelog-diff-explorer-data">{{ $items | jsonify }}</script>

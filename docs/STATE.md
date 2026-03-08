@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 17:28 MST
+- Last updated: 2026-03-07 17:45 MST
 
 ## Last shipped batch
-- Header v2 pass shipped: subtle active-nav underline indicator, upgraded glass accent surface, and calmer non-upshift control interactions.
+- Added changelog-native diff explorer (IDE-style text diffs + modal image compare/flip) to `/changelog/` for faster visual change inspection.
 
 ## Next queued action
 - No meaningful batch currently queued (roadmap wave complete; awaiting next prioritized roadmap item).

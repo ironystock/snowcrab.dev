@@ -2159,6 +2159,10 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin-bottom: 0.9rem;
 }
 
+#changelog-diff-explorer {
+  margin-top: 0.55rem;
+}
+
 .automation-diff-explorer select {
   width: min(100%, 520px);
   min-height: 2.15rem;

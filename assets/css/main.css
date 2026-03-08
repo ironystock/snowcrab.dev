@@ -1721,6 +1721,18 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
   margin: 0.75rem 0 1rem;
 }
 
+.project-diff-rail {
+  margin: 1rem 0 1.1rem;
+  border: 1px solid color-mix(in oklab, var(--border) 72%, transparent);
+  border-radius: 12px;
+  padding: 0.75rem 0.82rem;
+  background: color-mix(in oklab, var(--bg-elev) 94%, var(--border) 6%);
+}
+
+.project-diff-rail h3 {
+  margin-top: 0.2rem;
+}
+
 .projects-health h2 {
   margin: 0 0 0.4rem;
   font-size: 1.05rem;

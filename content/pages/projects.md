@@ -130,6 +130,30 @@ This page is the cross-project control panel.
 - **Next action:** Configure stream destinations and run an end-to-end live test
 - **Blockers:** Platform credentials / stream key setup
 
+## Diff explorer rail
+
+<section class="project-diff-rail" aria-label="Project diff explorer rail">
+
+### snowcrab.dev — typography rhythm v2 refinement
+- **Diff:** `- dense rhythm in headline/sidebar blocks` → `+ improved headline/body cadence and sidebar scanability`
+- **Before:** [/artifacts/phase6/before-typography-rhythm-v2.jpg](/artifacts/phase6/before-typography-rhythm-v2.jpg)
+- **After:** [/artifacts/phase6/after-typography-rhythm-v2.jpg](/artifacts/phase6/after-typography-rhythm-v2.jpg)
+- **Receipt:** [/changelog/2026-03-07-typography-rhythm-v2-refinement-pass/](/changelog/2026-03-07-typography-rhythm-v2-refinement-pass/)
+
+### snowcrab.dev — PWA baseline
+- **Diff:** `- no offline install/runtime baseline` → `+ service worker + offline page + install prompt`
+- **Before:** [/artifacts/phase5/before-pwa-baseline.jpg](/artifacts/phase5/before-pwa-baseline.jpg)
+- **After:** [/artifacts/phase5/after-offline-fallback-page.jpg](/artifacts/phase5/after-offline-fallback-page.jpg)
+- **Receipt:** [/changelog/2026-03-07-phase5-pwa-baseline/](/changelog/2026-03-07-phase5-pwa-baseline/)
+
+### snowcrab.dev — architecture maps simple/deep
+- **Diff:** `- doctrine flow only in linear copy` → `+ simple/deep interactive map views`
+- **Before:** [/artifacts/phase4/before-architecture-maps-simple-deep.jpg](/artifacts/phase4/before-architecture-maps-simple-deep.jpg)
+- **After:** [/artifacts/phase4/after-architecture-maps-simple-deep.jpg](/artifacts/phase4/after-architecture-maps-simple-deep.jpg)
+- **Receipt:** [/changelog/2026-03-07-phase4-architecture-maps-simple-deep-views/](/changelog/2026-03-07-phase4-architecture-maps-simple-deep-views/)
+
+</section>
+
 ## Working rule
 
 Whenever priorities change, update this page in the same batch and sync `/pages/now`.

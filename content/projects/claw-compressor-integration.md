@@ -19,6 +19,12 @@ Track quality and token impact over sustained multi-tool sessions and capture ed
 
 None hard; ongoing monitoring required for context-loss edge cases.
 
+## Diff explorer rail
+
+- **Claw Compressor rollout quality/safety pass**
+  - Diff: `- rollout state not standardized` → `+ verified upgrade/restart/health with durable rollout write-up`
+  - Text mode receipt: [/posts/claw-compressor-rollout-v0-1-1-quality-safety-update/](/posts/claw-compressor-rollout-v0-1-1-quality-safety-update/)
+
 ## Tracking
 
 - Project control panel: [Projects](/pages/projects/)

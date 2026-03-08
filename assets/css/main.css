@@ -1663,7 +1663,10 @@ article.prose .projects-state-machine-track li + li,
 article.prose .integration-grid li + li,
 article.prose .automation-demos-grid li + li,
 article.prose .capability-explorer-grid li + li,
-article.prose .contributor-spotlight-list li + li {
+article.prose .contributor-spotlight-list li + li,
+article.prose .roadmap-scorecard-grid li + li,
+article.prose .roadmap-heartbeat-log-list li + li,
+article.prose .roadmap-mockup-grid li + li {
   margin-top: 0;
 }
 
@@ -1879,6 +1882,10 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .roadmap-scorecard {
   margin: 0.72rem 0 0.95rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 
 .roadmap-scorecard-grid {
@@ -1891,10 +1898,11 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 }
 
 .roadmap-scorecard-grid li {
-  border: 1px solid var(--stroke-soft);
+  border: 1px solid color-mix(in oklab, var(--stroke-soft) 78%, transparent);
+  border-left-width: 3px;
   border-radius: 10px;
   padding: 0.58rem;
-  background: color-mix(in oklab, var(--bg-elev) 94%, var(--border) 6%);
+  background: color-mix(in oklab, var(--bg-elev) 97%, transparent);
 }
 
 .roadmap-scorecard-grid p {
@@ -1907,13 +1915,23 @@ article.prose code { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular
 
 .roadmap-heartbeat-log {
   margin: 0.72rem 0 0.95rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 
 .roadmap-heartbeat-log-list {
   margin: 0.55rem 0 0;
-  padding-left: 1.1rem;
+  padding: 0;
+  list-style: none;
   display: grid;
   gap: 0.45rem;
+}
+
+.roadmap-heartbeat-log-list li {
+  padding: 0.35rem 0.15rem 0.35rem 0.55rem;
+  border-left: 2px solid color-mix(in oklab, var(--stroke-soft) 72%, transparent);
 }
 
 .roadmap-heartbeat-log-list li p {

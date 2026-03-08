@@ -4,6 +4,8 @@ on:
   pull_request:
   push:
     branches: [main]
+  schedule:
+    - cron: '0 15 * * 1'
 
 permissions:
   contents: read
@@ -35,6 +37,9 @@ jobs:
 
       - name: Queue-state guardrails
         run: node scripts/validate-queue-state.mjs
+
+      - name: Metric ownership overlap guardrails
+        run: node scripts/validate-metric-ownership.mjs
 
       # Link checking intentionally disabled for now.
       # CI gate is Hugo build + performance + receipt + surface-sync + queue-state guardrails.

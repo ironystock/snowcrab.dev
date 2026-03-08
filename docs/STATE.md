@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 22:48 MST
+- Last updated: 2026-03-07 23:08 MST
 
 ## Last shipped batch
-- Added state-machine interaction contract on `/pages/projects/`: lane nodes now filter integration cards and surface lane-specific transition receipts.
+- Added weekly metric-ownership regression guardrails for `/pages/projects/`: CI now fails when overlapping Health/State-Machine metric labels lack distinct ownership metadata, with a weekly scheduled check.
 
 ## Next queued action
-- Add weekly regression check: fail CI when health + state machine expose overlapping metric labels without distinct ownership metadata.
+- Build the Projects health mini-viz pulse module listed in `/pages/roadmap/` (Roadmap 3, Track D).
 
 ## Active blockers
 - None.

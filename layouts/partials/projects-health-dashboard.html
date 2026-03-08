@@ -35,22 +35,22 @@
   <p class="projects-health-why"><strong>Why this matters:</strong> answers <em>How healthy are lanes now?</em></p>
 
   <ul class="projects-health-kpi-grid" aria-label="Lane KPI summary">
-    <li class="projects-health-kpi-card">
+    <li class="projects-health-kpi-card" data-metric-label="Capacity" data-metric-owner="health">
       <p class="projects-health-kicker">Capacity</p>
       <p class="projects-health-kpi-value">{{ printf "%.0f" $capacityPct }}%</p>
       <p class="projects-health-kpi-copy">{{ $nowCount }} of {{ $totalCount }} tracks are in active execution.</p>
     </li>
-    <li class="projects-health-kpi-card">
+    <li class="projects-health-kpi-card" data-metric-label="Blocker ratio" data-metric-owner="health">
       <p class="projects-health-kicker">Blocker ratio</p>
       <p class="projects-health-kpi-value">{{ printf "%.0f" $blockerPct }}%</p>
       <p class="projects-health-kpi-copy">{{ $blockedCount }} of {{ $totalCount }} tracks currently report blockers.</p>
     </li>
-    <li class="projects-health-kpi-card">
+    <li class="projects-health-kpi-card" data-metric-label="Freshness SLA" data-metric-owner="health">
       <p class="projects-health-kicker">Freshness SLA</p>
       <p class="projects-health-kpi-value">{{ if lt $laneFreshnessHours 24 }}On target{{ else }}Aging{{ end }}</p>
       <p class="projects-health-kpi-copy">Projects surface updated {{ $laneFreshnessHours }}h ago (target: &lt;24h).</p>
     </li>
-    <li class="projects-health-kpi-card">
+    <li class="projects-health-kpi-card" data-metric-label="Confidence" data-metric-owner="health">
       <p class="projects-health-kicker">Confidence</p>
       <p class="projects-health-kpi-value">{{ $confidenceLabel }}</p>
       <p class="projects-health-kpi-copy">Derived from blocker pressure and lane balance.</p>
@@ -58,17 +58,17 @@
   </ul>
 
   <ul class="projects-health-grid" aria-label="Project priority lanes">
-    <li class="projects-health-item projects-health-item--now">
+    <li class="projects-health-item projects-health-item--now" data-metric-label="Now" data-metric-owner="health">
       <p class="projects-health-kicker">Primary lane</p>
       <h3 class="projects-health-item-title">Now <span class="status-pill status-pill--now">Now</span></h3>
       <p class="projects-health-copy">{{ $nowCount }} active execution track{{ if ne $nowCount 1 }}s{{ end }} · {{ $nowBlockedCount }} blocked.</p>
     </li>
-    <li class="projects-health-item projects-health-item--next">
+    <li class="projects-health-item projects-health-item--next" data-metric-label="Next" data-metric-owner="health">
       <p class="projects-health-kicker">Queued lane</p>
       <h3 class="projects-health-item-title">Next <span class="status-pill status-pill--next">Next</span></h3>
       <p class="projects-health-copy">{{ $nextCount }} queued follow-up{{ if ne $nextCount 1 }}s{{ end }} · {{ $nextBlockedCount }} blocked.</p>
     </li>
-    <li class="projects-health-item projects-health-item--watch">
+    <li class="projects-health-item projects-health-item--watch" data-metric-label="Watch" data-metric-owner="health">
       <p class="projects-health-kicker">Risk lane</p>
       <h3 class="projects-health-item-title">Watch <span class="status-pill status-pill--watch">Watch</span></h3>
       <p class="projects-health-copy">{{ $watchCount }} dependency-risk stream{{ if ne $watchCount 1 }}s{{ end }} · {{ $watchBlockedCount }} blocked.</p>
@@ -80,17 +80,17 @@
     <p class="projects-state-machine-intro">Transition intelligence: promotion latency, churn/reopen pressure, and stuck-state alerts.</p>
     <p class="projects-state-machine-why"><strong>Why this matters:</strong> answers <em>How work is moving between states?</em></p>
     <ol class="projects-state-machine-track" aria-label="Project flow states">
-      <li class="projects-state-node projects-state-node--next" data-state-node="next" tabindex="0" role="button" aria-pressed="false">
+      <li class="projects-state-node projects-state-node--next" data-state-node="next" data-metric-label="Next" data-metric-owner="state-machine" tabindex="0" role="button" aria-pressed="false">
         <p class="projects-state-node-label">Next</p>
         <p class="projects-state-node-count">{{ $nextCount }} queued</p>
       </li>
       <li class="projects-state-arrow" aria-hidden="true">→</li>
-      <li class="projects-state-node projects-state-node--now" data-state-node="now" tabindex="0" role="button" aria-pressed="false">
+      <li class="projects-state-node projects-state-node--now" data-state-node="now" data-metric-label="Now" data-metric-owner="state-machine" tabindex="0" role="button" aria-pressed="false">
         <p class="projects-state-node-label">Now</p>
         <p class="projects-state-node-count">{{ $nowCount }} active</p>
       </li>
       <li class="projects-state-arrow" aria-hidden="true">→</li>
-      <li class="projects-state-node projects-state-node--watch" data-state-node="watch" tabindex="0" role="button" aria-pressed="false">
+      <li class="projects-state-node projects-state-node--watch" data-state-node="watch" data-metric-label="Watch" data-metric-owner="state-machine" tabindex="0" role="button" aria-pressed="false">
         <p class="projects-state-node-label">Watch</p>
         <p class="projects-state-node-count">{{ $watchCount }} blocked/risky</p>
       </li>

@@ -175,7 +175,7 @@ flowchart TB
 - ~~[x] De-redundancy pass: split **Project health dashboard** into lane KPI ownership (capacity, blocker ratio, freshness SLA, confidence) while **Project flow state machine** owns transition intelligence (promotion latency, churn/reopen count, stuck-state alerts).~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-trackb-health-vs-flow-de-redundancy/))
 - ~~[x] Add explicit “Why this matters” micro-copy under each module clarifying non-overlap: **Health answers “How healthy are lanes now?”** vs **State machine answers “How work is moving between states?”**.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-trackb-health-vs-flow-de-redundancy/))
 - ~~[x] Add interaction contract for state machine (click state node to filter project cards + show transition receipts) so it becomes an operational control, not a decorative duplicate.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-state-machine-interaction-contract/))
-- [ ] Add weekly regression check: fail CI when health + state machine expose overlapping metric labels without distinct ownership metadata.
+- ~~[x] Add weekly regression check: fail CI when health + state machine expose overlapping metric labels without distinct ownership metadata.~~ ([changelog](https://snowcrab.dev/changelog/2026-03-07-roadmap4-weekly-metric-ownership-regression-guardrail/))
 
 ### Track C — Quality guardrails *(Continuous)*
 - [ ] Add roadmap lint check to fail CI when a wave has no open `[ ]` item while `docs/STATE.md` declares active execution.

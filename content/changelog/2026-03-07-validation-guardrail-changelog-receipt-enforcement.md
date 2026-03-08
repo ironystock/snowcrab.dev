@@ -16,7 +16,7 @@ draft: false
 - Makes receipt discipline default behavior rather than optional memory.
 
 ## Receipts
-- Affected pages: `/changelog/` entries and release process templates (`/archetypes/changelog.md`, CI workflow).
+- Affected pages: `/changelog/` entries, `/pages/roadmap/`, and release process templates (`/archetypes/changelog.md`, CI workflow).
 - Before: `/artifacts/validation-guardrail/before-archetype-changelog.md.txt`
 - After: `/artifacts/validation-guardrail/after-archetype-changelog.md.txt`
 - Before: `/artifacts/validation-guardrail/before-ci-workflow.yml.txt`

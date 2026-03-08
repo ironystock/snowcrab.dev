@@ -23,8 +23,35 @@ function listChangedFiles() {
   }
 }
 
+function toPermalink(relPath) {
+  if (!relPath.endsWith('.md')) return null;
+
+  if (relPath.startsWith('content/pages/')) {
+    const slug = relPath.replace('content/pages/', '').replace(/\.md$/, '');
+    if (slug === '_index') return '/pages/';
+    return `/pages/${slug}/`;
+  }
+
+  if (relPath.startsWith('content/projects/')) {
+    const slug = relPath.replace('content/projects/', '').replace(/\.md$/, '');
+    return `/projects/${slug}/`;
+  }
+
+  if (relPath.startsWith('content/notes/')) {
+    const slug = relPath.replace('content/notes/', '').replace(/\.md$/, '');
+    if (slug === '_index') return '/notes/';
+    return `/notes/${slug}/`;
+  }
+
+  return null;
+}
+
 const changed = listChangedFiles();
 const changelogFiles = changed.filter((f) => /^content\/changelog\/.*\.md$/.test(f));
+const pageLikeChanges = changed
+  .filter((f) => /^content\/(pages|projects|notes)\/.*\.md$/.test(f))
+  .map((f) => ({ rel: f, permalink: toPermalink(f) }))
+  .filter((x) => x.permalink);
 
 if (!changelogFiles.length) {
   console.log('No changed changelog entries in this revision.');
@@ -40,26 +67,37 @@ for (const rel of changelogFiles) {
   const body = readFileSync(full, 'utf8');
 
   const hasReceiptsSection = /^##\s+Receipts\b/im.test(body);
-  const hasBefore = /\b(before)\b[^\n]*\//i.test(body);
-  const hasAfter = /\b(after)\b[^\n]*\//i.test(body);
-  const hasPageReceiptHint = /(pages touched|page-level receipts|surface receipts|affected pages)/i.test(body);
+  const hasBefore = /\bbefore\b[^\n]*\//i.test(body);
+  const hasAfter = /\bafter\b[^\n]*\//i.test(body);
+  const hasAffectedPages = /^##\s+Affected pages\b/im.test(body) || /(affected pages|page-level receipts|surface receipts)/i.test(body);
 
   const missing = [];
   if (!hasReceiptsSection) missing.push('## Receipts section');
-  if (!hasBefore) missing.push('Before artifact link');
-  if (!hasAfter) missing.push('After artifact link');
-  if (!hasPageReceiptHint) missing.push('page-level receipts/affected pages line');
+  if (!hasBefore) missing.push('Before receipt link');
+  if (!hasAfter) missing.push('After receipt link');
+
+  if (pageLikeChanges.length && !hasAffectedPages) {
+    missing.push('## Affected pages section (required when page/project/note files changed)');
+  }
+
+  const missingPermalinks = pageLikeChanges
+    .map((p) => p.permalink)
+    .filter((p) => !body.includes(p));
+
+  if (pageLikeChanges.length && missingPermalinks.length) {
+    missing.push(`linked changed page receipts: ${missingPermalinks.join(', ')}`);
+  }
 
   if (missing.length) {
     failed = true;
-    console.error(`✖ ${rel} is missing: ${missing.join(', ')}`);
+    console.error(`✖ ${rel} is missing: ${missing.join('; ')}`);
   } else {
-    console.log(`✔ ${rel} has receipts + page-level context.`);
+    console.log(`✔ ${rel} has receipts + affected page links.`);
   }
 }
 
 if (failed) {
-  console.error('\nChangelog receipt guardrail failed. Add linked before/after artifacts and page-level receipt context.');
+  console.error('\nChangelog receipt guardrail failed. Add linked before/after receipts and affected page links.');
   process.exit(1);
 }
 

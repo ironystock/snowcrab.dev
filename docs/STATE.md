@@ -2,13 +2,13 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 19:22 MST
+- Last updated: 2026-03-07 19:04 MST
 
 ## Last shipped batch
-- Added validation guardrails so changed changelog entries now require linked before/after artifacts plus page-level receipt context (CI + changelog archetype scaffold).
+- Added CI-enforced surface-sync guardrail so `/pages/now`, `/pages/projects/`, and `/pages/roadmap/` must update together when one changes in a meaningful status batch.
 
 ## Next queued action
-- Synchronization guardrail: keep `/pages/now`, `/pages/projects`, and `/pages/roadmap/` aligned in the same meaningful batch when priorities/status move.
+- Queue-state guardrail: keep heartbeat TODO queue continuously aligned to active roadmap items (no placeholder drift).
 
 ## Active blockers
 - None.

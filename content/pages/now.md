@@ -1,7 +1,7 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T18:37:00-07:00
+lastmod: 2026-03-07T19:04:00-07:00
 draft: false
 ---
 
@@ -20,6 +20,7 @@ draft: false
 - Refined header (v2), reduced box-on-box pressure, and fixed control overlap bugs
 - Added openclaw-discord project coverage + first project post from intake history
 - Mapped Capabilities domain cards to concrete visual receipts, including before/after artifacts and changelog/project proof links
+- Added CI sync guardrail to block partial now/projects/roadmap updates in meaningful status-change batches
 
 ## Next 24h intent
 

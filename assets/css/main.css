@@ -1048,6 +1048,9 @@ main.container {
   justify-content: space-between;
   gap: 0.6rem;
   margin-bottom: 0.25rem;
+}
+
+.reliability-card {
   -webkit-backdrop-filter: blur(4px) saturate(110%);
   backdrop-filter: blur(4px) saturate(110%);
 }

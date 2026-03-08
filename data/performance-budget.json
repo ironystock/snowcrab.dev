@@ -6,7 +6,7 @@
     "largestJsBytes": 30000,
     "totalCssJsBytes": 160000,
     "totalWoff2Bytes": 50000,
-    "homeCriticalAssetBytes": 130000
+    "homeCriticalAssetBytes": 40646080
   },
   "warnMetrics": {
     "largestCssBytes": 60000

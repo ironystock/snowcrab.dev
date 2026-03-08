@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:11 MST
+- Last updated: 2026-03-07 21:10 MST
 
 ## Last shipped batch
-- Roadmap hygiene reconciliation batch: marked the now/projects/roadmap sync rule as shipped on `/pages/roadmap/` and attached the missing changelog receipt for the CI surface-sync guardrail.
+- Updated CSS performance policy for Roadmap 3: hard budget raised to 65KB with a 60KB warning band, plus CI guardrail script support for WARN thresholds.
 
 ## Next queued action
 - Roadmap Track D follow-up: prototype optional WebGPU-enhanced background/data visuals on `/pages/roadmap/` with progressive enhancement fallback and artifact receipts.

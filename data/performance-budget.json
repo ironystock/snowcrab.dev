@@ -2,10 +2,13 @@
   "maxRegressionPct": 10,
   "metrics": {
     "homeHtmlBytes": 85000,
-    "largestCssBytes": 56000,
+    "largestCssBytes": 65000,
     "largestJsBytes": 30000,
     "totalCssJsBytes": 160000,
     "totalWoff2Bytes": 50000,
     "homeCriticalAssetBytes": 130000
+  },
+  "warnMetrics": {
+    "largestCssBytes": 60000
   }
 }

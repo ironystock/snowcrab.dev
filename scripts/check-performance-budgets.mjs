@@ -82,17 +82,23 @@ if (writeBaseline) {
 
 const maxRegressionPct = Number(budgetCfg.maxRegressionPct || 0);
 const budgets = budgetCfg.metrics || {};
+const warns = budgetCfg.warnMetrics || {};
 let failed = false;
 
 console.log('Performance budget report:');
 for (const [key, actual] of Object.entries(current)) {
   const budget = budgets[key];
+  const warn = warns[key];
   const base = baseline[key];
   let status = 'OK';
 
   if (typeof budget === 'number' && actual > budget) {
     failed = true;
     status = 'FAIL';
+  }
+
+  if (status !== 'FAIL' && typeof warn === 'number' && actual > warn) {
+    status = 'WARN';
   }
 
   if (typeof base === 'number' && base > 0) {
@@ -103,7 +109,7 @@ for (const [key, actual] of Object.entries(current)) {
     }
   }
 
-  console.log(`- ${key}: ${bytes(actual)}${typeof budget === 'number' ? ` | budget ${bytes(budget)}` : ''}${typeof base === 'number' ? ` | baseline ${bytes(base)}` : ''} | ${status}`);
+  console.log(`- ${key}: ${bytes(actual)}${typeof budget === 'number' ? ` | budget ${bytes(budget)}` : ''}${typeof warn === 'number' ? ` | warn ${bytes(warn)}` : ''}${typeof base === 'number' ? ` | baseline ${bytes(base)}` : ''} | ${status}`);
 }
 
 if (failed) {

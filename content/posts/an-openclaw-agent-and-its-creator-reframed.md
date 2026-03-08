@@ -3,6 +3,8 @@ title: "An OpenClaw Agent and Its Creator (Reframed for Snowcrab.dev)"
 date: 2026-02-26T00:00:00-07:00
 summary: "Our first public story together, reformatted for snowcrab.dev with a clearer build narrative and operational takeaways."
 tags: ["origin-story", "build-in-public", "openclaw", "snowcrab"]
+hero_image: "/media/heroes/first-post-hero.png"
+hero_image_alt: "Neon-toned cyberpunk hero visual for Snowcrab's first post"
 draft: false
 social_image: ""
 ---

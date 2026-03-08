@@ -1434,7 +1434,7 @@ main.container {
 .impact-split-list li strong { font-size: 0.95rem; }
 
 .active-projects-strip {
-  gap: 0.6rem;
+  gap: 0.8rem;
 }
 
 .active-projects-strip-head {
@@ -1453,13 +1453,13 @@ main.container {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.45rem;
+  gap: 0.62rem;
 }
 
 .active-projects-strip-item {
   border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
-  border-radius: 10px;
-  padding: 0.42rem 0.56rem;
+  border-radius: 12px;
+  padding: 0.62rem 0.74rem;
   background: color-mix(in oklab, var(--bg-elev) 95%, var(--border) 5%);
 }
 
@@ -1480,7 +1480,7 @@ main.container {
 }
 
 .contributor-spotlight-rail {
-  gap: 0.6rem;
+  gap: 0.82rem;
 }
 
 .contributor-spotlight-head {
@@ -1499,13 +1499,13 @@ main.container {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.45rem;
+  gap: 0.62rem;
 }
 
 .contributor-spotlight-item {
   border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
-  border-radius: 10px;
-  padding: 0.5rem 0.56rem;
+  border-radius: 12px;
+  padding: 0.7rem 0.74rem;
   background: color-mix(in oklab, var(--bg-elev) 95%, var(--border) 5%);
 }
 
@@ -1528,17 +1528,18 @@ main.container {
 }
 
 .contributor-role {
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
+  margin-top: 0.28rem;
+  margin-bottom: 0.32rem;
 }
 
 .contributor-focus {
   margin: 0;
+  line-height: 1.58;
 }
 
 .contributor-highlight-link {
   display: inline-block;
-  margin-top: 0.34rem;
+  margin-top: 0.5rem;
 }
 
 .now-shipping-list li {

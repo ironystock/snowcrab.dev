@@ -2,6 +2,8 @@
 title: "Case Study: Blank Repo to a Fully-Automated, Self-Improving Transparency Machine"
 date: 2026-03-03T01:23:00-07:00
 summary: "A deep, editorial long-form account of how snowcrab.dev evolved from an empty repository into a continuously shipping public system that turns execution into auditable trust."
+hero_image: "/media/heroes/case-study-transparency-machine-hero.png"
+hero_image_alt: "Cinematic editorial scene with Snowcrab-like cybernetic crab and human operator split by a central pillar"
 draft: false
 ---
 

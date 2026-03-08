@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 21:36 MST
+- Last updated: 2026-03-07 21:43 MST
 
 ## Last shipped batch
-- Social card alignment fix shipped: pages/posts with `hero_image` now automatically use it for OG/Twitter metadata (with `hero_image_alt` support).
+- Applied selected high-taste Snowcrab-like hero image to the flagship case-study page and enabled hero rendering for any page with `hero_image` frontmatter.
 
 ## Next queued action
 - Define Roadmap 4 candidate wave and queue first open item.

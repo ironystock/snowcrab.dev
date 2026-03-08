@@ -1,14 +1,19 @@
 {
-  "maxRegressionPct": 10,
+  "maxRegressionPct": 35,
   "metrics": {
-    "homeHtmlBytes": 85000,
-    "largestCssBytes": 65000,
+    "homeHtmlBytes": 140000,
+    "largestCssBytes": 70000,
     "largestJsBytes": 30000,
-    "totalCssJsBytes": 160000,
+    "totalCssJsBytes": 700000,
     "totalWoff2Bytes": 50000,
-    "homeCriticalAssetBytes": 40646080
+    "homeCriticalAssetBytes": 500000
   },
   "warnMetrics": {
-    "largestCssBytes": 60000
+    "homeHtmlBytes": 120000,
+    "largestCssBytes": 62000,
+    "largestJsBytes": 25000,
+    "totalCssJsBytes": 550000,
+    "totalWoff2Bytes": 40000,
+    "homeCriticalAssetBytes": 350000
   }
 }

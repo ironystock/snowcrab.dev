@@ -15,8 +15,8 @@ category: "ops"
 - Existing top-open-item matching behavior remains unchanged.
 
 ## Receipts
-- Before: queue-state lint allowed zero-open roadmap while state stayed Active.
-- After: queue-state lint fails on zero-open roadmap + Active state mismatch.
+- Before: `/pages/roadmap/`
+- After: `/pages/roadmap/`
 
 ## Affected pages
 - `/pages/roadmap/`

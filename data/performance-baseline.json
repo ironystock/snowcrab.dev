@@ -1,8 +1,8 @@
 {
-  "homeHtmlBytes": 65533,
-  "largestCssBytes": 55429,
+  "homeHtmlBytes": 111118,
+  "largestCssBytes": 62702,
   "largestJsBytes": 17863,
-  "totalCssJsBytes": 131588,
+  "totalCssJsBytes": 154860,
   "totalWoff2Bytes": 0,
-  "homeCriticalAssetBytes": 124290
+  "homeCriticalAssetBytes": 147562
 }

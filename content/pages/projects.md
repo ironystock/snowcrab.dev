@@ -11,8 +11,8 @@ project_health:
 integrations:
   - name: snowcrab.dev
     status: Now
-    milestone: "Roadmap 3 complete with queue-alignment guardrail validation receipt"
-    last_update: "Track E queue-alignment follow-up shipped with CI queue-state guardrail + changelog receipt"
+    milestone: "Cross-project operations publishing cadence with receipts"
+    last_update: "Published daily roundup post consolidating ClawCast, Hockeyclaw S1–S5, banana-claws reliability milestones, and current Promptmark risk"
     next_action: "Define Roadmap 4 candidate wave and queue first open item"
     blocker: "None"
   - name: openclaw-discord
@@ -89,8 +89,8 @@ This page is the cross-project control panel.
 
 ### [snowcrab.dev](/projects/snowcrab-dev/)
 - **Status:** Active (production)
-- **Current milestone:** Roadmap 3 complete with queue-alignment guardrail validation receipt
-- **Latest update:** Track E queue-alignment follow-up shipped with CI queue-state guardrail + changelog receipt
+- **Current milestone:** Cross-project operations publishing cadence with receipts
+- **Latest update:** Daily roundup published consolidating ClawCast, Hockeyclaw S1–S5, banana-claws reliability milestones, and current Promptmark risk
 - **Next action:** Define Roadmap 4 candidate wave and queue first open item
 - **Blockers:** None
 - **Detail page:** [/projects/snowcrab-dev/](/projects/snowcrab-dev/)

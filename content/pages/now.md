@@ -16,6 +16,7 @@ draft: false
 - banana-claws shipped drift-hardening provenance rails (v0.1.4) + async queue-contract enforcement (v0.1.5)
 - ClawCast rename/release-prep batch shipped (formerly streaming-obs-bootstrap) with migration PR live
 - Hockeyclaw visual ingress sprint (S1–S5) shipped with `/bridge/demo/live-card` QA route
+- Daily cross-project roundup published (ClawCast, Hockeyclaw, banana-claws reliability, Promptmark risk)
 - Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
 ## What changed in the last 24 hours
@@ -38,6 +39,7 @@ draft: false
 - Renamed OBS Streaming Bootstrap to **ClawCast**, hardened docs/scripts for broader reuse, and opened migration PR #2
 - Shipped banana-claws reliability hardening: deterministic baseline/provenance fields + async queue handoff contract telemetry (`handoff_mode`, `same_turn_drain_detected`)
 - Hockeyclaw shipped visual ingress sprints S1–S5: fallback+remote logo path, score-clock/rink-shell modules, and live demo route `/bridge/demo/live-card`
+- Published daily cross-project roundup with consolidated state/risks/next actions
 
 ## Next 24h intent
 

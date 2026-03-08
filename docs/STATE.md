@@ -2,10 +2,10 @@
 
 ## Status
 - State: Active
-- Last updated: 2026-03-07 18:24 MST
+- Last updated: 2026-03-07 18:26 MST
 
 ## Last shipped batch
-- Contributor spotlight rail diffused to `/pages/projects/` and selected posts via reusable single-template wiring (`show_contributor_spotlight` opt-in).
+- Renamed civic-nexus to civic across active site content: projects list/details, capability references, and related content; added `/projects/civic/` with legacy alias support.
 
 ## Next queued action
 - Add implementation diff callouts to top 8–12 posts where receipts exist.

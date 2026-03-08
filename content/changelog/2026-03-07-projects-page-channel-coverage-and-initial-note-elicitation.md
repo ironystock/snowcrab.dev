@@ -10,7 +10,7 @@ draft: false
 ## Changed
 - Updated `/pages/projects/` to explicitly include all active project/channel streams:
   - agentic-obs
-  - civic-nexus
+  - civic
   - promptmark-ai
   - hockey-stuff
   - discord-sdk

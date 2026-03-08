@@ -45,7 +45,7 @@ integrations:
     last_update: "OAuth + queue/worker pilot stabilized"
     next_action: "Expand channel coverage and benchmark quality/latency"
     blocker: "Guardrail-sensitive data hygiene"
-  - name: civic-nexus
+  - name: civic
     status: Next
     milestone: "Multi-endpoint profile-aware skill execution"
     last_update: "Auth/profile mismatch resolved; tools available"
@@ -64,7 +64,7 @@ This page is the cross-project control panel.
 ## Project channels (source inputs)
 
 - `#agentic-obs`
-- `#civic-nexus`
+- `#civic` (current project name; channel currently `#civic-nexus`)
 - `#promptmark-ai`
 - `#hockey-stuff`
 - `#discord-sdk`
@@ -118,10 +118,10 @@ This page is the cross-project control panel.
 - **Next action:** Expand pilot scope and baseline reliability metrics against production traffic
 - **Blockers:** Guardrail hygiene required to keep sensitive data out of published outputs
 
-### [civic-nexus](/projects/civic-nexus/)
+### [civic](/projects/civic/)
 - **Status:** Next
 - **Current milestone:** Multi-endpoint profile-aware routing capability
-- **Next action:** Build MVP fork (`civic-nexus-multi`) with profile registry + profile-aware calls
+- **Next action:** Build MVP fork (`civic-multi`) with profile registry + profile-aware calls
 - **Blockers:** Execution time allocation
 
 ### [agentic-obs](/projects/agentic-obs/)

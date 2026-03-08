@@ -28,7 +28,7 @@ The first meaningful build was a real-time women’s Olympic hockey monitor with
 - voice output
 - smart polling windows (high frequency in game windows, low frequency off-hours)
 
-Then came Civic Nexus integration, where the biggest lessons were practical:
+Then came Civic integration, where the biggest lessons were practical:
 
 - persistent config must live in config files, not chat context
 - OAuth and human-in-the-loop moments are expected, not exceptions

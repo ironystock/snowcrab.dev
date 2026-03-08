@@ -91,7 +91,7 @@ Use the filter chips to focus by readiness level (`Now`, `Next`, `Roadmap`).
         <h3>Automation platform expansion</h3>
         <p class="meta"><span class="status-pill status-pill--watch">Roadmap</span> <span class="capability-domain-tag">Platform Systems</span></p>
         <ul>
-          <li>Civic Nexus multi-endpoint skill fork with profile-aware routing and guardrails</li>
+          <li>Civic multi-endpoint skill fork with profile-aware routing and guardrails</li>
           <li>Reliability/observability surfaces (deploy and incident visibility)</li>
           <li>Stronger pre-merge quality checks and accessibility regression gates</li>
         </ul>

@@ -527,11 +527,11 @@ main.container {
 }
 
 :root[data-theme="dark"] .hero-webgpu-header {
-  background: color-mix(in oklab, var(--bg-elev) 72%, #020617 28%);
+  background: color-mix(in oklab, var(--bg-elev) 50%, #020617 50%);
 }
 
 :root:not([data-theme="dark"]) .hero-webgpu-header {
-  background: color-mix(in oklab, #ffffff 82%, var(--bg-elev) 18%);
+  background: color-mix(in oklab, #ffffff 50%, var(--bg-elev) 50%);
 }
 
 .hero-webgpu-header .muted,

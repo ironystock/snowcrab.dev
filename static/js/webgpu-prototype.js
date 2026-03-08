@@ -37,6 +37,53 @@
       glow: 'rgba(125, 211, 252, 0.22)',
     };
 
+    const crabImage = new Image();
+    crabImage.src = '/favicon-256.png';
+    const crabWalk = {
+      active: false,
+      direction: 1,
+      startMs: 0,
+      durationMs: 7200,
+      nextStartMs: (typeof performance !== 'undefined' ? performance.now() : Date.now()) + 2800,
+    };
+
+    const drawCrabWalk = (nowMs, width, height) => {
+      if (!crabImage.complete) return;
+
+      if (!crabWalk.active && nowMs >= crabWalk.nextStartMs) {
+        crabWalk.active = true;
+        crabWalk.startMs = nowMs;
+        crabWalk.durationMs = 6200 + Math.random() * 2200;
+        crabWalk.direction = Math.random() > 0.5 ? 1 : -1;
+      }
+
+      if (!crabWalk.active) return;
+
+      const progress = Math.min(1, (nowMs - crabWalk.startMs) / crabWalk.durationMs);
+      const baseY = height * 0.35;
+      const startX = crabWalk.direction === 1 ? -width * 0.08 : width * 1.08;
+      const endX = crabWalk.direction === 1 ? width * 1.08 : -width * 0.08;
+      const x = startX + (endX - startX) * progress;
+      const zScale = 0.9 + (0.2 * progress); // -10% z to +10% z feel
+      const bob = Math.sin(progress * Math.PI * 10) * 2.8;
+      const crabW = width * 0.048 * zScale;
+      const crabH = crabW;
+
+      ctx.save();
+      ctx.globalAlpha = 0.9;
+      ctx.translate(x, baseY + bob);
+      if (crabWalk.direction === -1) ctx.scale(-1, 1);
+      ctx.shadowColor = 'rgba(34, 211, 238, 0.28)';
+      ctx.shadowBlur = 10;
+      ctx.drawImage(crabImage, -crabW / 2, -crabH / 2, crabW, crabH);
+      ctx.restore();
+
+      if (progress >= 1) {
+        crabWalk.active = false;
+        crabWalk.nextStartMs = nowMs + 9000 + Math.random() * 13000;
+      }
+    };
+
     const drawFallback = (t = 0) => {
       const { width, height } = canvas;
       const g = ctx.createRadialGradient(width * 0.25, height * 0.15, 0, width * 0.55, height * 0.6, width * 0.9);
@@ -86,6 +133,7 @@
       syncSize();
       drawFallback(t);
       const { width, height } = canvas;
+      const nowMs = typeof performance !== 'undefined' ? performance.now() : Date.now();
 
       // Orbiting "claw nodes" with connective filaments
       const nodes = [];
@@ -115,6 +163,8 @@
         ctx.arc(n.x, n.y, 3.2, 0, Math.PI * 2);
         ctx.fill();
       }
+
+      drawCrabWalk(nowMs, width, height);
 
       requestAnimationFrame(animate);
     };

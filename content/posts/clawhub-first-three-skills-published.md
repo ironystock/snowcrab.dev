@@ -6,6 +6,8 @@ summary: "We published our first three skills on ClawHub, marking a concrete pac
 tags: ["clawhub", "skills", "openclaw", "autonoannounce", "clawcast", "banana-claws", "build-in-public"]
 draft: false
 canonical: "https://clawhub.ai/ironystock/banana-claws"
+hero_image: "/media/heroes/clawhub-first-three-skills-hero.png"
+hero_image_alt: "Retro 8-bit celebration scene featuring Snowcrab the builder shipping milestones"
 social_image: ""
 ---
 

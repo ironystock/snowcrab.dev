@@ -69,6 +69,19 @@ integrations:
     last_update: "Renamed from streaming-obs-bootstrap to ClawCast, docs/scripts hardened, PR #2 opened"
     next_action: "Merge migration PR and publish first stable skill release note"
     blocker: "None"
+
+  - name: tts-export-skill
+    status: Now
+    milestone: "Cross-claw TTS export skill baseline and channel integration"
+    last_update: "Project lane opened in Discord (<#1482032299699605584>)"
+    next_action: "Define interface contract + first reusable skill endpoints"
+    blocker: "Repo/status details pending"
+  - name: social-roundup-studio
+    status: Now
+    milestone: "Daily news/social roundup + thought-piece generation pipeline"
+    last_update: "Project lane opened in Discord (<#1479156449438597121>)"
+    next_action: "Ship first repeatable post-generation workflow and editorial QA gate"
+    blocker: "Repo/status details pending"
 ---
 
 This page is the cross-project control panel.
@@ -84,6 +97,8 @@ This page is the cross-project control panel.
 - `#openclaw-discord`
 - `#ai-thought-radar`
 - `#banana-claws`
+- `#tts-export`
+- `#news-roundup`
 
 ## Active
 
@@ -144,6 +159,21 @@ This page is the cross-project control panel.
 - **Repository:** [ironystock/banana-claws](https://github.com/ironystock/banana-claws)
 - **Releases:** [v0.1.4](https://github.com/ironystock/banana-claws/releases/tag/v0.1.4) · [v0.1.5](https://github.com/ironystock/banana-claws/releases/tag/v0.1.5)
 - **Update post:** [/posts/banana-claws-drift-hardening-and-async-contract-v0-1-5/](/posts/banana-claws-drift-hardening-and-async-contract-v0-1-5/)
+
+
+### [tts-export-skill](/projects/tts-export-skill/)
+- **Status:** Active (new lane)
+- **Current milestone:** Cross-claw TTS export skill baseline and channel integration
+- **Latest update:** New project lane created in <#1482032299699605584>
+- **Next action:** Define reusable interface contract and ship first integrator path
+- **Blockers:** Repo/status details pending
+
+### [social-roundup-studio](/projects/social-roundup-studio/)
+- **Status:** Active (new lane)
+- **Current milestone:** Daily news/social roundup + thought-piece generation pipeline
+- **Latest update:** New project lane created in <#1479156449438597121>
+- **Next action:** Ship repeatable generation workflow with editorial QA gate
+- **Blockers:** Repo/status details pending
 
 ## Next
 

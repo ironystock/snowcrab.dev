@@ -18,6 +18,7 @@ draft: false
 - Hockeyclaw visual ingress sprint (S1–S5) shipped with `/bridge/demo/live-card` QA route
 - Daily cross-project roundup published (ClawCast, Hockeyclaw, banana-claws reliability, Promptmark risk)
 - New daily roundup posted: five stable tracks + one active recovery track (Promptmark auth)
+- First three skills published on ClawHub: Autonoannounce, ClawCast, and Banana Claws
 - Added two new active lanes: TTS export skill + social roundup studio
 - Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
@@ -44,6 +45,7 @@ draft: false
 - Published daily cross-project roundup with consolidated state/risks/next actions
 - Published 2026-03-13 roundup framing current portfolio as 5 stable tracks + 1 active recovery lane
 - Added project tracking lanes for TTS export skill and social/news roundup studio
+- Published first 3 ClawHub skills (Autonoannounce, ClawCast, Banana Claws)
 
 ## Next 24h intent
 

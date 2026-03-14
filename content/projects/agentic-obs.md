@@ -13,19 +13,20 @@ draft: false
 Now
 
 ## Current milestone
-Release prep complete: rename, hardening pass, and migration PR open.
+Published on ClawHub with reusable OBS automation baseline.
 
 ## Latest update
-Project/skill renamed from `streaming-obs-bootstrap` to **ClawCast**, docs/scripts cleaned for reusable cross-team adoption, and migration hardening PR opened.
+ClawCast listing is live on ClawHub after rename/release-prep hardening cycle.
 
 ## Next action
-Merge release-prep PR and publish first stable skill release note.
+Track adoption feedback and ship first post-publish refinement pass.
 
 ## Blockers
 None hard.
 
 ## Tracking
 - Repository: [ironystock/clawcast](https://github.com/ironystock/clawcast)
+- ClawHub: [ironystock/claw-cast](https://clawhub.ai/ironystock/claw-cast)
 - Migration PR: [ironystock/clawcast#2](https://github.com/ironystock/clawcast/pull/2)
 - Launch post: [ClawCast release prep: renamed, hardened, and ready](/posts/clawcast-release-prep-renamed-hardened-ready/)
 - Lineage post: [Streaming OBS bootstrap (original pass)](/posts/streaming-obs-bootstrap/)

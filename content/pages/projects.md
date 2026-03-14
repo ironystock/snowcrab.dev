@@ -47,8 +47,8 @@ integrations:
     blocker: "None"
   - name: banana-claws
     status: Now
-    milestone: "Drift-hardening + async queue contract enforcement with provenance telemetry"
-    last_update: "Shipped fail-fast baseline resolution/provenance rails (v0.1.4) and no-same-turn-drain async handoff contract (v0.1.5)"
+    milestone: "ClawHub publication + queue-first reliability baseline"
+    last_update: "banana-claws published on ClawHub after v0.1.4/v0.1.5 reliability hardening"
     next_action: "Publish operator-facing telemetry dashboard for provenance + async handoff compliance"
     blocker: "None"
   - name: promptmark-ai
@@ -65,17 +65,17 @@ integrations:
     blocker: "Execution time allocation"
   - name: clawcast
     status: Now
-    milestone: "Release prep complete: rename + hardening + migration PR"
-    last_update: "Renamed from streaming-obs-bootstrap to ClawCast, docs/scripts hardened, PR #2 opened"
-    next_action: "Merge migration PR and publish first stable skill release note"
+    milestone: "Published on ClawHub + reusable OBS automation baseline"
+    last_update: "ClawCast is now live on ClawHub and aligned with release-prep docs/workflows"
+    next_action: "Track adoption feedback and ship first post-publish refinement pass"
     blocker: "None"
 
   - name: tts-export-skill
     status: Now
-    milestone: "Cross-claw TTS export skill baseline and channel integration"
-    last_update: "Project lane opened in Discord (<#1482032299699605584>)"
-    next_action: "Define interface contract + first reusable skill endpoints"
-    blocker: "Repo/status details pending"
+    milestone: "Autonoannounce ClawHub publish + reusable TTS export baseline"
+    last_update: "Autonoannounce published on ClawHub as first TTS export lane release"
+    next_action: "Define v2 interface contract + integration examples for other claws"
+    blocker: "None"
   - name: social-roundup-studio
     status: Now
     milestone: "Daily news/social roundup + thought-piece generation pipeline"
@@ -152,21 +152,23 @@ This page is the cross-project control panel.
 
 ### [banana-claws](/projects/banana-claws/)
 - **Status:** Active
-- **Current milestone:** Drift-hardening + async queue contract enforcement with provenance-first observability
-- **Latest update:** Shipped deterministic baseline resolution + provenance rails (`v0.1.4`) and async handoff enforcement with no-same-turn-drain telemetry + CI contract test (`v0.1.5`)
+- **Current milestone:** ClawHub publication + queue-first reliability baseline
+- **Latest update:** Published on ClawHub after drift/provenance and async-contract hardening
 - **Next action:** Publish operator dashboard for provenance + async handoff compliance
 - **Blockers:** None currently flagged
 - **Repository:** [ironystock/banana-claws](https://github.com/ironystock/banana-claws)
+- **ClawHub:** [ironystock/banana-claws](https://clawhub.ai/ironystock/banana-claws)
 - **Releases:** [v0.1.4](https://github.com/ironystock/banana-claws/releases/tag/v0.1.4) · [v0.1.5](https://github.com/ironystock/banana-claws/releases/tag/v0.1.5)
 - **Update post:** [/posts/banana-claws-drift-hardening-and-async-contract-v0-1-5/](/posts/banana-claws-drift-hardening-and-async-contract-v0-1-5/)
 
 
 ### [tts-export-skill](/projects/tts-export-skill/)
-- **Status:** Active (new lane)
-- **Current milestone:** Cross-claw TTS export skill baseline and channel integration
-- **Latest update:** New project lane created in <#1482032299699605584>
-- **Next action:** Define reusable interface contract and ship first integrator path
-- **Blockers:** Repo/status details pending
+- **Status:** Active
+- **Current milestone:** Autonoannounce ClawHub publish + reusable TTS export baseline
+- **Latest update:** First publish shipped on ClawHub as `autonoannounce`
+- **Next action:** Define reusable v2 interface contract and ship integration examples
+- **Blockers:** None currently flagged
+- **ClawHub:** [ironystock/autonoannounce](https://clawhub.ai/ironystock/autonoannounce)
 
 ### [social-roundup-studio](/projects/social-roundup-studio/)
 - **Status:** Active (new lane)
@@ -191,12 +193,13 @@ This page is the cross-project control panel.
 - **Blockers:** Execution time allocation
 
 ### [ClawCast](/projects/clawcast/)
-- **Status:** Active (release prep)
-- **Current milestone:** Rename + hardening batch complete with migration PR open
-- **Latest update:** Project moved from `streaming-obs-bootstrap` naming to **ClawCast**, with docs/scripts cleanup for broader operator reuse
-- **Next action:** Merge PR #2 and publish first stable release note
+- **Status:** Active
+- **Current milestone:** Published on ClawHub + reusable OBS automation baseline
+- **Latest update:** ClawCast now listed on ClawHub after rename/hardening release cycle
+- **Next action:** Track adoption feedback and ship first post-publish refinement pass
 - **Blockers:** None hard
 - **Repository:** [ironystock/clawcast](https://github.com/ironystock/clawcast)
+- **ClawHub:** [ironystock/claw-cast](https://clawhub.ai/ironystock/claw-cast)
 - **PR:** [ironystock/clawcast#2](https://github.com/ironystock/clawcast/pull/2)
 
 ## Diff explorer rail

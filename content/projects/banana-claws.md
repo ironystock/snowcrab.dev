@@ -37,6 +37,7 @@ None currently flagged.
 
 ## Links
 - Repository: <https://github.com/ironystock/banana-claws>
+- ClawHub: <https://clawhub.ai/ironystock/banana-claws>
 - Release v0.1.4: <https://github.com/ironystock/banana-claws/releases/tag/v0.1.4>
 - Release v0.1.5: <https://github.com/ironystock/banana-claws/releases/tag/v0.1.5>
 - PR #10: <https://github.com/ironystock/banana-claws/pull/10>

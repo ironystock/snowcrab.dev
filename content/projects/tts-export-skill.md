@@ -9,13 +9,13 @@ draft: false
 Now
 
 ## Current milestone
-Cross-claw TTS export skill baseline and channel integration.
+Autonoannounce published on ClawHub as the first cross-claw TTS export skill.
 
 ## Latest update
-Project lane opened in Discord: <#1482032299699605584>.
+ClawHub listing is live: <https://clawhub.ai/ironystock/autonoannounce>.
 
 ## Next action
-Define interface contract and ship first integrator path for external claws.
+Define v2 interface contract and ship integration examples for external claws.
 
 ## Blockers
-Repository and packaging details pending.
+None currently flagged.

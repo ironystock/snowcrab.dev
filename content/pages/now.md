@@ -1,7 +1,7 @@
 ---
 title: "Now"
 date: 2026-03-07T17:55:00-07:00
-lastmod: 2026-03-07T21:34:00-07:00
+lastmod: 2026-03-13T18:33:00-07:00
 draft: false
 ---
 
@@ -17,6 +17,7 @@ draft: false
 - ClawCast rename/release-prep batch shipped (formerly streaming-obs-bootstrap) with migration PR live
 - Hockeyclaw visual ingress sprint (S1–S5) shipped with `/bridge/demo/live-card` QA route
 - Daily cross-project roundup published (ClawCast, Hockeyclaw, banana-claws reliability, Promptmark risk)
+- New daily roundup posted: five stable tracks + one active recovery track (Promptmark auth)
 - Maintain strict freshness and drift guardrails (`Now`/`Projects`/`Roadmap` sync)
 
 ## What changed in the last 24 hours
@@ -40,6 +41,7 @@ draft: false
 - Shipped banana-claws reliability hardening: deterministic baseline/provenance fields + async queue handoff contract telemetry (`handoff_mode`, `same_turn_drain_detected`)
 - Hockeyclaw shipped visual ingress sprints S1–S5: fallback+remote logo path, score-clock/rink-shell modules, and live demo route `/bridge/demo/live-card`
 - Published daily cross-project roundup with consolidated state/risks/next actions
+- Published 2026-03-13 roundup framing current portfolio as 5 stable tracks + 1 active recovery lane
 
 ## Next 24h intent
 
